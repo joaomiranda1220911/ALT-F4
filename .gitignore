@@ -1,0 +1,42 @@
+# Ignorar ficheiros temporários de sistemas e editores
+*.swp
+*.*~
+.DS_Store
+*.pyc
+
+# Ignorar pacotes locais
+nupkg/
+
+# Ignorar ficheiro de lock (não deve ser incluído no repositório)
+project.lock.json
+
+# Ignorar configurações de IDEs e editores
+.vscode/
+.idea/
+.vs/
+.fleet/
+.cr/
+
+# Ignorar ficheiros específicos de utilizadores
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignorar diretórios e ficheiros de resultados de build
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+# Ignorar ficheiros de log de msbuild
+msbuild.log
+msbuild.err
+msbuild.wrn

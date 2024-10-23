@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Grupo2A")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36f7d534c0a542cbb9e6442e33dc1567d1eef4e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f92037a4ee11173c87952921f1b583f23291b27")]
 [assembly: System.Reflection.AssemblyProductAttribute("Grupo2A")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Grupo2A")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
