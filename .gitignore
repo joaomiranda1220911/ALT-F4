@@ -54,3 +54,10 @@ Grupo2A.AssemblyInfoInput.cache
 *.nuget.dgspec.json
 *.nuget.g.props
 *.nuget.g.targets
+
+# Optional: Ignore AssemblyInfo if it's auto-generated
+Grupo2A.AssemblyInfo.cs
+
+# Ignore cache files
+Grupo2A.AssemblyInfoInput.cache
+
