@@ -428,19 +428,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\stiag\\.nuget\\packages\\": {}
+    "/Users/joaomiranda/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stiag\\OneDrive\\Ambiente de Trabalho\\Faculdade\\2024-2025\\1º Semestre\\SINF2\\Trabalho SINF2\\ALT-F4\\Grupo2A\\Grupo2A.csproj",
+      "projectUniqueName": "/Users/joaomiranda/ISEP.LES/2024.25/SINF2/TP1/ALT-F4/Grupo2A/Grupo2A.csproj",
       "projectName": "Grupo2A",
-      "projectPath": "C:\\Users\\stiag\\OneDrive\\Ambiente de Trabalho\\Faculdade\\2024-2025\\1º Semestre\\SINF2\\Trabalho SINF2\\ALT-F4\\Grupo2A\\Grupo2A.csproj",
-      "packagesPath": "C:\\Users\\stiag\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stiag\\OneDrive\\Ambiente de Trabalho\\Faculdade\\2024-2025\\1º Semestre\\SINF2\\Trabalho SINF2\\ALT-F4\\Grupo2A\\obj\\",
+      "projectPath": "/Users/joaomiranda/ISEP.LES/2024.25/SINF2/TP1/ALT-F4/Grupo2A/Grupo2A.csproj",
+      "packagesPath": "/Users/joaomiranda/.nuget/packages/",
+      "outputPath": "/Users/joaomiranda/ISEP.LES/2024.25/SINF2/TP1/ALT-F4/Grupo2A/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\stiag\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/joaomiranda/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -493,7 +493,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
