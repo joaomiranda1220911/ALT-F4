@@ -428,19 +428,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/joaomiranda/.nuget/packages/": {}
+    "C:\\Users\\aacma\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/joaomiranda/ISEP.LES/2024.25/SINF2/TP1/ALT-F4/Grupo2A/Grupo2A.csproj",
+      "projectUniqueName": "C:\\Users\\aacma\\Desktop\\trabalhoSINF2\\ALT-F4\\Grupo2A\\Grupo2A.csproj",
       "projectName": "Grupo2A",
-      "projectPath": "/Users/joaomiranda/ISEP.LES/2024.25/SINF2/TP1/ALT-F4/Grupo2A/Grupo2A.csproj",
-      "packagesPath": "/Users/joaomiranda/.nuget/packages/",
-      "outputPath": "/Users/joaomiranda/ISEP.LES/2024.25/SINF2/TP1/ALT-F4/Grupo2A/obj/",
+      "projectPath": "C:\\Users\\aacma\\Desktop\\trabalhoSINF2\\ALT-F4\\Grupo2A\\Grupo2A.csproj",
+      "packagesPath": "C:\\Users\\aacma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aacma\\Desktop\\trabalhoSINF2\\ALT-F4\\Grupo2A\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/joaomiranda/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\aacma\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
