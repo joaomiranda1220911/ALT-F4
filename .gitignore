@@ -40,3 +40,17 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+# Ignore cache and asset files
+project.assets.json
+project.nuget.cache
+Grupo2A.assets.cache
+
+# Optional: Ignore AssemblyInfo if it's auto-generated (confirm if necessary)
+Grupo2A.AssemblyInfo.cs
+Grupo2A.AssemblyInfoInput.cache
+
+# Ignore NuGet and build-specific files
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
