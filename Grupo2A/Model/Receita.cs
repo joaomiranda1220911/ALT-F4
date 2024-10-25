@@ -6,7 +6,7 @@ namespace Cozinha_BE.Model
     public class Receita
     {
         [Key]
-        public int Id { get; set; } // Identificador único da receita
+        public int IdReceita { get; set; } // Identificador único da receita
 
         [Required]
         [StringLength(100)]

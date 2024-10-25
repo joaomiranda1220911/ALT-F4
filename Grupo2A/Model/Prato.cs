@@ -6,7 +6,7 @@ namespace Cozinha_BE.Model
     public class Prato
     {
         [Key]
-        public int Id { get; set; } // Identificador único do prato
+        public long IdPrato { get; set; } // Identificador único do prato
 
         [Required]
         [StringLength(100)]

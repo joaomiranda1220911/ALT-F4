@@ -5,7 +5,7 @@ namespace Cozinha_BE.Model
     public class Ingrediente
     {
         [Key]
-        public int Id { get; set; } // Identificador único do ingrediente
+        public int IdIngrediente { get; set; } // Identificador único do ingrediente
 
         [Required]
         [StringLength(100)]

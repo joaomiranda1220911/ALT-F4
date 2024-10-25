@@ -1,35 +1,56 @@
-// const ingredienteModel = require('../models/ingrediente');
-// const ingredienteService = require('../services/ingredienteService');
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Cozinha_BE.Model;
+using IngredientesService.Services;
 
 
-// Método para inativar um ingrediente e atualizar o estado de todos os pratos que o utilizam.
-//  PATCH/PUT --> /api/ingredientes/{id}
+namespace Ingredientes.Controllers
+{
+    public class IngredientesController : ControllerBase
+    {
+        private readonly CozinhaContext _context;
+        private IngredientesService _service;
 
-// exports.updateEstadoIngredienteInativar = async function (req, res) {
-//     const ingredienteId = req.params.id;
-//     const ingredienteEstado = 'inativo'; // Define o estado como 'inativo'
+        public IngredientesController(CozinhaContext context)
+        {
+            _context = context;
+            _service = new IngredientesService(context);
+        }
 
-//     try {
-//         // Atualiza o estado do ingrediente
-//         const ingredienteResult = await ingredienteService.updateIngredienteEstado(ingredienteId, ingredienteEstado);
-        
-//         if (!ingredienteResult) {
-//             return res.status(404).json({ error: 'Ingrediente não encontrado' });
-//         }
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateEstadoPrato(long id, Prato2update_dto info)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
 
-//         const pratosAfetados = await pratoService.getPratosByIngredienteId(ingredienteId);
+            var theUpdatePrato = await _service.PutHero(id, info);
 
-//         // Atualiza o estado de todos os pratos que o contem
-//         const updatePromises = pratosAfetados.map(prato => {
-//             return pratoService.updatePratoEstado(prato.id, ingredienteEstado); // ATENÇÃO NOME DO METODO UPDATEPRATOESTADO REVER !!!!
-//         });
+            return (theUpdatePrato == null) ? NotFound() : theUpdatePrato;
+        }
 
-//         await Promise.all(updatePromises);
 
-//         res.status(200).json({ message: 'Estado do ingrediente e dos pratos atualizados com sucesso' });
-//     } catch (error) {
-//         res.status(500).json({ error: 'Erro ao atualizar o estado do ingrediente e dos pratos' });
-//     }
-// }
+        // public async Task<ActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
+        // {
+        //     // procurar o ingrediente e inativá-lo
+
+        //     //procurar os pratos que o contem e update estado prato
+        // public async Task<ActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
+        // {
+        //     // procurar o ingrediente e ativa-lo
+
+        //     //procurar os pratos que o contem e fazer logica para update estado prato
+        // }
+
+    }
+}
+
+
 
 
