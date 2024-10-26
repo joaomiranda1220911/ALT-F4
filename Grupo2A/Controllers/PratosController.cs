@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Cozinha_BE.Model;
+using Cozinha_BE.Model.DTO;
+using Grupo2A.Services;
 
 
-namespace Pratos.Controllers
+namespace Grupo2A.Controllers
 {
     public class PratosController : ControllerBase
     {
