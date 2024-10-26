@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Cozinha_BE.Model;
-using IngredientesService.Services;
+using Grupo2A.Services;
+using Cozinha_BE.Model.DTO;
 
 
-namespace Ingredientes.Controllers
-{
+namespace Grupo2A.Controllers{
     public class IngredientesController : ControllerBase
     {
         private readonly CozinhaContext _context;
@@ -22,18 +22,18 @@ namespace Ingredientes.Controllers
             _service = new IngredientesService(context);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateEstadoPrato(long id, Prato2update_dto info)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
+        // [HttpPut("{id}")]
+        // public async Task<ActionResult> UpdateEstadoPrato(long id, Prato2update_dto info)
+        // {
+        //     if (!ModelState.IsValid)
+        //     {
+        //         return BadRequest();
+        //     }
 
-            var theUpdatePrato = await _service.PutHero(id, info);
+        //     var theUpdatePrato = await _service.PutHero(id, info);
 
-            return (theUpdatePrato == null) ? NotFound() : theUpdatePrato;
-        }
+        //     return (theUpdatePrato == null) ? NotFound() : theUpdatePrato;
+        // }
 
 
         // public async Task<ActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
