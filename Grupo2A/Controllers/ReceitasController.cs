@@ -22,4 +22,11 @@ namespace Receitas.Controllers
         }
 
     }
-}
+    // [HttpPost("CreateTipoRefeicao")]
+    //     public async Task<IActionResult> CreateTipoRefeicao([FromBody] string nomeTipoRefeicao)
+    //     {
+    //         var tipoRefeicaoCriado = await _service.CreateTipoRefeicao(nomeTipoRefeicao);
+    //         return Ok(tipoRefeicaoCriado);
+    //     }
+
+    }
