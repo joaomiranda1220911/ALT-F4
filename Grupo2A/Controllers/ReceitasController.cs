@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Cozinha_BE.Model;
+using Grupo2A.Services;
 
 
-namespace Receitas.Controllers
+namespace Grupo2A.Controllers
 {
     public class ReceitasController : ControllerBase
     {
