@@ -1,0 +1,26 @@
+745e042,2024-10-26 23:26:48 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Receitas (Contr, Serv, Repo) - Base
+3bf3d49,2024-10-26 23:20:11 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Ingred (Contr, Repo e Service)
+5844e56,2024-10-26 23:10:31 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Pratos (Contr, Repo e Service) - Base
+b1eb658,2024-10-26 22:49:42 +0100,Seu Nome,1220827@isep.ipp.pt,Commit - 2update_dto: Receita
+bc309af,2024-10-26 22:44:41 +0100,Seu Nome,1220827@isep.ipp.pt,Commit - 2update_dto: Ingrediente e Prato
+32d7dbb,2024-10-26 22:14:11 +0100,Gabriela,1220832@isep.ipp.pt,Commit - 2listing_dto: Ingrediente Receita Prato
+0f5478b,2024-10-26 22:02:00 +0100,Gabriela,1220832@isep.ipp.pt,Commit - 2detail_dto: Ingrediente, Prato e Receita
+00ff2bf,2024-10-26 15:42:04 +0100,1221040,1221040@isep.ipp.pt,CreateTipoRefeição - Receitas Service, Controller, Repository
+0947f83,2024-10-25 20:37:38 +0100,AnaAlexandraMatos,1221035@isep.ipp.pt,base dos controller + método updatePrato no controller
+6f62cb1,2024-10-25 20:13:13 +0100,Seu Nome,1220827@isep.ipp.pt,Criação de ficheiros dto
+7c73fbe,2024-10-25 20:08:29 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Folder DTO e ficheiros
+fcbc0f5,2024-10-24 19:22:43 +0100,Seu Nome,1220827@isep.ipp.pt,Criação do ficheiro ReceitasRepository.cs
+96e76a5,2024-10-24 19:07:29 +0100,Gabriela,1220832@isep.ipp.pt,Commmit - Folder Repositories
+843ef9b,2024-10-23 23:38:54 +0100,JoaÌƒo Miranda,1220911@isep.ipp.pt,CozinhaContext, Ingrediente, Prato, Receita, TipoDePrato e TipoDeRefeicao, migrations e Database.
+0abd84b,2024-10-23 22:04:46 +0100,Seu Nome,1220827@isep.ipp.pt,Criação da pasta models e respetivos ficheiros
+94780d1,2024-10-23 21:49:14 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Folder Services
+47f5437,2024-10-23 21:10:40 +0100,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+d1b2913,2024-10-23 21:08:02 +0100,João Miranda,1220911@isep.ipp.pt,Delete Grupo2A/obj directory
+f6a5bdf,2024-10-23 20:58:52 +0100,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+39f525f,2024-10-23 19:52:12 +0100,AnaAlexandraMatos,1221035@isep.ipp.pt,updateEstadoIngredienteInativar - controller
+2f92037,2024-10-23 19:22:12 +0100,1221040,1221040@isep.ipp.pt,Erro de Pull
+ddda4d8,2024-10-23 19:17:50 +0100,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+a9638c3,2024-10-23 16:40:44 +0100,AnaAlexandraMatos,1221035@isep.ipp.pt,Criar Controllers
+be88aa4,2024-10-23 16:36:29 +0100,JoaÌƒo Miranda,1220911@isep.ipp.pt,setup
+7833d43,2024-10-23 15:13:55 +0100,João Miranda,1220911@isep.ipp.pt,Create .gitignore
+36f7d53,2024-10-22 11:00:37 +0100,1221040,1221040@isep.ipp.pt,Inicialização do Projeto

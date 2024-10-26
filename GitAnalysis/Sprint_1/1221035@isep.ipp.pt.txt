@@ -1,0 +1,41 @@
+commit 0947f8393bd8c608bb90ce675a4d8301ee5d533d	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Oct 25 20:37:38 2024 +0100
+
+    base dos controller + método updatePrato no controller
+
+M	Grupo2A/Controllers/IngredientesController.cs
+M	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Controllers/ReceitasController.cs
+A	Grupo2A/Grupo2A.sln
+M	Grupo2A/Model/Ingrediente.cs
+M	Grupo2A/Model/Prato.cs
+M	Grupo2A/Model/Receita.cs
+
+commit 39f525f180a45d901821bfb7a78bd0ca6f9cfce2	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Oct 23 19:52:12 2024 +0100
+
+    updateEstadoIngredienteInativar - controller
+
+M	Grupo2A/Controllers/IngredientesController.cs
+D	Grupo2A/Controllers/PratoController.cs
+A	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Controllers/ReceitasController.cs
+
+commit a9638c38e8381b51681591ca03fe954903027b67	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Oct 23 16:40:44 2024 +0100
+
+    Criar Controllers
+
+A	ALT-F4.sln
+A	Grupo2A/Controllers/IngredientesController.cs
+A	Grupo2A/Controllers/PratoController.cs
+A	Grupo2A/Controllers/ReceitasController.cs
+D	Grupo2A/Controllers/WeatherForecastController.cs
+D	Grupo2A/WeatherForecast.cs
+M	Grupo2A/obj/Grupo2A.csproj.nuget.dgspec.json
+M	Grupo2A/obj/Grupo2A.csproj.nuget.g.props
+M	Grupo2A/obj/project.assets.json
+M	Grupo2A/obj/project.nuget.cache

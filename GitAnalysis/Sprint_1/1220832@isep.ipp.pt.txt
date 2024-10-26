@@ -1,0 +1,80 @@
+commit 745e042adb41287b033e1f8ea054cf92f384441d	refs/heads/main (HEAD -> main, origin/main)
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sat Oct 26 23:26:48 2024 +0100
+
+    Commit - Receitas (Contr, Serv, Repo) - Base
+
+M	Grupo2A/Controllers/ReceitasController.cs
+M	Grupo2A/Repositories/ReceitasRepository.cs
+M	Grupo2A/Services/ReceitasService.cs
+
+commit 3bf3d491b0339737bce3fb4574ed290081781cfd	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sat Oct 26 23:20:11 2024 +0100
+
+    Commit - Ingred (Contr, Repo e Service)
+
+M	Grupo2A/Controllers/IngredientesController.cs
+M	Grupo2A/Repositories/IngredientesRepository.cs
+M	Grupo2A/Services/IngredientesService.cs
+
+commit 5844e56aad9e28edf40ac44009f03c2119c3e880	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sat Oct 26 23:10:31 2024 +0100
+
+    Commit - Pratos (Contr, Repo e Service) - Base
+
+M	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Repositories/PratosRepository.cs
+M	Grupo2A/Services/PratosService.cs
+
+commit 32d7dbbae381b8749ac1bbb3a9d890d50c8662f4	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sat Oct 26 22:14:11 2024 +0100
+
+    Commit - 2listing_dto: Ingrediente Receita Prato
+
+M	Grupo2A/Model/DTO/Ingrediente2listing_dto.cs
+M	Grupo2A/Model/DTO/Prato2listing_dto.cs
+M	Grupo2A/Model/DTO/Receita2listing_dto.cs
+
+commit 0f5478b275938e83a95713ccef32d17970325199	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sat Oct 26 22:02:00 2024 +0100
+
+    Commit - 2detail_dto: Ingrediente, Prato e Receita
+
+M	Grupo2A/Model/DTO/Ingrediente2detail_dto.cs
+M	Grupo2A/Model/DTO/Prato2detail_dto.cs
+M	Grupo2A/Model/DTO/Receita2detail_dto.cs
+
+commit 7c73fbe4ef7d0d4d25fe7d4139c710464f1ea2fe	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Fri Oct 25 20:08:29 2024 +0100
+
+    Commit - Folder DTO e ficheiros
+
+A	Grupo2A/Model/DTO/Ingrediente2detail_dto.cs
+A	Grupo2A/Model/DTO/Ingrediente2listing_dto.cs
+A	Grupo2A/Model/DTO/Prato2detail_dto.cs
+A	Grupo2A/Model/DTO/Prato2listing_dto.cs
+A	Grupo2A/Model/DTO/Receita2detail_dto.cs
+
+commit 96e76a53c1966b355788929ebc5a8436830bf11c	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Thu Oct 24 19:07:29 2024 +0100
+
+    Commmit - Folder Repositories
+
+A	Grupo2A/Repositories/IngredientesRepository.cs
+A	Grupo2A/Repositories/PratosRepository.cs
+
+commit 94780d15faecfe57077b15bf7ee386cd5e6f91fc	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Oct 23 21:49:14 2024 +0100
+
+    Commit - Folder Services
+
+A	Grupo2A/Services/IngredientesService.cs
+A	Grupo2A/Services/PratosService.cs
+A	Grupo2A/Services/ReceitasService.cs

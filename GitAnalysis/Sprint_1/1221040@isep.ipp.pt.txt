@@ -1,0 +1,44 @@
+commit 00ff2bf17058dfab90e3eca379976108ea0b3ce8	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Sat Oct 26 15:42:04 2024 +0100
+
+    CreateTipoRefeição - Receitas Service, Controller, Repository
+
+M	Grupo2A/Controllers/ReceitasController.cs
+M	Grupo2A/Repositories/ReceitasRepository.cs
+M	Grupo2A/Services/ReceitasService.cs
+
+commit 2f92037a4ee11173c87952921f1b583f23291b27	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Wed Oct 23 19:22:12 2024 +0100
+
+    Erro de Pull
+
+A	ALT-F4.sln
+A	Grupo2A/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.AssemblyInfo.cs
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.AssemblyInfoInputs.cache
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.GeneratedMSBuildEditorConfig.editorconfig
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.GlobalUsings.g.cs
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.assets.cache
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.csproj.AssemblyReference.cache
+
+commit 36f7d534c0a542cbb9e6442e33dc1567d1eef4e4	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Tue Oct 22 11:00:37 2024 +0100
+
+    Inicialização do Projeto
+
+A	Grupo2A/Controllers/WeatherForecastController.cs
+A	Grupo2A/Grupo2A.csproj
+A	Grupo2A/Grupo2A.http
+A	Grupo2A/Program.cs
+A	Grupo2A/Properties/launchSettings.json
+A	Grupo2A/WeatherForecast.cs
+A	Grupo2A/appsettings.Development.json
+A	Grupo2A/appsettings.json
+A	Grupo2A/obj/Grupo2A.csproj.nuget.dgspec.json
+A	Grupo2A/obj/Grupo2A.csproj.nuget.g.props
+A	Grupo2A/obj/Grupo2A.csproj.nuget.g.targets
+A	Grupo2A/obj/project.assets.json
+A	Grupo2A/obj/project.nuget.cache

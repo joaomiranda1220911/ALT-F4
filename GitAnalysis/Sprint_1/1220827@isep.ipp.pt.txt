@@ -1,0 +1,46 @@
+commit b1eb65880f6ff67ed6c92c263ad3eb07d4c0f165	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Oct 26 22:49:42 2024 +0100
+
+    Commit - 2update_dto: Receita
+
+M	Grupo2A/Model/DTO/Prato2update_dto.cs
+M	Grupo2A/Model/DTO/Receita2update_dto.cs
+
+commit bc309affd3a966b6269c579ced63895d0f6d728a	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Oct 26 22:44:41 2024 +0100
+
+    Commit - 2update_dto: Ingrediente e Prato
+
+M	Grupo2A/Model/DTO/Ingrediente2update_dto.cs
+M	Grupo2A/Model/DTO/Prato2update_dto.cs
+
+commit 6f62cb1143775d4b95187e40be603bf08e584b98	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Fri Oct 25 20:13:13 2024 +0100
+
+    Criação de ficheiros dto
+
+A	Grupo2A/Model/DTO/Ingrediente2update_dto.cs
+A	Grupo2A/Model/DTO/Prato2update_dto.cs
+A	Grupo2A/Model/DTO/Receita2listing_dto.cs
+A	Grupo2A/Model/DTO/Receita2update_dto.cs
+
+commit fcbc0f52b2901703793a92153070b3060299ef72	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Thu Oct 24 19:22:43 2024 +0100
+
+    Criação do ficheiro ReceitasRepository.cs
+
+A	Grupo2A/Repositories/ReceitasRepository.cs
+
+commit 0abd84b1cde16569a2b17385f9cc1b8e5d28724d	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Wed Oct 23 22:04:46 2024 +0100
+
+    Criação da pasta models e respetivos ficheiros
+
+A	Grupo2A/Models/Ingredientes.cs
+A	Grupo2A/Models/Pratos.cs
+A	Grupo2A/Models/Receitas.cs

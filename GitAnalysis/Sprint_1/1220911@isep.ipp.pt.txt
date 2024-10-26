@@ -1,0 +1,91 @@
+commit 843ef9b7d7e44633b1c8260c5b4e8c020b1243d4	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Oct 23 23:38:54 2024 +0100
+
+    CozinhaContext, Ingrediente, Prato, Receita, TipoDePrato e TipoDeRefeicao, migrations e Database.
+
+A	Grupo2A/Database/CozinhaDB
+M	Grupo2A/Grupo2A.csproj
+A	Grupo2A/Migrations/20241023223138_CozinhaCreation.Designer.cs
+A	Grupo2A/Migrations/20241023223138_CozinhaCreation.cs
+A	Grupo2A/Migrations/CozinhaContextModelSnapshot.cs
+A	Grupo2A/Model/CozinhaContext.cs
+A	Grupo2A/Model/Ingrediente.cs
+A	Grupo2A/Model/Prato.cs
+A	Grupo2A/Model/Receita.cs
+A	Grupo2A/Model/TipoDePrato.cs
+A	Grupo2A/Model/TipoDeRefeicao.cs
+D	Grupo2A/Models/Ingredientes.cs
+D	Grupo2A/Models/Pratos.cs
+D	Grupo2A/Models/Receitas.cs
+M	Grupo2A/Program.cs
+
+commit 47f5437e51f491b66fc69085d2e472c27033ca71	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Oct 23 21:10:40 2024 +0100
+
+    Update .gitignore
+
+M	.gitignore
+
+commit d1b291348e53403e98f2242ce3caebd0c1b461cf	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Oct 23 21:08:02 2024 +0100
+
+    Delete Grupo2A/obj directory
+
+D	Grupo2A/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+D	Grupo2A/obj/Debug/net8.0/Grupo2A.AssemblyInfo.cs
+D	Grupo2A/obj/Debug/net8.0/Grupo2A.AssemblyInfoInputs.cache
+D	Grupo2A/obj/Debug/net8.0/Grupo2A.GeneratedMSBuildEditorConfig.editorconfig
+D	Grupo2A/obj/Debug/net8.0/Grupo2A.GlobalUsings.g.cs
+D	Grupo2A/obj/Debug/net8.0/Grupo2A.assets.cache
+D	Grupo2A/obj/Grupo2A.csproj.nuget.dgspec.json
+D	Grupo2A/obj/Grupo2A.csproj.nuget.g.props
+D	Grupo2A/obj/Grupo2A.csproj.nuget.g.targets
+D	Grupo2A/obj/project.assets.json
+D	Grupo2A/obj/project.nuget.cache
+
+commit f6a5bdf7aaf92c555f2435145882e3eb2020ad73	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Oct 23 20:58:52 2024 +0100
+
+    Update .gitignore
+
+M	.gitignore
+
+commit ddda4d8c49373d6ca9697cc98b3746d922f3b377	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Oct 23 19:17:50 2024 +0100
+
+    Update .gitignore
+
+M	.gitignore
+
+commit be88aa4496e74e18e9640ba8fda181cf523581a9	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Oct 23 16:36:29 2024 +0100
+
+    setup
+
+A	ALT-F4.sln
+A	Grupo2A/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.AssemblyInfo.cs
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.AssemblyInfoInputs.cache
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.GeneratedMSBuildEditorConfig.editorconfig
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.GlobalUsings.g.cs
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.assets.cache
+A	Grupo2A/obj/Debug/net8.0/Grupo2A.csproj.AssemblyReference.cache
+M	Grupo2A/obj/Grupo2A.csproj.nuget.dgspec.json
+M	Grupo2A/obj/Grupo2A.csproj.nuget.g.props
+M	Grupo2A/obj/Grupo2A.csproj.nuget.g.targets
+M	Grupo2A/obj/project.assets.json
+M	Grupo2A/obj/project.nuget.cache
+
+commit 7833d4369fe2bc5907a7e57242e81d234816b6e4	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Oct 23 15:13:55 2024 +0100
+
+    Create .gitignore
+
+A	.gitignore
