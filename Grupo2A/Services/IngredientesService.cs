@@ -42,7 +42,6 @@ namespace Grupo2A.Services
             };
         }
 
-
         public async Task<Ingrediente2detail_dto?> UpdateIngrediente(long idIngrediente)
         {
             // Verifica se o ingrediente existe no repositório
@@ -59,7 +58,7 @@ namespace Grupo2A.Services
             var updatedIngrediente = await _repo.UpdateIngrediente(theIngrediente);
 
             // Devolve os detalhes atualizados do ingrediente
-            return IngredienteDetail(updatedIngrediente); // Supondo que há um método para transformar o ingrediente atualizado em um DTO
+            return IngredienteDetail(updatedIngrediente);
         }
 
     }
