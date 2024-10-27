@@ -22,18 +22,6 @@ namespace Grupo2A.Controllers{
             _service = new IngredientesService(context);
         }
 
-        // [HttpPut("{id}")]
-        // public async Task<ActionResult> UpdateEstadoPrato(long id, Prato2update_dto info)
-        // {
-        //     if (!ModelState.IsValid)
-        //     {
-        //         return BadRequest();
-        //     }
-
-        //     var theUpdatePrato = await _service.PutHero(id, info);
-
-        //     return (theUpdatePrato == null) ? NotFound() : theUpdatePrato;
-        // }
 
 
         // public async Task<ActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
@@ -41,6 +29,8 @@ namespace Grupo2A.Controllers{
         //     // procurar o ingrediente e inativá-lo
 
         //     //procurar os pratos que o contem e update estado prato
+
+
         // public async Task<ActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
         // {
         //     // procurar o ingrediente e ativa-lo

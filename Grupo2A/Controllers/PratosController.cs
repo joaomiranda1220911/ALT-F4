@@ -23,6 +23,21 @@ namespace Grupo2A.Controllers
             _service = new PratosService(context);
         }
 
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateEstadoPrato(long id, Prato2update_dto info)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            var theUpdatePrato = await _service.UpdatePrato(id, info);
+
+            return (theUpdatePrato == null) ? NotFound() : Ok(theUpdatePrato);
+        }
+
     }
 }
+
 

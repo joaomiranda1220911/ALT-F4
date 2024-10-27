@@ -10,7 +10,7 @@ namespace Cozinha_BE.Model
 
         [Required]
         [StringLength(100)]
-        public string Nome { get; set; } // Nome do prato
+        public required string Nome { get; set; } // Nome do prato
 
         [Required]
         public TipoDePrato TipoPrato { get; set; } // Tipo do prato
@@ -19,6 +19,6 @@ namespace Cozinha_BE.Model
 
         public Receita Receita { get; set; } // Receita associada ao prato
 
-        public bool Ativo { get; set; } = true; // Estado do prato (ativo ou inativo)
+        public bool? Ativo { get; set; } // Estado do prato (ativo ou inativo)
     }
 }
