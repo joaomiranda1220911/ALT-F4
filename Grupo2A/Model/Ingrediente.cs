@@ -14,6 +14,6 @@ namespace Cozinha_BE.Model
         [Required]
         public string Categoria { get; set; } // Categoria do ingrediente (ex: Vegetal, Laticínio, etc.)
 
-        public bool Ativo { get; set; } = true; // Estado do ingrediente (ativo ou inativo)
+        public bool? Ativo { get; set; } = true; // Estado do ingrediente (ativo ou inativo)
     }
 }
