@@ -37,7 +37,25 @@ namespace Grupo2A.Controllers
             return (theUpdatePrato == null) ? NotFound() : Ok(theUpdatePrato);
         }
 
+        //US014: Servir Refeição (decrementar quantidade)
+        [HttpPost("{idPrato}/servir")]
+        public async Task<ActionResult> ServirRefeicao(long idPrato)
+        {
+            // Chama o serviço para servir uma refeição (decrementar a quantidade)
+            var prato = await _service.ServirRefeicao(idPrato);
+
+            // Verifica se o prato existe e possui quantidade disponível
+            if (prato == null)
+            {
+                return NotFound("Refeição não encontrada ou quantidade insuficiente."); // Retorna 404 se não for encontrado ou se não houver quantidade suficiente
+            }
+
+            return Ok(prato); // Retorna o prato atualizado com a quantidade decrementada
+        }
+
     }
+
 }
+
 
 
