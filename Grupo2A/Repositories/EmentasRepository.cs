@@ -35,5 +35,12 @@ namespace Grupo2A.Repositories
         //     await _context.SaveChangesAsync();
         // }
 
+        //US12
+        // public async Task<List<TipoDeRefeicao>> GetAllTiposRefeicao()
+        // {
+        //     return await _context.TiposDeRefeicao.ToListAsync();
+        // }
+
+
     }
 }

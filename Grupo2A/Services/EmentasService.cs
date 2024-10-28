@@ -32,5 +32,15 @@ namespace Grupo2A.Services
         //     return new TipoRefeicao2detail_dto { Id = novoTipoRefeicao.Id, Nome = novoTipoRefeicao.Nome };
         // }
 
+        //US12
+        // public async Task<List<TipoRefeicao2listing_dto>> GetAllTiposRefeicao()
+        // {
+        //     var tiposRefeicao = await _ementasRepository.GetAllTiposRefeicao();
+        //     return tiposRefeicao.Select(t => new TipoRefeicao2listing_dto { Id = t.Id, Nome = t.Nome }).ToList();
+        // }
+
+
+        
+
     }
 }
