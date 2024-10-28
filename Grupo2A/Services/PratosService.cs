@@ -2,17 +2,24 @@ using Cozinha_BE.Model.DTO;
 using Cozinha_BE.Model;
 using Grupo2A.Repositories;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Grupo2A.Services;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Grupo2A.Services
 {
     public class PratosService
     {
+        private object? _service;
         private CozinhaContext _context;
         private PratosRepository _repo;
+        private object service;
 
         public PratosService(CozinhaContext context)
         {
+            _service = service;
             _context = context;
             _repo = new PratosRepository(_context);
 
@@ -74,8 +81,24 @@ namespace Grupo2A.Services
 
             // Devolve os detalhes atualizados do prato
             return PratoDetail(updatedPrato); // Retorna o DTO com os detalhes do prato atualizado
-
         }
 
+        //US014: Servir Refeição (decrementar quantidade)
+        public async Task<Prato?> ServirRefeicao(long idPrato)
+        {
+            var prato = await _context.Pratos.FindAsync(idPrato);
+            if (prato == null || prato.Quantidade <= 0)
+            {
+                return null; //Retorna null se o prato não for encontrado ou se a quantidade for insuficiente
+            }
+
+            prato.Quantidade--; //Incrementa a quantidade disponível do prato
+            await _context.SaveChangesAsync();
+            return prato;
+        }
+
+
     }
+
 }
+
