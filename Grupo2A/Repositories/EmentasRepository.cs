@@ -41,6 +41,28 @@ namespace Grupo2A.Repositories
         //     return await _context.TiposDeRefeicao.ToListAsync();
         // }
 
+        //US13
+        // // Método para obter TipoDeRefeicao pelo Id
+        // public async Task<TipoDeRefeicao> GetTipoRefeicaoById(int tipoRefeicaoId)
+        // {
+        //     return await _context.TipoDeRefeicao.FindAsync(tipoRefeicaoId);
+        // }
+
+        // // Método para obter Prato pelo Id
+        // public async Task<Prato> GetPratoById(long pratoId)
+        // {
+        //     return await _context.Pratos
+        //         .Where(p => p.Id == pratoId && p.Ativo) // Verifica se o prato está ativo
+        //         .FirstOrDefaultAsync();
+        // }
+
+        // // Método para adicionar uma nova refeição
+        // public async Task AddRefeicao(Refeicao refeicao)
+        // {
+        //     await _context.Refeicoes.AddAsync(refeicao);
+        //     await _context.SaveChangesAsync();
+        // }
+
 
     }
 }
