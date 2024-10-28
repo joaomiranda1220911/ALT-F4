@@ -4,17 +4,33 @@ using Grupo2A.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Grupo2A.Services{
-    public class EmentasService{
+namespace Grupo2A.Services
+{
+    public class EmentasService
+    {
         private CozinhaContext _context;
         private EmentasRepository _repo;
-        public EmentasService(CozinhaContext context){
+        public EmentasService(CozinhaContext context)
+        {
             _context = context;
             _repo = new EmentasRepository(_context);
         }
 
-        public async Task<IEnumerable<Prato>> GetEmentaDisponivel (DateTime data, int tipoDeRefeicaoId){
+        public async Task<IEnumerable<Prato>> GetEmentaDisponivel(DateTime data, int tipoDeRefeicaoId)
+        {
             return await _repo.GetEmentaDisponivel(data, tipoDeRefeicaoId);
         }
+        //US11
+        // public async Task<TipoRefeicao2detail_dto> CreateTipoRefeicao(string nomeTipoRefeicao)
+        // {
+        //     var tipoExistente = await _ementasRepository.GetTipoRefeicaoByName(nomeTipoRefeicao);
+        //     if (tipoExistente != null) return null; // Já existe
+
+        //     var novoTipoRefeicao = new TipoDeRefeicao { Nome = nomeTipoRefeicao };
+        //     await _ementasRepository.AddTipoRefeicao(novoTipoRefeicao);
+
+        //     return new TipoRefeicao2detail_dto { Id = novoTipoRefeicao.Id, Nome = novoTipoRefeicao.Nome };
+        // }
+
     }
 }

@@ -36,6 +36,18 @@ namespace Grupo2A.Controllers
                 return Ok(ementa);
             }
         }
+        
+        //US11
+        // [HttpPost("CreateTipoRefeicao")]
+        // public async Task<IActionResult> CreateTipoRefeicao([FromBody] string nomeTipoRefeicao)
+        // {
+        //     var tipoRefeicaoCriado = await _ementasService.CreateTipoRefeicao(nomeTipoRefeicao);
+        //     if (tipoRefeicaoCriado == null)
+        //         return BadRequest("Tipo de refeição já existe ou ocorreu um erro.");
+
+        //     return Ok(tipoRefeicaoCriado);
+        // }
+
     }
 }
 
