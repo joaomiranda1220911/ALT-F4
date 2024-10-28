@@ -39,5 +39,15 @@ namespace Grupo2A.Repositories
                 .Where(p => p.Ingredientes.Any(i => i.IdIngrediente == ingredienteId)) // Filtra pratos que contêm o ingrediente
                 .ToListAsync(); // Executa a consulta e retorna a lista de pratos
         }
+
+
+        // public async Task <Prato> ServirPratoAsync (int IdPrato){
+        //     var prato = await _context.Pratos.FindAsync(IdPrato);
+        //     if (prato != null && prato.Quantidade > 0){
+        //         prato.Quantidade -= 1;
+        //         await _context.SaveChangesAsync();
+        //     }
+
+        // }
     }
 }

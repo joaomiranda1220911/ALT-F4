@@ -20,5 +20,11 @@ namespace Cozinha_BE.Model
         public Receita Receita { get; set; } // Receita associada ao prato
 
         public bool? Ativo { get; set; } // Estado do prato (ativo ou inativo)
+
+        public int Quantidade{get;set;} //Quantidade do prato disponível
+
+        public DateTime Data {get;set;} //Data em que o prato será servido
+
+        public TipoDeRefeicao TipoRefeicao {get;set;} //Tipo de Refeição
     }
 }
