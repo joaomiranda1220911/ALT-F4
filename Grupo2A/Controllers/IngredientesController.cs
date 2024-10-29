@@ -29,6 +29,21 @@ namespace Grupo2A.Controllers
         {
             return await _service.CreateNewIngrediente(ingrediente);
         }
+
+        // GET: api/Ingredientes/active
+        [HttpGet("active")]
+        public async Task<ActionResult<IEnumerable<Ingrediente2listing_dto>>> GetActiveIngredientes()
+        {
+            return await _service.GetIngredientesByAtiveState(true);
+        }
+
+        // GET: api/Heroes/retired
+        [HttpGet("notActive")]
+        public async Task<ActionResult<IEnumerable<Ingredientes2listing_dto>>> GetNotActiveIngredientes()
+        {
+            return await _service.GetIngredientesByAtiveState(false);
+        }
+
         public async Task<ActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
         {
             // Verifica se o estado do modelo é válido

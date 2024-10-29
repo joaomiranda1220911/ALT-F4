@@ -20,8 +20,6 @@ namespace Grupo2A.Services
             _repoP = new PratosRepository (_context);
         }
 
-
-
         public async Task<IEnumerable<Prato>> GetPratosByIngredienteId(long ingredienteId)
     {
         // Chama o repositório para obter os pratos que contêm o ingrediente pelo ID
@@ -50,6 +48,23 @@ namespace Grupo2A.Services
                 // INCOMPLETO 
             };
             return IngredienteDetail(await _repo.AddIngrediente(newIngrediente));
+        }
+
+        private Ingrediente2listing_dto IngredienteListItem(Ingrediente i)
+        {
+            return new Ingrediente2listing_dto
+            {
+                IdIngrediente = i.IdIngrediente,
+                Nome = i.Nome,
+                Categoria = i.Categoria,
+                // Ativo = i.Ativo // Ativo = i.Ativo? "Ativo" : "Inativo" // da erro
+            };
+        }
+        public async Task<List<Ingrediente2listing_dto>> GetAllActiveIngredientes(bool state)
+        {
+            List<Ingrediente> allMatchingIngredientes = await _repo.GetIngredientesByStateFromDataBase(state);
+
+            return allMatchingIngredientes.Select(x => IngredienteListItem(x)).ToList();
         }
 
         public async Task<Ingrediente2detail_dto?> UpdateIngrediente(long idIngrediente)

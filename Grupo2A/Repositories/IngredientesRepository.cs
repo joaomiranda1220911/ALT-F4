@@ -13,6 +13,15 @@ namespace Grupo2A.Repositories
             _context = context;
         }
 
+        public async Task<List<Ingrediente>> GetAllIngredientesFromDataBase()
+        {
+            return await _context.Ingredientes.ToListAsync();
+        }
+        public async Task<List<Ingrediente>> GetIngredientesByStateFromDataBase(bool state)
+        {
+            return await _context.Ingredientes.Where(i => i.Ativo == state).ToListAsync();
+        }
+
         public async Task<Ingrediente> AddIngrediente(Ingrediente ingrediente)
         {
             var newHero = await _context.Ingredientes.AddAsync(ingrediente);
