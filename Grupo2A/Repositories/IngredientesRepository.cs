@@ -13,6 +13,14 @@ namespace Grupo2A.Repositories
             _context = context;
         }
 
+        public async Task<Ingrediente> AddIngrediente(Ingrediente ingrediente)
+        {
+            var newHero = await _context.Ingredientes.AddAsync(ingrediente);
+            
+            await _context.SaveChangesAsync();
+            return newHero.Entity;
+        }
+
         public async Task<Ingrediente?> GetIngredienteById(long id)
         {
             return await _context.Ingredientes.FindAsync(id);

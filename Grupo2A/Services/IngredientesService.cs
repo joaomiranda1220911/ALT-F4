@@ -37,9 +37,19 @@ namespace Grupo2A.Services
             {
                 Nome = i.Nome,
                 Categoria = i.Categoria,
-                Ativo = i.Ativo ? "Ativo" : "Inativo"
+                // Ativo = i.Ativo ? "Ativo" : "Inativo" // da erro
 
             };
+        }
+
+        public async Task<Ingrediente2detail_dto> CreateNewIngrediente(Ingrediente2create_dto info)
+        {
+            Ingrediente newIngrediente = new Ingrediente{
+                // Id = info.Id,
+                // Name = info.Name,
+                // INCOMPLETO 
+            };
+            return IngredienteDetail(await _repo.AddIngrediente(newIngrediente));
         }
 
         public async Task<Ingrediente2detail_dto?> UpdateIngrediente(long idIngrediente)

@@ -25,7 +25,10 @@ namespace Grupo2A.Controllers
             _service = new IngredientesService(context);
             _serviceP = new PratosService(context);
         }
-
+        public async Task<ActionResult<Ingrediente2detail_dto>> PostHero(Ingrediente2create_dto ingrediente)
+        {
+            return await _service.CreateNewIngrediente(ingrediente);
+        }
         public async Task<ActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
         {
             // Verifica se o estado do modelo é válido
