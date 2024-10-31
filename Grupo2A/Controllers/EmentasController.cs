@@ -29,7 +29,7 @@ namespace Grupo2A.Controllers
             var ementa = await _ementasService.GetEmentaDisponivel(data, tipoDeRefeicaoId);
             if (!ementa.Any())
             {
-                return NotFound("Nenhum prato disponível");
+                return NotFound("Nenhuma ementa disponível");
             }
             else
             {

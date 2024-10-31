@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Cozinha_BE.Model;
 using Cozinha_BE.Model.DTO;
 using Grupo2A.Services;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace Grupo2A.Controllers
@@ -64,6 +65,19 @@ namespace Grupo2A.Controllers
             }
             return NoContent();// Caso a refeição seja eliminada com sucesso, retorna NoContent
         }
+
+        //US016: Apresentar ementa disponível com base na data, tipo e quantidade
+        [HttpGet("ementa")]
+        public async Task<ActionResult<Prato2listing_dto>>ApresentarEmenta(
+            [FromQuery] string tipoRefeicao, 
+            [FromQuery] DateTime data){
+
+            var ementa = await _service.GetEmentaDisponivel(tipoRefeicao, data);
+            if (ementa == null || !ementa.Any()){
+                return NotFound("Nenhuma ementa disponível.");
+            }
+            return Ok(ementa);
+        } 
     }
 
 }
