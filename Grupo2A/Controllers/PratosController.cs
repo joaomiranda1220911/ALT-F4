@@ -69,7 +69,7 @@ namespace Grupo2A.Controllers
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
         [HttpGet("ementa")]
         public async Task<ActionResult<Prato2listing_dto>>ApresentarEmenta(
-            [FromQuery] string tipoRefeicao, 
+            [FromQuery] string tipoRefeicao, //Recebe o tipo de refeição como parâmetro de consulta
             [FromQuery] DateTime data){
 
             var ementa = await _service.GetEmentaDisponivel(tipoRefeicao, data);
