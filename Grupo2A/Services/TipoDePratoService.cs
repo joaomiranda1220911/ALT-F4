@@ -26,5 +26,19 @@ namespace Grupo2A.Services{
             };
         }
 
+        //US005 - Listar todos os tipos de pratos
+        public async Task<List<TipoDePrato2listing_dto>> GetTiposDePratos(){   
+            List <TipoDePrato> allTiposDePratos = await _repo.GetAllTiposDePratosFromDataBase();
+            return allTiposDePratos.Select(x=> TipoDePratoListItem(x)).ToList();
+
+        }
+
+        private TipoDePrato2listing_dto TipoDePratoListItem (TipoDePrato tipoDePrato){
+            return new TipoDePrato2listing_dto{
+                Id = tipoDePrato.Id,
+                Nome = tipoDePrato.Nome
+            };
+        }
+
     }
 }

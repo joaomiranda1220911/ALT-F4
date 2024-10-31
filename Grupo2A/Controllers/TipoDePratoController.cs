@@ -22,5 +22,11 @@ namespace Grupo2A.Controllers{
         return await _service.CreateNewTipoDePrato(tipoDePrato);
     }
 
+    //US005 - Listar todos os Tipos de Prato
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<TipoDePrato2listing_dto>>> GetTiposDePratos(){
+        return await _service.GetTiposDePratos();
+    }
+
     }
 }

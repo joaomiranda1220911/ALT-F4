@@ -1,4 +1,5 @@
 using Cozinha_BE.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace Grupo2A.Repositories{
     public class TipoDePratoRepository{
@@ -14,6 +15,11 @@ namespace Grupo2A.Repositories{
 
             await _context.SaveChangesAsync();
             return newTipoDePrato.Entity;
+        }
+
+        //US005 - Listar todos os tipos de pratos
+        public async Task <List<TipoDePrato>> GetAllTiposDePratosFromDataBase(){
+            return await _context.TiposDePrato.ToListAsync();
         }
     }
 }
