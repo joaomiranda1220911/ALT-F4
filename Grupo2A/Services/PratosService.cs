@@ -101,7 +101,7 @@ namespace Grupo2A.Services
         }
 
         //US015: Remover uma refeição futura
-        public async Task<bool> RemoverRefeicaoFutura(long idPrato)
+        public async Task<bool> DeleteRefeicao(long idPrato)
         {
             //Procura o prato na base de dados
             var prato = await _context.Pratos.FindAsync(idPrato);

@@ -53,6 +53,17 @@ namespace Grupo2A.Controllers
             return Ok(prato); // Retorna o prato atualizado com a quantidade decrementada
         }
 
+        //US015: Remover refeição futura
+        [HttpDelete("{idPrato}")]
+        public async Task<ActionResult> DeleteRefeicao(long idPrato){
+            //Chama o método RemoverRefeicaoFutura para eliminar a refeição futura
+            var result = await _service.DeleteRefeicao(idPrato);
+            //Se a refeição não for encontrada, retorna NotFound
+            if (!result){
+                return NotFound("Refeição futura não encontrada.");
+            }
+            return NoContent();// Caso a refeição seja eliminada com sucesso, retorna NoContent
+        }
     }
 
 }
