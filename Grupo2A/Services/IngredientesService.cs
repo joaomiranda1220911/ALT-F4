@@ -18,17 +18,29 @@ namespace Grupo2A.Services
         {
             _context = context;
             _repo = new IngredientesRepository(_context);
-            _repoP = new PratosRepository (_context);
+            _repoP = new PratosRepository(_context);
         }
 
         public async Task<IEnumerable<Prato>> GetPratosByIngredienteId(long ingredienteId)
-    {
-        // Chama o repositório para obter os pratos que contêm o ingrediente pelo ID
-        var pratos = await _repoP.GetPratosByIngredienteId(ingredienteId);
-        
-        // Retorna a lista de pratos
-        return pratos;
-    }
+        {
+            // Chama o repositório para obter os pratos que contêm o ingrediente pelo ID
+            var pratos = await _repoP.GetPratosByIngredienteId(ingredienteId);
+
+            // Retorna a lista de pratos
+            return pratos;
+        }
+
+        public async Task<Ingrediente2detail_dto> CreateNewIngrediente(Ingrediente2create_dto info)
+        {
+            Ingrediente newIngrediente = new Ingrediente
+            {
+                IdIngrediente = (int)info.Id,
+                Nome = info.Name,
+                Categoria = info.Categoria,
+                Ativo = info.Ativo
+            };
+            return IngredienteDetail(await _repo.AddIngrediente(newIngrediente));
+        }
 
         private Ingrediente2detail_dto IngredienteDetail(Ingrediente i)
         {
@@ -36,19 +48,9 @@ namespace Grupo2A.Services
             {
                 Nome = i.Nome,
                 Categoria = i.Categoria,
-                // Ativo = i.Ativo ? "Ativo" : "Inativo" // da erro
+                Ativo = i.Ativo ? "Ativo" : "Inativo"
 
             };
-        }
-
-        public async Task<Ingrediente2detail_dto> CreateNewIngrediente(Ingrediente2create_dto info)
-        {
-            Ingrediente newIngrediente = new Ingrediente{
-                // Id = info.Id,
-                // Name = info.Name,
-                // INCOMPLETO 
-            };
-            return IngredienteDetail(await _repo.AddIngrediente(newIngrediente));
         }
 
         private Ingrediente2listing_dto IngredienteListItem(Ingrediente i)
@@ -57,8 +59,7 @@ namespace Grupo2A.Services
             {
                 IdIngrediente = i.IdIngrediente,
                 Nome = i.Nome,
-                Categoria = i.Categoria,
-                // Ativo = i.Ativo // Ativo = i.Ativo? "Ativo" : "Inativo" // da erro
+                Categoria = i.Categoria
             };
         }
         public async Task<List<Ingrediente2listing_dto>> GetAllActiveIngredientes(bool state)
@@ -95,5 +96,3 @@ namespace Grupo2A.Services
         }
     }
 }
-
-
