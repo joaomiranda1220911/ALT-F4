@@ -37,36 +37,6 @@ namespace Grupo2A.Controllers
             }
         }
 
-        //US11
-        // [HttpPost("CreateTipoRefeicao")]
-        // public async Task<IActionResult> CreateTipoRefeicao([FromBody] string nomeTipoRefeicao)
-        // {
-        //     var tipoRefeicaoCriado = await _ementasService.CreateTipoRefeicao(nomeTipoRefeicao);
-        //     if (tipoRefeicaoCriado == null)
-        //         return BadRequest("Tipo de refeição já existe ou ocorreu um erro.");
-
-        //     return Ok(tipoRefeicaoCriado);
-        // }
-
-        //US12
-        // [HttpGet("GetAllTipoRefeicao")]
-        // public async Task<IActionResult> GetAllTipoRefeicao()
-        // {
-        //     var tiposRefeicao = await _ementasService.GetAllTiposRefeicao();
-        //     return Ok(tiposRefeicao);
-        // }
-
-        //US13
-        // [HttpPost("CreateRefeicao")]
-        // public async Task<IActionResult> CreateRefeicao([FromBody] Refeicao2create_dto novaRefeicao)
-        // {
-        //     var refeicaoCriada = await _ementasService.CreateRefeicao(novaRefeicao);
-        //     if (refeicaoCriada == null)
-        //         return BadRequest("Erro ao criar a refeição.");
-
-        //     return Ok(refeicaoCriada);
-        // }
-
     }
 }
 
