@@ -1,6 +1,7 @@
 using Cozinha_BE.Model;
 using Cozinha_BE.Model.DTO;
 using Grupo2A.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Grupo2A.Services
@@ -19,8 +20,6 @@ namespace Grupo2A.Services
             _repo = new IngredientesRepository(_context);
             _repoP = new PratosRepository (_context);
         }
-
-
 
         public async Task<IEnumerable<Prato>> GetPratosByIngredienteId(long ingredienteId)
     {
@@ -52,6 +51,23 @@ namespace Grupo2A.Services
             return IngredienteDetail(await _repo.AddIngrediente(newIngrediente));
         }
 
+        private Ingrediente2listing_dto IngredienteListItem(Ingrediente i)
+        {
+            return new Ingrediente2listing_dto
+            {
+                IdIngrediente = i.IdIngrediente,
+                Nome = i.Nome,
+                Categoria = i.Categoria,
+                // Ativo = i.Ativo // Ativo = i.Ativo? "Ativo" : "Inativo" // da erro
+            };
+        }
+        public async Task<List<Ingrediente2listing_dto>> GetAllActiveIngredientes(bool state)
+        {
+            List<Ingrediente> allMatchingIngredientes = await _repo.GetIngredientesByStateFromDataBase(state);
+
+            return allMatchingIngredientes.Select(x => IngredienteListItem(x)).ToList();
+        }
+
         public async Task<Ingrediente2detail_dto?> UpdateIngrediente(long idIngrediente)
         {
             // Verifica se o ingrediente existe no repositório
@@ -71,6 +87,12 @@ namespace Grupo2A.Services
             return IngredienteDetail(updatedIngrediente);
         }
 
+        public async Task<List<Ingrediente2listing_dto>> GetIngredientesByAtiveState(bool state)
+        {
+            List<Ingrediente> allMatchingIngredientes = await _repo.GetIngredientesByStateFromDataBase(state);
+
+            return allMatchingIngredientes.Select(x => IngredienteListItem(x)).ToList();
+        }
     }
 }
 
