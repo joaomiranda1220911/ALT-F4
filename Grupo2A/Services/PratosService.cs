@@ -25,6 +25,8 @@ namespace Grupo2A.Services
 
         }
 
+        //Método para transformar um prato em Prato2detail_dto
+
         private Prato2detail_dto PratoDetail(Prato p)
         {
             return new Prato2detail_dto
@@ -33,8 +35,7 @@ namespace Grupo2A.Services
                 TipoPrato = p.TipoPrato,
                 Ingredientes = p.Ingredientes,
                 Receita = p.Receita,
-                Ativo = p.Ativo ? "Ativo" : "Inativo"
-
+                Ativo = p.Ativo
             };
         }
 
@@ -119,7 +120,36 @@ namespace Grupo2A.Services
             return true;
         }
 
-    }
+        //US016: Apresentar ementa disponível com base na data, tipo e quantidade
+        public async Task<List<Prato2listing_dto>> GetEmentaDisponivel(string tipoRefeicao, DateTime data)
+        {
+            var pratosDisponiveis = await _context.Pratos
+            // Filtra os pratos de acordo com o tipo de refeição, data e quantidade disponível
+           .Where(p => p.TipoRefeicao.ToString() == tipoRefeicao && p.DataServico.Date == data.Date && p.Quantidade > 0)
+           .Select(p => new Prato2listing_dto
+           {
+               IdPrato = (int)p.IdPrato,
+               Nome = p.Nome,
+               TipoPrato = p.TipoPrato,
+               Ativo = p.Ativo
+           })
+            // Executa a consulta assíncrona e converte o resultado numa lista
+            .ToListAsync();
+            // Retorna a lista de pratos disponíveis que satisfazem os critérios
+            return pratosDisponiveis;
+        }
 
+        //Método para transformar um prato em Prato2listing_dto
+        public Prato2listing_dto PratoListItem(Prato p)
+        {
+            return new Prato2listing_dto
+            {
+                IdPrato = (int)p.IdPrato,
+                Nome = p.Nome,
+                TipoPrato = p.TipoPrato,
+                Ativo = p.Ativo
+            };
+        }
+    }
 }
 

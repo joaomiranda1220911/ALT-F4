@@ -6,6 +6,6 @@ public class Prato2detail_dto{
     public required TipoDePrato TipoPrato {get; set;}
     public required ICollection<Ingrediente> Ingredientes {get;set;}
     public required Receita Receita {get; set;}
-    public bool Ativo {get; set;}
+    public bool? Ativo {get; set;}
 
 }
