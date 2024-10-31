@@ -28,5 +28,15 @@ namespace Grupo2A.Controllers{
         return await _service.GetTiposDePratos();
     }
 
+    //US006 - Obter informação sobre um Tipo de Prato Específico
+    [HttpGet("{Id}")]
+    public async Task<ActionResult<TipoDePrato2detail_dto>> GetTipoDePratoById(int Id){
+        var tipoDePrato = await _service.GetTipoDePratoById(Id);
+        if(tipoDePrato == null){
+            return NotFound();
+        }
+        return Ok(tipoDePrato);
+    }
+
     }
 }

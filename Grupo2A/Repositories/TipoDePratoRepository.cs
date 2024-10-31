@@ -21,5 +21,10 @@ namespace Grupo2A.Repositories{
         public async Task <List<TipoDePrato>> GetAllTiposDePratosFromDataBase(){
             return await _context.TiposDePrato.ToListAsync();
         }
+
+        //US006 - Obter informação sobre um Tipo de Prato Específico
+        public async Task <TipoDePrato> GetTipoDePratoById(int Id){
+            return await _context.TiposDePrato.FindAsync(Id);
+        }
     }
 }
