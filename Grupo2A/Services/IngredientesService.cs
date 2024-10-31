@@ -1,6 +1,7 @@
 using Cozinha_BE.Model;
 using Cozinha_BE.Model.DTO;
 using Grupo2A.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Grupo2A.Services
@@ -86,6 +87,12 @@ namespace Grupo2A.Services
             return IngredienteDetail(updatedIngrediente);
         }
 
+        public async Task<List<Ingrediente2listing_dto>> GetIngredientesByAtiveState(bool state)
+        {
+            List<Ingrediente> allMatchingIngredientes = await _repo.GetIngredientesByStateFromDataBase(state);
+
+            return allMatchingIngredientes.Select(x => IngredienteListItem(x)).ToList();
+        }
     }
 }
 
