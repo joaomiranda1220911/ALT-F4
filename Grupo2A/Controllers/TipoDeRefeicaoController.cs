@@ -26,7 +26,7 @@ namespace Grupo2A.Controllers
         // [HttpPost("CreateTipoRefeicao")]
         // public async Task<IActionResult> CreateTipoRefeicao([FromBody] string nomeTipoRefeicao)
         // {
-        //     var tipoRefeicaoCriado = await _ementasService.CreateTipoRefeicao(nomeTipoRefeicao);
+        //     var tipoRefeicaoCriado = await _TipoDeRefeicaoService.CreateTipoRefeicao(nomeTipoRefeicao);
         //     if (tipoRefeicaoCriado == null)
         //         return BadRequest("Tipo de refeição já existe ou ocorreu um erro.");
 
@@ -37,7 +37,7 @@ namespace Grupo2A.Controllers
         // [HttpGet("GetAllTipoRefeicao")]
         // public async Task<IActionResult> GetAllTipoRefeicao()
         // {
-        //     var tiposRefeicao = await _ementasService.GetAllTiposRefeicao();
+        //     var tiposRefeicao = await _TipoDeRefeicaoService.GetAllTiposRefeicao();
         //     return Ok(tiposRefeicao);
         // }
 
@@ -45,7 +45,7 @@ namespace Grupo2A.Controllers
         // [HttpPost("CreateRefeicao")]
         // public async Task<IActionResult> CreateRefeicao([FromBody] Refeicao2create_dto novaRefeicao)
         // {
-        //     var refeicaoCriada = await _ementasService.CreateRefeicao(novaRefeicao);
+        //     var refeicaoCriada = await _TipoDeRefeicaoService.CreateRefeicao(novaRefeicao);
         //     if (refeicaoCriada == null)
         //         return BadRequest("Erro ao criar a refeição.");
 
