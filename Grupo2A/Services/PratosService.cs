@@ -25,6 +25,21 @@ namespace Grupo2A.Services
 
         }
 
+        //US007 - Criar Prato
+        public async Task<Prato2detail_dto> CreateNewPrato(Prato2create_dto info)
+        {
+            Prato newPrato = new Prato
+            {
+                Nome = info.Nome,
+                TipoPrato = info.TipoPrato,
+                Ingredientes = info.Ingredientes,
+                Receita = info.Receita
+            };
+            return PratoDetail(await _repo.AddPrato(newPrato));
+        }
+        
+        
+        
         //Método para transformar um prato em Prato2detail_dto
 
         private Prato2detail_dto PratoDetail(Prato p)

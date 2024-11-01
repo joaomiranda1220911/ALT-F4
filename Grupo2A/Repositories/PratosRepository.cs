@@ -14,6 +14,15 @@ namespace Grupo2A.Repositories
 
         }
 
+        //US007 - Criar Prato
+        public async Task<Prato> AddPrato(Prato prato)
+        {
+            var newPrato = await _context.Pratos.AddAsync(prato);
+            
+            await _context.SaveChangesAsync();
+            return newPrato.Entity;
+        }
+
         public async Task<Prato?> GetPratoById(long id)
         {
             return await _context.Pratos.FindAsync(id);

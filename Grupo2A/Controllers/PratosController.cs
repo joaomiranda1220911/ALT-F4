@@ -24,6 +24,10 @@ namespace Grupo2A.Controllers
             _service = new PratosService(context);
         }
 
+        //US007 - Criar Prato
+        public async Task<ActionResult<Prato2detail_dto>> PostPrato (Prato2create_dto prato){
+            return await _service.CreateNewPrato(prato);
+        }
 
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateEstadoPrato(long id, Prato2update_dto info)
