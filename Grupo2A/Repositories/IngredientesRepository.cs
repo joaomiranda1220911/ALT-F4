@@ -24,10 +24,10 @@ namespace Grupo2A.Repositories
 
         public async Task<Ingrediente> AddIngrediente(Ingrediente ingrediente)
         {
-            var newHero = await _context.Ingredientes.AddAsync(ingrediente);
+            var newIngrediente = await _context.Ingredientes.AddAsync(ingrediente);
             
             await _context.SaveChangesAsync();
-            return newHero.Entity;
+            return newIngrediente.Entity;
         }
 
         public async Task<Ingrediente?> GetIngredienteById(long id)
