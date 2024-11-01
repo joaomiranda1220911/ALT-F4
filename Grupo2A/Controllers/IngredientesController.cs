@@ -30,8 +30,6 @@ namespace Grupo2A.Controllers
             return await _service.CreateNewIngrediente(ingrediente);
         }
 
-        // Controlador de Ingredientes
-
         // GET: api/Ingredientes/active
         [HttpGet("active")]
         public async Task<ActionResult<IEnumerable<Ingrediente2listing_dto>>> GetAllActiveIngredientes()

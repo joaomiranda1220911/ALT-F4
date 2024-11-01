@@ -12,45 +12,46 @@ namespace Grupo2A.Repositories
             _context = context;
         }
 
-        //US11
-        // public async Task<TipoDeRefeicao> GetTipoRefeicaoByName(string nome)
-        // {
-        //     return await _context.TiposDeRefeicao.FirstOrDefaultAsync(t => t.Nome == nome);
+        //US011: Definir tipos de refeição, como almoço ou jantar.
+        public async Task<TipoDeRefeicao> GetTipoRefeicaoByName(string nome)
+        {
+            return await _context.TiposDeRefeicao.FirstOrDefaultAsync(t => t.Nome == nome);
+        }
+
+
+        public async Task AddTipoRefeicao(TipoDeRefeicao tipoRefeicao)
+        {
+            await _context.TiposDeRefeicao.AddAsync(tipoRefeicao);
+            await _context.SaveChangesAsync();
         // }
 
-        // public async Task AddTipoRefeicao(TipoDeRefeicao tipoRefeicao)
-        // {
-        //     await _context.TiposDeRefeicao.AddAsync(tipoRefeicao);
-        //     await _context.SaveChangesAsync();
-        // }
+            //US012: Listar tipos de refeição disponíveis.
+        public async Task<List<TipoDeRefeicao>> GetAllTiposRefeicao()
+        {
+            return await _context.TiposDeRefeicao.ToListAsync();
+        }
 
-        //US12
-        // public async Task<List<TipoDeRefeicao>> GetAllTiposRefeicao()
-        // {
-        //     return await _context.TiposDeRefeicao.ToListAsync();
-        // }
+        //US013: Criar uma refeição especificando prato, data, tipo e quantidade.
+        // Método para obter TipoDeRefeicao pelo Id
+        public async Task<TipoDeRefeicao> GetTipoRefeicaoById(int tipoRefeicaoId)
+        {
+            return await _context.TipoDeRefeicao.FindAsync(tipoRefeicaoId);
+        }
 
-        //US13
-        // // Método para obter TipoDeRefeicao pelo Id
-        // public async Task<TipoDeRefeicao> GetTipoRefeicaoById(int tipoRefeicaoId)
-        // {
-        //     return await _context.TipoDeRefeicao.FindAsync(tipoRefeicaoId);
-        // }
+        // Método para obter Prato pelo Id
+        public async Task<Prato> GetPratoById(long pratoId)
+        {
+            return await _context.Pratos
+                .Where(p => p.Id == pratoId && p.Ativo) // Verifica se o prato está ativo
+                .FirstOrDefaultAsync();
+        }
 
-        // // Método para obter Prato pelo Id
-        // public async Task<Prato> GetPratoById(long pratoId)
-        // {
-        //     return await _context.Pratos
-        //         .Where(p => p.Id == pratoId && p.Ativo) // Verifica se o prato está ativo
-        //         .FirstOrDefaultAsync();
-        // }
-
-        // // Método para adicionar uma nova refeição
-        // public async Task AddRefeicao(Refeicao refeicao)
-        // {
-        //     await _context.Refeicoes.AddAsync(refeicao);
-        //     await _context.SaveChangesAsync();
-        // }
+        // Método para adicionar uma nova refeição
+        public async Task AddRefeicao(Refeicao refeicao)
+        {
+            await _context.Refeicoes.AddAsync(refeicao);
+            await _context.SaveChangesAsync();
+        }
 
 
     }
