@@ -12,6 +12,6 @@ namespace Cozinha_BE.Model
         public DbSet<Refeicao> Refeicoes { get; set; }
         public DbSet<TipoDePrato> TiposDePrato { get; set; }
         public DbSet<TipoDeRefeicao> TiposDeRefeicao { get; set; }
-        public object Refeicao { get; internal set; }
+
     }
 }

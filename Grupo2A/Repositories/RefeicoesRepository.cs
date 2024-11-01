@@ -7,7 +7,7 @@ namespace Cozinha_BE.Model.Repositories
 {
     public class RefeicoesRepository
     {
-       private CozinhaContext _context;
+        private CozinhaContext _context;
 
         public RefeicoesRepository(CozinhaContext context)
         {
@@ -16,8 +16,18 @@ namespace Cozinha_BE.Model.Repositories
 
         public async Task<Refeicao> GetByRefeicaoById(long id)
         {
-            return await _context.Refeicoes.FindAsync(id);
+            var refeicao = await _context.Refeicoes.FindAsync(id);
+
+            // Se a refeição for nula, poderias lançar uma exceção ou retornar um valor padrão
+            if (refeicao == null)
+            {
+                throw new KeyNotFoundException($"Refeição com ID {id} não encontrada.");
+                // ou retorna um valor padrão, dependendo da lógica do teu sistema
+            }
+
+            return refeicao;
         }
+
 
         public async Task<List<Refeicao>> GetAllRefeicoes()
         {

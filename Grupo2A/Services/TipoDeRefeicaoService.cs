@@ -17,7 +17,7 @@ namespace Grupo2A.Services
         }
 
         // US011: Definir tipos de refeição, como almoço ou jantar.
-        public async Task<TipoRefeicao2detail_dto> CreateTipoRefeicao(string nomeTipoRefeicao)
+        public async Task<TipoRefeicao2detail_dto?> CreateTipoRefeicao(string nomeTipoRefeicao)
         {
             // Verificar se o nome da refeição é válido
             if (string.IsNullOrWhiteSpace(nomeTipoRefeicao))
@@ -36,15 +36,11 @@ namespace Grupo2A.Services
             return new TipoRefeicao2detail_dto { Id = novoTipoRefeicao.Id, Nome = novoTipoRefeicao.Nome };
         }
 
-
         // US012: Listar tipos de refeição disponíveis.
         public async Task<List<TipoRefeicao2listing_dto>> GetAllTiposRefeicao()
         {
             var tiposRefeicao = await _repo.GetAllTiposRefeicao();
             return tiposRefeicao.Select(t => new TipoRefeicao2listing_dto { Id = t.Id, Nome = t.Nome }).ToList();
         }
-
-
-
     }
 }

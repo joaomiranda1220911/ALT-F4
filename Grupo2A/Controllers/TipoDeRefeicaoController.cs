@@ -24,7 +24,6 @@ namespace Grupo2A.Controllers
         }
 
         // US011: Definir tipos de refeição, como almoço ou jantar.
-        [HttpPost("CreateTipoRefeicao")]
         public async Task<IActionResult> CreateTipoRefeicao([FromBody] TipoRefeicao2detail_dto tipoRefeicaoDto)
         {
             // Verificar se o objeto recebido é nulo ou se o nome é vazio
@@ -32,7 +31,7 @@ namespace Grupo2A.Controllers
                 return BadRequest("O nome do tipo de refeição não pode ser vazio.");
 
             // Criar o tipo de refeição
-            var tipoRefeicaoCriado = await _service.CreateTipoRefeicao(tipoRefeicaoDto.Nome);
+            var tipoRefeicaoCriado = await _service.CreateTipoRefeicao(tipoRefeicaoDto.Nome); // Certifique-se que está chamando CreateTipoRefeicao
 
             // Verificar se a criação falhou (tipo de refeição já existe)
             if (tipoRefeicaoCriado == null)
@@ -41,6 +40,7 @@ namespace Grupo2A.Controllers
             // Retornar o resultado da criação com um código de sucesso
             return Ok(tipoRefeicaoCriado);
         }
+
 
 
         // US012: Listar tipos de refeição disponíveis.

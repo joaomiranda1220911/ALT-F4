@@ -8,15 +8,14 @@ namespace Cozinha_BE.Model
         [Key]
         public int IdReceita { get; set; } // Identificador único da receita
 
-        [Required]
+
         [StringLength(100)]
-        public string Nome { get; set; } // Nome da receita
+        public required string Nome { get; set; } // Nome da receita
 
         public string Descricao { get; set; } // Descrição da receita
 
         public ICollection<Ingrediente> Ingredientes { get; set; } // Ingredientes necessários
 
-        [Required]
-        public string Passos { get; set; } // Passos de preparação da receita
+        public required string Passos { get; set; } // Passos de preparação da receita
     }
 }
