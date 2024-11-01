@@ -17,10 +17,10 @@ namespace Grupo2A.Controllers
         private readonly CozinhaContext _context;
         private RefeicoesService _service;
 
-        public RefeicoesController(CozinhaContext context)
+        public RefeicoesController(CozinhaContext context, PratosService pratoService)
         {
             _context = context;
-            _service = new RefeicoesService(context);
+            _service = new RefeicoesService(context,pratoService);
         }
 
         // US013: Criar uma refeição especificando prato, data, tipo e quantidade.
