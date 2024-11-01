@@ -22,7 +22,7 @@ namespace Grupo2A.Controllers
             _context = context;
             _service = new RefeicoesService(context);
         }
-        
+
         // US013: Criar uma refeição especificando prato, data, tipo e quantidade.
         public async Task<ActionResult<Refeicao2detail_dto>> PostRefeicao(Refeicao2create_dto refeicao)
         {
@@ -47,17 +47,33 @@ namespace Grupo2A.Controllers
 
         //US015: Remover refeição futura
         [HttpDelete("{idPrato}")]
-        public async Task<ActionResult> DeleteRefeicao(long idPrato){
+        public async Task<ActionResult> DeleteRefeicao(long idPrato)
+        {
             //Chama o método RemoverRefeicaoFutura para eliminar a refeição futura
             var result = await _service.DeleteRefeicao(idPrato);
             //Se a refeição não for encontrada, retorna NotFound
-            if (!result){
+            if (!result)
+            {
                 return NotFound("Refeição futura não encontrada.");
             }
             return NoContent();// Caso a refeição seja eliminada com sucesso, retorna NoContent
         }
 
-        
+        //US016: Apresentar ementa disponível com base na data, tipo e quantidade
+        [HttpGet("ementa")]
+        public async Task<ActionResult<Prato2listing_dto>> ApresentarEmenta(
+            [FromQuery] string tipoRefeicao, //Recebe o tipo de refeição como parâmetro de consulta
+            [FromQuery] DateTime data)
+        {
+
+            var ementa = await _service.GetEmentaDisponivel(tipoRefeicao, data);
+            if (ementa == null || !ementa.Any())
+            {
+                return NotFound("Nenhuma ementa disponível.");
+            }
+            return Ok(ementa);
+        }
     }
 }
+
 
