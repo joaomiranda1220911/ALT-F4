@@ -14,11 +14,12 @@ namespace Grupo2A.Services
         private PratosRepository _repoPrato;
         private TipoDeRefeicaoRepository _repoTipodeRefeicao;
         private EmentasRepository _repoEmenta;
-        private PratosService _pratoService;
+        private readonly PratosService _pratoService;
 
-        public RefeicoesService(CozinhaContext context)
+        public RefeicoesService(CozinhaContext context, PratosService pratoService)
         {
             _context = context;
+            _pratoService = pratoService ?? throw new ArgumentNullException(nameof(pratoService));
             _repo = new RefeicoesRepository(_context);
             _repoPrato = new PratosRepository(_context);
             _repoTipodeRefeicao = new TipoDeRefeicaoRepository(_context);
@@ -121,12 +122,15 @@ namespace Grupo2A.Services
         {
             var pratosDisponiveis = await _context.Pratos
             // Filtra os pratos de acordo com o tipo de refeição, data e quantidade disponível
-           .Where(p => p.TipoRefeicao.ToString() == tipoRefeicao && p.DataServico.Date == data.Date && p.Quantidade > 0)
+           .Where(p => p.TipoRefeicao != null &&
+                       p.TipoRefeicao.ToString() == tipoRefeicao && 
+                       p.DataServico.Date == data.Date && 
+                       p.Quantidade > 0)
            .Select(p => new Prato2listing_dto
            {
                IdPrato = (int)p.IdPrato,
                Nome = p.Nome,
-               TipoPrato = p.TipoPrato,
+               TipoPrato = p.TipoPrato!,
                Ativo = p.Ativo
            })
             // Executa a consulta assíncrona e converte o resultado numa lista
