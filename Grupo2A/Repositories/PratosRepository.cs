@@ -23,15 +23,6 @@ namespace Grupo2A.Repositories
             return newPrato.Entity;
         }
 
-        public async Task<bool> IsPratoAtivo(long pratoId)
-        {
-            // Procura o prato pelo ID
-            var prato = await _context.Pratos.FindAsync(pratoId);
-
-            // Verifica se o prato existe e se está ativo
-            return prato != null && prato.Ativo.GetValueOrDefault();
-        }
-
         public async Task<Prato?> GetPratoById(long id)
         {
             return await _context.Pratos.FindAsync(id);

@@ -50,17 +50,5 @@ namespace Grupo2A.Controllers
             var tiposRefeicao = await _service.GetAllTiposRefeicao();
             return Ok(tiposRefeicao);
         }
-
-        //US013: Criar uma refeição especificando prato, data, tipo e quantidade.
-        [HttpPost("CreateRefeicao")]
-        public async Task<IActionResult> CreateRefeicao([FromBody] Refeicao2create_dto novaRefeicao)
-        {
-            var refeicaoCriada = await _service.CreateRefeicao(novaRefeicao);
-            if (refeicaoCriada == null)
-                return BadRequest("Erro ao criar a refeição.");
-
-            return Ok(refeicaoCriada);
-        }
-
     }
 }

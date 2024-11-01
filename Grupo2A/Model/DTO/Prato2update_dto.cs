@@ -7,5 +7,5 @@ public class Prato2update_dto
     public TipoDePrato? tipoDePrato { get; set; }
     public ICollection<Ingrediente>? Ingredientes { get; set; }
     public Receita? Receita { get; set; }
-    public bool? Ativo { get; set; }
+    public required bool Ativo { get; set; }
 }

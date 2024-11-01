@@ -13,13 +13,13 @@ namespace Cozinha_BE.Model
         public required string Nome { get; set; } // Nome do prato
 
         [Required]
-        public TipoDePrato TipoPrato { get; set; } // Tipo do prato
+        public TipoDePrato? TipoPrato { get; set; } // Tipo do prato
 
         public ICollection<Ingrediente> Ingredientes { get; set; } // Ingredientes que compõem o prato
 
-        public Receita Receita { get; set; } // Receita associada ao prato
+        public Receita? Receita { get; set; } // Receita associada ao prato
 
-        public bool? Ativo { get; set; } // Estado do prato (ativo ou inativo)
+        public required bool Ativo { get; set; } // Estado do prato (ativo ou inativo)
 
         public int Quantidade{get;set;} //Quantidade do prato disponível
 

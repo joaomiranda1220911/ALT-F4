@@ -12,7 +12,7 @@ namespace Cozinha_BE.Model
         [StringLength(100)]
         public required string Nome { get; set; } // Nome da receita
 
-        public string Descricao { get; set; } // Descrição da receita
+        public string? Descricao { get; set; } // Descrição da receita
 
         public ICollection<Ingrediente> Ingredientes { get; set; } // Ingredientes necessários
 

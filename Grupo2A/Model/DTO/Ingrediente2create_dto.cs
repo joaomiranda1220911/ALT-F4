@@ -7,5 +7,5 @@ public class Ingrediente2create_dto
 
     public required string Categoria { get; set; }
 
-    public bool Ativo { get; set; }
+    public required bool Ativo { get; set; }
 }

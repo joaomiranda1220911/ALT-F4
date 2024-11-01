@@ -12,7 +12,7 @@ namespace Grupo2A.Services
         private CozinhaContext _context;
         private RefeicoesRepository _repo;
         private PratosRepository _repoPrato;
-        private TipoDeRefeicaoService _repoTipodeRefeicao;
+        private TipoDeRefeicaoRepository _repoTipodeRefeicao;
         private EmentasRepository _repoEmenta;
         private PratosService _pratoService;
 
@@ -21,13 +21,12 @@ namespace Grupo2A.Services
             _context = context;
             _repo = new RefeicoesRepository(_context);
             _repoPrato = new PratosRepository(_context);
-            _repoTipodeRefeicao = new TipoDeRefeicaoService(_context);
+            _repoTipodeRefeicao = new TipoDeRefeicaoRepository(_context);
             _repoEmenta = new EmentasRepository(_context);
-            _pratoService = new PratosService(_context);
         }
 
 
-        // US013: Criar uma refeição especificando prato, data, tipo e quantidade.
+        // US013: Criar uma refeição especificando prato, data, tipo e quantidade
         public async Task<Refeicao2detail_dto> CreateNewRefeicao(Refeicao2create_dto info)
         {
             // Verifica se o prato está ativo
@@ -37,19 +36,33 @@ namespace Grupo2A.Services
                 throw new InvalidOperationException("O prato especificado não está ativo.");
             }
 
+            // Carrega o prato e o tipo de refeição correspondentes
+            var prato = await _repoPrato.GetPratoById(info.PratoId);
+            var tipoRefeicao = await _repoTipodeRefeicao.GetTipoRefeicaoById(info.TipoRefeicaoId);
+
+            if (prato == null)
+            {
+                throw new InvalidOperationException("Prato não encontrado.");
+            }
+
+            if (tipoRefeicao == null)
+            {
+                throw new InvalidOperationException("Tipo de refeição não encontrado.");
+            }
+
             // Cria uma nova refeição
             Refeicao novaRefeicao = new Refeicao
             {
-                PratoId = (int)info.PratoId,
-                Data = info.Data,
-                TipoRefeicaoId = (int)info.TipoRefeicaoId,
-                QuantidadeProduzida = info.QuantidadeProduzida
+                PratoId = prato.IdPrato,
+                Data = info.Data, // Preenche a data da refeição
+                TipoRefeicaoId = tipoRefeicao.Id, // Preenche o ID do tipo de refeição
+                QuantidadeProduzida = info.QuantidadeProduzida, // Preenche a quantidade produzida
+                Prato = prato, // Inicializa a propriedade de navegação Prato
+                TipoRefeicao = tipoRefeicao // Inicializa a propriedade de navegação TipoRefeicao
             };
-
 
             // Retorna os detalhes da nova refeição criada
             return RefeicaoDetail(await _repo.AddRefeicao(novaRefeicao));
-
         }
 
         private Refeicao2detail_dto RefeicaoDetail(Refeicao r)
@@ -63,8 +76,6 @@ namespace Grupo2A.Services
                 QuantidadeProduzida = r.QuantidadeProduzida
             };
         }
-
-
 
 
         //US014: Servir Refeição (decrementar quantidade)
@@ -84,6 +95,7 @@ namespace Grupo2A.Services
             return prato; //Retorna o prato atualizado com a nova quantidade
         }
 
+
         //US015: Remover uma refeição futura
         public async Task<bool> DeleteRefeicao(long idPrato)
         {
@@ -102,6 +114,7 @@ namespace Grupo2A.Services
             //Retorna true indicando que o prato foi removido com sucesso
             return true;
         }
+
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
         public async Task<List<Prato2listing_dto>> GetEmentaDisponivel(string tipoRefeicao, DateTime data)

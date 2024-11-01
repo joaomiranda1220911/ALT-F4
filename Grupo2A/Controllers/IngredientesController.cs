@@ -70,7 +70,13 @@ namespace Grupo2A.Controllers
             foreach (var prato in pratos)
             {
                 prato.Ativo = false;
-                var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato);
+                // Criar o objeto info para atualizar o estado do prato
+                var info = new Prato2update_dto
+                {
+                    Ativo = prato.Ativo, // Defina o estado como inativo
+                };
+
+                var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
                 if (updateResult == null)
                 {
                     return StatusCode(500, "Erro ao atualizar o prato.");
@@ -79,7 +85,6 @@ namespace Grupo2A.Controllers
 
             return Ok(theUpdateIngrediente);
         }
-
 
         // Método para ativar ingrediente e verificar o estado dos pratos
         public async Task<ActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
@@ -106,18 +111,23 @@ namespace Grupo2A.Controllers
             // Verificar o estado de cada prato e ativá-lo se todos os ingredientes estiverem ativos
             foreach (var prato in pratos)
             {
-                // Corrigido para usar a propriedade Ativo
                 bool todosIngredientesAtivos = prato.Ingredientes.All(i => i.Ativo);
 
                 if (todosIngredientesAtivos)
                 {
-                    // Atualiza o estado do prato para ativo se todos os ingredientes estiverem ativos
-                    await _serviceP.UpdateEstadoPrato(prato.IdPrato);
+                    // Criar o objeto info para atualizar o estado do prato
+                    var info = new Prato2update_dto
+                    {
+                        Ativo = true, // Defina o estado como ativo
+                    };
+
+                    await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
                 }
             }
 
             return Ok(theUpdateIngrediente);
         }
+
 
     }
 }

@@ -24,7 +24,7 @@ namespace Grupo2A.Services
                 throw new ArgumentException("O nome do tipo de refeição não pode ser vazio.", nameof(nomeTipoRefeicao));
 
             // Verificar se o tipo de refeição já existe
-            var tipoExistente = await _repo.GetTipoRefeicaoByName(nomeTipoRefeicao);
+            var tipoExistente = await _repo.GetTipoRefeicaoByNome(nomeTipoRefeicao);
             if (tipoExistente != null)
                 return null; // Já existe
 
