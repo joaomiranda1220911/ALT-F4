@@ -13,9 +13,9 @@ namespace Cozinha_BE.Model
         public required string Nome { get; set; } // Nome do prato
 
         [Required]
-        public TipoDePrato? TipoPrato { get; set; } // Tipo do prato
+        public required TipoDePrato? TipoPrato { get; set; } // Tipo do prato
 
-        public ICollection<Ingrediente> Ingredientes { get; set; } // Ingredientes que compõem o prato
+        public required ICollection<Ingrediente> Ingredientes { get; set; } // Ingredientes que compõem o prato
 
         public Receita? Receita { get; set; } // Receita associada ao prato
 
@@ -25,6 +25,6 @@ namespace Cozinha_BE.Model
 
         public DateTime DataServico {get;set;} //Data em que o prato será servido
 
-        public TipoDeRefeicao TipoRefeicao {get;set;} //Tipo de Refeição
+        public  TipoDeRefeicao ? TipoRefeicao {get;set;} //Tipo de Refeição
     }
 }

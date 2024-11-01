@@ -12,16 +12,15 @@ namespace Grupo2A.Services
 {
     public class PratosService
     {
-        private object? _service;
-        private CozinhaContext _context;
-        private PratosRepository _repo;
-        private TipoDeRefeicaoRepository _repoTipoDeRefeicao;
-        private object service;
+        // Dependências do serviço, inicializadas no construtor
+        private readonly CozinhaContext _context;
+        private readonly PratosRepository _repo;
+        private readonly TipoDeRefeicaoRepository _repoTipoDeRefeicao;
 
         public PratosService(CozinhaContext context)
         {
-            _service = service;
-            _context = context;
+            // Garante que o context não seja nulo
+            _context = context ?? throw new ArgumentNullException(nameof(context));
             _repo = new PratosRepository(_context);
             _repoTipoDeRefeicao = new TipoDeRefeicaoRepository(_context);
 
@@ -119,6 +118,11 @@ namespace Grupo2A.Services
         //Método para transformar um prato em Prato2listing_dto
         public Prato2listing_dto PratoListItem(Prato p)
         {
+            if (p.TipoPrato == null)
+            {
+                // Se TipoPrato for nulo, você pode lançar uma exceção ou atribuir um valor padrão
+                throw new ArgumentNullException(nameof(p.TipoPrato), "TipoPrato não pode ser nulo.");
+            }
             return new Prato2listing_dto
             {
                 IdPrato = (int)p.IdPrato,
