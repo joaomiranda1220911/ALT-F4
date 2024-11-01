@@ -9,7 +9,9 @@ namespace Cozinha_BE.Model
         // Define as tabelas na base de dados
         public DbSet<Ingrediente> Ingredientes { get; set; }
         public DbSet<Prato> Pratos { get; set; }
+        public DbSet<Refeicao> Refeicoes { get; set; }
         public DbSet<TipoDePrato> TiposDePrato { get; set; }
         public DbSet<TipoDeRefeicao> TiposDeRefeicao { get; set; }
+        public object Refeicao { get; internal set; }
     }
 }

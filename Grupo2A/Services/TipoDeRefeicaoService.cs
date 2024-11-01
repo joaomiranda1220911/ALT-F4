@@ -37,7 +37,7 @@ namespace Grupo2A.Services
         }
 
 
-        //US012: Listar tipos de refeição disponíveis.
+        // US012: Listar tipos de refeição disponíveis.
         public async Task<List<TipoRefeicao2listing_dto>> GetAllTiposRefeicao()
         {
             var tiposRefeicao = await _repo.GetAllTiposRefeicao();
@@ -45,37 +45,6 @@ namespace Grupo2A.Services
         }
 
 
-        // US013: Criar uma refeição especificando prato, data, tipo e quantidade.
-        public async Task<Refeicao2detail_dto> CreateRefeicao(Refeicao2create_dto novaRefeicaoDto)
-        {
-            // Busca o tipo de refeição e o prato
-            var tipoRefeicao = await _repo.GetTipoRefeicaoById(novaRefeicaoDto.TipoRefeicaoId);
-            var prato = await _repo.GetPratoById(novaRefeicaoDto.PratoId);
 
-            // Verifica se o tipo de refeição ou prato não foram encontrados
-            if (tipoRefeicao == null || prato == null) return null;
-
-            // Cria a nova refeição
-            var novaRefeicao = new Refeicao
-            {
-                Prato = prato,
-                Data = novaRefeicaoDto.Data,
-                TipoRefeicao = tipoRefeicao,
-                QuantidadeProduzida = novaRefeicaoDto.QuantidadeProduzida
-            };
-
-            // Adiciona a refeição ao banco de dados
-            await _ementasRepository.AddRefeicao(novaRefeicao);
-
-            // Retorna os detalhes da nova refeição criada
-            return new Refeicao2detail_dto
-            {
-                Id = novaRefeicao.Id,
-                Data = novaRefeicao.Data,
-                TipoRefeicao = tipoRefeicao.Nome,
-                Prato = prato.Nome,
-                QuantidadeProduzida = novaRefeicao.QuantidadeProduzida
-            };
-        }
     }
 }

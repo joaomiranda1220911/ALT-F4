@@ -43,46 +43,7 @@ namespace Grupo2A.Controllers
             return (theUpdatePrato == null) ? NotFound() : Ok(theUpdatePrato);
         }
 
-        //US014: Servir Refeição (decrementar quantidade)
-        [HttpPost("{idPrato}/servir")]
-        public async Task<ActionResult> ServirRefeicao(long idPrato)
-        {
-            // Chama o serviço para servir uma refeição (decrementar a quantidade)
-            var prato = await _service.ServirRefeicao(idPrato);
-
-            // Verifica se o prato existe e possui quantidade disponível
-            if (prato == null)
-            {
-                return NotFound("Refeição não encontrada ou quantidade insuficiente."); // Retorna 404 se não for encontrado ou se não houver quantidade suficiente
-            }
-
-            return Ok(prato); // Retorna o prato atualizado com a quantidade decrementada
-        }
-
-        //US015: Remover refeição futura
-        [HttpDelete("{idPrato}")]
-        public async Task<ActionResult> DeleteRefeicao(long idPrato){
-            //Chama o método RemoverRefeicaoFutura para eliminar a refeição futura
-            var result = await _service.DeleteRefeicao(idPrato);
-            //Se a refeição não for encontrada, retorna NotFound
-            if (!result){
-                return NotFound("Refeição futura não encontrada.");
-            }
-            return NoContent();// Caso a refeição seja eliminada com sucesso, retorna NoContent
-        }
-
-        //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        [HttpGet("ementa")]
-        public async Task<ActionResult<Prato2listing_dto>>ApresentarEmenta(
-            [FromQuery] string tipoRefeicao, //Recebe o tipo de refeição como parâmetro de consulta
-            [FromQuery] DateTime data){
-
-            var ementa = await _service.GetEmentaDisponivel(tipoRefeicao, data);
-            if (ementa == null || !ementa.Any()){
-                return NotFound("Nenhuma ementa disponível.");
-            }
-            return Ok(ementa);
-        } 
+        
     }
 
 }

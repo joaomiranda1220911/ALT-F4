@@ -43,11 +43,11 @@ namespace Grupo2A.Controllers
         }
 
 
-        //US012: Listar tipos de refeição disponíveis.
-        [HttpGet("GetAllTipoRefeicao")]
-        public async Task<IActionResult> GetAllTipoRefeicao()
+        // US012: Listar tipos de refeição disponíveis.
+        [HttpGet("GetAllTiposRefeicao")]
+        public async Task<IActionResult> GetAllTiposRefeicao()
         {
-            var tiposRefeicao = await _TipoDeRefeicaoService.GetAllTiposRefeicao();
+            var tiposRefeicao = await _service.GetAllTiposRefeicao();
             return Ok(tiposRefeicao);
         }
 
@@ -55,7 +55,7 @@ namespace Grupo2A.Controllers
         [HttpPost("CreateRefeicao")]
         public async Task<IActionResult> CreateRefeicao([FromBody] Refeicao2create_dto novaRefeicao)
         {
-            var refeicaoCriada = await _TipoDeRefeicaoService.CreateRefeicao(novaRefeicao);
+            var refeicaoCriada = await _service.CreateRefeicao(novaRefeicao);
             if (refeicaoCriada == null)
                 return BadRequest("Erro ao criar a refeição.");
 

@@ -18,9 +18,18 @@ namespace Grupo2A.Repositories
         public async Task<Prato> AddPrato(Prato prato)
         {
             var newPrato = await _context.Pratos.AddAsync(prato);
-            
+
             await _context.SaveChangesAsync();
             return newPrato.Entity;
+        }
+
+        public async Task<bool> IsPratoAtivo(long pratoId)
+        {
+            // Procura o prato pelo ID
+            var prato = await _context.Pratos.FindAsync(pratoId);
+
+            // Verifica se o prato existe e se está ativo
+            return prato != null && prato.Ativo.GetValueOrDefault();
         }
 
         public async Task<Prato?> GetPratoById(long id)

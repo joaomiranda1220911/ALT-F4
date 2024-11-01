@@ -48,7 +48,7 @@ namespace Grupo2A.Services
             {
                 Nome = i.Nome,
                 Categoria = i.Categoria,
-                Ativo = i.Ativo ? "Ativo" : "Inativo"
+                Ativo = i.Ativo
 
             };
         }

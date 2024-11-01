@@ -25,6 +25,17 @@ namespace Grupo2A.Services
 
         }
 
+
+        public async Task<bool> IsPratoAtivo(long pratoId)
+        {
+            // Recupera o prato pelo ID
+            var prato = await _repo.GetPratoById(pratoId);
+            // Verifica se o prato existe e se está ativo
+            return prato != null && prato.Ativo == true; // Verifica se Ativo é true
+        }
+
+
+
         //US007 - Criar Prato
         public async Task<Prato2detail_dto> CreateNewPrato(Prato2create_dto info)
         {
@@ -83,62 +94,6 @@ namespace Grupo2A.Services
 
             // Devolve os detalhes atualizados do prato
             return PratoDetail(updatedPrato);
-        }
-
-
-        //US014: Servir Refeição (decrementar quantidade)
-        public async Task<Prato?> ServirRefeicao(long idPrato)
-        {
-
-            //Procura o prato na base de dados
-            var prato = await _context.Pratos.FindAsync(idPrato);
-            //Verifica se o prato possui quantidade suficiente para ser servido
-            if (prato == null || prato.Quantidade <= 0) //Se o prato não existir ou a quantidade for 0 ou <0, retorna null
-            {
-                return null; //Retorna null se o prato não for encontrado ou se a quantidade for insuficiente
-            }
-
-            prato.Quantidade--; //Incrementa a quantidade disponível do prato
-            await _context.SaveChangesAsync(); //Guarda as mudanças
-            return prato; //Retorna o prato atualizado com a nova quantidade
-        }
-
-        //US015: Remover uma refeição futura
-        public async Task<bool> DeleteRefeicao(long idPrato)
-        {
-            //Procura o prato na base de dados
-            var prato = await _context.Pratos.FindAsync(idPrato);
-
-            //Verifica se o prato existe e se a data de serviço é futura
-            if (prato == null || prato.DataServico <= DateTime.Now)
-            {
-                return false; //Caso o prato não seja encontrado ou a data já tenha passado
-            }
-
-            //Remove prato da BD e guarda as mudanças
-            _context.Pratos.Remove(prato);
-            await _context.SaveChangesAsync();
-            //Retorna true indicando que o prato foi removido com sucesso
-            return true;
-        }
-
-        //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        public async Task<List<Prato2listing_dto>> GetEmentaDisponivel(string tipoRefeicao, DateTime data)
-        {
-            var pratosDisponiveis = await _context.Pratos
-            // Filtra os pratos de acordo com o tipo de refeição, data e quantidade disponível
-           .Where(p => p.TipoRefeicao.ToString() == tipoRefeicao && p.DataServico.Date == data.Date && p.Quantidade > 0)
-           .Select(p => new Prato2listing_dto
-           {
-               IdPrato = (int)p.IdPrato,
-               Nome = p.Nome,
-               TipoPrato = p.TipoPrato,
-               Ativo = p.Ativo
-           })
-            // Executa a consulta assíncrona e converte o resultado numa lista
-            .ToListAsync();
-            // Retorna a lista de pratos disponíveis que satisfazem os critérios
-            return pratosDisponiveis;
         }
 
         //Método para transformar um prato em Prato2listing_dto

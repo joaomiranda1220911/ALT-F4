@@ -12,6 +12,24 @@ namespace Grupo2A.Repositories
             _context = context;
         }
 
+        public async Task<Refeicao> AddRefeicao(Refeicao refeicao)
+        {
+            if (refeicao == null)
+            {
+                throw new ArgumentNullException(nameof(refeicao), "A refeição não pode ser nula.");
+            }
+
+            // Adiciona a refeição ao contexto
+            await _context.Refeicoes.AddAsync(refeicao);
+
+            // Salva as alterações na base de dados
+            await _context.SaveChangesAsync();
+
+            // Retorna a refeição adicionada (incluindo o ID gerado)
+            return refeicao;
+        }
+
+
         public async Task<IEnumerable<Prato>> GetEmentaDisponivel(DateTime data, int tipoDeRefeicaoId)
         {
             return await _context.Pratos
@@ -22,5 +40,7 @@ namespace Grupo2A.Repositories
             .Where(p => p.Quantidade > 0 && p.Ativo == true)
             .ToListAsync();
         }
+
+
     }
 }
