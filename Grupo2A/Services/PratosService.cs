@@ -37,11 +37,9 @@ namespace Grupo2A.Services
             };
             return PratoDetail(await _repo.AddPrato(newPrato));
         }
-        
-        
-        
-        //Método para transformar um prato em Prato2detail_dto
 
+
+        //Método para transformar um prato em Prato2detail_dto
         private Prato2detail_dto PratoDetail(Prato p)
         {
             return new Prato2detail_dto
@@ -54,20 +52,30 @@ namespace Grupo2A.Services
             };
         }
 
-
-        public async Task<Prato2detail_dto?> UpdatePrato(long id, Prato2update_dto info)
+        //US008: Atualizar o estado do Prato
+        //Também usado em US009 e US010 
+        public async Task<Prato2detail_dto?> UpdateEstadoPrato(long id, Prato2update_dto? info = null, Prato? prato = null)
         {
             // Verifica se o prato existe no repositório
             var thePrato = await _repo.GetPratoById(id);
             if (thePrato == null)
             {
-                return null;
+                return null; // Retorna nulo se o prato não for encontrado
             }
 
-            // Atualiza o estado de Ativo, caso tenha sido fornecido no DTO
-            if (info.Ativo.HasValue)
+            // Atualiza o estado de Ativo com base no tipo de objeto passado
+
+            // Verifica se o parâmetro `info` foi fornecido e contém um valor para o estado `Ativo`.
+            // Se `info` estiver presente, o estado do prato será atualizado com `info.Ativo`.
+            if (info?.Ativo.HasValue == true)
             {
                 thePrato.Ativo = info.Ativo.Value;
+            }
+            // Se `info` não foi fornecido, verifica o parâmetro `prato`, que também é opcional e pode ser `null`.
+            // Se `prato` for passado, usa `prato.Ativo` para atualizar o estado do prato.
+            else if (prato?.Ativo.HasValue == true)
+            {
+                thePrato.Ativo = prato.Ativo.Value;
             }
 
             // Atualiza o prato no repositório
@@ -77,27 +85,6 @@ namespace Grupo2A.Services
             return PratoDetail(updatedPrato);
         }
 
-        public async Task<Prato2detail_dto?> UpdatePratoByIngrediente(long id, Prato prato)
-        {
-            // Verifica se o prato existe no repositório
-            var thePrato = await _repo.GetPratoById(id);
-            if (thePrato == null)
-            {
-                return null; // Retorna nulo se o prato não for encontrado
-            }
-
-            // Atualiza o estado de Ativo, se fornecido
-            if (prato.Ativo.HasValue)
-            {
-                thePrato.Ativo = prato.Ativo.Value; // Atualiza o estado
-            }
-
-            // Atualiza o prato no repositório
-            var updatedPrato = await _repo.UpdatePrato(thePrato);
-
-            // Devolve os detalhes atualizados do prato
-            return PratoDetail(updatedPrato); // Retorna o DTO com os detalhes do prato atualizado
-        }
 
         //US014: Servir Refeição (decrementar quantidade)
         public async Task<Prato?> ServirRefeicao(long idPrato)

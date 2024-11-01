@@ -78,7 +78,7 @@ namespace Grupo2A.Services
                 return null; // Retorna null se o ingrediente não existir
             }
 
-            // Altera o estado do ingrediente: se estiver ativo, passa a inativo e vice-versa
+            // Altera o estado do ingrediente
             theIngrediente.Ativo = !theIngrediente.Ativo; // Inverte o estado atual
 
             // Atualiza o ingrediente no repositório

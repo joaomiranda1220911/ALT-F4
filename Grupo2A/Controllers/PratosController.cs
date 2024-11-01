@@ -29,7 +29,8 @@ namespace Grupo2A.Controllers
             return await _service.CreateNewPrato(prato);
         }
 
-        [HttpPut("{id}")]
+        //US008: Atualizar o estado do Prato
+        [HttpPut("{id}/estado")]
         public async Task<ActionResult> UpdateEstadoPrato(long id, Prato2update_dto info)
         {
             if (!ModelState.IsValid)
@@ -37,7 +38,7 @@ namespace Grupo2A.Controllers
                 return BadRequest();
             }
 
-            var theUpdatePrato = await _service.UpdatePrato(id, info);
+            var theUpdatePrato = await _service.UpdateEstadoPrato(id, info);
 
             return (theUpdatePrato == null) ? NotFound() : Ok(theUpdatePrato);
         }

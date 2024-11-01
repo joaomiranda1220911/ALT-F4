@@ -30,6 +30,8 @@ namespace Grupo2A.Controllers
             return await _service.CreateNewIngrediente(ingrediente);
         }
 
+        // Controlador de Ingredientes
+
         // GET: api/Ingredientes/active
         [HttpGet("active")]
         public async Task<ActionResult<IEnumerable<Ingrediente2listing_dto>>> GetAllActiveIngredientes()
@@ -44,68 +46,80 @@ namespace Grupo2A.Controllers
             return await _service.GetIngredientesByAtiveState(false);
         }
 
+        // Método para inativar ingrediente e atualizar pratos associados
         public async Task<ActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
         {
-            // Verifica se o estado do modelo é válido
             if (!ModelState.IsValid)
             {
-                return BadRequest(); // Retorna um erro 400 (Bad Request) se o modelo não for válido
+                return BadRequest();
             }
 
-            // Passo 1: Inativar o ingrediente
+            // Inativar o ingrediente
             var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente);
-
-            // Verifica se o ingrediente foi encontrado e atualizado
             if (theUpdateIngrediente == null)
             {
-                return NotFound(); // Retorna 404 (Not Found) se o ingrediente não existir
+                return NotFound();
             }
 
-            // Passo 2: Obter todos os pratos que contêm este ingrediente
+            // Obter todos os pratos que contêm este ingrediente
             var pratos = await _service.GetPratosByIngredienteId(idIngrediente);
             if (pratos == null || !pratos.Any())
             {
-                return NoContent(); // Retorna 204 (No Content) se não houver pratos associados
+                return NoContent();
             }
 
-            // Passo 3: Inativar cada prato
+            // Inativar cada prato associado ao ingrediente
             foreach (var prato in pratos)
             {
-                prato.Ativo = false; // Define como inativo
-                var updateResult = await _serviceP.UpdatePratoByIngrediente(prato.IdPrato, prato);
+                prato.Ativo = false;
+                var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato);
                 if (updateResult == null)
                 {
-                    // Aqui, você pode adicionar logs ou outros tratamentos de erro
-                    return StatusCode(500, "Erro ao atualizar o prato."); // Retorna erro 500 em caso de falha na atualização
+                    return StatusCode(500, "Erro ao atualizar o prato.");
                 }
             }
 
-            return Ok(theUpdateIngrediente); // Retorna 200 (Ok) com o ingrediente atualizado
+            return Ok(theUpdateIngrediente);
         }
 
 
+        // Método para ativar ingrediente e verificar o estado dos pratos
+        public async Task<ActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
 
+            // Ativar o ingrediente
+            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente);
+            if (theUpdateIngrediente == null)
+            {
+                return NotFound();
+            }
 
+            // Obter todos os pratos que contêm este ingrediente
+            var pratos = await _service.GetPratosByIngredienteId(idIngrediente);
+            if (pratos == null || !pratos.Any())
+            {
+                return NoContent();
+            }
 
+            // Verificar o estado de cada prato e ativá-lo se todos os ingredientes estiverem ativos
+            foreach (var prato in pratos)
+            {
+                // Corrigido para usar a propriedade Ativo
+                bool todosIngredientesAtivos = prato.Ingredientes.All(i => i.Ativo);
 
-        // public async Task<ActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
-        // {
-        //     // Verifica se o estado do modelo é válido
-        //     if (!ModelState.IsValid)
-        //     {
-        //         return BadRequest(); // Retorna um erro 400 (Bad Request) se o modelo não for válido
-        //     }
+                if (todosIngredientesAtivos)
+                {
+                    // Atualiza o estado do prato para ativo se todos os ingredientes estiverem ativos
+                    await _serviceP.UpdateEstadoPrato(prato.IdPrato);
+                }
+            }
 
-        //     // Passo 2: Inativar o ingrediente
-        //     var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente); // Chama o serviço para atualizar o ingrediente pelo ID fornecido
-
-        //     // Verifica se o ingrediente foi encontrado e atualizado
-        //     return (theUpdateIngrediente == null) ? NotFound() : Ok(theUpdateIngrediente); // Retorna 404 (Not Found) se o ingrediente não existir, ou 200 (Ok) com o ingrediente atualizado se a operação for bem-sucedida
-
-
-        //     // inativar todos os pratos em que ele é o unico inativo
-
-        // }
+            return Ok(theUpdateIngrediente);
+        }
 
     }
 }
