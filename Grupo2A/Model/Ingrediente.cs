@@ -9,7 +9,7 @@ namespace Cozinha_BE.Model
 
         [Required]
         [StringLength(100)]
-        public string Nome { get; set; } // Nome do ingrediente
+        public required string Nome { get; set; } // Nome do ingrediente
 
         [Required]
         public string Categoria { get; set; } // Categoria do ingrediente (ex: Vegetal, Laticínio, etc.)
