@@ -9,7 +9,6 @@ using Cozinha_BE.Model;
 using Grupo2A.Services;
 using Cozinha_BE.Model.DTO;
 
-
 namespace Grupo2A.Controllers
 {
     [Route("api/[controller]")]
@@ -18,7 +17,6 @@ namespace Grupo2A.Controllers
     {
         private readonly CozinhaContext _context;
         private IngredientesService _service;
-
         private PratosService _serviceP;
 
         public IngredientesController(CozinhaContext context)
@@ -48,8 +46,9 @@ namespace Grupo2A.Controllers
             return await _service.GetIngredientesByAtiveState(false);
         }
 
-        // Método para inativar ingrediente e atualizar pratos associados
-        public async Task<ActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
+        // PUT: api/Ingredientes/inativar/{idIngrediente}
+        [HttpPut("inativar/{idIngrediente}")]
+        public async Task<IActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
         {
             if (!ModelState.IsValid)
             {
@@ -74,10 +73,9 @@ namespace Grupo2A.Controllers
             foreach (var prato in pratos)
             {
                 prato.Ativo = false;
-                // Criar o objeto info para atualizar o estado do prato
                 var info = new Prato2update_dto
                 {
-                    Ativo = prato.Ativo, // Defina o estado como inativo
+                    Ativo = prato.Ativo,
                 };
 
                 var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
@@ -90,8 +88,9 @@ namespace Grupo2A.Controllers
             return Ok(theUpdateIngrediente);
         }
 
-        // Método para ativar ingrediente e verificar o estado dos pratos
-        public async Task<ActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
+        // PUT: api/Ingredientes/ativar/{idIngrediente}
+        [HttpPut("ativar/{idIngrediente}")]
+        public async Task<IActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
         {
             if (!ModelState.IsValid)
             {
@@ -119,10 +118,9 @@ namespace Grupo2A.Controllers
 
                 if (todosIngredientesAtivos)
                 {
-                    // Criar o objeto info para atualizar o estado do prato
                     var info = new Prato2update_dto
                     {
-                        Ativo = true, // Defina o estado como ativo
+                        Ativo = true,
                     };
 
                     await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
@@ -131,11 +129,5 @@ namespace Grupo2A.Controllers
 
             return Ok(theUpdateIngrediente);
         }
-
-
     }
 }
-
-
-
-
