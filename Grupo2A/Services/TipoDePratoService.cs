@@ -1,6 +1,5 @@
 using Cozinha_BE.Model;
 using Cozinha_BE.Model.DTO;
-using Grupo2A.Migrations;
 using Grupo2A.Repositories;
 
 namespace Grupo2A.Services
