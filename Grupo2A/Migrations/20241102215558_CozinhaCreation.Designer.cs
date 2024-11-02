@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Grupo2A.Migrations
 {
     [DbContext(typeof(CozinhaContext))]
-    [Migration("20241102131732_CozinhaCreation")]
+    [Migration("20241102215558_CozinhaCreation")]
     partial class CozinhaCreation
     {
         /// <inheritdoc />
@@ -41,14 +41,9 @@ namespace Grupo2A.Migrations
                     b.Property<long?>("PratoIdPrato")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("ReceitaIdReceita")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("IdIngrediente");
 
                     b.HasIndex("PratoIdPrato");
-
-                    b.HasIndex("ReceitaIdReceita");
 
                     b.ToTable("Ingredientes");
                 });
@@ -73,8 +68,8 @@ namespace Grupo2A.Migrations
                     b.Property<int>("Quantidade")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("ReceitaIdReceita")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Receita")
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("TipoPratoIdTipoPrato")
                         .HasColumnType("INTEGER");
@@ -84,36 +79,11 @@ namespace Grupo2A.Migrations
 
                     b.HasKey("IdPrato");
 
-                    b.HasIndex("ReceitaIdReceita");
-
                     b.HasIndex("TipoPratoIdTipoPrato");
 
                     b.HasIndex("TipoRefeicaoId");
 
                     b.ToTable("Pratos");
-                });
-
-            modelBuilder.Entity("Cozinha_BE.Model.Receita", b =>
-                {
-                    b.Property<int>("IdReceita")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Passos")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("IdReceita");
-
-                    b.ToTable("Receita");
                 });
 
             modelBuilder.Entity("Cozinha_BE.Model.Refeicao", b =>
@@ -152,6 +122,10 @@ namespace Grupo2A.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("DescricaoTipoPrato")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -183,18 +157,10 @@ namespace Grupo2A.Migrations
                     b.HasOne("Cozinha_BE.Model.Prato", null)
                         .WithMany("Ingredientes")
                         .HasForeignKey("PratoIdPrato");
-
-                    b.HasOne("Cozinha_BE.Model.Receita", null)
-                        .WithMany("Ingredientes")
-                        .HasForeignKey("ReceitaIdReceita");
                 });
 
             modelBuilder.Entity("Cozinha_BE.Model.Prato", b =>
                 {
-                    b.HasOne("Cozinha_BE.Model.Receita", "Receita")
-                        .WithMany()
-                        .HasForeignKey("ReceitaIdReceita");
-
                     b.HasOne("Cozinha_BE.Model.TipoDePrato", "TipoPrato")
                         .WithMany()
                         .HasForeignKey("TipoPratoIdTipoPrato")
@@ -204,8 +170,6 @@ namespace Grupo2A.Migrations
                     b.HasOne("Cozinha_BE.Model.TipoDeRefeicao", "TipoRefeicao")
                         .WithMany()
                         .HasForeignKey("TipoRefeicaoId");
-
-                    b.Navigation("Receita");
 
                     b.Navigation("TipoPrato");
 
@@ -232,11 +196,6 @@ namespace Grupo2A.Migrations
                 });
 
             modelBuilder.Entity("Cozinha_BE.Model.Prato", b =>
-                {
-                    b.Navigation("Ingredientes");
-                });
-
-            modelBuilder.Entity("Cozinha_BE.Model.Receita", b =>
                 {
                     b.Navigation("Ingredientes");
                 });

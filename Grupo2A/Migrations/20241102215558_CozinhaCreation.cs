@@ -12,27 +12,13 @@ namespace Grupo2A.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Receita",
-                columns: table => new
-                {
-                    IdReceita = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Descricao = table.Column<string>(type: "TEXT", nullable: true),
-                    Passos = table.Column<string>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Receita", x => x.IdReceita);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "TiposDePrato",
                 columns: table => new
                 {
                     IdTipoPrato = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
+                    Nome = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    DescricaoTipoPrato = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,7 +46,7 @@ namespace Grupo2A.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     TipoPratoIdTipoPrato = table.Column<int>(type: "INTEGER", nullable: false),
-                    ReceitaIdReceita = table.Column<int>(type: "INTEGER", nullable: true),
+                    Receita = table.Column<string>(type: "TEXT", nullable: true),
                     Ativo = table.Column<bool>(type: "INTEGER", nullable: false),
                     Quantidade = table.Column<int>(type: "INTEGER", nullable: false),
                     DataServico = table.Column<DateTime>(type: "TEXT", nullable: false),
@@ -69,11 +55,6 @@ namespace Grupo2A.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pratos", x => x.IdPrato);
-                    table.ForeignKey(
-                        name: "FK_Pratos_Receita_ReceitaIdReceita",
-                        column: x => x.ReceitaIdReceita,
-                        principalTable: "Receita",
-                        principalColumn: "IdReceita");
                     table.ForeignKey(
                         name: "FK_Pratos_TiposDePrato_TipoPratoIdTipoPrato",
                         column: x => x.TipoPratoIdTipoPrato,
@@ -96,8 +77,7 @@ namespace Grupo2A.Migrations
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Categoria = table.Column<string>(type: "TEXT", nullable: false),
                     Ativo = table.Column<bool>(type: "INTEGER", nullable: false),
-                    PratoIdPrato = table.Column<long>(type: "INTEGER", nullable: true),
-                    ReceitaIdReceita = table.Column<int>(type: "INTEGER", nullable: true)
+                    PratoIdPrato = table.Column<long>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -107,11 +87,6 @@ namespace Grupo2A.Migrations
                         column: x => x.PratoIdPrato,
                         principalTable: "Pratos",
                         principalColumn: "IdPrato");
-                    table.ForeignKey(
-                        name: "FK_Ingredientes_Receita_ReceitaIdReceita",
-                        column: x => x.ReceitaIdReceita,
-                        principalTable: "Receita",
-                        principalColumn: "IdReceita");
                 });
 
             migrationBuilder.CreateTable(
@@ -149,16 +124,6 @@ namespace Grupo2A.Migrations
                 column: "PratoIdPrato");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Ingredientes_ReceitaIdReceita",
-                table: "Ingredientes",
-                column: "ReceitaIdReceita");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Pratos_ReceitaIdReceita",
-                table: "Pratos",
-                column: "ReceitaIdReceita");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Pratos_TipoPratoIdTipoPrato",
                 table: "Pratos",
                 column: "TipoPratoIdTipoPrato");
@@ -190,9 +155,6 @@ namespace Grupo2A.Migrations
 
             migrationBuilder.DropTable(
                 name: "Pratos");
-
-            migrationBuilder.DropTable(
-                name: "Receita");
 
             migrationBuilder.DropTable(
                 name: "TiposDePrato");
