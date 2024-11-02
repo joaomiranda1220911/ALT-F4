@@ -28,15 +28,16 @@ namespace Grupo2A.Repositories
 
 
         // Método para obter TipoDeRefeicao pelo Id
-        public async Task<TipoDeRefeicao> GetTipoRefeicaoById(long tipoRefeicaoId)
+        public async Task<TipoDeRefeicao?> GetTipoRefeicaoById(long tipoRefeicaoId)
         {
             return await _context.TiposDeRefeicao.FindAsync(tipoRefeicaoId);
         }
 
         //método usado para ver se ja existe um tipo de refeicao com esse nome 
-        public async Task<TipoDeRefeicao> GetTipoRefeicaoByNome(string nomeTipoRefeicao)
+        public async Task<TipoDeRefeicao?> GetTipoRefeicaoByNome(string nomeTipoRefeicao)
         {
-            return await _context.TiposDeRefeicao.FindAsync(nomeTipoRefeicao);
+            return await _context.TiposDeRefeicao
+                                 .FirstOrDefaultAsync(tr => tr.Nome == nomeTipoRefeicao);
         }
     }
 }
