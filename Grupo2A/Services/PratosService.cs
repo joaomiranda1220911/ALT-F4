@@ -118,19 +118,25 @@ namespace Grupo2A.Services
         //Método para transformar um prato em Prato2listing_dto
         public Prato2listing_dto PratoListItem(Prato p)
         {
+            // Verifica se TipoPrato é nulo
             if (p.TipoPrato == null)
             {
-                // Se TipoPrato for nulo, você pode lançar uma exceção ou atribuir um valor padrão
                 throw new ArgumentNullException(nameof(p.TipoPrato), "TipoPrato não pode ser nulo.");
             }
+
             return new Prato2listing_dto
             {
                 IdPrato = (int)p.IdPrato,
                 Nome = p.Nome,
                 TipoPrato = p.TipoPrato,
-                Ativo = p.Ativo
+                Ativo = p.Ativo,
+                TipoRefeicao = p.TipoRefeicao, 
+                Receita = p.Receita, 
+                Quantidade = p.Quantidade, 
+                DataServico = p.DataServico
             };
         }
+
     }
 }
 
