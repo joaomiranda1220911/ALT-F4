@@ -31,7 +31,7 @@ namespace Grupo2A.Services
            {
                IdPrato = (int)p.IdPrato,
                Nome = p.Nome,
-               TipoPrato = p.TipoPrato,
+               TipoPrato = p.TipoPrato!,
                Ativo = p.Ativo
            })
             // Executa a consulta assíncrona e converte o resultado numa lista
