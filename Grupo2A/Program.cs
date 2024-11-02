@@ -14,9 +14,9 @@ builder.Services.AddControllers();
 // Adicionar o contexto da Cozinha
 builder.Services.AddDbContext<CozinhaContext>(
     opt => opt.UseSqlite("Data Source=Database/CozinhaDB"));
-    
-//TestDataSeeder (nao existe)
-builder.Services.AddTransient<TestDataSeeder>();
+
+//TestDataSeeder (necessário ou não?)
+//builder.Services.AddTransient<TestDataSeeder>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
