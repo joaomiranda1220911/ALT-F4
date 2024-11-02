@@ -36,11 +36,9 @@ namespace Grupo2A.Repositories
             .Include(p => p.TipoPrato)
             .Include(p => p.TipoRefeicao)
             .Include(p => p.Ingredientes)
-            .Where(p => p.DataServico.Date == data.Date && p.TipoRefeicao.Id == tipoDeRefeicaoId)
+            .Where(p => p.DataServico.Date == data.Date && p.TipoRefeicao != null && p.TipoRefeicao.Id == tipoDeRefeicaoId)
             .Where(p => p.Quantidade > 0 && p.Ativo == true)
             .ToListAsync();
         }
-
-
     }
 }

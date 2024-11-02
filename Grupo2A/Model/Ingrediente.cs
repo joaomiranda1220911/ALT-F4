@@ -12,7 +12,7 @@ namespace Cozinha_BE.Model
         public required string Nome { get; set; } // Nome do ingrediente
 
         [Required]
-        public string? Categoria { get; set; } // Categoria do ingrediente (ex: Vegetal, Laticínio, etc.)
+        public required string Categoria { get; set; } // Categoria do ingrediente (ex: Vegetal, Laticínio, etc.)
 
         public required bool Ativo { get; set; } // Estado do ingrediente (ativo ou inativo)
     }

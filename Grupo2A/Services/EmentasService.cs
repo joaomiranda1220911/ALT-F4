@@ -26,7 +26,7 @@ namespace Grupo2A.Services
         {
             var pratosDisponiveis = await _context.Pratos
             // Filtra os pratos de acordo com o tipo de refeição, data e quantidade disponível
-           .Where(p => p.TipoRefeicao.ToString() == tipoRefeicao && p.DataServico.Date == data.Date && p.Quantidade > 0)
+           .Where(p => p.TipoRefeicao != null && p.DataServico.Date == data.Date && p.Quantidade > 0)
            .Select(p => new Prato2listing_dto
            {
                IdPrato = (int)p.IdPrato,
