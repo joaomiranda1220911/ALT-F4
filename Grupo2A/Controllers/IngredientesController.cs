@@ -25,6 +25,8 @@ namespace Grupo2A.Controllers
             _service = new IngredientesService(context);
             _serviceP = new PratosService(context);
         }
+        
+        [HttpPost]
         public async Task<ActionResult<Ingrediente2detail_dto>> PostIngrediente(Ingrediente2create_dto ingrediente)
         {
             return await _service.CreateNewIngrediente(ingrediente);
