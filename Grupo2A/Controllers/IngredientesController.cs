@@ -12,6 +12,8 @@ using Cozinha_BE.Model.DTO;
 
 namespace Grupo2A.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class IngredientesController : ControllerBase
     {
         private readonly CozinhaContext _context;
