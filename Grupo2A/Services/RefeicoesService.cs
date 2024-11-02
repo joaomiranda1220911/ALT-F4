@@ -70,7 +70,7 @@ namespace Grupo2A.Services
         {
             return new Refeicao2detail_dto
             {
-                Id = r.Id,
+                IdRefeicao = r.IdRefeicao,
                 Data = r.Data,
                 TipoRefeicao = r.TipoRefeicao?.Nome ?? "N/A",  // Usando operador nulo-coalescente
                 Prato = r.Prato?.Nome ?? "N/A", // Usando operador nulo-coalescente

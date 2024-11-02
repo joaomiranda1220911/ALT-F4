@@ -4,7 +4,7 @@ namespace Cozinha_BE.Model
 {
     public class Refeicao
     {
-        public int Id { get; set; } // Identificador da refeição
+        public long IdRefeicao { get; set; } // Identificador da refeição
         public required long PratoId { get; set; } // Referência ao prato
         public required DateTime Data { get; set; } // Data da refeição
         public required long TipoRefeicaoId { get; set; } // Referência ao tipo de refeição
