@@ -27,7 +27,7 @@ namespace Grupo2A.Services
         {
             return new TipoDePrato2detail_dto
             {
-                Id = tipoDePrato.Id,
+                IdTipoPrato = tipoDePrato.IdTipoPrato,
                 Nome = tipoDePrato.Nome
             };
         }
@@ -44,7 +44,7 @@ namespace Grupo2A.Services
         {
             return new TipoDePrato2listing_dto
             {
-                Id = tipoDePrato.Id,
+                IdTipoPrato = tipoDePrato.IdTipoPrato,
                 Nome = tipoDePrato.Nome
             };
         }
