@@ -3,6 +3,10 @@ using Cozinha_BE.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors (options =>{
+    options.AddPolicy(name:"MyPolicy", policy => { policy.WithOrigins ("https://localhost:8080").AllowAnyHeader().AllowAnyMethod();});
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -10,6 +14,9 @@ builder.Services.AddControllers();
 // Adicionar o contexto da Cozinha
 builder.Services.AddDbContext<CozinhaContext>(
     opt => opt.UseSqlite("Data Source=Database/CozinhaDB"));
+    
+//TestDataSeeder (nao existe)
+builder.Services.AddTransient<TestDataSeeder>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -25,6 +32,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("MyPolicy");
 
 app.UseAuthorization();
 
