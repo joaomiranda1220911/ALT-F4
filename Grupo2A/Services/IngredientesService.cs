@@ -34,8 +34,8 @@ namespace Grupo2A.Services
         {
             Ingrediente newIngrediente = new Ingrediente
             {
-                IdIngrediente = (int)info.Id,
-                Nome = info.Name,
+                IdIngrediente = (int)info.IdIngrediente,
+                Nome = info.Nome,
                 Categoria = info.Categoria,
                 Ativo = info.Ativo
             };
