@@ -126,25 +126,21 @@ namespace Grupo2A.Services
 
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        public async Task<List<Prato2listing_dto>> GetEmentaDisponivel(string tipoRefeicao, DateTime data)
+        public async Task<Refeicao2detail_dto> GetRefeicaoByDataETipo(DateTime data, TipoDeRefeicao tipoRefeicao)
+    {
+        var refeicao = await _repo.GetRefeicaoByDataETipo(data, tipoRefeicao);
+
+        // Mapeamento para Refeicao2detail_dto, se necessário
+        var refeicaoDto = new Refeicao2detail_dto
         {
-            var pratosDisponiveis = await _context.Pratos
-            // Filtra os pratos de acordo com o tipo de refeição, data e quantidade disponível
-           .Where(p => p.TipoRefeicao != null &&
-                       p.TipoRefeicao.ToString() == tipoRefeicao &&
-                       p.DataServico.Date == data.Date &&
-                       p.Quantidade > 0)
-           .Select(p => new Prato2listing_dto
-           {
-               IdPrato = (int)p.IdPrato,
-               Nome = p.Nome,
-               TipoPrato = p.TipoPrato!,
-               Ativo = p.Ativo
-           })
-            // Executa a consulta assíncrona e converte o resultado numa lista
-            .ToListAsync();
-            // Retorna a lista de pratos disponíveis que satisfazem os critérios
-            return pratosDisponiveis;
-        }
+            IdRefeicao = refeicao.IdRefeicao,
+            Data = refeicao.Data,
+            Prato = refeicao.Prato, 
+            tipoDeRefeicao = refeicao.TipoRefeicao,
+            QuantidadeProduzida = refeicao.QuantidadeProduzida
+        };
+
+        return refeicaoDto;
+    }
     }
 }

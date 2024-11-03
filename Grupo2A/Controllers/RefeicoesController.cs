@@ -79,18 +79,18 @@ namespace Grupo2A.Controllers
         }
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        [HttpGet("ementa")]
-        public async Task<ActionResult<Prato2listing_dto>> ApresentarEmenta(
-            [FromQuery] string tipoRefeicao, //Recebe o tipo de refeição como parâmetro de consulta
-            [FromQuery] DateTime data)
+        [HttpGet("data/tipoRefeicao")]
+        public async Task<IActionResult> GetRefeicaoByDataETipo([FromBody] DateTime data, [FromBody] TipoDeRefeicao tipoRefeicao)
         {
-
-            var ementa = await _service.GetEmentaDisponivel(tipoRefeicao, data);
-            if (ementa == null || !ementa.Any())
+            try
             {
-                return NotFound("Nenhuma ementa disponível.");
+                var refeicaoDto = await _service.GetRefeicaoByDataETipo(data, tipoRefeicao);
+                return Ok(refeicaoDto);
             }
-            return Ok(ementa);
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
     }
 }
