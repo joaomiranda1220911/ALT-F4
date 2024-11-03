@@ -51,7 +51,7 @@ namespace Grupo2A.Services
         }
 
         //US006 - Obter informação sobre um Tipo de Prato Específico
-        public async Task<TipoDePrato2detail_dto?> GetTipoDePratoById(int Id)
+        public async Task<TipoDePrato2detail_dto?> GetTipoDePratoById(long Id)
         {
             var tipoDePrato = await _repo.GetTipoDePratoById(Id);
             return tipoDePrato == null ? null : TipoDePratoDetail(tipoDePrato);

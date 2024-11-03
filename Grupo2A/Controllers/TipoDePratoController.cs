@@ -30,7 +30,7 @@ namespace Grupo2A.Controllers{
 
     //US006 - Obter informação sobre um Tipo de Prato Específico
     [HttpGet("{Id}")]
-    public async Task<ActionResult<TipoDePrato2detail_dto>> GetTipoDePratoById(int Id){
+    public async Task<ActionResult<TipoDePrato2detail_dto>> GetTipoDePratoById(long Id){
         var tipoDePrato = await _service.GetTipoDePratoById(Id);
         if(tipoDePrato == null){
             return NotFound();
