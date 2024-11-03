@@ -26,6 +26,7 @@ namespace Grupo2A.Controllers
             _serviceP = new PratosService(context);
         }
 
+
         [HttpPost]
         public async Task<ActionResult<Ingrediente2detail_dto>> PostIngrediente(Ingrediente2create_dto ingrediente)
         {
@@ -69,26 +70,34 @@ namespace Grupo2A.Controllers
                 return NoContent();
             }
 
+            // Lista para armazenar os pratos atualizados
+            var pratosInativados = new List<Prato>();
+
             // Inativar cada prato associado ao ingrediente
             foreach (var prato in pratos)
             {
-                prato.Ativo = false;
+                prato.Ativo = false; // Atualiza o estado do prato para inativo
                 var info = new Prato2update_dto
                 {
                     Ativo = prato.Ativo,
                 };
 
                 var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
-                if (updateResult == null)
+                if (updateResult != null)
                 {
-                    return StatusCode(500, "Erro ao atualizar o prato.");
+                    pratosInativados.Add(prato); // Adiciona o prato à lista se a atualização for bem-sucedida
                 }
             }
 
-            return Ok(theUpdateIngrediente);
+            return Ok(new
+            {
+                ingrediente = theUpdateIngrediente,
+                pratosInativados // Retorna a lista de pratos inativados
+            });
         }
 
-        // PUT: api/Ingredientes/ativar/{idIngrediente}
+
+
         [HttpPut("ativar/{idIngrediente}")]
         public async Task<IActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
         {
@@ -111,6 +120,9 @@ namespace Grupo2A.Controllers
                 return NoContent();
             }
 
+            // Crie uma lista para armazenar os pratos atualizados
+            var pratosAtualizados = new List<Prato2detail_dto>();
+
             // Verificar o estado de cada prato e ativá-lo se todos os ingredientes estiverem ativos
             foreach (var prato in pratos)
             {
@@ -123,11 +135,14 @@ namespace Grupo2A.Controllers
                         Ativo = true,
                     };
 
-                    await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                    // Atualiza o prato e adiciona à lista de pratos atualizados
+                    var updatedPrato = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                    pratosAtualizados.Add(updatedPrato);
                 }
             }
 
-            return Ok(theUpdateIngrediente);
+            // Retorna o ingrediente atualizado e a lista de pratos atualizados
+            return Ok(new { ingrediente = theUpdateIngrediente, pratosAtualizados });
         }
 
         // GET: api/Ingredientes/{idIngrediente}
