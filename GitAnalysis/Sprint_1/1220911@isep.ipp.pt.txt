@@ -1,3 +1,146 @@
+commit 74546656791b8069e62933508e172e7b3a46065f	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 15:22:35 2024 +0000
+
+    GetIngredienteById e DeleteIngrediente
+
+M	Grupo2A/Controllers/IngredientesController.cs
+M	Grupo2A/Model/DTO/Ingrediente2detail_dto.cs
+M	Grupo2A/Services/IngredientesService.cs
+
+commit 5b5ae284bf01bd450f084cf67736b4bc531a8139	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 14:58:12 2024 +0000
+
+    DeleteTipoDePratoById
+
+M	Grupo2A/Controllers/TipoDePratoController.cs
+
+commit 91fe7afdf29c0acbdfa8c87021ace7abe1746ff8	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 13:54:29 2024 +0000
+
+    Update .gitignore
+
+M	.gitignore
+
+commit aeb37b6cc813c2a567b0a67693ff9cfe4a9095eb	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 13:06:26 2024 +0000
+
+    GetTipoRefeicaoById
+
+M	Grupo2A/Controllers/TipoDeRefeicaoController.cs
+M	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
+M	Grupo2A/Services/TipoDeRefeicaoService.cs
+
+commit 1df7aac2583c1b45f487261199c9537d7ec43921	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 12:34:25 2024 +0000
+
+    correção criar prato
+
+M	Grupo2A/Services/PratosService.cs
+
+commit 75c7e6ace56ca5f9c6e045c7746240d29a785036	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 2 23:57:04 2024 +0000
+
+    PUT: ativar e inativar
+
+M	Grupo2A/Controllers/IngredientesController.cs
+
+commit 0d7da8cda08f3c80497ba5cb3c55049113543f17	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 2 22:46:19 2024 +0000
+
+    Update .gitignore
+
+M	.gitignore
+
+commit 2ce2d47fabe0ce2d9489e4d772f43e9547f6444a	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 2 22:10:24 2024 +0000
+
+    migrations e database
+
+M	Grupo2A/Database/CozinhaDB
+A	Grupo2A/Migrations/20241102220906_AddDescricaoTipoPratoColumn.Designer.cs
+A	Grupo2A/Migrations/20241102220906_AddDescricaoTipoPratoColumn.cs
+
+commit 791d08dd686b4744f563dd8500dadb675d23980f	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 2 22:05:06 2024 +0000
+
+    migrations update
+
+R081	Grupo2A/Migrations/20241102131732_CozinhaCreation.Designer.cs	Grupo2A/Migrations/20241102215558_CozinhaCreation.Designer.cs
+R078	Grupo2A/Migrations/20241102131732_CozinhaCreation.cs	Grupo2A/Migrations/20241102215558_CozinhaCreation.cs
+M	Grupo2A/Migrations/CozinhaContextModelSnapshot.cs
+
+commit 8168eab05498da2d5958eb8d72992ae43a613152	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 2 13:34:14 2024 +0000
+
+    Correção de Warnings
+
+M	Grupo2A/Repositories/TipoDePratoRepository.cs
+M	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
+
+commit f02566b3d1f9bbbe99c5920a2094c833f0979fe7	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 2 13:19:59 2024 +0000
+
+    Migrations, update database, correção de erros
+
+M	Grupo2A/Database/CozinhaDB
+R060	Grupo2A/Migrations/20241023223138_CozinhaCreation.Designer.cs	Grupo2A/Migrations/20241102131732_CozinhaCreation.Designer.cs
+R050	Grupo2A/Migrations/20241023223138_CozinhaCreation.cs	Grupo2A/Migrations/20241102131732_CozinhaCreation.cs
+M	Grupo2A/Migrations/CozinhaContextModelSnapshot.cs
+M	Grupo2A/Services/TipoDePratoService.cs
+
+commit fee38da3c79264c9794e97cc596a5ab591471ab5	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Thu Oct 31 15:33:12 2024 +0000
+
+    Correção de erros
+
+M	Grupo2A/Model/DTO/Ingrediente2create_dto.cs
+M	Grupo2A/Model/DTO/Ingrediente2detail_dto.cs
+M	Grupo2A/Model/DTO/Ingrediente2listing_dto.cs
+M	Grupo2A/Model/Ingrediente.cs
+M	Grupo2A/Services/IngredientesService.cs
+
+commit fcd87df05bfeab5692a9cf3c9b481b65e3783ee1	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Thu Oct 31 15:00:13 2024 +0000
+
+    GetAllInactiveIngredientes
+
+M	Grupo2A/Controllers/IngredientesController.cs
+M	Grupo2A/Services/IngredientesService.cs
+
+commit 1ef1fd991739c520e696948c6807ae4ad5aa329b	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Tue Oct 29 17:18:09 2024 +0000
+
+    GetAllActiveIngredientes
+
+M	Grupo2A/Controllers/IngredientesController.cs
+M	Grupo2A/Repositories/IngredientesRepository.cs
+M	Grupo2A/Services/IngredientesService.cs
+
+commit 9466102b920b4b89844ae6dc12e7db16d794ca42	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Tue Oct 29 15:02:55 2024 +0000
+
+    CreateIngredientes
+
+M	Grupo2A/Controllers/IngredientesController.cs
+A	Grupo2A/Model/DTO/Ingrediente2create_dto.cs
+M	Grupo2A/Repositories/IngredientesRepository.cs
+M	Grupo2A/Services/IngredientesService.cs
+
 commit 843ef9b7d7e44633b1c8260c5b4e8c020b1243d4	refs/heads/main
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Oct 23 23:38:54 2024 +0100
