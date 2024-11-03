@@ -23,7 +23,7 @@ namespace Grupo2A.Repositories{
         }
 
         //US006 - Obter informação sobre um Tipo de Prato Específico
-        public async Task <TipoDePrato?> GetTipoDePratoById(int Id){
+        public async Task <TipoDePrato?> GetTipoDePratoById(long Id){
             return await _context.TiposDePrato.FindAsync(Id);
         }
     }
