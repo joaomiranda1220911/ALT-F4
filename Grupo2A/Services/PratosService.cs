@@ -19,6 +19,7 @@ namespace Grupo2A.Services
         private readonly TipoDeRefeicaoRepository _repoTipoDeRefeicao;
         private readonly TipoDePratoRepository _repoTipoDePrato;
         private readonly IngredientesRepository _repoIngredientes;
+
         public PratosService(CozinhaContext context)
         {
             // Garante que o context não seja nulo
@@ -35,28 +36,32 @@ namespace Grupo2A.Services
         {
             // Recupera o prato pelo ID
             var prato = await _repo.GetPratoById(pratoId);
-            // Verifica se o prato existe e se está ativo
-            return prato != null && prato.Ativo == true; // Verifica se Ativo é true
+            return prato != null && prato.Ativo; // Simplified condition
         }
 
         // US007 - Criar Prato
-        public async Task<(Prato prato, string mensagem)> CreateNewPrato(Prato2create_dto pratoDto)
+        public async Task<(Prato? prato, string? mensagem)> CreateNewPrato(Prato2create_dto pratoDto)
         {
-            // Validar e obter o tipo de prato pelo ID
+            if (pratoDto == null)
+            {
+                throw new ArgumentNullException(nameof(pratoDto));
+            }
+
+            // Validate TipoPrato
             var tipoPrato = await _repoTipoDePrato.GetTipoDePratoById(pratoDto.TipoPratoId);
             if (tipoPrato == null)
             {
                 return (null, "Tipo de prato não encontrado.");
             }
 
-            // Validar e obter o tipo de refeição, que é obrigatório
+            // Validate TipoRefeicao
             var tipoRefeicao = await _repoTipoDeRefeicao.GetTipoRefeicaoById(pratoDto.TipoRefeicaoId);
             if (tipoRefeicao == null)
             {
                 return (null, "Tipo de refeição não encontrado.");
             }
 
-            // Obter os ingredientes existentes pelos IDs
+            // Initialize ingredientes
             var ingredientesAssociados = new List<Ingrediente>();
             foreach (var ingredienteId in pratoDto.IngredientesIds)
             {
@@ -68,7 +73,7 @@ namespace Grupo2A.Services
                 ingredientesAssociados.Add(ingrediente);
             }
 
-            // Cria uma nova instância do prato a ser adicionado ao repositório
+            // Create a new Prato instance
             var novoPrato = new Prato
             {
                 Nome = pratoDto.Nome,
@@ -76,15 +81,15 @@ namespace Grupo2A.Services
                 Ingredientes = ingredientesAssociados,
                 Receita = pratoDto.Receita,
                 Ativo = pratoDto.Ativo,
-                Quantidade = pratoDto.Quantidade,
-                DataServico = pratoDto.DataServico,
+                Quantidade = pratoDto.Quantidade , // Use 0 if null
+                DataServico = pratoDto.DataServico , // Use current date if null
                 TipoRefeicao = tipoRefeicao
             };
 
-            // Adiciona o novo prato ao repositório
+            // Add the new Prato to the repository
             await _repo.AddPrato(novoPrato);
 
-            return (novoPrato, null); // Retorna o prato criado sem mensagem de erro
+            return (novoPrato, null);
         }
 
         // Método para transformar um Prato em Prato2detail_dto
@@ -103,7 +108,6 @@ namespace Grupo2A.Services
             };
         }
 
-
         //US008: Atualizar o estado do Prato
         //Também usado em US009 e US010 
         public async Task<Prato2detail_dto?> UpdateEstadoPrato(long id, Prato2update_dto info, Prato? prato = null)
@@ -112,24 +116,22 @@ namespace Grupo2A.Services
             var thePrato = await _repo.GetPratoById(id);
             if (thePrato == null)
             {
-                return null; // Retorna nulo se o prato não for encontrado
+                return null;// Retorna nulo se o prato não for encontrado
             }
 
             // Atualiza o estado de Ativo usando o valor de info.Ativo
             if (info != null)
             {
-                // Como Ativo é requerido em Prato2update_dto, não precisa de verificação adicional.
+            // Como Ativo é requerido em Prato2update_dto, não precisa de verificação adicional.
                 thePrato.Ativo = info.Ativo;
             }
-            // Se `info` não foi fornecido, mas `prato` foi passado, usa prato.Ativo.
+            // Se info não foi fornecido, mas prato foi passado, usa prato.Ativo.
             else if (prato != null)
             {
-                thePrato.Ativo = prato.Ativo; // prato.Ativo é requerido
+                thePrato.Ativo = prato.Ativo;
             }
-
             // Atualiza o prato no repositório
             var updatedPrato = await _repo.UpdatePrato(thePrato);
-
             // Devolve os detalhes atualizados do prato
             return PratoDetail(updatedPrato);
         }
@@ -157,7 +159,5 @@ namespace Grupo2A.Services
                 DataServico = p.DataServico
             };
         }
-
     }
 }
-
