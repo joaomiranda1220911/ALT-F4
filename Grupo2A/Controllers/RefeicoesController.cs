@@ -60,7 +60,7 @@ namespace Grupo2A.Controllers
             return Ok(prato); // Retorna o prato atualizado com a quantidade decrementada
         }
 
-    
+
         //US015: Remover refeição futura
         [HttpDelete("{idRefeicao}")]
         public async Task<ActionResult> DeleteRefeicao(long idRefeicao)
@@ -74,8 +74,8 @@ namespace Grupo2A.Controllers
                 return NotFound("Refeição não encontrada.");
             }
 
-            // Retorna NoContent para indicar sucesso na exclusão
-            return NoContent();
+            // Retorna uma mensagem de confirmação ao Postman
+            return Ok("Refeição eliminada com sucesso.");
         }
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
