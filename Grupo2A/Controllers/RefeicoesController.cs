@@ -20,15 +20,15 @@ namespace Grupo2A.Controllers
         private RefeicoesService _service;
         private PratosService _serviceP;
 
-        public RefeicoesController(CozinhaContext context )
+        public RefeicoesController(CozinhaContext context)
         {
             _context = context;
             _service = new RefeicoesService(context);
-            _serviceP=new PratosService(context);
+            _serviceP = new PratosService(context);
         }
 
 
-         //US013 - Criar Refeicao
+        //US013 - Criar Refeicao
         [HttpPost]
         public async Task<ActionResult<Refeicao2detail_dto>> PostRefeicao(Refeicao2create_dto refeicao)
         {
@@ -60,18 +60,22 @@ namespace Grupo2A.Controllers
             return Ok(prato); // Retorna o prato atualizado com a quantidade decrementada
         }
 
+    
         //US015: Remover refeição futura
-        [HttpDelete("{IdRefeicao}")]
-        public async Task<ActionResult> DeleteRefeicao(long IdRefeicao)
+        [HttpDelete("{idRefeicao}")]
+        public async Task<ActionResult> DeleteRefeicao(long idRefeicao)
         {
-            //Chama o método RemoverRefeicaoFutura para eliminar a refeição futura
-            var result = await _service.DeleteRefeicao(IdRefeicao);
-            //Se a refeição não for encontrada, retorna NotFound
+            // Chama o serviço para remover a refeição
+            var result = await _service.DeleteRefeicao(idRefeicao);
+
+            // Verifica se a refeição foi encontrada e removida
             if (!result)
             {
-                return NotFound("Refeição futura não encontrada.");
+                return NotFound("Refeição não encontrada.");
             }
-            return NoContent();// Caso a refeição seja eliminada com sucesso, retorna NoContent
+
+            // Retorna NoContent para indicar sucesso na exclusão
+            return NoContent();
         }
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade

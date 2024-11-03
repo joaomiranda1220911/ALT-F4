@@ -78,8 +78,8 @@ namespace Grupo2A.Services
             {
                 IdRefeicao = r.IdRefeicao,
                 Data = r.Data,
-                Prato = r.Prato, 
-                tipoDeRefeicao =r.TipoRefeicao,
+                Prato = r.Prato,
+                tipoDeRefeicao = r.TipoRefeicao,
                 QuantidadeProduzida = r.QuantidadeProduzida
             };
         }
@@ -104,23 +104,25 @@ namespace Grupo2A.Services
 
 
         //US015: Remover uma refeição futura
-        public async Task<bool> DeleteRefeicao(long IdRefeicao)
+        public async Task<bool> DeleteRefeicao(long idRefeicao)
         {
-            //Procura o prato na base de dados
-            var prato = await _context.Pratos.FindAsync(IdRefeicao);
+            // Encontra a refeição a ser deletada
+            var refeicao = await _context.Refeicoes.FindAsync(idRefeicao);
 
-            //Verifica se o prato existe e se a data de serviço é futura
-            if (prato == null || prato.DataServico <= DateTime.Now)
+            // Verifica se a refeição existe
+            if (refeicao == null)
             {
-                return false; //Caso o prato não seja encontrado ou a data já tenha passado
+                return false;
             }
 
-            //Remove prato da BD e guarda as mudanças
-            _context.Pratos.Remove(prato);
+            // Remove apenas a refeição, sem tocar nas entidades relacionadas
+            _context.Refeicoes.Remove(refeicao);
+
+            // Salva as alterações no banco de dados
             await _context.SaveChangesAsync();
-            //Retorna true indicando que o prato foi removido com sucesso
             return true;
         }
+
 
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
