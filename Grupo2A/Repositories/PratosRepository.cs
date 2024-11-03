@@ -27,7 +27,6 @@ namespace Grupo2A.Repositories
         {
             return await _context.Pratos.FindAsync(id);
         }
-
         public async Task<Prato> UpdatePrato(Prato prato)
         {
             _context.Entry(prato).State = EntityState.Modified;
@@ -42,6 +41,21 @@ namespace Grupo2A.Repositories
                 throw;
             }
         }
+  
+        // public async Task<Prato> UpdateEstadoPratoByIngrediente(Prato prato)
+        // {
+        //     _context.Entry(prato).State = EntityState.Modified;
+
+        //     try
+        //     {
+        //         await _context.SaveChangesAsync();
+        //         return prato;
+        //     }
+        //     catch (DbUpdateConcurrencyException)
+        //     {
+        //         throw;
+        //     }
+        // }
         public async Task<IEnumerable<Prato>> GetPratosByIngredienteId(long ingredienteId)
         {
             return await _context.Pratos
@@ -50,15 +64,6 @@ namespace Grupo2A.Repositories
                 .ToListAsync();
         }
 
-
-        // public async Task <Prato> ServirPratoAsync (int IdPrato){
-        //     var prato = await _context.Pratos.FindAsync(IdPrato);
-        //     if (prato != null && prato.Quantidade > 0){
-        //         prato.Quantidade -= 1;
-        //         await _context.SaveChangesAsync();
-        //     }
-
-        // }
         public async Task<bool?> GetEstadoDePratoById(long pratoId)
         {
             var prato = await _context.Pratos.FindAsync(pratoId);

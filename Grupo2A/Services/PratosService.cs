@@ -107,8 +107,34 @@ namespace Grupo2A.Services
                 TipoRefeicao = p.TipoRefeicao // Inclui o valor opcional de TipoRefeicao
             };
         }
-
         public async Task<Prato2detail_dto?> UpdateEstadoPrato(long id, Prato2update_dto info, Prato? prato = null)
+        {
+            // Verifica se o prato existe no repositório
+            var thePrato = await _repo.GetPratoById(id);
+            if (thePrato == null)
+            {
+                return null; // Retorna null se o prato não for encontrado
+            }
+
+            // Atualiza o estado de Ativo usando info.Ativo se info estiver presente
+            if (info != null && info.Ativo != null)
+            {
+                thePrato.Ativo = info.Ativo;
+            }
+            // Usa prato.Ativo se info não foi fornecido e prato está presente
+            else if (prato != null)
+            {
+                thePrato.Ativo = prato.Ativo;
+            }
+
+            // Atualiza o prato no repositório
+            var updatedPrato = await _repo.UpdatePrato(thePrato);
+
+            // Devolve os detalhes atualizados do prato
+            return PratoDetail(updatedPrato);
+        }
+
+        public async Task<Prato2detail_dto?> UpdateEstadoPratoByIngrediente(long id, Prato2update_dto info, Prato? prato = null)
         {
             // Verifica se o prato existe no repositório
             var thePrato = await _repo.GetPratoById(id);
@@ -138,9 +164,6 @@ namespace Grupo2A.Services
             // Devolve os detalhes atualizados do prato
             return PratoDetail(updatedPrato);
         }
-
-
-
 
 
         //Método para transformar um prato em Prato2listing_dto
@@ -173,7 +196,7 @@ namespace Grupo2A.Services
             foreach (var prato in pratos)
             {
                 // Reavalia o estado do prato com base nos estados dos ingredientes
-                await UpdateEstadoPrato(prato.IdPrato, new Prato2update_dto { Ativo = prato.Ativo });
+                await UpdateEstadoPratoByIngrediente(prato.IdPrato, new Prato2update_dto { Ativo = prato.Ativo });
             }
         }
 

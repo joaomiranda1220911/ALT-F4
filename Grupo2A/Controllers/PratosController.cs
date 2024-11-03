@@ -44,6 +44,28 @@ namespace Grupo2A.Controllers
 
         // PUT: api/Pratos/{id}
         [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEstadoPratoByIngrediente(long id, [FromBody] Prato2update_dto info)
+        {
+            // Verifica se o objeto `info` foi recebido no body e contém o campo `Ativo`
+            if (info == null || info.Ativo == null)
+            {
+                return BadRequest("As informações do prato, incluindo o estado Ativo, são necessárias.");
+            }
+
+            // Chama o serviço para atualizar o estado do prato
+            var updatedPrato = await _service.UpdateEstadoPratoByIngrediente(id, info);
+
+            // Retorna NotFound se o prato não existir
+            if (updatedPrato == null)
+            {
+                return NotFound($"Prato com ID {id} não encontrado.");
+            }
+
+            // Retorna o prato atualizado com status 200 OK
+            return Ok(updatedPrato);
+        }
+
+        [HttpPut("estadoPrato/{id}")]
         public async Task<IActionResult> UpdateEstadoPrato(long id, [FromBody] Prato2update_dto info)
         {
             // Verifica se o objeto `info` foi recebido no body e contém o campo `Ativo`

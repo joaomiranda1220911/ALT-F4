@@ -74,7 +74,7 @@ namespace Grupo2A.Controllers
             foreach (var prato in pratos)
             {
                 var info = new Prato2update_dto { Ativo = false }; // Define como inativo
-                await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                await _serviceP.UpdateEstadoPratoByIngrediente(prato.IdPrato, info);
             }
 
             return Ok(new { ingrediente = theUpdateIngrediente });
@@ -120,7 +120,7 @@ namespace Grupo2A.Controllers
                     };
 
                     // Atualiza o prato e adiciona-o à lista de pratos atualizados
-                    var updatedPrato = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                    var updatedPrato = await _serviceP.UpdateEstadoPratoByIngrediente(prato.IdPrato, info);
                     if (updatedPrato != null) // Verifica se a atualização foi bem-sucedida
                     {
                         pratosAtualizados.Add(updatedPrato); // Adiciona o prato à lista se a atualização for bem-sucedida
