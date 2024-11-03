@@ -59,14 +59,14 @@ namespace Grupo2A.Controllers
             var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente);
             if (theUpdateIngrediente == null)
             {
-                return NotFound("Ingrediente não encontrado ou não foi possível inativar.");
+                return NotFound();
             }
 
             // Obter todos os pratos que contêm este ingrediente
             var pratos = await _service.GetPratosByIngredienteId(idIngrediente);
             if (pratos == null || !pratos.Any())
             {
-                return Ok("Ingrediente inativado com sucesso. Nenhum prato associado encontrado para inativação.");
+                return Ok(theUpdateIngrediente);
             }
 
             // Verificação de serviço de pratos antes de continuar
@@ -98,7 +98,7 @@ namespace Grupo2A.Controllers
                 }
             }
 
-            return Ok("Ingrediente e pratos associados foram inativados com sucesso.");
+            return Ok(theUpdateIngrediente);
         }
 
 
