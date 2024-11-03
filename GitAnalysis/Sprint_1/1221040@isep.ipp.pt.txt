@@ -1,3 +1,95 @@
+commit ade5f5985cfcf4296a811c722288218d315eacc8	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Sun Nov 3 15:30:49 2024 +0000
+
+    GetEstadoDePrato
+
+M	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Services/PratosService.cs
+
+commit bc92310e016cd810571b13faa35a526cb5b8efa9	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Sun Nov 3 00:44:04 2024 +0000
+
+    Correção de Erros- TipoDeRefeiçãoCtl, Refeicao, TipoDeRefeicao
+
+M	Grupo2A/Controllers/TipoDeRefeicaoController.cs
+M	Grupo2A/Model/Refeicao.cs
+M	Grupo2A/Model/TipoDeRefeicao.cs
+
+commit 83bfd95114f1df0f725f209dede4680879c75032	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Sat Nov 2 12:04:35 2024 +0000
+
+    Alteração no Program.cs
+
+M	Grupo2A/Program.cs
+
+commit a04c5003f127b6e8a3398dbdf95a9107dd9e749c	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Sat Nov 2 11:59:14 2024 +0000
+
+    Program.cs Alterações MyPolicy
+
+M	Grupo2A/Program.cs
+
+commit 6f51fe21c413ccfcaafebcebc030f18c74ecd4c8	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Thu Oct 31 15:14:43 2024 +0000
+
+    Alterações no Service e Controller -  TipoDeRefeicao
+
+M	Grupo2A/Controllers/TipoDeRefeicaoController.cs
+M	Grupo2A/Services/TipoDeRefeicaoService.cs
+
+commit ac0fdd82af46e4ecb0b62745303aed63f659c79c	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Thu Oct 31 15:04:44 2024 +0000
+
+    Alterações da ementa para o tipo de refeição - controller, service e repository
+
+M	Grupo2A/Controllers/EmentasController.cs
+A	Grupo2A/Controllers/TipoDeRefeicaoController.cs
+M	Grupo2A/Repositories/EmentasRepository.cs
+A	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
+M	Grupo2A/Services/EmentasService.cs
+A	Grupo2A/Services/TipoDeRefeicaoService.cs
+
+commit 23885f6662af7c7c0b7cb50f353da28ef1b5d907	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Mon Oct 28 21:06:31 2024 +0000
+
+    US13 - Controller, Repository, Services - CreateRefeicao
+
+M	Grupo2A/Repositories/EmentasRepository.cs
+M	Grupo2A/Services/EmentasService.cs
+
+commit b9f3f31c14ccb07c0296b4161bdc18fbb0a226b9	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Mon Oct 28 20:59:14 2024 +0000
+
+    US12 - Controller Repository Service, GetAllTiposRefeicao
+
+M	Grupo2A/Controllers/EmentasController.cs
+M	Grupo2A/Repositories/EmentasRepository.cs
+M	Grupo2A/Services/EmentasService.cs
+
+commit 2bb64922bcb928681ef754a39f03b9cd0656b84a	refs/heads/main
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Mon Oct 28 19:23:50 2024 +0000
+
+    US11-  Criar Tipo de refeição, alterações no codigo, DTO's refeição e tipoRefeição
+
+M	Grupo2A/Controllers/EmentasController.cs
+M	Grupo2A/Controllers/ReceitasController.cs
+A	Grupo2A/Model/DTO/Refeicao2create_dto.cs
+A	Grupo2A/Model/DTO/Refeicao2detail_dto.cs
+A	Grupo2A/Model/DTO/TipoRefeicao2detail_dto.cs
+A	Grupo2A/Model/DTO/TipoRefeicao2listing_dto.cs
+M	Grupo2A/Repositories/EmentasRepository.cs
+M	Grupo2A/Services/EmentasService.cs
+M	Grupo2A/Services/ReceitasService.cs
+
 commit 00ff2bf17058dfab90e3eca379976108ea0b3ce8	refs/heads/main
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Sat Oct 26 15:42:04 2024 +0100
