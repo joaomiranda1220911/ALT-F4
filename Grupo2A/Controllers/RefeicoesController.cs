@@ -61,11 +61,11 @@ namespace Grupo2A.Controllers
         }
 
         //US015: Remover refeição futura
-        [HttpDelete("{idPrato}")]
-        public async Task<ActionResult> DeleteRefeicao(long idPrato)
+        [HttpDelete("{IdRefeicao}")]
+        public async Task<ActionResult> DeleteRefeicao(long IdRefeicao)
         {
             //Chama o método RemoverRefeicaoFutura para eliminar a refeição futura
-            var result = await _service.DeleteRefeicao(idPrato);
+            var result = await _service.DeleteRefeicao(IdRefeicao);
             //Se a refeição não for encontrada, retorna NotFound
             if (!result)
             {
