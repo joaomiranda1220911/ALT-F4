@@ -34,13 +34,14 @@ namespace Grupo2A.Repositories
         {
             return await _context.Ingredientes.FindAsync(id);
         }
-
+        
         public async Task<Ingrediente?> UpdateIngrediente(Ingrediente ingrediente)
         {
             _context.Ingredientes.Update(ingrediente);
             await _context.SaveChangesAsync();
             return ingrediente;
         }
+
 
 
         public async Task<IEnumerable<Prato>> GetPratosByIngredienteId(long ingredienteId)

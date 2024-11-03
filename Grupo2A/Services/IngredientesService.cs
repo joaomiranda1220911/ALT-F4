@@ -46,6 +46,7 @@ namespace Grupo2A.Services
         {
             return new Ingrediente2detail_dto
             {
+                IdIngrediente = i.IdIngrediente,
                 Nome = i.Nome,
                 Categoria = i.Categoria,
                 Ativo = i.Ativo
@@ -84,8 +85,6 @@ namespace Grupo2A.Services
             return IngredienteDetail(updatedIngrediente);
         }
 
-<<<<<<< HEAD
-
         public async Task<Ingrediente2detail_dto?> GetIngredienteById(long idIngrediente)
         {
             return await _context.Ingredientes
@@ -100,8 +99,6 @@ namespace Grupo2A.Services
                 .FirstOrDefaultAsync();
         }
 
-=======
->>>>>>> 6984044c7632af18851c5df4a4b3ecbdee82dc44
         public async Task<List<Ingrediente2listing_dto>> GetIngredientesByAtiveState(bool state)
         {
             List<Ingrediente> allMatchingIngredientes = await _repo.GetIngredientesByStateFromDataBase(state);
