@@ -102,6 +102,7 @@ namespace Grupo2A.Controllers
         }
 
 
+
         // PUT: api/Ingredientes/ativar/{idIngrediente}
         [HttpPut("ativar/{idIngrediente}")]
         public async Task<IActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
