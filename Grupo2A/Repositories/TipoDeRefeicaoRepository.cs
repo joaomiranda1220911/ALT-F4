@@ -41,10 +41,5 @@ namespace Grupo2A.Repositories
                                  .FirstOrDefaultAsync(tr => tr.Nome == nomeTipoRefeicao);
         }
 
-        public async Task<TipoDeRefeicao?> GetTipoRefeicaoById(int id)
-        {
-            return await _context.TiposDeRefeicao.FindAsync(id);
-        }
-
     }
 }
