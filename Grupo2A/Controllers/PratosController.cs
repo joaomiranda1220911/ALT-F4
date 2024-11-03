@@ -42,23 +42,27 @@ namespace Grupo2A.Controllers
             return CreatedAtAction(nameof(PostPrato), new { id = novoPrato.IdPrato }, novoPrato);
         }
 
-        // PUT ou PATCH para atualizar o estado do prato
+        // PUT: api/Pratos/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEstadoPrato(long id, [FromBody] Prato2update_dto info)
         {
-            if (info == null)
+            // Verifica se o objeto `info` foi recebido no body e contém o campo `Ativo`
+            if (info == null || info.Ativo == null)
             {
-                return BadRequest("As informações do prato não podem ser nulas.");
+                return BadRequest("As informações do prato, incluindo o estado Ativo, são necessárias.");
             }
 
+            // Chama o serviço para atualizar o estado do prato
             var updatedPrato = await _service.UpdateEstadoPrato(id, info);
 
+            // Retorna NotFound se o prato não existir
             if (updatedPrato == null)
             {
                 return NotFound($"Prato com ID {id} não encontrado.");
             }
 
-            return Ok(updatedPrato); // Retorna os detalhes do prato atualizado
+            // Retorna o prato atualizado com status 200 OK
+            return Ok(updatedPrato);
         }
 
         //US009

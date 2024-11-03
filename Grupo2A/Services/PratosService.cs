@@ -108,33 +108,33 @@ namespace Grupo2A.Services
             };
         }
 
-        //US008: Atualizar o estado do Prato
-        //Também usado em US009 e US010 
         public async Task<Prato2detail_dto?> UpdateEstadoPrato(long id, Prato2update_dto info, Prato? prato = null)
         {
             // Verifica se o prato existe no repositório
             var thePrato = await _repo.GetPratoById(id);
             if (thePrato == null)
             {
-                return null;// Retorna nulo se o prato não for encontrado
+                return null; // Retorna null se o prato não for encontrado
             }
 
-            // Atualiza o estado de Ativo usando o valor de info.Ativo
-            if (info != null)
+            // Atualiza o estado de Ativo usando info.Ativo se info estiver presente
+            if (info != null && info.Ativo != null)
             {
-                // Como Ativo é requerido em Prato2update_dto, não precisa de verificação adicional.
                 thePrato.Ativo = info.Ativo;
             }
-            // Se info não foi fornecido, mas prato foi passado, usa prato.Ativo.
+            // Usa prato.Ativo se info não foi fornecido e prato está presente
             else if (prato != null)
             {
                 thePrato.Ativo = prato.Ativo;
             }
+
             // Atualiza o prato no repositório
             var updatedPrato = await _repo.UpdatePrato(thePrato);
+
             // Devolve os detalhes atualizados do prato
             return PratoDetail(updatedPrato);
         }
+
 
 
 

@@ -26,6 +26,7 @@ namespace Grupo2A.Controllers
             _serviceP = new PratosService(context);
         }
 
+
         [HttpPost]
         public async Task<ActionResult<Ingrediente2detail_dto>> PostIngrediente(Ingrediente2create_dto ingrediente)
         {
@@ -144,7 +145,6 @@ namespace Grupo2A.Controllers
             // Retorna o ingrediente atualizado e a lista de pratos que foram efetivamente ativados
             return Ok(new { ingrediente = theUpdateIngrediente, pratosAtualizados });
         }
-
 
     }
 }
