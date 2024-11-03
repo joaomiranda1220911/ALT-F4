@@ -49,11 +49,11 @@ namespace Grupo2A.Controllers
 
         // PUT: api/Ingredientes/inativar/{idIngrediente}
         [HttpPut("inativar/{idIngrediente}")]
-        public async Task<IActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
+        public async Task<IActionResult> UpdateEstadoIngredienteInativar(long idIngrediente, [FromBody] Prato2update_dto info)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || info == null)
             {
-                return BadRequest();
+                return BadRequest("Informações inválidas.");
             }
 
             // Inativar o ingrediente
@@ -73,15 +73,10 @@ namespace Grupo2A.Controllers
             // Lista para armazenar os pratos atualizados
             var pratosInativados = new List<Prato>();
 
-            // Inativar cada prato associado ao ingrediente
+            // Inativar cada prato associado ao ingrediente conforme o valor no body
             foreach (var prato in pratos)
             {
-                prato.Ativo = false; // Atualiza o estado do prato para inativo
-                var info = new Prato2update_dto
-                {
-                    Ativo = prato.Ativo,
-                };
-
+                prato.Ativo = info.Ativo; // Usa o valor do body para definir o estado
                 var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
                 if (updateResult != null)
                 {
@@ -92,9 +87,10 @@ namespace Grupo2A.Controllers
             return Ok(new
             {
                 ingrediente = theUpdateIngrediente,
-                pratosInativados // Retorna a lista de pratos inativados
+                pratosInativados // Retorna a lista de pratos atualizados com o estado definido no body
             });
         }
+
 
 
 
