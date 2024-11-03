@@ -42,5 +42,25 @@ namespace Grupo2A.Services
             var tiposRefeicao = await _repo.GetAllTiposRefeicao();
             return tiposRefeicao.Select(t => new TipoRefeicao2listing_dto { Id = t.Id, Nome = t.Nome }).ToList();
         }
+
+        // Método para obter um tipo de refeição pelo ID
+        public async Task<TipoRefeicao2detail_dto?> GetTipoRefeicaoById(int id)
+        {
+            // Verificar se o ID é válido
+            if (id <= 0)
+                throw new ArgumentException("O ID do tipo de refeição deve ser um número positivo.", nameof(id));
+
+            // Buscar o tipo de refeição pelo ID
+            var tipoRefeicao = await _repo.GetTipoRefeicaoById(id);
+            if (tipoRefeicao == null)
+                return null; // Retorna nulo se não encontrar
+
+            // Retornar o DTO
+            return new TipoRefeicao2detail_dto
+            {
+                Id = tipoRefeicao.Id,
+                Nome = tipoRefeicao.Nome
+            };
+        }
     }
 }
