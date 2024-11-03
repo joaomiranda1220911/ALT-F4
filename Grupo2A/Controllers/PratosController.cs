@@ -28,25 +28,21 @@ namespace Grupo2A.Controllers
 
         //US007 - Criar Prato
         [HttpPost]
-        public async Task<ActionResult<Prato2detail_dto>> PostPrato (Prato2create_dto prato){
-            return await _service.CreateNewPrato(prato);
-        }
-
-        //US008: Atualizar o estado do Prato
-        [HttpPut("{id}/estado")]
-        public async Task<ActionResult> UpdateEstadoPrato(long id, Prato2update_dto info)
+        public async Task<ActionResult<Prato2detail_dto>> PostPrato(Prato2create_dto prato)
         {
-            if (!ModelState.IsValid)
+            var (novoPrato, mensagem) = await _service.CreateNewPrato(prato);
+
+            if (novoPrato == null)
             {
-                return BadRequest();
+                // Return a BadRequest with the message if prato creation failed
+                return BadRequest(mensagem);
             }
 
-            var theUpdatePrato = await _service.UpdateEstadoPrato(id, info);
-
-            return (theUpdatePrato == null) ? NotFound() : Ok(theUpdatePrato);
+            // Return the created Prato2detail_dto
+            return CreatedAtAction(nameof(PostPrato), new { id = novoPrato.IdPrato }, novoPrato);
         }
 
-        
+
     }
 
 }
