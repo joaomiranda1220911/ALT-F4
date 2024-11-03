@@ -138,8 +138,9 @@ namespace Grupo2A.Controllers
                     // Atualiza o prato e adiciona à lista de pratos atualizados
                     var updatedPrato = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
                     pratosAtualizados.Add(updatedPrato);
+                    };
                 }
-            }
+            
 
             // Retorna o ingrediente atualizado e a lista de pratos atualizados
             return Ok(new { ingrediente = theUpdateIngrediente, pratosAtualizados });
