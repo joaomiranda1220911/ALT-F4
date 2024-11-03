@@ -25,7 +25,7 @@ namespace Grupo2A.Repositories
         public async Task<Ingrediente> AddIngrediente(Ingrediente ingrediente)
         {
             var newIngrediente = await _context.Ingredientes.AddAsync(ingrediente);
-            
+
             await _context.SaveChangesAsync();
             return newIngrediente.Entity;
         }
@@ -35,20 +35,13 @@ namespace Grupo2A.Repositories
             return await _context.Ingredientes.FindAsync(id);
         }
 
-        public async Task<Ingrediente> UpdateIngrediente(Ingrediente ingrediente)
+        public async Task<Ingrediente?> UpdateIngrediente(Ingrediente ingrediente)
         {
-            _context.Entry(ingrediente).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-                return ingrediente;
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                throw;
-            }
+            _context.Ingredientes.Update(ingrediente);
+            await _context.SaveChangesAsync();
+            return ingrediente;
         }
+
 
         public async Task<IEnumerable<Prato>> GetPratosByIngredienteId(long ingredienteId)
         {

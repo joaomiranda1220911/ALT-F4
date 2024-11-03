@@ -70,24 +70,21 @@ namespace Grupo2A.Services
             return allMatchingIngredientes.Select(x => IngredienteListItem(x)).ToList();
         }
 
-        public async Task<Ingrediente2detail_dto?> UpdateIngrediente(long idIngrediente)
+        public async Task<Ingrediente2detail_dto?> UpdateIngrediente(long idIngrediente, bool ativar)
         {
-            // Verifica se o ingrediente existe no repositório
-            var theIngrediente = await _repo.GetIngredienteById(idIngrediente);
-            if (theIngrediente == null)
+            var ingrediente = await _repo.GetIngredienteById(idIngrediente);
+            if (ingrediente == null)
             {
-                return null; // Retorna null se o ingrediente não existir
+                return null;
             }
 
-            // Altera o estado do ingrediente
-            theIngrediente.Ativo = !theIngrediente.Ativo; // Inverte o estado atual
+            // Atualiza o estado do ingrediente
+            ingrediente.Ativo = ativar;
 
-            // Atualiza o ingrediente no repositório
-            var updatedIngrediente = await _repo.UpdateIngrediente(theIngrediente);
-
-            // Devolve os detalhes atualizados do ingrediente
+            var updatedIngrediente = await _repo.UpdateIngrediente(ingrediente);
             return IngredienteDetail(updatedIngrediente);
         }
+
 
         public async Task<Ingrediente2detail_dto?> GetIngredienteById(long idIngrediente)
         {
@@ -95,9 +92,9 @@ namespace Grupo2A.Services
                 .Where(i => i.IdIngrediente == idIngrediente)
                 .Select(i => new Ingrediente2detail_dto
                 {
-                    IdIngrediente = i.IdIngrediente, 
+                    IdIngrediente = i.IdIngrediente,
                     Nome = i.Nome,
-                    Categoria = i.Categoria, 
+                    Categoria = i.Categoria,
                     Ativo = i.Ativo,
                 })
                 .FirstOrDefaultAsync();
