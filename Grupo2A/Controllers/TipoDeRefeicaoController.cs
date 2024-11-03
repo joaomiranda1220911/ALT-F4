@@ -59,5 +59,6 @@ namespace Grupo2A.Controllers
             }
             return Ok(tipoRefeicao); // Retorna 200 com os detalhes do tipo de refeição
         }
+        
     }
 }
