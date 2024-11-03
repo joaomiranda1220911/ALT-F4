@@ -61,8 +61,8 @@ namespace Grupo2A.Services
             {
                 QuantidadeProduzida = info.QuantidadeProduzida,
                 Data = info.Data, // A data da refeição deve ser recebida do dto
-                TipoRefeicao = tipoRefeicao, // Atribuindo o tipo de refeição
-                Prato = prato // Atribuindo o prato à refeição
+                TipoRefeicao = tipoRefeicao, // Atribuí o tipo de refeição
+                Prato = prato // Atribuí o prato à refeição
             };
 
             // Adiciona a nova refeição ao repositório

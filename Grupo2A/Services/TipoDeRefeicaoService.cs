@@ -19,20 +19,20 @@ namespace Grupo2A.Services
         // US011: Definir tipos de refeição, como almoço ou jantar.
         public async Task<TipoRefeicao2detail_dto?> CreateTipoRefeicao(string nomeTipoRefeicao)
         {
-            // Verificar se o nome da refeição é válido
+            // Verifica se o nome da refeição é válido
             if (string.IsNullOrWhiteSpace(nomeTipoRefeicao))
                 throw new ArgumentException("O nome do tipo de refeição não pode ser vazio.", nameof(nomeTipoRefeicao));
 
-            // Verificar se o tipo de refeição já existe
+            // Verifica se o tipo de refeição já existe
             var tipoExistente = await _repo.GetTipoRefeicaoByNome(nomeTipoRefeicao);
             if (tipoExistente != null)
                 return null; // Já existe
 
-            // Criar novo tipo de refeição
+            // Cria novo tipo de refeição
             var novoTipoRefeicao = new TipoDeRefeicao { Nome = nomeTipoRefeicao };
             await _repo.AddTipoRefeicao(novoTipoRefeicao);
 
-            // Retornar o DTO
+            // Retorna o DTO
             return new TipoRefeicao2detail_dto { Id = novoTipoRefeicao.Id, Nome = novoTipoRefeicao.Nome };
         }
 
@@ -46,16 +46,16 @@ namespace Grupo2A.Services
         // Método para obter um tipo de refeição pelo ID
         public async Task<TipoRefeicao2detail_dto?> GetTipoRefeicaoById(int id)
         {
-            // Verificar se o ID é válido
+            // Verifica se o ID é válido
             if (id <= 0)
                 throw new ArgumentException("O ID do tipo de refeição deve ser um número positivo.", nameof(id));
 
-            // Buscar o tipo de refeição pelo ID
+            // Procura o tipo de refeição pelo ID
             var tipoRefeicao = await _repo.GetTipoRefeicaoById(id);
             if (tipoRefeicao == null)
                 return null; // Retorna nulo se não encontrar
 
-            // Retornar o DTO
+            // Retorna o DTO
             return new TipoRefeicao2detail_dto
             {
                 Id = tipoRefeicao.Id,
