@@ -26,7 +26,6 @@ namespace Grupo2A.Controllers
             _serviceP = new PratosService(context);
         }
 
-
         [HttpPost]
         public async Task<ActionResult<Ingrediente2detail_dto>> PostIngrediente(Ingrediente2create_dto ingrediente)
         {
@@ -47,13 +46,14 @@ namespace Grupo2A.Controllers
             return await _service.GetIngredientesByAtiveState(false);
         }
 
+        
         // PUT: api/Ingredientes/inativar/{idIngrediente}
         [HttpPut("inativar/{idIngrediente}")]
-        public async Task<IActionResult> UpdateEstadoIngredienteInativar(long idIngrediente, [FromBody] Prato2update_dto info)
+        public async Task<IActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
         {
-            if (!ModelState.IsValid || info == null)
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Informações inválidas.");
+                return BadRequest();
             }
 
             // Inativar o ingrediente
@@ -70,6 +70,7 @@ namespace Grupo2A.Controllers
                 return NoContent();
             }
 
+<<<<<<< HEAD
             // Lista para armazenar os pratos atualizados
             var pratosInativados = new List<Prato2detail_dto>();
 
@@ -90,6 +91,28 @@ namespace Grupo2A.Controllers
                 pratosInativados // Retorna a lista de pratos inativados
             });
         }
+
+            // Inativar cada prato associado ao ingrediente
+            foreach (var prato in pratos)
+            {
+                prato.Ativo = false;
+                var info = new Prato2update_dto
+                {
+                    Ativo = prato.Ativo,
+                };
+
+                var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                if (updateResult == null)
+                {
+                    return StatusCode(500, "Erro ao atualizar o prato.");
+                }
+            }
+
+            return Ok(theUpdateIngrediente);
+        }
+
+
+>>>>>>> 6984044c7632af18851c5df4a4b3ecbdee82dc44
         // PUT: api/Ingredientes/ativar/{idIngrediente}
         [HttpPut("ativar/{idIngrediente}")]
         public async Task<IActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
@@ -113,10 +136,7 @@ namespace Grupo2A.Controllers
                 return NoContent();
             }
 
-            // Lista para armazenar os pratos que foram efetivamente ativados
-            var pratosAtualizados = new List<Prato2detail_dto>();
-
-            // Verificar o estado de cada prato e ativá-lo apenas se todos os ingredientes estiverem ativos
+            // Verificar o estado de cada prato e ativá-lo se todos os ingredientes estiverem ativos
             foreach (var prato in pratos)
             {
                 bool todosIngredientesAtivos = prato.Ingredientes.All(i => i.Ativo);
@@ -126,13 +146,23 @@ namespace Grupo2A.Controllers
                     var updatedPrato = await _serviceP.UpdateEstadoPrato(prato.IdPrato, updateInfo);
                     if (updatedPrato != null)
                     {
+<<<<<<< HEAD
                         pratosAtualizados.Add(updatedPrato); // Adiciona o prato à lista de pratos atualizados
                     }
                 }
             }
 
             return Ok(new { ingrediente = theUpdateIngrediente, pratosAtualizados });
-        }
+=======
+                        Ativo = true,
+                    };
 
+                    await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                }
+            }
+
+            return Ok(theUpdateIngrediente);
+>>>>>>> 6984044c7632af18851c5df4a4b3ecbdee82dc44
+        }
     }
 }
