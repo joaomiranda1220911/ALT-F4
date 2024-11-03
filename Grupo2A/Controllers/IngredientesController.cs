@@ -49,15 +49,15 @@ namespace Grupo2A.Controllers
 
         // PUT: api/Ingredientes/inativar/{idIngrediente}
         [HttpPut("inativar/{idIngrediente}")]
-        public async Task<IActionResult> UpdateEstadoIngredienteInativar(long idIngrediente, [FromBody] Prato2update_dto info)
+        public async Task<IActionResult> UpdateEstadoIngredienteInativar(long idIngrediente)
         {
-            if (!ModelState.IsValid || info == null)
+            if (!ModelState.IsValid)
             {
                 return BadRequest("Informações inválidas.");
             }
 
             // Inativar o ingrediente
-            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente, false); // Passa 'false' para inativar
+            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente, false);
             if (theUpdateIngrediente == null)
             {
                 return NotFound();
@@ -70,26 +70,16 @@ namespace Grupo2A.Controllers
                 return NoContent();
             }
 
-            // Lista para armazenar os pratos atualizados
-            var pratosInativados = new List<Prato2detail_dto>();
-
             // Inativar cada prato associado ao ingrediente
             foreach (var prato in pratos)
             {
-                var updateInfo = new Prato2update_dto { Ativo = false };
-                var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, updateInfo);
-                if (updateResult != null)
-                {
-                    pratosInativados.Add(updateResult); // Adiciona o prato à lista se a atualização for bem-sucedida
-                }
+                var info = new Prato2update_dto { Ativo = false }; // Define como inativo
+                await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
             }
 
-            return Ok(new
-            {
-                ingrediente = theUpdateIngrediente,
-                pratosInativados // Retorna a lista de pratos inativados
-            });
+            return Ok(new { ingrediente = theUpdateIngrediente });
         }
+
         // PUT: api/Ingredientes/ativar/{idIngrediente}
         [HttpPut("ativar/{idIngrediente}")]
         public async Task<IActionResult> UpdateEstadoIngredienteAtivar(long idIngrediente)
@@ -100,7 +90,7 @@ namespace Grupo2A.Controllers
             }
 
             // Ativar o ingrediente
-            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente, true); // Passa 'true' para ativar
+            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente, true); // Ativar o ingrediente
             if (theUpdateIngrediente == null)
             {
                 return NotFound();
@@ -114,23 +104,31 @@ namespace Grupo2A.Controllers
             }
 
             // Lista para armazenar os pratos que foram efetivamente ativados
-            var pratosAtualizados = new List<Prato2detail_dto>();
+            var pratosAtualizados = new List<Prato2detail_dto>(); // Mudei para Prato2detail_dto
 
             // Verificar o estado de cada prato e ativá-lo apenas se todos os ingredientes estiverem ativos
             foreach (var prato in pratos)
             {
-                bool todosIngredientesAtivos = prato.Ingredientes.All(i => i.Ativo);
+                // Verifica se todos os ingredientes do prato estão ativos
+                bool todosIngredientesAtivos = prato.Ingredientes.All(i => i.Ativo == true); // Confirmando que Ativo é true
+
                 if (todosIngredientesAtivos)
                 {
-                    var updateInfo = new Prato2update_dto { Ativo = true };
-                    var updatedPrato = await _serviceP.UpdateEstadoPrato(prato.IdPrato, updateInfo);
-                    if (updatedPrato != null)
+                    var info = new Prato2update_dto
                     {
-                        pratosAtualizados.Add(updatedPrato); // Adiciona o prato à lista de pratos atualizados
+                        Ativo = true,
+                    };
+
+                    // Atualiza o prato e adiciona-o à lista de pratos atualizados
+                    var updatedPrato = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                    if (updatedPrato != null) // Verifica se a atualização foi bem-sucedida
+                    {
+                        pratosAtualizados.Add(updatedPrato); // Adiciona o prato à lista se a atualização for bem-sucedida
                     }
                 }
             }
 
+            // Retorna o ingrediente atualizado e a lista de pratos que foram efetivamente ativados
             return Ok(new { ingrediente = theUpdateIngrediente, pratosAtualizados });
         }
     }

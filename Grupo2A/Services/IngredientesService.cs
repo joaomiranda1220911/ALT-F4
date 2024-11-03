@@ -72,18 +72,23 @@ namespace Grupo2A.Services
 
         public async Task<Ingrediente2detail_dto?> UpdateIngrediente(long idIngrediente, bool ativar)
         {
-            var ingrediente = await _repo.GetIngredienteById(idIngrediente);
-            if (ingrediente == null)
+            // Verifica se o ingrediente existe no repositório
+            var theIngrediente = await _repo.GetIngredienteById(idIngrediente);
+            if (theIngrediente == null)
             {
-                return null;
+                return null; // Retorna null se o ingrediente não existir
             }
 
-            // Atualiza o estado do ingrediente
-            ingrediente.Ativo = ativar;
+            // Define o estado do ingrediente com base no parâmetro ativar
+            theIngrediente.Ativo = ativar;
 
-            var updatedIngrediente = await _repo.UpdateIngrediente(ingrediente);
+            // Atualiza o ingrediente no repositório
+            var updatedIngrediente = await _repo.UpdateIngrediente(theIngrediente);
+
+            // Devolve os detalhes atualizados do ingrediente
             return IngredienteDetail(updatedIngrediente);
         }
+
 
         public async Task<Ingrediente2detail_dto?> GetIngredienteById(long idIngrediente)
         {

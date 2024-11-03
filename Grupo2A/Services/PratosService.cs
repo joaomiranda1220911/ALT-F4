@@ -138,6 +138,7 @@ namespace Grupo2A.Services
 
 
 
+
         //Método para transformar um prato em Prato2listing_dto
         public Prato2listing_dto PratoListItem(Prato p)
         {
