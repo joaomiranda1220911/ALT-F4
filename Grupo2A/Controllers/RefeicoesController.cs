@@ -18,18 +18,30 @@ namespace Grupo2A.Controllers
     {
         private readonly CozinhaContext _context;
         private RefeicoesService _service;
+        private PratosService _serviceP;
 
-        public RefeicoesController(CozinhaContext context, PratosService pratoService)
+        public RefeicoesController(CozinhaContext context )
         {
             _context = context;
-            _service = new RefeicoesService(context,pratoService);
+            _service = new RefeicoesService(context);
+            _serviceP=new PratosService(context);
         }
 
-        // US013: Criar uma refeição especificando prato, data, tipo e quantidade.
+
+         //US013 - Criar Refeicao
         [HttpPost]
         public async Task<ActionResult<Refeicao2detail_dto>> PostRefeicao(Refeicao2create_dto refeicao)
         {
-            return await _service.CreateNewRefeicao(refeicao);
+            var (novaRefeicao, mensagem) = await _service.CreateNewRefeicao(refeicao);
+
+            if (novaRefeicao == null)
+            {
+                // Return a BadRequest with the message if refeicao creation failed
+                return BadRequest(mensagem);
+            }
+
+            // Return the created refeicao2detail_dto
+            return CreatedAtAction(nameof(PostRefeicao), new { id = novaRefeicao.IdRefeicao }, novaRefeicao);
         }
 
         //US014: Servir Refeição (decrementar quantidade)

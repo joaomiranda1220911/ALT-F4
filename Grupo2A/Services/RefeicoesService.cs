@@ -16,10 +16,10 @@ namespace Grupo2A.Services
         private EmentasRepository _repoEmenta;
         private readonly PratosService _pratoService;
 
-        public RefeicoesService(CozinhaContext context, PratosService pratoService)
+        public RefeicoesService(CozinhaContext context)
         {
             _context = context;
-            _pratoService = pratoService ?? throw new ArgumentNullException(nameof(pratoService));
+            _pratoService = new PratosService(_context);
             _repo = new RefeicoesRepository(_context);
             _repoPrato = new PratosRepository(_context);
             _repoTipodeRefeicao = new TipoDeRefeicaoRepository(_context);
@@ -28,43 +28,49 @@ namespace Grupo2A.Services
 
 
         // US013: Criar uma refeição especificando prato, data, tipo e quantidade
-        public async Task<Refeicao2detail_dto> CreateNewRefeicao(Refeicao2create_dto info)
+        public async Task<(Refeicao? refeicao, string? mensagem)> CreateNewRefeicao(Refeicao2create_dto info)
         {
+            if (info == null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
             // Verifica se o prato está ativo
-            var pratoAtivo = await _pratoService.IsPratoAtivo(info.PratoId);
+            var pratoAtivo = await _pratoService.IsPratoAtivo(info.IdPrato);
             if (!pratoAtivo)
             {
-                throw new InvalidOperationException("O prato especificado não está ativo.");
+                return (null, "O prato especificado não está ativo.");
             }
 
-            // Carrega o prato e o tipo de refeição correspondentes
-            var prato = await _repoPrato.GetPratoById(info.PratoId);
-            var tipoRefeicao = await _repoTipodeRefeicao.GetTipoRefeicaoById(info.TipoRefeicaoId);
-
+            // Carrega o prato correspondente
+            var prato = await _repoPrato.GetPratoById(info.IdPrato);
             if (prato == null)
             {
-                throw new InvalidOperationException("Prato não encontrado.");
+                return (null, "Prato não encontrado.");
             }
 
+            // Valida TipoRefeicao
+            var tipoRefeicao = await _repoTipodeRefeicao.GetTipoRefeicaoById(info.TipoRefeicaoId);
             if (tipoRefeicao == null)
             {
-                throw new InvalidOperationException("Tipo de refeição não encontrado.");
+                return (null, "Tipo de refeição não encontrado.");
             }
 
             // Cria uma nova refeição
             Refeicao novaRefeicao = new Refeicao
             {
-                PratoId = prato.IdPrato,
-                Data = info.Data, // Preenche a data da refeição
-                TipoRefeicaoId = tipoRefeicao.Id, // Preenche o ID do tipo de refeição
-                QuantidadeProduzida = info.QuantidadeProduzida, // Preenche a quantidade produzida
-                Prato = prato, // Inicializa a propriedade de navegação Prato
-                TipoRefeicao = tipoRefeicao // Inicializa a propriedade de navegação TipoRefeicao
+                QuantidadeProduzida = info.QuantidadeProduzida,
+                Data = info.Data, // A data da refeição deve ser recebida do dto
+                TipoRefeicao = tipoRefeicao, // Atribuindo o tipo de refeição
+                Prato = prato // Atribuindo o prato à refeição
             };
 
-            // Retorna os detalhes da nova refeição criada
-            return RefeicaoDetail(await _repo.AddRefeicao(novaRefeicao));
+            // Adiciona a nova refeição ao repositório
+            await _repo.AddRefeicao(novaRefeicao);
+
+            return (novaRefeicao, null);
         }
+
 
         private Refeicao2detail_dto RefeicaoDetail(Refeicao r)
         {
@@ -72,8 +78,8 @@ namespace Grupo2A.Services
             {
                 IdRefeicao = r.IdRefeicao,
                 Data = r.Data,
-                TipoRefeicao = r.TipoRefeicao?.Nome ?? "N/A",  // Usando operador nulo-coalescente
-                Prato = r.Prato?.Nome ?? "N/A", // Usando operador nulo-coalescente
+                Prato = r.Prato, 
+                tipoDeRefeicao =r.TipoRefeicao,
                 QuantidadeProduzida = r.QuantidadeProduzida
             };
         }
@@ -123,8 +129,8 @@ namespace Grupo2A.Services
             var pratosDisponiveis = await _context.Pratos
             // Filtra os pratos de acordo com o tipo de refeição, data e quantidade disponível
            .Where(p => p.TipoRefeicao != null &&
-                       p.TipoRefeicao.ToString() == tipoRefeicao && 
-                       p.DataServico.Date == data.Date && 
+                       p.TipoRefeicao.ToString() == tipoRefeicao &&
+                       p.DataServico.Date == data.Date &&
                        p.Quantidade > 0)
            .Select(p => new Prato2listing_dto
            {

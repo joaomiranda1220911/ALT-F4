@@ -29,9 +29,9 @@ namespace Grupo2A.Repositories
 
 
         // Método para obter TipoDeRefeicao pelo Id
-        public async Task<TipoDeRefeicao?> GetTipoRefeicaoById(long tipoRefeicaoId)
+        public async Task<TipoDeRefeicao?> GetTipoRefeicaoById(long Id)
         {
-            return await _context.TiposDeRefeicao.FindAsync(tipoRefeicaoId);
+            return await _context.TiposDeRefeicao.FindAsync(Id);
         }
 
         //método usado para ver se ja existe um tipo de refeicao com esse nome 
