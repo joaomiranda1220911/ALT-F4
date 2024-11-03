@@ -78,16 +78,21 @@ namespace Grupo2A.Controllers
             return Ok("Refeição eliminada com sucesso.");
         }
 
-        //US016: Apresentar ementa disponível com base na data, tipo e quantidade[HttpPost("filtrar")]
+        //US016: Apresentar ementa disponível com base na data, tipo e quantidade[HttpPost("filtrar")][HttpPost("filtrar")]
+        [HttpPost("filtrar")]
         public async Task<ActionResult<IEnumerable<Refeicao>>> GetRefeicaoByDataETipo(
-            [FromBody] Refeicao2listing_dto request)
+                    [FromBody] Refeicao2listing_dto request)
         {
-            // Adiciona um log para verificar se o método foi chamado
-            Console.WriteLine($"Requisição recebida: Data = {request.Data}, TipoRefeicao = {request.TipoRefeicao}");
+            if (request == null)
+            {
+                return BadRequest("Request não pode ser nulo.");
+            }
 
+            // Obtém a data e o tipo de refeição do DTO
             var data = request.Data;
             var tipoRefeicao = request.TipoRefeicao;
 
+            // Implementa a lógica para obter as refeições com base na data e tipo de refeição
             var refeicoes = await _service.GetRefeicaoByDataETipo(data, tipoRefeicao);
 
             if (refeicoes == null || !refeicoes.Any())

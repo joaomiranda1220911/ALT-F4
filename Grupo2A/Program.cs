@@ -3,8 +3,14 @@ using Cozinha_BE.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors (options =>{
-    options.AddPolicy(name:"MyPolicy", policy => { policy.WithOrigins ("https://localhost:8080").AllowAnyHeader().AllowAnyMethod();});
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "MyPolicy", policy =>
+    {
+        policy.WithOrigins("https://localhost:5057")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
 });
 
 // Add services to the container.

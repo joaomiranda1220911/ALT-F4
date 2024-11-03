@@ -44,19 +44,12 @@ namespace Cozinha_BE.Model.Repositories
 
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        public async Task<Refeicao> GetRefeicaoByDataETipo(DateTime data, TipoDeRefeicao tipoRefeicao)
+        // Obter refeições com base na data e tipo de refeição
+        public async Task<IEnumerable<Refeicao>> GetRefeicaoByDataETipo(DateTime data, TipoDeRefeicao tipoRefeicao)
         {
-            var refeicao = await _context.Refeicoes
-                .Where(r => r.Data.Date == data.Date && r.TipoRefeicao == tipoRefeicao)
-                .FirstOrDefaultAsync();
-
-            // Se a refeição for nula, lança uma exceção ou retorna um valor padrão
-            if (refeicao == null)
-            {
-                throw new KeyNotFoundException($"Refeição para a data {data.ToShortDateString()} e tipo {tipoRefeicao} não encontrada.");
-            }
-
-            return refeicao;
+            return await _context.Refeicoes
+                .Where(r => r.Data.Date == data.Date && r.TipoRefeicao.Id == tipoRefeicao.Id) // Ajusta a comparação
+                .ToListAsync();
         }
 
     }
