@@ -45,8 +45,9 @@ namespace Grupo2A.Repositories
         public async Task<IEnumerable<Prato>> GetPratosByIngredienteId(long ingredienteId)
         {
             return await _context.Pratos
-                .Where(p => p.Ingredientes.Any(i => i.IdIngrediente == ingredienteId)) // Filtra pratos que contêm o ingrediente
-                .ToListAsync(); // Executa a consulta e retorna a lista de pratos
+                .Include(p => p.Ingredientes)
+                .Where(p => p.Ingredientes.Any(i => i.IdIngrediente == ingredienteId))
+                .ToListAsync();
         }
 
 

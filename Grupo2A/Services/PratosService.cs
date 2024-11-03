@@ -117,15 +117,19 @@ namespace Grupo2A.Services
                 return null; // Retorna null se o prato não for encontrado
             }
 
-            // Atualiza o estado de Ativo usando info.Ativo se info estiver presente
-            if (info != null && info.Ativo != null)
+            // Se info.Ativo for verdadeiro, verifica o estado dos ingredientes
+            if (info != null && info.Ativo == true)
             {
-                thePrato.Ativo = info.Ativo;
+                // Verifica se todos os ingredientes do prato estão ativos
+                bool todosIngredientesAtivos = thePrato.Ingredientes.All(ing => ing.Ativo);
+
+                // Ativa o prato somente se todos os ingredientes estiverem ativos
+                thePrato.Ativo = todosIngredientesAtivos;
             }
-            // Usa prato.Ativo se info não foi fornecido e prato está presente
-            else if (prato != null)
+            else if (info != null && info.Ativo == false)
             {
-                thePrato.Ativo = prato.Ativo;
+                // Desativa o prato se info.Ativo for falso
+                thePrato.Ativo = false;
             }
 
             // Atualiza o prato no repositório
@@ -160,6 +164,19 @@ namespace Grupo2A.Services
                 DataServico = p.DataServico
             };
         }
+
+        public async Task UpdateEstadoDosPratosQueContemIngrediente(long ingredienteId)
+        {
+            // Obtém todos os pratos que contêm esse ingrediente
+            var pratos = await _repo.GetPratosByIngredienteId(ingredienteId);
+
+            foreach (var prato in pratos)
+            {
+                // Reavalia o estado do prato com base nos estados dos ingredientes
+                await UpdateEstadoPrato(prato.IdPrato, new Prato2update_dto { Ativo = prato.Ativo });
+            }
+        }
+
 
         //US009
         public async Task<bool?> GetEstadoDePratoById(long pratoId)
