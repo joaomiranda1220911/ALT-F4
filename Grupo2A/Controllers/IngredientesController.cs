@@ -119,12 +119,13 @@ namespace Grupo2A.Controllers
                 return NoContent();
             }
 
-            // Crie uma lista para armazenar os pratos atualizados
+            // Lista para armazenar os pratos que foram efetivamente ativados
             var pratosAtualizados = new List<Prato2detail_dto>();
 
-            // Verificar o estado de cada prato e ativá-lo se todos os ingredientes estiverem ativos
+            // Verificar o estado de cada prato e ativá-lo apenas se todos os ingredientes estiverem ativos
             foreach (var prato in pratos)
             {
+                // Verifica se todos os ingredientes do prato estão ativos
                 bool todosIngredientesAtivos = prato.Ingredientes.All(i => i.Ativo);
 
                 if (todosIngredientesAtivos)
@@ -134,16 +135,16 @@ namespace Grupo2A.Controllers
                         Ativo = true,
                     };
 
-                    // Atualiza o prato e adiciona à lista de pratos atualizados
+                    // Atualiza o prato e adiciona-o à lista de pratos atualizados
                     var updatedPrato = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
                     pratosAtualizados.Add(updatedPrato);
-                    };
                 }
-            
+            }
 
-            // Retorna o ingrediente atualizado e a lista de pratos atualizados
+            // Retorna o ingrediente atualizado e a lista de pratos que foram efetivamente ativados
             return Ok(new { ingrediente = theUpdateIngrediente, pratosAtualizados });
         }
+
 
     }
 }
