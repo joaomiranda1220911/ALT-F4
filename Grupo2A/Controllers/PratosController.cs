@@ -60,9 +60,23 @@ namespace Grupo2A.Controllers
 
             return Ok(updatedPrato); // Retorna os detalhes do prato atualizado
         }
+
+        //US009
+        [HttpGet("{id}/estado")]
+        public async Task<ActionResult<bool?>> GetEstadoDePrato(long id)
+        {
+            var estado = await _service.GetEstadoDePratoById(id);
+            if (estado == null)
+            {
+                return NotFound(); // Retorna 404 se o prato não for encontrado
+            }
+            return Ok(estado); // Retorna o estado do prato
+        }
+
+
     }
 
-    
+
 
 }
 
