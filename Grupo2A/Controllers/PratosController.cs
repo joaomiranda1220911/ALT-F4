@@ -70,7 +70,7 @@ namespace Grupo2A.Controllers
             {
                 return NotFound(); // Retorna 404 se o prato não for encontrado
             }
-            return Ok(estado); // Retorna o estado do prato
+            return Ok(estado); // Retorna o estado do prato 
         }
 
 
