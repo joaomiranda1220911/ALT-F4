@@ -97,7 +97,6 @@ namespace Grupo2A.Controllers
                     return StatusCode(500, $"Erro ao inativar o prato com ID {prato.IdPrato}: {ex.Message}");
                 }
             }
-
             return Ok(theUpdateIngrediente);
         }
 
