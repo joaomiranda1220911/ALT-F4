@@ -22,7 +22,6 @@ namespace Cozinha_BE.Model.Repositories
             if (refeicao == null)
             {
                 throw new KeyNotFoundException($"Refeição com ID {id} não encontrada.");
-                // ou retorna um valor padrão, dependendo da lógica do teu sistema
             }
 
             return refeicao;

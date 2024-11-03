@@ -8,6 +8,7 @@ using Grupo2A.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
+
 namespace Grupo2A.Services
 {
     public class PratosService
@@ -16,13 +17,16 @@ namespace Grupo2A.Services
         private readonly CozinhaContext _context;
         private readonly PratosRepository _repo;
         private readonly TipoDeRefeicaoRepository _repoTipoDeRefeicao;
-
+        private readonly TipoDePratoRepository _repoTipoDePrato;
+        private readonly IngredientesRepository _repoIngredientes;
         public PratosService(CozinhaContext context)
         {
             // Garante que o context não seja nulo
             _context = context ?? throw new ArgumentNullException(nameof(context));
             _repo = new PratosRepository(_context);
             _repoTipoDeRefeicao = new TipoDeRefeicaoRepository(_context);
+            _repoTipoDePrato = new TipoDePratoRepository(_context);
+            _repoIngredientes = new IngredientesRepository(_context);
 
         }
 
@@ -36,32 +40,60 @@ namespace Grupo2A.Services
         }
 
         // US007 - Criar Prato
-        public async Task<Prato2detail_dto> CreateNewPrato(Prato2create_dto info)
+        [HttpPost]
+        public async Task<IActionResult> CreateNewPrato([FromBody] Prato2create_dto pratoDto)
         {
-            // Verifica se os ingredientes existem na base de dados
-            var ingredientesExistentes = await _context.Ingredientes
-                .Where(i => info.Ingredientes.Select(ing => ing.IdIngrediente).Contains(i.IdIngrediente))
-                .ToListAsync();
-
-            if (ingredientesExistentes.Count != info.Ingredientes.Count)
+            // Validar e obter o tipo de prato pelo ID
+            var tipoPrato = await _repoTipoDePrato.GetTipoDePratoById(pratoDto.TipoPratoId);
+            if (tipoPrato == null)
             {
-                throw new ArgumentException("Um ou mais ingredientes não foram encontrados.");
+                return NotFound();
             }
 
-            Prato newPrato = new Prato
+            // Validar e obter o tipo de refeição, se fornecido
+            TipoDeRefeicao? tipoRefeicao = null;
+            if (pratoDto.TipoRefeicaoId.HasValue)
             {
-                Nome = info.Nome,
-                TipoPrato = info.TipoPrato,
-                Ingredientes = ingredientesExistentes, // Associa apenas ingredientes existentes
-                Receita = info.Receita,
-                Ativo = info.Ativo,
-                Quantidade = info.Quantidade ?? 0,
-                DataServico = info.DataServico ?? DateTime.Now,
-                TipoRefeicao = info.TipoRefeicao
+                tipoRefeicao = await _repoTipoDeRefeicao.GetTipoDeRefeicaoById(pratoDto.TipoRefeicaoId.Value);
+                if (tipoRefeicao == null)
+                {
+                    return NotFound(new { mensagem = "Tipo de refeição não encontrado." });
+                }
+            }
+
+            // Obter os ingredientes existentes pelos IDs
+            var ingredientesAssociados = new List<Ingrediente>();
+            foreach (var ingredienteId in pratoDto.IngredientesIds)
+            {
+                var ingrediente = await _repoIngredientes.GetIngredienteById(ingredienteId);
+                if (ingrediente == null)
+                {
+                    return NotFound(new { mensagem = $"Ingrediente com ID {ingredienteId} não encontrado." });
+                }
+                ingredientesAssociados.Add(ingrediente);
+            }
+
+            // Cria uma nova instância do prato a ser adicionado ao repositório
+            var novoPrato = new Prato
+            {
+                Nome = pratoDto.Nome,
+                TipoPrato = tipoPrato,
+                Ingredientes = ingredientesAssociados,
+                Receita = pratoDto.Receita,
+                Ativo = pratoDto.Ativo,
+                Quantidade = pratoDto.Quantidade,
+                DataServico = pratoDto.DataServico,
+                TipoRefeicao = tipoRefeicao
             };
 
-            return PratoDetail(await _repo.AddPrato(newPrato));
+            // Adiciona o novo prato ao repositório
+            await _repo.AddPratoAsync(novoPrato);
+            await _repo.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetPratoById), new { id = novoPrato.Id }, novoPrato);
         }
+
+
 
         // Método para transformar um Prato em Prato2detail_dto
         private Prato2detail_dto PratoDetail(Prato p)
