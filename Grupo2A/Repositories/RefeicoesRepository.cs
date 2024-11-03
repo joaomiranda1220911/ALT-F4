@@ -18,7 +18,7 @@ namespace Cozinha_BE.Model.Repositories
         {
             var refeicao = await _context.Refeicoes.FindAsync(id);
 
-            // Se a refeição for nula, poderias lançar uma exceção ou retornar um valor padrão
+            
             if (refeicao == null)
             {
                 throw new KeyNotFoundException($"Refeição com ID {id} não encontrada.");
@@ -44,7 +44,6 @@ namespace Cozinha_BE.Model.Repositories
 
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        // Obter refeições com base na data e tipo de refeição
         public async Task<IEnumerable<Refeicao>> GetRefeicaoByDataETipo(DateTime data, TipoDeRefeicao tipoRefeicao)
         {
             return await _context.Refeicoes

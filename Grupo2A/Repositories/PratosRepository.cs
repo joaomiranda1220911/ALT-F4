@@ -41,21 +41,6 @@ namespace Grupo2A.Repositories
                 throw;
             }
         }
-  
-        // public async Task<Prato> UpdateEstadoPratoByIngrediente(Prato prato)
-        // {
-        //     _context.Entry(prato).State = EntityState.Modified;
-
-        //     try
-        //     {
-        //         await _context.SaveChangesAsync();
-        //         return prato;
-        //     }
-        //     catch (DbUpdateConcurrencyException)
-        //     {
-        //         throw;
-        //     }
-        // }
         public async Task<IEnumerable<Prato>> GetPratosByIngredienteId(long ingredienteId)
         {
             return await _context.Pratos

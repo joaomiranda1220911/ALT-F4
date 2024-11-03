@@ -49,7 +49,7 @@ namespace Grupo2A.Repositories
         {
             return await _context.Pratos
                 .Where(p => p.Ingredientes.Any(i => i.IdIngrediente == ingredienteId)) // Filtra pratos que contêm o ingrediente
-                .ToListAsync(); // Executa a consulta e retorna a lista de pratos
+                .ToListAsync(); // Executa e retorna a lista de pratos
         }
     }
 }

@@ -90,7 +90,7 @@ namespace Grupo2A.Controllers
             }
 
             // Ativar o ingrediente
-            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente, true); // Ativar o ingrediente
+            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente, true); 
             if (theUpdateIngrediente == null)
             {
                 return NotFound();
@@ -103,14 +103,14 @@ namespace Grupo2A.Controllers
                 return NoContent();
             }
 
-            // Lista para armazenar os pratos que foram efetivamente ativados
-            var pratosAtualizados = new List<Prato2detail_dto>(); // Mudei para Prato2detail_dto
+            // Lista para armazenar os pratos que foram ativados
+            var pratosAtualizados = new List<Prato2detail_dto>(); 
 
             // Verificar o estado de cada prato e ativá-lo apenas se todos os ingredientes estiverem ativos
             foreach (var prato in pratos)
             {
                 // Verifica se todos os ingredientes do prato estão ativos
-                bool todosIngredientesAtivos = prato.Ingredientes.All(i => i.Ativo == true); // Confirmando que Ativo é true
+                bool todosIngredientesAtivos = prato.Ingredientes.All(i => i.Ativo == true); // Confirma que Ativo é true
 
                 if (todosIngredientesAtivos)
                 {
@@ -123,7 +123,7 @@ namespace Grupo2A.Controllers
                     var updatedPrato = await _serviceP.UpdateEstadoPratoByIngrediente(prato.IdPrato, info);
                     if (updatedPrato != null) // Verifica se a atualização foi bem-sucedida
                     {
-                        pratosAtualizados.Add(updatedPrato); // Adiciona o prato à lista se a atualização for bem-sucedida
+                        pratosAtualizados.Add(updatedPrato); // Adiciona o prato à lista se for bem-sucedido
                     }
                 }
             }

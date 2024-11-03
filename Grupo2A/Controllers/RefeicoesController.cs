@@ -36,11 +36,11 @@ namespace Grupo2A.Controllers
 
             if (novaRefeicao == null)
             {
-                // Return a BadRequest with the message if refeicao creation failed
+                // Retorna um BadRequest com a mensagem no caso de a criação falhar
                 return BadRequest(mensagem);
             }
 
-            // Return the created refeicao2detail_dto
+            
             return CreatedAtAction(nameof(PostRefeicao), new { id = novaRefeicao.IdRefeicao }, novaRefeicao);
         }
 
@@ -48,7 +48,7 @@ namespace Grupo2A.Controllers
         [HttpPost("{idPrato}/servir")]
         public async Task<ActionResult> ServirRefeicao(long idPrato)
         {
-            // Chama o serviço para servir uma refeição (decrementar a quantidade)
+            // Chama o Service para servir uma refeição (decrementar a quantidade)
             var prato = await _service.ServirRefeicao(idPrato);
 
             // Verifica se o prato existe e possui quantidade disponível
@@ -65,7 +65,7 @@ namespace Grupo2A.Controllers
         [HttpDelete("{idRefeicao}")]
         public async Task<ActionResult> DeleteRefeicao(long idRefeicao)
         {
-            // Chama o serviço para remover a refeição
+            // Chama o Service para remover a refeição
             var result = await _service.DeleteRefeicao(idRefeicao);
 
             // Verifica se a refeição foi encontrada e removida

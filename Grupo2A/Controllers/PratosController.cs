@@ -34,11 +34,11 @@ namespace Grupo2A.Controllers
 
             if (novoPrato == null)
             {
-                // Return a BadRequest with the message if prato creation failed
+                // Retorna um BadRequest com a mensagem no caso de a criação falhar
                 return BadRequest(mensagem);
             }
 
-            // Return the created Prato2detail_dto
+            
             return CreatedAtAction(nameof(PostPrato), new { id = novoPrato.IdPrato }, novoPrato);
         }
 
@@ -52,7 +52,7 @@ namespace Grupo2A.Controllers
                 return BadRequest("As informações do prato, incluindo o estado Ativo, são necessárias.");
             }
 
-            // Chama o serviço para atualizar o estado do prato
+            // Chama o Service para atualizar o estado do prato
             var updatedPrato = await _service.UpdateEstadoPratoByIngrediente(id, info);
 
             // Retorna NotFound se o prato não existir
@@ -74,7 +74,7 @@ namespace Grupo2A.Controllers
                 return BadRequest("As informações do prato, incluindo o estado Ativo, são necessárias.");
             }
 
-            // Chama o serviço para atualizar o estado do prato
+            // Chama o Service para atualizar o estado do prato
             var updatedPrato = await _service.UpdateEstadoPrato(id, info);
 
             // Retorna NotFound se o prato não existir

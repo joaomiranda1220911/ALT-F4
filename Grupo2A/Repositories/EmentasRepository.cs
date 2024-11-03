@@ -22,7 +22,7 @@ namespace Grupo2A.Repositories
             // Adiciona a refeição ao contexto
             await _context.Refeicoes.AddAsync(refeicao);
 
-            // Salva as alterações na base de dados
+            // Guarda as alterações na base de dados
             await _context.SaveChangesAsync();
 
             // Retorna a refeição adicionada (incluindo o ID gerado)
