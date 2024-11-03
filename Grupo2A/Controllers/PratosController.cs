@@ -42,7 +42,24 @@ namespace Grupo2A.Controllers
             return CreatedAtAction(nameof(PostPrato), new { id = novoPrato.IdPrato }, novoPrato);
         }
 
+        // PUT ou PATCH para atualizar o estado do prato
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEstadoPrato(long id, [FromBody] Prato2update_dto info)
+        {
+            if (info == null)
+            {
+                return BadRequest("As informações do prato não podem ser nulas.");
+            }
 
+            var updatedPrato = await _service.UpdateEstadoPrato(id, info);
+
+            if (updatedPrato == null)
+            {
+                return NotFound($"Prato com ID {id} não encontrado.");
+            }
+
+            return Ok(updatedPrato); // Retorna os detalhes do prato atualizado
+        }
     }
 
 }
