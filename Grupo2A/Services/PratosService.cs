@@ -163,7 +163,9 @@ namespace Grupo2A.Services
         //US009
         public async Task<bool?> GetEstadoDePratoById(long pratoId)
         {
-            return await _repo.GetEstadoDePratoById(pratoId);
+            // Usa diretamente o método IsPratoAtivo para verificar o estado do prato
+            var prato = await _repo.GetPratoById(pratoId);
+            return prato?.Ativo;
         }
     }
 }
