@@ -126,21 +126,11 @@ namespace Grupo2A.Services
 
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        public async Task<Refeicao2detail_dto> GetRefeicaoByDataETipo(DateTime data, TipoDeRefeicao tipoRefeicao)
-    {
-        var refeicao = await _repo.GetRefeicaoByDataETipo(data, tipoRefeicao);
-
-        // Mapeamento para Refeicao2detail_dto, se necessário
-        var refeicaoDto = new Refeicao2detail_dto
+        public async Task<IEnumerable<Refeicao>> GetRefeicaoByDataETipo(DateTime data, TipoDeRefeicao tipoRefeicao)
         {
-            IdRefeicao = refeicao.IdRefeicao,
-            Data = refeicao.Data,
-            Prato = refeicao.Prato, 
-            tipoDeRefeicao = refeicao.TipoRefeicao,
-            QuantidadeProduzida = refeicao.QuantidadeProduzida
-        };
-
-        return refeicaoDto;
-    }
+            return await _context.Refeicoes
+                .Where(r => r.Data == data && r.TipoRefeicao == tipoRefeicao)
+                .ToListAsync();
+        }
     }
 }

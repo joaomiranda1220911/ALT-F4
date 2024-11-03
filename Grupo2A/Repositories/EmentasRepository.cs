@@ -28,17 +28,5 @@ namespace Grupo2A.Repositories
             // Retorna a refeição adicionada (incluindo o ID gerado)
             return refeicao;
         }
-
-
-        public async Task<IEnumerable<Prato>> GetEmentaDisponivel(DateTime data, int tipoDeRefeicaoId)
-        {
-            return await _context.Pratos
-            .Include(p => p.TipoPrato)
-            .Include(p => p.TipoRefeicao)
-            .Include(p => p.Ingredientes)
-            .Where(p => p.DataServico.Date == data.Date && p.TipoRefeicao != null && p.TipoRefeicao.Id == tipoDeRefeicaoId)
-            .Where(p => p.Quantidade > 0 && p.Ativo == true)
-            .ToListAsync();
-        }
     }
 }

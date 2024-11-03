@@ -23,37 +23,37 @@ namespace Grupo2A.Controllers
         }
 
 
-        //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        [HttpGet("ementa")]
-        public async Task<ActionResult<Prato2listing_dto>> ApresentarEmenta(
-            [FromQuery] string tipoRefeicao, //Recebe o tipo de refeição como parâmetro de consulta
-            [FromQuery] DateTime data)
-        {
+        // //US016: Apresentar ementa disponível com base na data, tipo e quantidade
+        // [HttpGet("ementa")]
+        // public async Task<ActionResult<Prato2listing_dto>> ApresentarEmenta(
+        //     [FromQuery] string tipoRefeicao, //Recebe o tipo de refeição como parâmetro de consulta
+        //     [FromQuery] DateTime data)
+        // {
 
-            var ementa = await _service.GetEmentaDisponivel(tipoRefeicao, data);
-            if (ementa == null || !ementa.Any())
-            {
-                return NotFound("Nenhuma ementa disponível.");
-            }
-            return Ok(ementa);
-        }
+        //     var ementa = await _service.GetEmentaDisponivel(tipoRefeicao, data);
+        //     if (ementa == null || !ementa.Any())
+        //     {
+        //         return NotFound("Nenhuma ementa disponível.");
+        //     }
+        //     return Ok(ementa);
+        // }
         
-        //Endpoint para obter a ementa disponível
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Prato>>> GetEmentaDisponivel(
-            [FromQuery] DateTime data,
-            [FromQuery] int tipoDeRefeicaoId)
-        {
-            var ementa = await _service.GetEmentaDisponivel(data, tipoDeRefeicaoId);
-            if (!ementa.Any())
-            {
-                return NotFound("Nenhuma ementa disponível");
-            }
-            else
-            {
-                return Ok(ementa);
-            }
-        }
+        // //Endpoint para obter a ementa disponível
+        // [HttpGet]
+        // public async Task<ActionResult<IEnumerable<Prato>>> GetEmentaDisponivel(
+        //     [FromQuery] DateTime data,
+        //     [FromQuery] int tipoDeRefeicaoId)
+        // {
+        //     var ementa = await _service.GetEmentaDisponivel(data, tipoDeRefeicaoId);
+        //     if (!ementa.Any())
+        //     {
+        //         return NotFound("Nenhuma ementa disponível");
+        //     }
+        //     else
+        //     {
+        //         return Ok(ementa);
+        //     }
+        // }
 
     }
 }

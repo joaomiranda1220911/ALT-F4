@@ -79,18 +79,22 @@ namespace Grupo2A.Controllers
         }
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
-        [HttpGet("data/tipoRefeicao")]
-        public async Task<IActionResult> GetRefeicaoByDataETipo([FromBody] DateTime data, [FromBody] TipoDeRefeicao tipoRefeicao)
+        [HttpPost("refeicoes/filtrar")]
+        public async Task<ActionResult<IEnumerable<Refeicao>>> GetRefeicaoByDataETipo(
+    [FromBody] Refeicao2listing_dto request)
         {
-            try
+            var data = request.Data;
+            var tipoRefeicao = request.TipoRefeicao;
+
+            // Implementa a lógica para obter as refeições com base na data e tipo de refeição
+            var refeicoes = await _service.GetRefeicaoByDataETipo(data, tipoRefeicao);
+
+            if (refeicoes == null || !refeicoes.Any())
             {
-                var refeicaoDto = await _service.GetRefeicaoByDataETipo(data, tipoRefeicao);
-                return Ok(refeicaoDto);
+                return NotFound("Nenhuma refeição disponível para os critérios especificados.");
             }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
+
+            return Ok(refeicoes);
         }
     }
 }
