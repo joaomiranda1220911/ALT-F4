@@ -12,6 +12,8 @@ using Cozinha_BE.Model.DTO;
 
 namespace Grupo2A.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class RefeicoesController : ControllerBase
     {
         private readonly CozinhaContext _context;
@@ -24,6 +26,7 @@ namespace Grupo2A.Controllers
         }
 
         // US013: Criar uma refeição especificando prato, data, tipo e quantidade.
+        [HttpPost]
         public async Task<ActionResult<Refeicao2detail_dto>> PostRefeicao(Refeicao2create_dto refeicao)
         {
             return await _service.CreateNewRefeicao(refeicao);

@@ -13,6 +13,8 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Grupo2A.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class PratosController : ControllerBase
     {
         private readonly CozinhaContext _context;
@@ -25,6 +27,7 @@ namespace Grupo2A.Controllers
         }
 
         //US007 - Criar Prato
+        [HttpPost]
         public async Task<ActionResult<Prato2detail_dto>> PostPrato (Prato2create_dto prato){
             return await _service.CreateNewPrato(prato);
         }
