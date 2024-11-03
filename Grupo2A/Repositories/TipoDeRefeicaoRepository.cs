@@ -40,6 +40,5 @@ namespace Grupo2A.Repositories
             return await _context.TiposDeRefeicao
                                  .FirstOrDefaultAsync(tr => tr.Nome == nomeTipoRefeicao);
         }
-
     }
 }
