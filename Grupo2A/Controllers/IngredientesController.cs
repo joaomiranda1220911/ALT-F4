@@ -25,7 +25,7 @@ namespace Grupo2A.Controllers
             _service = new IngredientesService(context);
             _serviceP = new PratosService(context);
         }
-        
+
         [HttpPost]
         public async Task<ActionResult<Ingrediente2detail_dto>> PostIngrediente(Ingrediente2create_dto ingrediente)
         {
@@ -55,38 +55,52 @@ namespace Grupo2A.Controllers
                 return BadRequest();
             }
 
-            // Inativar o ingrediente
+            // Inativa o ingrediente
             var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente);
             if (theUpdateIngrediente == null)
             {
-                return NotFound();
+                return NotFound("Ingrediente não encontrado ou não foi possível inativar.");
             }
 
             // Obter todos os pratos que contêm este ingrediente
             var pratos = await _service.GetPratosByIngredienteId(idIngrediente);
             if (pratos == null || !pratos.Any())
             {
-                return NoContent();
+                return Ok("Ingrediente inativado com sucesso. Nenhum prato associado encontrado para inativação.");
+            }
+
+            // Verificação de serviço de pratos antes de continuar
+            if (_serviceP == null)
+            {
+                return StatusCode(500, "Erro interno: serviço de pratos não está configurado.");
             }
 
             // Inativar cada prato associado ao ingrediente
             foreach (var prato in pratos)
             {
-                prato.Ativo = false;
-                var info = new Prato2update_dto
+                try
                 {
-                    Ativo = prato.Ativo,
-                };
+                    prato.Ativo = false;
+                    var info = new Prato2update_dto
+                    {
+                        Ativo = false
+                    };
 
-                var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
-                if (updateResult == null)
+                    var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                    if (updateResult == null)
+                    {
+                        return StatusCode(500, $"Erro ao atualizar o estado do prato com ID {prato.IdPrato}.");
+                    }
+                }
+                catch (Exception ex)
                 {
-                    return StatusCode(500, "Erro ao atualizar o prato.");
+                    return StatusCode(500, $"Erro ao inativar o prato com ID {prato.IdPrato}: {ex.Message}");
                 }
             }
 
-            return Ok(theUpdateIngrediente);
+            return Ok("Ingrediente e pratos associados foram inativados com sucesso.");
         }
+
 
         // PUT: api/Ingredientes/ativar/{idIngrediente}
         [HttpPut("ativar/{idIngrediente}")]
