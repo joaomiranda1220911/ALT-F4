@@ -58,5 +58,14 @@ namespace Grupo2A.Repositories
         //     }
 
         // }
+        public async Task<bool?> GetEstadoDePratoById(long pratoId)
+        {
+            var prato = await _context.Pratos.FindAsync(pratoId);
+            if (prato == null)
+            {
+                return null; // Retorna null se o prato não for encontrado
+            }
+            return prato.Ativo; // Retorna o estado (Ativo ou Inativo)
+        }
     }
 }

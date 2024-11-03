@@ -81,8 +81,8 @@ namespace Grupo2A.Services
                 Ingredientes = ingredientesAssociados,
                 Receita = pratoDto.Receita,
                 Ativo = pratoDto.Ativo,
-                Quantidade = pratoDto.Quantidade , // Use 0 if null
-                DataServico = pratoDto.DataServico , // Use current date if null
+                Quantidade = pratoDto.Quantidade, // Use 0 if null
+                DataServico = pratoDto.DataServico, // Use current date if null
                 TipoRefeicao = tipoRefeicao
             };
 
@@ -122,7 +122,7 @@ namespace Grupo2A.Services
             // Atualiza o estado de Ativo usando o valor de info.Ativo
             if (info != null)
             {
-            // Como Ativo é requerido em Prato2update_dto, não precisa de verificação adicional.
+                // Como Ativo é requerido em Prato2update_dto, não precisa de verificação adicional.
                 thePrato.Ativo = info.Ativo;
             }
             // Se info não foi fornecido, mas prato foi passado, usa prato.Ativo.
@@ -158,6 +158,12 @@ namespace Grupo2A.Services
                 Quantidade = p.Quantidade,
                 DataServico = p.DataServico
             };
+        }
+
+        //US009
+        public async Task<bool?> GetEstadoDePratoById(long pratoId)
+        {
+            return await _repo.GetEstadoDePratoById(pratoId);
         }
     }
 }
