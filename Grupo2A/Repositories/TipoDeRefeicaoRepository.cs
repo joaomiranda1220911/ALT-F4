@@ -1,4 +1,5 @@
 using Cozinha_BE.Model;
+using Cozinha_BE.Model.DTO;
 using Microsoft.EntityFrameworkCore;
 
 namespace Grupo2A.Repositories
@@ -39,5 +40,11 @@ namespace Grupo2A.Repositories
             return await _context.TiposDeRefeicao
                                  .FirstOrDefaultAsync(tr => tr.Nome == nomeTipoRefeicao);
         }
+
+        public async Task<TipoDeRefeicao?> GetTipoRefeicaoById(int id)
+        {
+            return await _context.TiposDeRefeicao.FindAsync(id);
+        }
+
     }
 }

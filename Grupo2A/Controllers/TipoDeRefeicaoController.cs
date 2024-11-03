@@ -47,5 +47,17 @@ namespace Grupo2A.Controllers
             var tiposRefeicao = await _service.GetAllTiposRefeicao();
             return Ok(tiposRefeicao);
         }
+
+        // GET: api/TipoDeRefeicao/{id}
+        [HttpGet("{id}")]
+        public async Task<ActionResult<TipoRefeicao2detail_dto>> GetTipoRefeicaoById(int id)
+        {
+            var tipoRefeicao = await _service.GetTipoRefeicaoById(id);
+            if (tipoRefeicao == null)
+            {
+                return NotFound(); // Retorna 404 se não encontrar o tipo de refeição
+            }
+            return Ok(tipoRefeicao); // Retorna 200 com os detalhes do tipo de refeição
+        }
     }
 }
