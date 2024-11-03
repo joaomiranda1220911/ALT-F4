@@ -35,33 +35,30 @@ namespace Grupo2A.Services
             return prato != null && prato.Ativo == true; // Verifica se Ativo é true
         }
 
-
-
-        // US007 - Criar Prato
         // US007 - Criar Prato
         public async Task<Prato2detail_dto> CreateNewPrato(Prato2create_dto info)
         {
+            // Verifica se os ingredientes existem na base de dados
+            var ingredientesExistentes = await _context.Ingredientes
+                .Where(i => info.Ingredientes.Select(ing => ing.IdIngrediente).Contains(i.IdIngrediente))
+                .ToListAsync();
+
+            if (ingredientesExistentes.Count != info.Ingredientes.Count)
+            {
+                throw new ArgumentException("Um ou mais ingredientes não foram encontrados.");
+            }
+
             Prato newPrato = new Prato
             {
                 Nome = info.Nome,
-                TipoPrato = info.TipoPrato, // Este campo deve ser obrigatório
-                Ingredientes = info.Ingredientes, // Este campo é opcional
+                TipoPrato = info.TipoPrato,
+                Ingredientes = ingredientesExistentes, // Associa apenas ingredientes existentes
                 Receita = info.Receita,
                 Ativo = info.Ativo,
-                Quantidade = info.Quantidade ?? 0, // Define um valor padrão caso não esteja preenchido
-                DataServico = info.DataServico ?? DateTime.Now, // Usa a data atual como valor padrão se estiver vazio
-                TipoRefeicao = info.TipoRefeicao // Este campo é opcional
+                Quantidade = info.Quantidade ?? 0,
+                DataServico = info.DataServico ?? DateTime.Now,
+                TipoRefeicao = info.TipoRefeicao
             };
-
-            // Verificar se o tipo de refeição foi preenchido e, se sim, verificar a sua existência
-            if (newPrato.TipoRefeicao != null)
-            {
-                var tipoRefeicaoExistente = await _repoTipoDeRefeicao.GetTipoRefeicaoByNome(newPrato.TipoRefeicao.Nome);
-                if (tipoRefeicaoExistente == null)
-                {
-                    throw new ArgumentException("Esse tipo de refeição não existe.");
-                }
-            }
 
             return PratoDetail(await _repo.AddPrato(newPrato));
         }
@@ -130,9 +127,9 @@ namespace Grupo2A.Services
                 Nome = p.Nome,
                 TipoPrato = p.TipoPrato,
                 Ativo = p.Ativo,
-                TipoRefeicao = p.TipoRefeicao, 
-                Receita = p.Receita, 
-                Quantidade = p.Quantidade, 
+                TipoRefeicao = p.TipoRefeicao,
+                Receita = p.Receita,
+                Quantidade = p.Quantidade,
                 DataServico = p.DataServico
             };
         }
