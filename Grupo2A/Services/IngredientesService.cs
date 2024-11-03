@@ -46,6 +46,7 @@ namespace Grupo2A.Services
         {
             return new Ingrediente2detail_dto
             {
+                IdIngrediente = i.IdIngrediente,
                 Nome = i.Nome,
                 Categoria = i.Categoria,
                 Ativo = i.Ativo
@@ -88,11 +89,36 @@ namespace Grupo2A.Services
             return IngredienteDetail(updatedIngrediente);
         }
 
+        public async Task<Ingrediente2detail_dto?> GetIngredienteById(long idIngrediente)
+        {
+            return await _context.Ingredientes
+                .Where(i => i.IdIngrediente == idIngrediente)
+                .Select(i => new Ingrediente2detail_dto
+                {
+                    IdIngrediente = i.IdIngrediente, 
+                    Nome = i.Nome,
+                    Categoria = i.Categoria, 
+                    Ativo = i.Ativo,
+                })
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<List<Ingrediente2listing_dto>> GetIngredientesByAtiveState(bool state)
         {
             List<Ingrediente> allMatchingIngredientes = await _repo.GetIngredientesByStateFromDataBase(state);
 
             return allMatchingIngredientes.Select(x => IngredienteListItem(x)).ToList();
         }
+
+        public async Task DeleteIngrediente(long idIngrediente)
+        {
+            var ingrediente = await _context.Ingredientes.FindAsync(idIngrediente);
+            if (ingrediente != null)
+            {
+                _context.Ingredientes.Remove(ingrediente);
+                await _context.SaveChangesAsync();
+            }
+        }
+
     }
 }

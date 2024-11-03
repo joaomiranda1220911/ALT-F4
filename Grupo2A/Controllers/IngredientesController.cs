@@ -25,7 +25,7 @@ namespace Grupo2A.Controllers
             _service = new IngredientesService(context);
             _serviceP = new PratosService(context);
         }
-        
+
         [HttpPost]
         public async Task<ActionResult<Ingrediente2detail_dto>> PostIngrediente(Ingrediente2create_dto ingrediente)
         {
@@ -129,5 +129,60 @@ namespace Grupo2A.Controllers
 
             return Ok(theUpdateIngrediente);
         }
+
+        // GET: api/Ingredientes/{idIngrediente}
+        [HttpGet("{idIngrediente}")]
+        public async Task<ActionResult<Ingrediente2detail_dto>> GetIngredienteById(long idIngrediente)
+        {
+            // Buscar o ingrediente pelo ID
+            var ingrediente = await _service.GetIngredienteById(idIngrediente);
+
+            // Verificar se o ingrediente foi encontrado
+            if (ingrediente == null)
+            {
+                return NotFound(); // Retorna 404 se o ingrediente não existir
+            }
+
+            return Ok(ingrediente); // Retorna o ingrediente encontrado
+        }
+
+
+        // DELETE: api/Ingredientes/{idIngrediente}
+        [HttpDelete("{idIngrediente}")]
+        public async Task<IActionResult> DeleteIngredienteById(long idIngrediente)
+        {
+            // Verificar se o ingrediente existe
+            var ingrediente = await _service.GetIngredienteById(idIngrediente);
+            if (ingrediente == null)
+            {
+                return NotFound();
+            }
+
+            // Remover o ingrediente
+            await _service.DeleteIngrediente(idIngrediente);
+
+            // Opcional: Se você quiser inativar todos os pratos que contêm este ingrediente ao excluí-lo
+            var pratos = await _service.GetPratosByIngredienteId(idIngrediente);
+            if (pratos != null && pratos.Any())
+            {
+                foreach (var prato in pratos)
+                {
+                    prato.Ativo = false;
+                    var info = new Prato2update_dto
+                    {
+                        Ativo = prato.Ativo,
+                    };
+
+                    var updateResult = await _serviceP.UpdateEstadoPrato(prato.IdPrato, info);
+                    if (updateResult == null)
+                    {
+                        return StatusCode(500, "Erro ao atualizar o prato associado ao ingrediente.");
+                    }
+                }
+            }
+
+            return NoContent(); // Indica que a exclusão foi bem-sucedida, mas não há conteúdo para retornar.
+        }
+
     }
 }
