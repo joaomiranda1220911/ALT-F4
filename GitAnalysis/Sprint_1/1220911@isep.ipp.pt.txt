@@ -1,4 +1,4 @@
-commit d9afca378136645087c2bcac0c43dcfed7d90c6c	refs/heads/main (HEAD -> main, tag: v1.0.1, origin/main)
+commit d9afca378136645087c2bcac0c43dcfed7d90c6c	refs/tags/v1.0.1 (tag: v1.0.1)
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sun Nov 3 23:27:30 2024 +0000
 
