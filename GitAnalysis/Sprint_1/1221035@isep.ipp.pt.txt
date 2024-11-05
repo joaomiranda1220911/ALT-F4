@@ -1,4 +1,39 @@
-commit 8150fabfb56a621b093c429baf1981dd1d840119	refs/heads/main
+commit 104a6c233e63af39e0ad51d850fe2b7abe96b254	refs/tags/v1.0.0
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Sun Nov 3 22:45:38 2024 +0000
+
+    correções finais
+
+M	Grupo2A/Controllers/IngredientesController.cs
+M	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Repositories/PratosRepository.cs
+M	Grupo2A/Services/PratosService.cs
+
+commit 673a869350a2b946be82467300bb4df0ef968855	refs/tags/v1.0.0
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Sun Nov 3 21:23:56 2024 +0000
+
+    correção erros
+
+M	Grupo2A/Controllers/EmentasController.cs
+M	Grupo2A/Controllers/RefeicoesController.cs
+A	Grupo2A/Model/DTO/Refeicao2listing_dto.cs
+M	Grupo2A/Repositories/EmentasRepository.cs
+M	Grupo2A/Services/EmentasService.cs
+M	Grupo2A/Services/RefeicoesService.cs
+
+commit 3f83f0c63cfe05e7cfb1b6350f7ddf4d9399145b	refs/tags/v1.0.0
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Sun Nov 3 21:02:34 2024 +0000
+
+    correção
+
+M	Grupo2A/Controllers/RefeicoesController.cs
+M	Grupo2A/Model/CozinhaContext.cs
+M	Grupo2A/Repositories/RefeicoesRepository.cs
+M	Grupo2A/Services/RefeicoesService.cs
+
+commit 8150fabfb56a621b093c429baf1981dd1d840119	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 18:11:49 2024 +0000
 
@@ -14,7 +49,7 @@ M	Grupo2A/Model/Refeicao.cs
 M	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
 M	Grupo2A/Services/RefeicoesService.cs
 
-commit f5b1038fcc63aa5fa8362e1ac4a387bfcb712f69	refs/heads/main
+commit f5b1038fcc63aa5fa8362e1ac4a387bfcb712f69	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 16:42:28 2024 +0000
 
@@ -25,7 +60,7 @@ M	Grupo2A/Repositories/IngredientesRepository.cs
 M	Grupo2A/Services/IngredientesService.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 8e4f0d45c2c01e51448121dd1145464858b2465b	refs/heads/main
+commit 8e4f0d45c2c01e51448121dd1145464858b2465b	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 16:30:39 2024 +0000
 
@@ -35,7 +70,7 @@ M	Grupo2A/Controllers/IngredientesController.cs
 M	Grupo2A/Repositories/IngredientesRepository.cs
 M	Grupo2A/Services/IngredientesService.cs
 
-commit ee09e2d525ef17bf101c8d2b98cb441c3c7f1b67	refs/heads/main
+commit ee09e2d525ef17bf101c8d2b98cb441c3c7f1b67	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 16:27:32 2024 +0000
 
@@ -43,7 +78,7 @@ Date:   Sun Nov 3 16:27:32 2024 +0000
 
 M	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
 
-commit c3a631b4b93719ea1ed5605a7aee23229aaa7971	refs/heads/main
+commit c3a631b4b93719ea1ed5605a7aee23229aaa7971	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 16:24:52 2024 +0000
 
@@ -53,7 +88,7 @@ M	Grupo2A/Controllers/IngredientesController.cs
 M	Grupo2A/Repositories/IngredientesRepository.cs
 M	Grupo2A/Services/IngredientesService.cs
 
-commit 2785bf38252f059a2397cbef123bff3c13fc57e7	refs/heads/main
+commit 2785bf38252f059a2397cbef123bff3c13fc57e7	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 15:45:05 2024 +0000
 
@@ -61,7 +96,7 @@ Date:   Sun Nov 3 15:45:05 2024 +0000
 
 M	Grupo2A/Controllers/IngredientesController.cs
 
-commit 9686812843b24d926472112b723b9d4200a9290c	refs/heads/main
+commit 9686812843b24d926472112b723b9d4200a9290c	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 15:28:00 2024 +0000
 
@@ -69,7 +104,7 @@ Date:   Sun Nov 3 15:28:00 2024 +0000
 
 M	Grupo2A/Controllers/IngredientesController.cs
 
-commit 2f3776aae49654d33a7f6e1e772861dcbe95cdfb	refs/heads/main
+commit 2f3776aae49654d33a7f6e1e772861dcbe95cdfb	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 15:23:33 2024 +0000
 
@@ -77,7 +112,7 @@ Date:   Sun Nov 3 15:23:33 2024 +0000
 
 M	Grupo2A/Controllers/IngredientesController.cs
 
-commit 69ecac7e19a84c498209e973c7d10db3a6dc2870	refs/heads/main
+commit 69ecac7e19a84c498209e973c7d10db3a6dc2870	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 15:12:27 2024 +0000
 
@@ -85,7 +120,7 @@ Date:   Sun Nov 3 15:12:27 2024 +0000
 
 M	Grupo2A/Controllers/IngredientesController.cs
 
-commit 6ce77d88f1ba9fd4f2a34980c69977e60adb2a10	refs/heads/main
+commit 6ce77d88f1ba9fd4f2a34980c69977e60adb2a10	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 14:56:33 2024 +0000
 
@@ -95,7 +130,7 @@ M	Grupo2A/Controllers/PratosController.cs
 M	Grupo2A/Controllers/TipoDePratoController.cs
 M	Grupo2A/Services/TipoDePratoService.cs
 
-commit 94bbf6a8f6217979b31361a0abef4031610aaf67	refs/heads/main
+commit 94bbf6a8f6217979b31361a0abef4031610aaf67	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 14:42:53 2024 +0000
 
@@ -103,7 +138,7 @@ Date:   Sun Nov 3 14:42:53 2024 +0000
 
 M	Grupo2A/Controllers/PratosController.cs
 
-commit 775839f5ea86a4bbd5c5851cc34f3ca3c511b305	refs/heads/main
+commit 775839f5ea86a4bbd5c5851cc34f3ca3c511b305	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 14:28:48 2024 +0000
 
@@ -112,7 +147,7 @@ Date:   Sun Nov 3 14:28:48 2024 +0000
 M	Grupo2A/Model/DTO/Ingrediente2create_dto.cs
 M	Grupo2A/Model/DTO/Ingrediente2listing_dto.cs
 
-commit 8a40d220325a0f7411dfc8aa7db5ea4878bf2aa9	refs/heads/main
+commit 8a40d220325a0f7411dfc8aa7db5ea4878bf2aa9	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 14:26:06 2024 +0000
 
@@ -120,7 +155,7 @@ Date:   Sun Nov 3 14:26:06 2024 +0000
 
 M	Grupo2A/Model/Ingrediente.cs
 
-commit 5e91c13a2d1a127e44cbc9434d5563bb83bba922	refs/heads/main
+commit 5e91c13a2d1a127e44cbc9434d5563bb83bba922	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 14:24:17 2024 +0000
 
@@ -128,7 +163,7 @@ Date:   Sun Nov 3 14:24:17 2024 +0000
 
 M	Grupo2A/Model/Refeicao.cs
 
-commit 9efeb9a3706e04dffec384c38394f2713e5f666d	refs/heads/main
+commit 9efeb9a3706e04dffec384c38394f2713e5f666d	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 14:21:10 2024 +0000
 
@@ -137,7 +172,7 @@ Date:   Sun Nov 3 14:21:10 2024 +0000
 M	Grupo2A/Model/TipoDeRefeicao.cs
 M	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
 
-commit d5dd866795000844357f76dd142a0cb5909d6343	refs/heads/main
+commit d5dd866795000844357f76dd142a0cb5909d6343	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 14:11:36 2024 +0000
 
@@ -147,7 +182,7 @@ M	Grupo2A/Model/DTO/TipoDePrato2detail_dto.cs
 M	Grupo2A/Model/DTO/TipoDePrato2listing_dto.cs
 M	Grupo2A/Model/TipoDePrato.cs
 
-commit d342a9d1fe7b7b7c6841c16d2535f0a20ce4fd37	refs/heads/main
+commit d342a9d1fe7b7b7c6841c16d2535f0a20ce4fd37	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 13:18:40 2024 +0000
 
@@ -157,7 +192,7 @@ M	Grupo2A/Model/DTO/Prato2create_dto.cs
 M	Grupo2A/Repositories/TipoDePratoRepository.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 52c0df9a3f61beb6a89743c43e46e0ea36413950	refs/heads/main
+commit 52c0df9a3f61beb6a89743c43e46e0ea36413950	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Nov 3 13:09:32 2024 +0000
 
@@ -167,7 +202,7 @@ M	Grupo2A/Model/DTO/Prato2create_dto.cs
 M	Grupo2A/Repositories/RefeicoesRepository.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit dda66a2eb0ad030fbefd16cfef44ca320bb7d128	refs/heads/main
+commit dda66a2eb0ad030fbefd16cfef44ca320bb7d128	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sat Nov 2 19:12:37 2024 +0000
 
@@ -188,7 +223,7 @@ D	Grupo2A/Repositories/ReceitasRepository.cs
 M	Grupo2A/Services/PratosService.cs
 D	Grupo2A/Services/ReceitasService.cs
 
-commit 60bb2769c7ab3298792038738a59137605d42f20	refs/heads/main
+commit 60bb2769c7ab3298792038738a59137605d42f20	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 1 19:12:04 2024 +0000
 
@@ -215,7 +250,7 @@ M	Grupo2A/Services/PratosService.cs
 M	Grupo2A/Services/RefeicoesService.cs
 M	Grupo2A/Services/TipoDeRefeicaoService.cs
 
-commit a00ea9d3588bf7272086de6b6200c2f5b52ec606	refs/heads/main
+commit a00ea9d3588bf7272086de6b6200c2f5b52ec606	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 1 16:21:14 2024 +0000
 
@@ -231,7 +266,7 @@ M	Grupo2A/Model/TipoDeRefeicao.cs
 M	Grupo2A/Repositories/RefeicoesRepository.cs
 M	Grupo2A/Services/TipoDeRefeicaoService.cs
 
-commit 751e76fb12910c8e1100108b502753d17ce3b094	refs/heads/main
+commit 751e76fb12910c8e1100108b502753d17ce3b094	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 1 15:43:52 2024 +0000
 
@@ -255,7 +290,7 @@ M	Grupo2A/Services/PratosService.cs
 A	Grupo2A/Services/RefeicoesService.cs
 M	Grupo2A/Services/TipoDeRefeicaoService.cs
 
-commit 9be4f9148ce5de745c894be6ebb942ab69609b2d	refs/heads/main
+commit 9be4f9148ce5de745c894be6ebb942ab69609b2d	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 1 13:11:52 2024 +0000
 
@@ -266,7 +301,7 @@ M	Grupo2A/Controllers/TipoDeRefeicaoController.cs
 M	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
 M	Grupo2A/Services/TipoDeRefeicaoService.cs
 
-commit 9933db4fb1ba348d2fd8a540d108b95b31becf42	refs/heads/main
+commit 9933db4fb1ba348d2fd8a540d108b95b31becf42	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 1 12:35:00 2024 +0000
 
@@ -279,7 +314,7 @@ M	Grupo2A/Model/DTO/Receita2update_dto.cs
 M	Grupo2A/Model/DTO/TipoRefeicao2detail_dto.cs
 M	Grupo2A/Model/Ingrediente.cs
 
-commit 7af011b23d79d60b8eaaca192947883b9539f301	refs/heads/main
+commit 7af011b23d79d60b8eaaca192947883b9539f301	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 1 11:54:06 2024 +0000
 
@@ -290,7 +325,7 @@ M	Grupo2A/Controllers/PratosController.cs
 M	Grupo2A/Services/IngredientesService.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit c8b07f6e157a798264a3827f9843899f52f09747	refs/heads/main
+commit c8b07f6e157a798264a3827f9843899f52f09747	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Oct 27 17:43:47 2024 +0000
 
@@ -298,7 +333,7 @@ Date:   Sun Oct 27 17:43:47 2024 +0000
 
 M	Grupo2A/Services/IngredientesService.cs
 
-commit 0d583761436cb5aa9b8e1fabd09e2b15509f0c42	refs/heads/main
+commit 0d583761436cb5aa9b8e1fabd09e2b15509f0c42	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Oct 27 17:42:27 2024 +0000
 
@@ -311,7 +346,7 @@ M	Grupo2A/Repositories/PratosRepository.cs
 M	Grupo2A/Services/IngredientesService.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 3271d0b6ebd0cd265c815e6aa03838b1af8e313a	refs/heads/main
+commit 3271d0b6ebd0cd265c815e6aa03838b1af8e313a	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sun Oct 27 16:48:10 2024 +0000
 
@@ -324,7 +359,7 @@ M	Grupo2A/Repositories/PratosRepository.cs
 M	Grupo2A/Services/IngredientesService.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 0947f8393bd8c608bb90ce675a4d8301ee5d533d	refs/heads/main
+commit 0947f8393bd8c608bb90ce675a4d8301ee5d533d	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Oct 25 20:37:38 2024 +0100
 
@@ -338,7 +373,7 @@ M	Grupo2A/Model/Ingrediente.cs
 M	Grupo2A/Model/Prato.cs
 M	Grupo2A/Model/Receita.cs
 
-commit 39f525f180a45d901821bfb7a78bd0ca6f9cfce2	refs/heads/main
+commit 39f525f180a45d901821bfb7a78bd0ca6f9cfce2	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Wed Oct 23 19:52:12 2024 +0100
 
@@ -349,7 +384,7 @@ D	Grupo2A/Controllers/PratoController.cs
 A	Grupo2A/Controllers/PratosController.cs
 M	Grupo2A/Controllers/ReceitasController.cs
 
-commit a9638c38e8381b51681591ca03fe954903027b67	refs/heads/main
+commit a9638c38e8381b51681591ca03fe954903027b67	refs/tags/v1.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Wed Oct 23 16:40:44 2024 +0100
 

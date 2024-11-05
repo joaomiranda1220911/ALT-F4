@@ -1,4 +1,19 @@
-commit ade5f5985cfcf4296a811c722288218d315eacc8	refs/heads/main
+commit d001bf2a2606d7917ee173625c6fb0cce91e09e7	refs/tags/v1.0.0
+Author: 1221040 <1221040@isep.ipp.pt>
+Date:   Sun Nov 3 22:55:33 2024 +0000
+
+    Correção de erros
+
+M	Grupo2A/Controllers/EmentasController.cs
+M	Grupo2A/Controllers/IngredientesController.cs
+M	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Controllers/RefeicoesController.cs
+M	Grupo2A/Repositories/EmentasRepository.cs
+M	Grupo2A/Repositories/IngredientesRepository.cs
+M	Grupo2A/Repositories/PratosRepository.cs
+M	Grupo2A/Repositories/RefeicoesRepository.cs
+
+commit ade5f5985cfcf4296a811c722288218d315eacc8	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Sun Nov 3 15:30:49 2024 +0000
 
@@ -7,7 +22,7 @@ Date:   Sun Nov 3 15:30:49 2024 +0000
 M	Grupo2A/Controllers/PratosController.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit bc92310e016cd810571b13faa35a526cb5b8efa9	refs/heads/main
+commit bc92310e016cd810571b13faa35a526cb5b8efa9	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Sun Nov 3 00:44:04 2024 +0000
 
@@ -17,7 +32,7 @@ M	Grupo2A/Controllers/TipoDeRefeicaoController.cs
 M	Grupo2A/Model/Refeicao.cs
 M	Grupo2A/Model/TipoDeRefeicao.cs
 
-commit 83bfd95114f1df0f725f209dede4680879c75032	refs/heads/main
+commit 83bfd95114f1df0f725f209dede4680879c75032	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Sat Nov 2 12:04:35 2024 +0000
 
@@ -25,7 +40,7 @@ Date:   Sat Nov 2 12:04:35 2024 +0000
 
 M	Grupo2A/Program.cs
 
-commit a04c5003f127b6e8a3398dbdf95a9107dd9e749c	refs/heads/main
+commit a04c5003f127b6e8a3398dbdf95a9107dd9e749c	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Sat Nov 2 11:59:14 2024 +0000
 
@@ -33,7 +48,7 @@ Date:   Sat Nov 2 11:59:14 2024 +0000
 
 M	Grupo2A/Program.cs
 
-commit 6f51fe21c413ccfcaafebcebc030f18c74ecd4c8	refs/heads/main
+commit 6f51fe21c413ccfcaafebcebc030f18c74ecd4c8	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Thu Oct 31 15:14:43 2024 +0000
 
@@ -42,7 +57,7 @@ Date:   Thu Oct 31 15:14:43 2024 +0000
 M	Grupo2A/Controllers/TipoDeRefeicaoController.cs
 M	Grupo2A/Services/TipoDeRefeicaoService.cs
 
-commit ac0fdd82af46e4ecb0b62745303aed63f659c79c	refs/heads/main
+commit ac0fdd82af46e4ecb0b62745303aed63f659c79c	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Thu Oct 31 15:04:44 2024 +0000
 
@@ -55,7 +70,7 @@ A	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
 M	Grupo2A/Services/EmentasService.cs
 A	Grupo2A/Services/TipoDeRefeicaoService.cs
 
-commit 23885f6662af7c7c0b7cb50f353da28ef1b5d907	refs/heads/main
+commit 23885f6662af7c7c0b7cb50f353da28ef1b5d907	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Mon Oct 28 21:06:31 2024 +0000
 
@@ -64,7 +79,7 @@ Date:   Mon Oct 28 21:06:31 2024 +0000
 M	Grupo2A/Repositories/EmentasRepository.cs
 M	Grupo2A/Services/EmentasService.cs
 
-commit b9f3f31c14ccb07c0296b4161bdc18fbb0a226b9	refs/heads/main
+commit b9f3f31c14ccb07c0296b4161bdc18fbb0a226b9	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Mon Oct 28 20:59:14 2024 +0000
 
@@ -74,7 +89,7 @@ M	Grupo2A/Controllers/EmentasController.cs
 M	Grupo2A/Repositories/EmentasRepository.cs
 M	Grupo2A/Services/EmentasService.cs
 
-commit 2bb64922bcb928681ef754a39f03b9cd0656b84a	refs/heads/main
+commit 2bb64922bcb928681ef754a39f03b9cd0656b84a	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Mon Oct 28 19:23:50 2024 +0000
 
@@ -90,7 +105,7 @@ M	Grupo2A/Repositories/EmentasRepository.cs
 M	Grupo2A/Services/EmentasService.cs
 M	Grupo2A/Services/ReceitasService.cs
 
-commit 00ff2bf17058dfab90e3eca379976108ea0b3ce8	refs/heads/main
+commit 00ff2bf17058dfab90e3eca379976108ea0b3ce8	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Sat Oct 26 15:42:04 2024 +0100
 
@@ -100,7 +115,7 @@ M	Grupo2A/Controllers/ReceitasController.cs
 M	Grupo2A/Repositories/ReceitasRepository.cs
 M	Grupo2A/Services/ReceitasService.cs
 
-commit 2f92037a4ee11173c87952921f1b583f23291b27	refs/heads/main
+commit 2f92037a4ee11173c87952921f1b583f23291b27	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Wed Oct 23 19:22:12 2024 +0100
 
@@ -115,7 +130,7 @@ A	Grupo2A/obj/Debug/net8.0/Grupo2A.GlobalUsings.g.cs
 A	Grupo2A/obj/Debug/net8.0/Grupo2A.assets.cache
 A	Grupo2A/obj/Debug/net8.0/Grupo2A.csproj.AssemblyReference.cache
 
-commit 36f7d534c0a542cbb9e6442e33dc1567d1eef4e4	refs/heads/main
+commit 36f7d534c0a542cbb9e6442e33dc1567d1eef4e4	refs/tags/v1.0.0
 Author: 1221040 <1221040@isep.ipp.pt>
 Date:   Tue Oct 22 11:00:37 2024 +0100
 

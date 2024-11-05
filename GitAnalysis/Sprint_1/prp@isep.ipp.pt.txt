@@ -1,4 +1,19 @@
-commit 1b5a53884bdf9ddd71588347b5e95eacd2075c9c	refs/heads/main
+commit c3c30b490efdea6aa97282430b13ec987e916fb4	refs/tags/v1.0.0
+Author: Paulo Proenca <prp@isep.ipp.pt>
+Date:   Sun Nov 3 21:00:47 2024 +0000
+
+    Repository Analysis
+
+M	GitAnalysis/Sprint_1/1220827@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_1/1220832@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_1/1220911@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_1/1221035@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_1/1221040@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_1/Commits.csv
+A	GitAnalysis/Sprint_1/prp@isep.ipp.pt.txt
+A	GitAnalysis/Sprint_1/report_2024-11-03.html
+
+commit 1b5a53884bdf9ddd71588347b5e95eacd2075c9c	refs/tags/v1.0.0
 Author: Paulo Proenca <prp@isep.ipp.pt>
 Date:   Sat Oct 26 23:04:31 2024 +0000
 
