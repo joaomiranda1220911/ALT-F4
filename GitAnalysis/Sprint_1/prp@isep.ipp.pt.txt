@@ -1,4 +1,13 @@
-commit 79c18f0e271c0e6da8101aec72d211ca19d6191c	refs/heads/main (HEAD -> main, origin/main)
+commit 69dd56900305aad07e5944ed66728935959f8558	refs/heads/main (HEAD -> main, origin/main)
+Author: Paulo Proenca <prp@isep.ipp.pt>
+Date:   Tue Nov 5 22:07:57 2024 +0000
+
+    Repository Analysis
+
+M	GitAnalysis/Sprint_1/Commits.csv
+M	GitAnalysis/Sprint_1/prp@isep.ipp.pt.txt
+
+commit 79c18f0e271c0e6da8101aec72d211ca19d6191c	refs/heads/main
 Author: Paulo Proenca <prp@isep.ipp.pt>
 Date:   Tue Nov 5 20:54:54 2024 +0000
 
