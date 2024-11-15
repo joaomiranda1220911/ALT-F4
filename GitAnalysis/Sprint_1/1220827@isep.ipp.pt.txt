@@ -1,4 +1,22 @@
-commit 72c778dfe49bdca1d351b0836b119cbd4c3876a0	refs/heads/main (HEAD -> main, origin/main)
+commit 16f39491c8bd5e21e5d2f54079075bea1a9f7ddf	refs/tags/v1.0.0
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sun Nov 3 22:54:51 2024 +0000
+
+    correção de erros
+
+M	Grupo2A/Services/RefeicoesService.cs
+M	Grupo2A/Services/TipoDeRefeicaoService.cs
+
+commit a6d24fe7fc355778ec2d02c0226df9beddc24542	refs/tags/v1.0.0
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sun Nov 3 22:02:09 2024 +0000
+
+    correção
+
+M	Grupo2A/Repositories/PratosRepository.cs
+M	Grupo2A/Services/PratosService.cs
+
+commit 72c778dfe49bdca1d351b0836b119cbd4c3876a0	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 18:57:34 2024 +0000
 
@@ -6,7 +24,7 @@ Date:   Sun Nov 3 18:57:34 2024 +0000
 
 M	Grupo2A/Controllers/RefeicoesController.cs
 
-commit e7bb425fe5d30063327e9341f9d6ed75a398f986	refs/heads/main
+commit e7bb425fe5d30063327e9341f9d6ed75a398f986	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 18:54:00 2024 +0000
 
@@ -15,7 +33,7 @@ Date:   Sun Nov 3 18:54:00 2024 +0000
 M	Grupo2A/Controllers/RefeicoesController.cs
 M	Grupo2A/Services/RefeicoesService.cs
 
-commit b1cc9bbf7dfac4112871ca16f3022d804a8cc4c9	refs/heads/main
+commit b1cc9bbf7dfac4112871ca16f3022d804a8cc4c9	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 18:41:16 2024 +0000
 
@@ -23,7 +41,7 @@ Date:   Sun Nov 3 18:41:16 2024 +0000
 
 M	Grupo2A/Services/RefeicoesService.cs
 
-commit c3ee2aaa3a3cd48d8c8bcc7200cd4c34f507a511	refs/heads/main
+commit c3ee2aaa3a3cd48d8c8bcc7200cd4c34f507a511	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 18:36:24 2024 +0000
 
@@ -31,7 +49,7 @@ Date:   Sun Nov 3 18:36:24 2024 +0000
 
 M	Grupo2A/Controllers/RefeicoesController.cs
 
-commit 6984044c7632af18851c5df4a4b3ecbdee82dc44	refs/heads/main
+commit 6984044c7632af18851c5df4a4b3ecbdee82dc44	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 16:14:12 2024 +0000
 
@@ -39,7 +57,7 @@ Date:   Sun Nov 3 16:14:12 2024 +0000
 
 M	Grupo2A/Controllers/IngredientesController.cs
 
-commit f745340c48a89c1ae3c1b7b808f5b82fc3a4f6c9	refs/heads/main
+commit f745340c48a89c1ae3c1b7b808f5b82fc3a4f6c9	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 16:09:14 2024 +0000
 
@@ -47,7 +65,7 @@ Date:   Sun Nov 3 16:09:14 2024 +0000
 
 M	Grupo2A/Controllers/IngredientesController.cs
 
-commit fea09c3a44aec887cc7ed1f51bda162ae22857f0	refs/heads/main
+commit fea09c3a44aec887cc7ed1f51bda162ae22857f0	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 15:49:21 2024 +0000
 
@@ -55,7 +73,7 @@ Date:   Sun Nov 3 15:49:21 2024 +0000
 
 M	Grupo2A/Controllers/IngredientesController.cs
 
-commit 7fccd30b90d00c59c0ecaa5eb2913c0c0b6e6200	refs/heads/main
+commit 7fccd30b90d00c59c0ecaa5eb2913c0c0b6e6200	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 15:03:28 2024 +0000
 
@@ -65,7 +83,7 @@ M	Grupo2A/Controllers/PratosController.cs
 M	Grupo2A/Repositories/PratosRepository.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 9b9ed9b0e76f016cf8cf8d97a2c2367e8676ff92	refs/heads/main
+commit 9b9ed9b0e76f016cf8cf8d97a2c2367e8676ff92	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 14:01:40 2024 +0000
 
@@ -73,7 +91,7 @@ Date:   Sun Nov 3 14:01:40 2024 +0000
 
 M	Grupo2A/Controllers/PratosController.cs
 
-commit 2f51ea9577c71255e49f5b05a3886af7f9746aed	refs/heads/main
+commit 2f51ea9577c71255e49f5b05a3886af7f9746aed	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 3 13:56:48 2024 +0000
 
@@ -82,7 +100,7 @@ Date:   Sun Nov 3 13:56:48 2024 +0000
 M	Grupo2A/Model/DTO/Prato2create_dto.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 7df4786550a92888b2009c6ee84755e2d93c4539	refs/heads/main
+commit 7df4786550a92888b2009c6ee84755e2d93c4539	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sat Nov 2 00:17:19 2024 +0000
 
@@ -93,7 +111,7 @@ M	Grupo2A/Repositories/EmentasRepository.cs
 M	Grupo2A/Services/EmentasService.cs
 M	Grupo2A/Services/TipoDePratoService.cs
 
-commit e9711391c467584f1d43cf47804c4364dbc3d645	refs/heads/main
+commit e9711391c467584f1d43cf47804c4364dbc3d645	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Fri Nov 1 21:27:19 2024 +0000
 
@@ -103,7 +121,7 @@ M	Grupo2A/Model/DTO/Prato2detail_dto.cs
 M	Grupo2A/Model/Prato.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 96562df0f506a59ddb2133f131a994cb8fb6d6f1	refs/heads/main
+commit 96562df0f506a59ddb2133f131a994cb8fb6d6f1	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Fri Nov 1 16:56:36 2024 +0000
 
@@ -112,7 +130,7 @@ Date:   Fri Nov 1 16:56:36 2024 +0000
 M	Grupo2A/Controllers/RefeicoesController.cs
 M	Grupo2A/Services/RefeicoesService.cs
 
-commit 89c398f9581c86b321c4491439625614fa132bac	refs/heads/main
+commit 89c398f9581c86b321c4491439625614fa132bac	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Thu Oct 31 21:39:31 2024 +0000
 
@@ -120,7 +138,7 @@ Date:   Thu Oct 31 21:39:31 2024 +0000
 
 M	Grupo2A/Controllers/PratosController.cs
 
-commit 72e734cc4a6929d0bc8a073f5d5d26d303e19072	refs/heads/main
+commit 72e734cc4a6929d0bc8a073f5d5d26d303e19072	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Thu Oct 31 21:36:06 2024 +0000
 
@@ -129,7 +147,7 @@ Date:   Thu Oct 31 21:36:06 2024 +0000
 M	Grupo2A/Controllers/EmentasController.cs
 M	Grupo2A/Controllers/PratosController.cs
 
-commit b9c205972f7c2e4b86f8a0c98196017e32a2ffea	refs/heads/main
+commit b9c205972f7c2e4b86f8a0c98196017e32a2ffea	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Thu Oct 31 21:14:28 2024 +0000
 
@@ -139,7 +157,7 @@ M	Grupo2A/Model/DTO/Prato2detail_dto.cs
 M	Grupo2A/Model/DTO/Prato2listing_dto.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 53ebb6566c7e64ff6c4a643736d09a920943a436	refs/heads/main
+commit 53ebb6566c7e64ff6c4a643736d09a920943a436	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Thu Oct 31 18:11:02 2024 +0000
 
@@ -148,7 +166,7 @@ Date:   Thu Oct 31 18:11:02 2024 +0000
 M	Grupo2A/Controllers/PratosController.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit 3d1fd43814bbd538f1a6ea5745286b07e7108b4c	refs/heads/main
+commit 3d1fd43814bbd538f1a6ea5745286b07e7108b4c	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Tue Oct 29 21:28:43 2024 +0000
 
@@ -157,7 +175,7 @@ Date:   Tue Oct 29 21:28:43 2024 +0000
 M	Grupo2A/Model/Prato.cs
 M	Grupo2A/Services/PratosService.cs
 
-commit adf96ec9db0c6078b6bda5dc3e6d93b2ddbddb1a	refs/heads/main
+commit adf96ec9db0c6078b6bda5dc3e6d93b2ddbddb1a	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Mon Oct 28 02:34:53 2024 +0000
 
@@ -165,7 +183,7 @@ Date:   Mon Oct 28 02:34:53 2024 +0000
 
 M	Grupo2A/Controllers/PratosController.cs
 
-commit 034ea4d226738e7da98397bff1a8438fdf19a042	refs/heads/main
+commit 034ea4d226738e7da98397bff1a8438fdf19a042	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Mon Oct 28 02:26:36 2024 +0000
 
@@ -173,7 +191,7 @@ Date:   Mon Oct 28 02:26:36 2024 +0000
 
 M	Grupo2A/Services/PratosService.cs
 
-commit 910bdf3c3a06e693461ad407278c3a1cdb531693	refs/heads/main
+commit 910bdf3c3a06e693461ad407278c3a1cdb531693	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Mon Oct 28 01:39:17 2024 +0000
 
@@ -181,7 +199,7 @@ Date:   Mon Oct 28 01:39:17 2024 +0000
 
 A	Grupo2A/Controllers/EmentasController.cs
 
-commit 3f6db41ee71a2a6e494b33f3499e523245fef1f9	refs/heads/main
+commit 3f6db41ee71a2a6e494b33f3499e523245fef1f9	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Mon Oct 28 01:38:24 2024 +0000
 
@@ -190,7 +208,7 @@ Date:   Mon Oct 28 01:38:24 2024 +0000
 M	Grupo2A/Model/Prato.cs
 M	Grupo2A/Repositories/PratosRepository.cs
 
-commit b1eb65880f6ff67ed6c92c263ad3eb07d4c0f165	refs/heads/main
+commit b1eb65880f6ff67ed6c92c263ad3eb07d4c0f165	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sat Oct 26 22:49:42 2024 +0100
 
@@ -199,7 +217,7 @@ Date:   Sat Oct 26 22:49:42 2024 +0100
 M	Grupo2A/Model/DTO/Prato2update_dto.cs
 M	Grupo2A/Model/DTO/Receita2update_dto.cs
 
-commit bc309affd3a966b6269c579ced63895d0f6d728a	refs/heads/main
+commit bc309affd3a966b6269c579ced63895d0f6d728a	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sat Oct 26 22:44:41 2024 +0100
 
@@ -208,7 +226,7 @@ Date:   Sat Oct 26 22:44:41 2024 +0100
 M	Grupo2A/Model/DTO/Ingrediente2update_dto.cs
 M	Grupo2A/Model/DTO/Prato2update_dto.cs
 
-commit 6f62cb1143775d4b95187e40be603bf08e584b98	refs/heads/main
+commit 6f62cb1143775d4b95187e40be603bf08e584b98	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Fri Oct 25 20:13:13 2024 +0100
 
@@ -219,7 +237,7 @@ A	Grupo2A/Model/DTO/Prato2update_dto.cs
 A	Grupo2A/Model/DTO/Receita2listing_dto.cs
 A	Grupo2A/Model/DTO/Receita2update_dto.cs
 
-commit fcbc0f52b2901703793a92153070b3060299ef72	refs/heads/main
+commit fcbc0f52b2901703793a92153070b3060299ef72	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Thu Oct 24 19:22:43 2024 +0100
 
@@ -227,7 +245,7 @@ Date:   Thu Oct 24 19:22:43 2024 +0100
 
 A	Grupo2A/Repositories/ReceitasRepository.cs
 
-commit 0abd84b1cde16569a2b17385f9cc1b8e5d28724d	refs/heads/main
+commit 0abd84b1cde16569a2b17385f9cc1b8e5d28724d	refs/tags/v1.0.0
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Wed Oct 23 22:04:46 2024 +0100
 
