@@ -45,19 +45,19 @@ namespace Grupo2A.Controllers
         }
 
         //US014: Servir Refeição (decrementar quantidade)
-        [HttpPost("{idPrato}/servir")]
-        public async Task<ActionResult> ServirRefeicao(long idPrato)
+        [HttpPost("{idRefeicao}/servir")]
+        public async Task<ActionResult> ServirRefeicao(long idRefeicao)
         {
             // Chama o Service para servir uma refeição (decrementar a quantidade)
-            var prato = await _service.ServirRefeicao(idPrato);
+            var refeicao = await _service.ServirRefeicao(idRefeicao);
 
-            // Verifica se o prato existe e possui quantidade disponível
-            if (prato == null)
+            // Verifica se a refeição existe e possui quantidade disponível
+            if (refeicao == null)
             {
-                return NotFound("Refeição não encontrada ou quantidade insuficiente."); // Retorna 404 se não for encontrado ou se não houver quantidade suficiente
+                return NotFound("Refeição não encontrada ou quantidade insuficiente."); // Retorna 404 se não for encontrada ou se não houver quantidade suficiente
             }
 
-            return Ok(prato); // Retorna o prato atualizado com a quantidade decrementada
+            return Ok(refeicao); // Retorna a refeição atualizada com a quantidade decrementada
         }
 
 
