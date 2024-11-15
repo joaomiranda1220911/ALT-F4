@@ -1,4 +1,48 @@
-commit 74546656791b8069e62933508e172e7b3a46065f	refs/heads/main
+commit d9afca378136645087c2bcac0c43dcfed7d90c6c	refs/tags/v1.0.1 (tag: v1.0.1)
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 23:27:30 2024 +0000
+
+    postman_collection
+
+A	Cozinha_API.postman_collection.json
+
+commit 5b00cdc75c498bacf07cc9ff0b7dfdb5b4e6b3bf	refs/tags/v1.0.0 (tag: v1.0.0)
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 23:13:36 2024 +0000
+
+    Database
+
+M	Grupo2A/Database/CozinhaDB
+A	Grupo2A/Database/CozinhaDB-shm
+A	Grupo2A/Database/CozinhaDB-wal
+
+commit 8b2f5bce2ebc77c941d7b36e5b55c10ea0bef260	refs/tags/v1.0.0
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 23:12:07 2024 +0000
+
+    Update .gitignore
+
+M	.gitignore
+
+commit 10342a965c460b0735f11f5794be36151b655671	refs/tags/v1.0.0
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 21:56:37 2024 +0000
+
+    [HttpPost("filtrar")]
+
+M	Grupo2A/Controllers/RefeicoesController.cs
+M	Grupo2A/Program.cs
+M	Grupo2A/Repositories/RefeicoesRepository.cs
+
+commit ca6d1b10ede3a92adf889e22d56c0059710167bf	refs/tags/v1.0.0
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 3 21:28:22 2024 +0000
+
+    RefeicoesController
+
+M	Grupo2A/Controllers/RefeicoesController.cs
+
+commit 74546656791b8069e62933508e172e7b3a46065f	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sun Nov 3 15:22:35 2024 +0000
 
@@ -8,7 +52,7 @@ M	Grupo2A/Controllers/IngredientesController.cs
 M	Grupo2A/Model/DTO/Ingrediente2detail_dto.cs
 M	Grupo2A/Services/IngredientesService.cs
 
-commit 5b5ae284bf01bd450f084cf67736b4bc531a8139	refs/heads/main
+commit 5b5ae284bf01bd450f084cf67736b4bc531a8139	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sun Nov 3 14:58:12 2024 +0000
 
@@ -16,7 +60,7 @@ Date:   Sun Nov 3 14:58:12 2024 +0000
 
 M	Grupo2A/Controllers/TipoDePratoController.cs
 
-commit 91fe7afdf29c0acbdfa8c87021ace7abe1746ff8	refs/heads/main
+commit 91fe7afdf29c0acbdfa8c87021ace7abe1746ff8	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sun Nov 3 13:54:29 2024 +0000
 
@@ -24,7 +68,7 @@ Date:   Sun Nov 3 13:54:29 2024 +0000
 
 M	.gitignore
 
-commit aeb37b6cc813c2a567b0a67693ff9cfe4a9095eb	refs/heads/main
+commit aeb37b6cc813c2a567b0a67693ff9cfe4a9095eb	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sun Nov 3 13:06:26 2024 +0000
 
@@ -34,7 +78,7 @@ M	Grupo2A/Controllers/TipoDeRefeicaoController.cs
 M	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
 M	Grupo2A/Services/TipoDeRefeicaoService.cs
 
-commit 1df7aac2583c1b45f487261199c9537d7ec43921	refs/heads/main
+commit 1df7aac2583c1b45f487261199c9537d7ec43921	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sun Nov 3 12:34:25 2024 +0000
 
@@ -42,7 +86,7 @@ Date:   Sun Nov 3 12:34:25 2024 +0000
 
 M	Grupo2A/Services/PratosService.cs
 
-commit 75c7e6ace56ca5f9c6e045c7746240d29a785036	refs/heads/main
+commit 75c7e6ace56ca5f9c6e045c7746240d29a785036	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sat Nov 2 23:57:04 2024 +0000
 
@@ -50,7 +94,7 @@ Date:   Sat Nov 2 23:57:04 2024 +0000
 
 M	Grupo2A/Controllers/IngredientesController.cs
 
-commit 0d7da8cda08f3c80497ba5cb3c55049113543f17	refs/heads/main
+commit 0d7da8cda08f3c80497ba5cb3c55049113543f17	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sat Nov 2 22:46:19 2024 +0000
 
@@ -58,7 +102,7 @@ Date:   Sat Nov 2 22:46:19 2024 +0000
 
 M	.gitignore
 
-commit 2ce2d47fabe0ce2d9489e4d772f43e9547f6444a	refs/heads/main
+commit 2ce2d47fabe0ce2d9489e4d772f43e9547f6444a	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sat Nov 2 22:10:24 2024 +0000
 
@@ -68,7 +112,7 @@ M	Grupo2A/Database/CozinhaDB
 A	Grupo2A/Migrations/20241102220906_AddDescricaoTipoPratoColumn.Designer.cs
 A	Grupo2A/Migrations/20241102220906_AddDescricaoTipoPratoColumn.cs
 
-commit 791d08dd686b4744f563dd8500dadb675d23980f	refs/heads/main
+commit 791d08dd686b4744f563dd8500dadb675d23980f	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sat Nov 2 22:05:06 2024 +0000
 
@@ -78,7 +122,7 @@ R081	Grupo2A/Migrations/20241102131732_CozinhaCreation.Designer.cs	Grupo2A/Migra
 R078	Grupo2A/Migrations/20241102131732_CozinhaCreation.cs	Grupo2A/Migrations/20241102215558_CozinhaCreation.cs
 M	Grupo2A/Migrations/CozinhaContextModelSnapshot.cs
 
-commit 8168eab05498da2d5958eb8d72992ae43a613152	refs/heads/main
+commit 8168eab05498da2d5958eb8d72992ae43a613152	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sat Nov 2 13:34:14 2024 +0000
 
@@ -87,7 +131,7 @@ Date:   Sat Nov 2 13:34:14 2024 +0000
 M	Grupo2A/Repositories/TipoDePratoRepository.cs
 M	Grupo2A/Repositories/TipoDeRefeicaoRepository.cs
 
-commit f02566b3d1f9bbbe99c5920a2094c833f0979fe7	refs/heads/main
+commit f02566b3d1f9bbbe99c5920a2094c833f0979fe7	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Sat Nov 2 13:19:59 2024 +0000
 
@@ -99,7 +143,7 @@ R050	Grupo2A/Migrations/20241023223138_CozinhaCreation.cs	Grupo2A/Migrations/202
 M	Grupo2A/Migrations/CozinhaContextModelSnapshot.cs
 M	Grupo2A/Services/TipoDePratoService.cs
 
-commit fee38da3c79264c9794e97cc596a5ab591471ab5	refs/heads/main
+commit fee38da3c79264c9794e97cc596a5ab591471ab5	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Thu Oct 31 15:33:12 2024 +0000
 
@@ -111,7 +155,7 @@ M	Grupo2A/Model/DTO/Ingrediente2listing_dto.cs
 M	Grupo2A/Model/Ingrediente.cs
 M	Grupo2A/Services/IngredientesService.cs
 
-commit fcd87df05bfeab5692a9cf3c9b481b65e3783ee1	refs/heads/main
+commit fcd87df05bfeab5692a9cf3c9b481b65e3783ee1	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Thu Oct 31 15:00:13 2024 +0000
 
@@ -120,7 +164,7 @@ Date:   Thu Oct 31 15:00:13 2024 +0000
 M	Grupo2A/Controllers/IngredientesController.cs
 M	Grupo2A/Services/IngredientesService.cs
 
-commit 1ef1fd991739c520e696948c6807ae4ad5aa329b	refs/heads/main
+commit 1ef1fd991739c520e696948c6807ae4ad5aa329b	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Tue Oct 29 17:18:09 2024 +0000
 
@@ -130,7 +174,7 @@ M	Grupo2A/Controllers/IngredientesController.cs
 M	Grupo2A/Repositories/IngredientesRepository.cs
 M	Grupo2A/Services/IngredientesService.cs
 
-commit 9466102b920b4b89844ae6dc12e7db16d794ca42	refs/heads/main
+commit 9466102b920b4b89844ae6dc12e7db16d794ca42	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Tue Oct 29 15:02:55 2024 +0000
 
@@ -141,7 +185,7 @@ A	Grupo2A/Model/DTO/Ingrediente2create_dto.cs
 M	Grupo2A/Repositories/IngredientesRepository.cs
 M	Grupo2A/Services/IngredientesService.cs
 
-commit 843ef9b7d7e44633b1c8260c5b4e8c020b1243d4	refs/heads/main
+commit 843ef9b7d7e44633b1c8260c5b4e8c020b1243d4	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Oct 23 23:38:54 2024 +0100
 
@@ -163,7 +207,7 @@ D	Grupo2A/Models/Pratos.cs
 D	Grupo2A/Models/Receitas.cs
 M	Grupo2A/Program.cs
 
-commit 47f5437e51f491b66fc69085d2e472c27033ca71	refs/heads/main
+commit 47f5437e51f491b66fc69085d2e472c27033ca71	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Oct 23 21:10:40 2024 +0100
 
@@ -171,7 +215,7 @@ Date:   Wed Oct 23 21:10:40 2024 +0100
 
 M	.gitignore
 
-commit d1b291348e53403e98f2242ce3caebd0c1b461cf	refs/heads/main
+commit d1b291348e53403e98f2242ce3caebd0c1b461cf	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Oct 23 21:08:02 2024 +0100
 
@@ -189,7 +233,7 @@ D	Grupo2A/obj/Grupo2A.csproj.nuget.g.targets
 D	Grupo2A/obj/project.assets.json
 D	Grupo2A/obj/project.nuget.cache
 
-commit f6a5bdf7aaf92c555f2435145882e3eb2020ad73	refs/heads/main
+commit f6a5bdf7aaf92c555f2435145882e3eb2020ad73	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Oct 23 20:58:52 2024 +0100
 
@@ -197,7 +241,7 @@ Date:   Wed Oct 23 20:58:52 2024 +0100
 
 M	.gitignore
 
-commit ddda4d8c49373d6ca9697cc98b3746d922f3b377	refs/heads/main
+commit ddda4d8c49373d6ca9697cc98b3746d922f3b377	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Oct 23 19:17:50 2024 +0100
 
@@ -205,7 +249,7 @@ Date:   Wed Oct 23 19:17:50 2024 +0100
 
 M	.gitignore
 
-commit be88aa4496e74e18e9640ba8fda181cf523581a9	refs/heads/main
+commit be88aa4496e74e18e9640ba8fda181cf523581a9	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Oct 23 16:36:29 2024 +0100
 
@@ -225,7 +269,7 @@ M	Grupo2A/obj/Grupo2A.csproj.nuget.g.targets
 M	Grupo2A/obj/project.assets.json
 M	Grupo2A/obj/project.nuget.cache
 
-commit 7833d4369fe2bc5907a7e57242e81d234816b6e4	refs/heads/main
+commit 7833d4369fe2bc5907a7e57242e81d234816b6e4	refs/tags/v1.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Oct 23 15:13:55 2024 +0100
 
