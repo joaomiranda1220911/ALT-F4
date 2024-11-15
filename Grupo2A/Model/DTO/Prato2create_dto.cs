@@ -4,9 +4,6 @@ public class Prato2create_dto
     public required long TipoPratoId { get; set; }  
     public required ICollection<long> IngredientesIds { get; set; }  // IDs dos ingredientes
     public required string? Receita { get; set; }
-    public required bool Ativo { get; set; }
-    public int Quantidade { get; set; }
-    public DateTime DataServico { get; set; }
-    public long TipoRefeicaoId { get; set; }  
+    public required bool Ativo { get; set; } 
 }
 
