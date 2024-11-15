@@ -86,20 +86,20 @@ namespace Grupo2A.Services
 
 
         //US014: Servir Refeição (decrementar quantidade)
-        public async Task<Prato?> ServirRefeicao(long idPrato)
+        public async Task<Refeicao?> ServirRefeicao(long idRefeicao)
         {
 
-            //Procura o prato na base de dados
-            var prato = await _context.Pratos.FindAsync(idPrato);
-            //Verifica se o prato possui quantidade suficiente para ser servido
-            if (prato == null || prato.Quantidade <= 0) //Se o prato não existir ou a quantidade for 0 ou <0, retorna null
+            //Procura a refeiçao na base de dados
+            var refeicao = await _context.Refeicao.FindAsync(idRefeicao);
+            //Verifica se a refeição possui quantidade suficiente para ser servida
+            if (refeicao == null || refeicao.Quantidade <= 0) //Se a refeição não existir ou a quantidade for 0 ou <0, retorna null
             {
-                return null; //Retorna null se o prato não for encontrado ou se a quantidade for insuficiente
+                return null; //Retorna null se a refeição não for encontrada ou se a quantidade for insuficiente
             }
 
-            prato.Quantidade--; //Incrementa a quantidade disponível do prato
+            refeicao.Quantidade--; //Incrementa a quantidade disponível da refeição
             await _context.SaveChangesAsync(); //Guarda as mudanças
-            return prato; //Retorna o prato atualizado com a nova quantidade
+            return refeicao; //Retorna a refeição atualizada com a nova quantidade
         }
 
 
