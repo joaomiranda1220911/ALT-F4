@@ -1,0 +1,47 @@
+commit 0698c24311f8669ed3ab1e8a078236659376800a	refs/heads/main (HEAD -> main, origin/main)
+Author: Tiago Santos <1221040@isep.ipp.pt>
+Date:   Sun Nov 17 14:12:07 2024 +0000
+
+    Routes - US009, US010
+
+M	Sala/sala/routes/salaRoutes.js
+
+commit 53bd7cb50a68d9a28eba9c50d38240dade525b4e	refs/heads/main
+Author: Tiago Santos <1221040@isep.ipp.pt>
+Date:   Fri Nov 15 21:51:31 2024 +0000
+
+    cozinha service
+
+M	Sala/sala/controllers/encomendaController.js
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/models/encomenda.js
+M	Sala/sala/models/refeicao.js
+M	Sala/sala/repositories/encomendaRepository.js
+M	Sala/sala/repositories/refeicaoRepository.js
+A	Sala/sala/services/cozinhaService.js
+M	Sala/sala/services/encomendaService.js
+M	Sala/sala/services/refeicaoService.js
+
+commit 5dc16da1ba23891616b033aff3978eda8284472c	refs/heads/main
+Author: Tiago Santos <1221040@isep.ipp.pt>
+Date:   Fri Nov 15 15:27:39 2024 +0000
+
+    Refeicao-model, repository, controller e service, modificação da encomenda
+
+M	Sala/sala/controllers/encomendaController.js
+A	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/models/encomenda.js
+A	Sala/sala/models/refeicao.js
+A	Sala/sala/repositories/refeicaoRepository.js
+A	Sala/sala/services/refeicaoService.js
+
+commit df8e3aee8f6333c9727eafdabc73c1854d331726	refs/heads/main
+Author: Tiago Santos <1221040@isep.ipp.pt>
+Date:   Fri Nov 15 15:19:51 2024 +0000
+
+    encomenda- controller,model,service,repository
+
+A	Sala/sala/controllers/encomendaController.js
+A	Sala/sala/models/encomenda.js
+A	Sala/sala/repositories/encomendaRepository.js
+A	Sala/sala/services/encomendaService.js

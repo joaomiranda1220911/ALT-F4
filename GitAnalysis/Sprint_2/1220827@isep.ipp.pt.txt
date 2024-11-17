@@ -1,0 +1,80 @@
+commit f6bcbd75e705465e09163f12deaa8cb1cbd741d9	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sun Nov 17 10:35:01 2024 +0000
+
+    US001- cliente.js
+
+M	Sala/sala/models/cliente.js
+
+commit 279d99ef1f96186023e822a3aceaf2185ff91726	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 20:52:36 2024 +0000
+
+    US001 - clienteService.js
+
+M	Sala/sala/services/clienteService.js
+
+commit b1c40d1b2b823f905c27a7d693968bac60a82ea9	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 17:00:10 2024 +0000
+
+    US001 - clienteRepository.js
+
+M	Sala/sala/repositories/clienteRepository.js
+
+commit 073f5f3b8676bcb807d96f3fabe993d922c7ade6	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 16:52:35 2024 +0000
+
+    US001 - clienteController.js
+
+M	Sala/sala/controllers/clienteController.js
+M	Sala/sala/routes/clienteRoutes.js
+
+commit 51bdcdd8a1abd6d8cb78995bc3421452f95a0c66	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 16:45:23 2024 +0000
+
+    Criação de cliente.js
+
+A	Sala/sala/models/cliente.js
+
+commit 66833212328a292b977f1c227b56075fcdca2602	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 16:44:32 2024 +0000
+
+    Criação de clienteService.js
+
+A	Sala/sala/services/clienteService.js
+
+commit ac7f7da474d105190fe0aef3f8d5f0931bc8e1d1	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 16:43:58 2024 +0000
+
+    Criação de clienteRepository.js
+
+A	Sala/sala/repositories/clienteRepository.js
+
+commit 21c597297e1a6fef15660c480006943945c2bca8	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 16:41:49 2024 +0000
+
+    US001 - clienteRoutes.js
+
+M	Sala/sala/routes/clienteRoutes.js
+
+commit a821d5f0d4a2abe379278edcec0a0582f4a9b0f4	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 16:16:27 2024 +0000
+
+    Criação de clienteController.js
+
+A	Sala/sala/controllers/clienteController.js
+
+commit cb9be4ec3be6cb66cd2b03e0a388f5c16154872b	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 16 16:13:39 2024 +0000
+
+    Criação do clienteRoutes.js
+
+A	Sala/sala/routes/clienteRoutes.js

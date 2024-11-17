@@ -1,0 +1,8 @@
+commit 4f09fd5ef09ab7648cad0e4468b0bebf74f8bbc0	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Fri Nov 15 15:15:21 2024 +0000
+
+    Commit - Correção no Decrementar Refeições
+
+M	Grupo2A/Controllers/RefeicoesController.cs
+M	Grupo2A/Services/RefeicoesService.cs

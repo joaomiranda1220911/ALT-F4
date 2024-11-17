@@ -1,0 +1,18 @@
+commit a9f33c9a8c5de090749e23cd5c2f968e80cbddd6	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 15 15:18:48 2024 +0000
+
+    issue tracking sprint 2
+
+A	"ALT-F4 - Divis\303\243o do trabalho no grupo.pdf"
+
+commit f2157be2c582f61299ba34bc712c34650b03ad35	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 15 14:34:29 2024 +0000
+
+    correção de erro - parametros prato
+
+M	Grupo2A/Model/DTO/Prato2create_dto.cs
+M	Grupo2A/Model/DTO/Prato2detail_dto.cs
+M	Grupo2A/Model/DTO/Prato2listing_dto.cs
+M	Grupo2A/Model/Prato.cs
