@@ -1,5 +1,6 @@
+const transaction = require('../models/transaction');
 const ClienteRepo = require('../repositories/clienteRepository');
-const ClienteModel = required('../models/cliente');
+const ClienteModel = require('../models/cliente');
 
 //US001: Criar cliente
 //Criar um novo cliente associando a conta com saldo inicial de 0€
@@ -30,7 +31,13 @@ exports.getClienteByNif = async function (clienteNif) {
             'name': theCliente.name,
             'nif': theCliente.nif,
             'email': theCliente.email,
-            'balance': theCliente.balance.toFixed(2) + "€"
+            'balance': theCliente.account.balance.toFixed(2) + "€",
+            'transactions': theCliente.account.transactions.map(transaction=>({
+                'id': transaction._id,
+                'type': transaction.type,
+                'amount': transaction.amount.toFixed(2) + "€",
+                'date': transaction.date.toLocaleString()
+            }))
         };
 
         return aux;
