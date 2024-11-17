@@ -12,3 +12,13 @@ exports.createClient = async function (clienteData) {
         return false; //Retorna falso caso tenha ocorrido algum erro
     }
 }
+
+//US003: Obter informação detalhada de um cliente
+exports.getClienteByNif = async function (clienteNif) {
+    try{
+    return await ClienteModel.findByNif(clienteNif);
+    } catch(error){
+        console.error("Erro ao encontrar cliente pelo NIF:", error);
+        throw error;
+    }
+}

@@ -15,3 +15,28 @@ exports.createClient = async function (clienteDTO){
     });
     return await ClienteRepo.createClient(newCliente);//Chama o repository para salvar o cliente 
 }
+
+//US003: Obter informação detalhada de um cliente
+
+exports.getClienteByNif = async function (clienteNif) {
+    try{
+    const theCliente = await ClienteRepo.getClienteByNif(clienteNif);
+
+    if(theCliente === null){
+        return null;
+    }
+    else{
+        var aux = {
+            'name': theCliente.name,
+            'nif': theCliente.nif,
+            'email': theCliente.email,
+            'balance': theCliente.balance.toFixed(2) + "€"
+        };
+
+        return aux;
+    }
+    } catch(error){
+        console.error("Erro ao encontrar cliente pelo NIF:", error);
+        throw error;
+    }
+}
