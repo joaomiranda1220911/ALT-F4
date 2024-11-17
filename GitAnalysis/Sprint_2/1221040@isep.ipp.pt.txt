@@ -1,4 +1,4 @@
-commit 0698c24311f8669ed3ab1e8a078236659376800a	refs/heads/main (HEAD -> main, origin/main)
+commit 0698c24311f8669ed3ab1e8a078236659376800a	refs/heads/main
 Author: Tiago Santos <1221040@isep.ipp.pt>
 Date:   Sun Nov 17 14:12:07 2024 +0000
 
