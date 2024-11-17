@@ -22,3 +22,17 @@ exports.getClienteByNif = async function (clienteNif) {
         throw error;
     }
 }
+
+// US005: Atualizar o saldo da conta de um cliente
+exports.updateSaldo = async function (nif, valor) {
+    try {
+        const cliente = await ClienteModel.findOne({ nif: nif });
+        if (!cliente) return null; // Cliente não encontrado
+
+        cliente.saldo += valor; // Atualiza o saldo
+        await cliente.save();
+        return cliente; // Retorna o cliente atualizado
+    } catch (err) {
+        return null;
+    }
+};

@@ -23,3 +23,16 @@ exports.getCliente = async function (req, res){
         res.status(200).json(result);
     }
 }
+
+exports.carregarContaCliente = async function (req, res) {
+    const { nif, valor } = req.body; // Recebe o NIF e o valor a carregar
+
+    const result = await ClienteService.carregarSaldo(nif, valor);
+
+    // Verifica se ocorreu algum erro no Service
+    if (result.error) {
+        res.status(400).json({ error: result.error });
+    } else {
+        res.status(200).json(result);
+    }
+};
