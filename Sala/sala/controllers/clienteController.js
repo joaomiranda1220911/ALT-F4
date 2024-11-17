@@ -50,7 +50,7 @@ exports.getClienteSaldo = async function (req, res){
     }
 };
 
-//US005: Carregar Conta Cliente
+//US005: Atualizar o saldo da conta de um cliente
 exports.carregarContaCliente = async function (req, res) {
     const { nif, valor } = req.body; // Recebe o NIF e o valor a carregar
 
