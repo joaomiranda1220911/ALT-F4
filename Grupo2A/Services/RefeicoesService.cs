@@ -90,14 +90,14 @@ namespace Grupo2A.Services
         {
 
             //Procura a refeiçao na base de dados
-            var refeicao = await _context.Refeicao.FindAsync(idRefeicao);
+            var refeicao = await _context.Refeicoes.FindAsync(idRefeicao);
             //Verifica se a refeição possui quantidade suficiente para ser servida
-            if (refeicao == null || refeicao.Quantidade <= 0) //Se a refeição não existir ou a quantidade for 0 ou <0, retorna null
+            if (refeicao == null || refeicao.QuantidadeProduzida <= 0) //Se a refeição não existir ou a quantidade for 0 ou <0, retorna null
             {
                 return null; //Retorna null se a refeição não for encontrada ou se a quantidade for insuficiente
             }
 
-            refeicao.Quantidade--; //Incrementa a quantidade disponível da refeição
+            refeicao.QuantidadeProduzida--; //Incrementa a quantidade disponível da refeição
             await _context.SaveChangesAsync(); //Guarda as mudanças
             return refeicao; //Retorna a refeição atualizada com a nova quantidade
         }

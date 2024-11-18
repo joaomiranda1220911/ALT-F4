@@ -54,13 +54,6 @@ namespace Grupo2A.Services
                 return (null, "Tipo de prato não encontrado.");
             }
 
-            // Validate TipoRefeicao
-            var tipoRefeicao = await _repoTipoDeRefeicao.GetTipoRefeicaoById(pratoDto.TipoRefeicaoId);
-            if (tipoRefeicao == null)
-            {
-                return (null, "Tipo de refeição não encontrado.");
-            }
-
             // Initialize ingredientes
             var ingredientesAssociados = new List<Ingrediente>();
             foreach (var ingredienteId in pratoDto.IngredientesIds)
@@ -81,9 +74,6 @@ namespace Grupo2A.Services
                 Ingredientes = ingredientesAssociados,
                 Receita = pratoDto.Receita,
                 Ativo = pratoDto.Ativo,
-                Quantidade = pratoDto.Quantidade, // Use 0 if null
-                DataServico = pratoDto.DataServico, // Use current date if null
-                TipoRefeicao = tipoRefeicao
             };
 
             // Add the new Prato to the repository
@@ -101,10 +91,7 @@ namespace Grupo2A.Services
                 TipoPrato = p.TipoPrato,
                 Ingredientes = p.Ingredientes,
                 Receita = p.Receita,
-                Ativo = p.Ativo,
-                Quantidade = p.Quantidade, // Inclui o valor opcional de Quantidade
-                DataServico = p.DataServico, // Inclui o valor opcional de DataServico
-                TipoRefeicao = p.TipoRefeicao // Inclui o valor opcional de TipoRefeicao
+                Ativo = p.Ativo
             };
         }
         public async Task<Prato2detail_dto?> UpdateEstadoPrato(long id, Prato2update_dto info, Prato? prato = null)
@@ -181,10 +168,7 @@ namespace Grupo2A.Services
                 Nome = p.Nome,
                 TipoPrato = p.TipoPrato,
                 Ativo = p.Ativo,
-                TipoRefeicao = p.TipoRefeicao,
-                Receita = p.Receita,
-                Quantidade = p.Quantidade,
-                DataServico = p.DataServico
+                Receita = p.Receita
             };
         }
 
