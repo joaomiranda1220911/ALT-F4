@@ -23,8 +23,17 @@ exports.adicionarPreco = async function (idPrato, preco) {
 };
 
 //US007: Consultar Ementa Disponível
+const Prato = require('../models/prato'); 
+// Função que retorna os pratos disponíveis na ementa
 exports.getPratosEmEmenta = async function () {
-    return await PratoModel.find({ emEmenta: true, quantidade: { $gt: 0 } });
+    try {
+        // Acede aos pratos armazenados na base de dados
+        const pratos = await Prato.find({ ativo: true }); // Query para pratos ativos
+        return pratos;
+    } catch (error) {
+        console.error('Erro ao obter pratos:', error);
+        throw error; // Lança o erro para ser tratado no controlador
+    }
 };
 
 //US007: Consultar Ementa Disponível
