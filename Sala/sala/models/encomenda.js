@@ -7,4 +7,5 @@ var EncomendaSchema = new Schema({
     data: Date,
     valor: Number
 });
+
 module.exports = mongoose.model('Encomenda', EncomendaSchema);

@@ -1,5 +1,6 @@
 const PratoRepo = require('../repositories/pratoRepository');
 
+//US007: Consultar Ementa Disponível
 exports.getEmentaDisponivel = async function () {
     const pratos = await PratoRepo.getPratosEmEmenta();
 

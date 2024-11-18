@@ -33,8 +33,7 @@ exports.getAllClientes = async function () {
 }
 
 //US003: Obter informação detalhada de um cliente
-
-exports.getClienteByNif = async function (clienteNif) {
+exports.getInfoClienteByNif = async function (clienteNif) {
     try {
         const theCliente = await ClienteRepo.getClienteByNif(clienteNif);
 
@@ -58,10 +57,26 @@ exports.getClienteByNif = async function (clienteNif) {
             return aux;
         }
     } catch (error) {
-        console.error("Erro ao encontrar cliente pelo NIF:", error);
+        console.error('Erro ao encontrar cliente pelo NIF:', error);
         throw error;
     }
 }
+
+//US004: Obter informação do saldo de um cliente
+exports.getSaldoByNif = async function (clienteNif){
+    try{
+        const saldo = await ClienteRepo.getClienteSaldoByNif(clienteNif);
+        if (saldo === null){
+            return null;
+        }else{
+            return saldo.toFixed(2) + "€";
+        }
+    }catch (error){
+        console.error('Erro ao encontrar saldo do cliente através do NIF:', error);
+        throw error;  
+    }
+};
+
 
 // US005: Atualizar o saldo da conta de um cliente
 exports.carregarSaldo = async function (nif, valor) {
@@ -76,7 +91,7 @@ exports.carregarSaldo = async function (nif, valor) {
     }
 
     return {
-        message: `Saldo carregado com sucesso!`,
+        message: 'Saldo carregado com sucesso!',
         cliente: {
             nome: clienteAtualizado.nome,
             nif: clienteAtualizado.nif,

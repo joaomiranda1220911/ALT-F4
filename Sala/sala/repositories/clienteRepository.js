@@ -12,7 +12,7 @@ exports.createCliente = async function (clienteData) {
     catch (err) {
         return false; //Retorna falso caso tenha ocorrido algum erro
     }
-}
+};
 
 //US002: Listar todos os clientes
 exports.getAllClientes = async function () {
@@ -22,7 +22,7 @@ exports.getAllClientes = async function () {
     catch (err) {
         return null;
     }
-}
+};
 
 //US003: Obter informação detalhada de um cliente
 exports.getClienteByNif = async function (clienteNif) {
@@ -32,7 +32,18 @@ exports.getClienteByNif = async function (clienteNif) {
         console.error("Erro ao encontrar cliente pelo NIF:", error);
         throw error;
     }
-}
+};
+
+//US004: Obter informação do saldo de um cliente
+exports.getClienteSaldoByNif = async function (clienteNif) {
+    try{
+        const cliente = await ClienteModel.findOne({ nif: clienteNif }).select('account.balance');
+        return cliente ? cliente.account.balance : null;
+    } catch (error){
+        console.error("Erro ao obter saldo do cliente pelo NIF:", error);
+        throw error;
+    } 
+};
 
 // US005: Atualizar o saldo da conta de um cliente
 exports.updateSaldo = async function (nif, valor) {
