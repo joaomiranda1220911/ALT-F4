@@ -4,6 +4,10 @@ const router = express.Router();
 const EmentaController = require('../controllers/ementaController');
 const EncomendaController = require('../controllers/encomendaController');
 const RefeicaoController = require('../controllers/refeicaoController');
+const pratoController = require('../controllers/pratoController');
+
+// US006: Definir Prato
+router.put('/prato/:id/preco', pratoController.definirPrecoPrato);
 
 //US007: Consultar Ementa Disponível
 router.get('/ementa', EmentaController.getEmentaDisponivel);

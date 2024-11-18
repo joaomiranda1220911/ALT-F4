@@ -26,6 +26,17 @@ namespace Grupo2A.Controllers
             _service = new PratosService(context);
         }
 
+        [HttpGet("{idPrato}")]
+        public async Task<IActionResult> GetPratoById(long idPrato)
+        {
+            var prato = await _context.Pratos.FindAsync(idPrato);
+            if (prato == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(prato);
+        }
         //US007 - Criar Prato
         [HttpPost]
         public async Task<ActionResult<Prato2detail_dto>> PostPrato(Prato2create_dto prato)
@@ -38,7 +49,7 @@ namespace Grupo2A.Controllers
                 return BadRequest(mensagem);
             }
 
-            
+
             return CreatedAtAction(nameof(PostPrato), new { id = novoPrato.IdPrato }, novoPrato);
         }
 

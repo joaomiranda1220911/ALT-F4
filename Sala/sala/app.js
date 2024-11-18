@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+const salaRoutes = require('./routes/salaRoutes');
 
 //Persistence ============
 var mongoose = require ('mongoose');
@@ -16,8 +17,8 @@ var mWare = require('./middleware');
 app.use(mWare);
 
 //Routing  ====================
-var IssueRouter= require ('./routes/issueRoutes');
-app.use('/api/issues', IssueRouter);
+var SalaRouter= require ('./routes/salaRoutes');
+app.use('/api', salaRoutes);
 
 
 var port=8080;
