@@ -14,7 +14,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Definindo o esquema do prato
+// Definir o esquema do prato
 const pratoSchema = new mongoose.Schema({
     nome: {
         type: String,
@@ -39,13 +39,13 @@ const pratoSchema = new mongoose.Schema({
         required: true,
         default: true
     },
-    preco: {  // Adicionando o campo preco
+    preco: {  // Adicionar o campo preco
         type: Number,
         default: null
     }
 });
 
-// Criando o modelo de prato
+// Criar o modelo de prato
 const PratoModel = mongoose.model('Prato', pratoSchema);
 
 module.exports = PratoModel;

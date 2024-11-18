@@ -21,4 +21,7 @@ router.get('/refeicoes/:refeicaoId', RefeicaoController.listarRefeicoes);
 //US010: Listar Encomendas por Cliente
 router.get('/clientes/:clienteId/encomendas', EncomendaController.listarEncomendasCliente);
 
+//Teste
+router.get('/test', (req, res) => res.status(200).send('Servidor está ativo!'));
+
 module.exports = router;
