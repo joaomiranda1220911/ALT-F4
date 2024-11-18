@@ -2,6 +2,7 @@ const PratoRepo = require('../repositories/pratoRepository');
 const ContaClienteRepo = require('../repositories/contaClienteRepository');
 const EncomendaRepo = require('../repositories/encomendaRepository');
 
+//US008 - Encomendar Prato
 exports.encomendarPrato = async function (clienteId, pratoId) {
     const conta = await ContaClienteRepo.getContaClienteById(clienteId);
     if (!conta) return { success: false, message: 'Conta do cliente não encontrada' };
@@ -22,6 +23,7 @@ exports.encomendarPrato = async function (clienteId, pratoId) {
     return { success: true, message: 'Prato encomendado com sucesso' };
 };
 
+//US010 - Listar Encomendas por Cliente
 exports.getEncomendasByCliente = async function (clienteId) {
     const encomendas = await EncomendaRepo.getEncomendasByClienteId(clienteId);
     return encomendas.map(encomenda => ({

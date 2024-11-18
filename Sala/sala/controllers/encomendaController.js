@@ -1,5 +1,6 @@
 const EncomendaService = require('../services/encomendaService');
 
+//US008 - Encomendar Prato
 exports.encomendarPrato = async function (req, res) {
     const { clienteId, pratoId } = req.body;
 
@@ -10,8 +11,8 @@ exports.encomendarPrato = async function (req, res) {
         res.status(400).json({ error: result.message });
     }
 };
-//US010
 
+//US010 - Listar Encomendas por Cliente
 exports.listarEncomendasCliente = async function (req, res) {
     const clienteId = req.params.clienteId;
     const result = await EncomendaService.getEncomendasByCliente(clienteId);
