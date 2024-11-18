@@ -33,7 +33,7 @@ exports.getAllClientes = async function () {
 }
 
 //US003: Obter informação detalhada de um cliente
-exports.getClienteByNif = async function (clienteNif) {
+exports.getInfoClienteByNif = async function (clienteNif) {
     try {
         const theCliente = await ClienteRepo.getClienteByNif(clienteNif);
 
