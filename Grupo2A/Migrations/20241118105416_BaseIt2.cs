@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Grupo2A.Migrations
 {
     /// <inheritdoc />
-    public partial class CozinhaCreation : Migration
+    public partial class BaseIt2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,7 @@ namespace Grupo2A.Migrations
                 name: "TiposDePrato",
                 columns: table => new
                 {
-                    IdTipoPrato = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdTipoPrato = table.Column<long>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     DescricaoTipoPrato = table.Column<string>(type: "TEXT", nullable: false)
@@ -29,7 +29,7 @@ namespace Grupo2A.Migrations
                 name: "TiposDeRefeicao",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<long>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
                 },
@@ -45,12 +45,9 @@ namespace Grupo2A.Migrations
                     IdPrato = table.Column<long>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    TipoPratoIdTipoPrato = table.Column<int>(type: "INTEGER", nullable: false),
+                    TipoPratoIdTipoPrato = table.Column<long>(type: "INTEGER", nullable: false),
                     Receita = table.Column<string>(type: "TEXT", nullable: true),
-                    Ativo = table.Column<bool>(type: "INTEGER", nullable: false),
-                    Quantidade = table.Column<int>(type: "INTEGER", nullable: false),
-                    DataServico = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    TipoRefeicaoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Ativo = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,18 +58,13 @@ namespace Grupo2A.Migrations
                         principalTable: "TiposDePrato",
                         principalColumn: "IdTipoPrato",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Pratos_TiposDeRefeicao_TipoRefeicaoId",
-                        column: x => x.TipoRefeicaoId,
-                        principalTable: "TiposDeRefeicao",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "Ingredientes",
                 columns: table => new
                 {
-                    IdIngrediente = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdIngrediente = table.Column<long>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
                     Categoria = table.Column<string>(type: "TEXT", nullable: false),
@@ -95,27 +87,25 @@ namespace Grupo2A.Migrations
                 {
                     IdRefeicao = table.Column<long>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    PratoId = table.Column<long>(type: "INTEGER", nullable: false),
-                    Data = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    TipoRefeicaoId = table.Column<long>(type: "INTEGER", nullable: false),
                     QuantidadeProduzida = table.Column<int>(type: "INTEGER", nullable: false),
-                    TipoRefeicaoId1 = table.Column<int>(type: "INTEGER", nullable: false)
+                    Data = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    TipoRefeicaoId = table.Column<long>(type: "INTEGER", nullable: true),
+                    PratoIdPrato = table.Column<long>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Refeicoes", x => x.IdRefeicao);
                     table.ForeignKey(
-                        name: "FK_Refeicoes_Pratos_PratoId",
-                        column: x => x.PratoId,
+                        name: "FK_Refeicoes_Pratos_PratoIdPrato",
+                        column: x => x.PratoIdPrato,
                         principalTable: "Pratos",
                         principalColumn: "IdPrato",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Refeicoes_TiposDeRefeicao_TipoRefeicaoId1",
-                        column: x => x.TipoRefeicaoId1,
+                        name: "FK_Refeicoes_TiposDeRefeicao_TipoRefeicaoId",
+                        column: x => x.TipoRefeicaoId,
                         principalTable: "TiposDeRefeicao",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -129,19 +119,14 @@ namespace Grupo2A.Migrations
                 column: "TipoPratoIdTipoPrato");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pratos_TipoRefeicaoId",
-                table: "Pratos",
+                name: "IX_Refeicoes_PratoIdPrato",
+                table: "Refeicoes",
+                column: "PratoIdPrato");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Refeicoes_TipoRefeicaoId",
+                table: "Refeicoes",
                 column: "TipoRefeicaoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Refeicoes_PratoId",
-                table: "Refeicoes",
-                column: "PratoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Refeicoes_TipoRefeicaoId1",
-                table: "Refeicoes",
-                column: "TipoRefeicaoId1");
         }
 
         /// <inheritdoc />
@@ -157,10 +142,10 @@ namespace Grupo2A.Migrations
                 name: "Pratos");
 
             migrationBuilder.DropTable(
-                name: "TiposDePrato");
+                name: "TiposDeRefeicao");
 
             migrationBuilder.DropTable(
-                name: "TiposDeRefeicao");
+                name: "TiposDePrato");
         }
     }
 }

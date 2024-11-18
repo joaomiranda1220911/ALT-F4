@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Grupo2A.Migrations
 {
     [DbContext(typeof(CozinhaContext))]
-    [Migration("20241102220906_AddDescricaoTipoPratoColumn")]
-    partial class AddDescricaoTipoPratoColumn
+    [Migration("20241118105416_BaseIt2")]
+    partial class BaseIt2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace Grupo2A.Migrations
 
             modelBuilder.Entity("Cozinha_BE.Model.Ingrediente", b =>
                 {
-                    b.Property<int>("IdIngrediente")
+                    b.Property<long>("IdIngrediente")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -57,31 +57,20 @@ namespace Grupo2A.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DataServico")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Receita")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("TipoPratoIdTipoPrato")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("TipoRefeicaoId")
+                    b.Property<long>("TipoPratoIdTipoPrato")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("IdPrato");
 
                     b.HasIndex("TipoPratoIdTipoPrato");
-
-                    b.HasIndex("TipoRefeicaoId");
 
                     b.ToTable("Pratos");
                 });
@@ -95,30 +84,27 @@ namespace Grupo2A.Migrations
                     b.Property<DateTime>("Data")
                         .HasColumnType("TEXT");
 
-                    b.Property<long>("PratoId")
+                    b.Property<long>("PratoIdPrato")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("QuantidadeProduzida")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("TipoRefeicaoId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("TipoRefeicaoId1")
+                    b.Property<long?>("TipoRefeicaoId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("IdRefeicao");
 
-                    b.HasIndex("PratoId");
+                    b.HasIndex("PratoIdPrato");
 
-                    b.HasIndex("TipoRefeicaoId1");
+                    b.HasIndex("TipoRefeicaoId");
 
                     b.ToTable("Refeicoes");
                 });
 
             modelBuilder.Entity("Cozinha_BE.Model.TipoDePrato", b =>
                 {
-                    b.Property<int>("IdTipoPrato")
+                    b.Property<long>("IdTipoPrato")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -138,7 +124,7 @@ namespace Grupo2A.Migrations
 
             modelBuilder.Entity("Cozinha_BE.Model.TipoDeRefeicao", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -167,28 +153,20 @@ namespace Grupo2A.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cozinha_BE.Model.TipoDeRefeicao", "TipoRefeicao")
-                        .WithMany()
-                        .HasForeignKey("TipoRefeicaoId");
-
                     b.Navigation("TipoPrato");
-
-                    b.Navigation("TipoRefeicao");
                 });
 
             modelBuilder.Entity("Cozinha_BE.Model.Refeicao", b =>
                 {
                     b.HasOne("Cozinha_BE.Model.Prato", "Prato")
                         .WithMany()
-                        .HasForeignKey("PratoId")
+                        .HasForeignKey("PratoIdPrato")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Cozinha_BE.Model.TipoDeRefeicao", "TipoRefeicao")
                         .WithMany()
-                        .HasForeignKey("TipoRefeicaoId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TipoRefeicaoId");
 
                     b.Navigation("Prato");
 

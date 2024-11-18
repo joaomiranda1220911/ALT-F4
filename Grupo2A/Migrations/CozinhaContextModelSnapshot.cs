@@ -54,16 +54,10 @@ namespace Grupo2A.Migrations
                     b.Property<bool>("Ativo")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("DataServico")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Receita")
                         .HasColumnType("TEXT");
@@ -71,14 +65,9 @@ namespace Grupo2A.Migrations
                     b.Property<long>("TipoPratoIdTipoPrato")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("TipoRefeicaoId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("IdPrato");
 
                     b.HasIndex("TipoPratoIdTipoPrato");
-
-                    b.HasIndex("TipoRefeicaoId");
 
                     b.ToTable("Pratos");
                 });
@@ -161,13 +150,7 @@ namespace Grupo2A.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cozinha_BE.Model.TipoDeRefeicao", "TipoRefeicao")
-                        .WithMany()
-                        .HasForeignKey("TipoRefeicaoId");
-
                     b.Navigation("TipoPrato");
-
-                    b.Navigation("TipoRefeicao");
                 });
 
             modelBuilder.Entity("Cozinha_BE.Model.Refeicao", b =>
