@@ -22,6 +22,8 @@ app.use(mWare);
 //Routing  ====================
 var salaRouter = require('./routes/salaRoutes');
 app.use('/api', salaRouter);
+var pratoRouter = require('./routes/pratoRoutes');
+app.use('/api/pratos', pratoRouter);
 
 // Middleware =================================
 app.use(bodyParser.urlencoded({ extended: true }));

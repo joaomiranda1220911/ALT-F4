@@ -1,6 +1,21 @@
 const PratoModel = require('../models/prato');
 const PratoRepo = require('../repositories/pratoRepository');
 
+exports.createPrato = async function (pratoDTO) {
+    // Criar um novo prato com os dados fornecidos no pratoDTO
+    const newPrato = new PratoModel({
+        nome: pratoDTO.nome,  // Nome do prato
+        tipoPrato: pratoDTO.tipoPrato,  // Tipo de prato (ex: entrada, prato principal)
+        ingredientes: pratoDTO.ingredientes,  // Lista de ingredientes (IDs dos ingredientes)
+        receita: pratoDTO.receita || null,  // Receita (pode ser nulo)
+        ativo: pratoDTO.ativo,  // Definir se o prato está ativo ou não
+        preco: pratoDTO.preco || null  // Preço do prato (pode ser nulo)
+    });
+
+    // Chama o repositório para salvar o prato na base de dados
+    return await PratoRepo.createPrato(newPrato);
+}
+
 //US006: Definir prato
 exports.definirPrecoPrato = async (pratoId, preco) => {
     // Verifica se o prato existe usando o pratoId (do tipo número)
