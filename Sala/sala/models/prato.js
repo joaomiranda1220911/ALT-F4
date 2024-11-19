@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 // Definir o esquema do prato
 var PratoSchema = new Schema({
+    _id: { type: Number },  // ID numérico
     nome: {
         type: String,
         required: true,

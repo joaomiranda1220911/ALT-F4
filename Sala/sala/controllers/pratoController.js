@@ -1,10 +1,11 @@
-const CozinhaService = require('../services/cozinhaService');
+const cozinhaService = require('../services/cozinhaService');
 const pratoService = require('../services/pratoService');
+const PratoModel = require('../models/prato');  
 
-// US006: Definir prato
+// US006: Definir preço de prato
 exports.definirPrecoPrato = async (req, res) => {
-    const IdPrato = req.params.id; // ID do prato vindo da rota
-    const preco = req.body.preco; // Preço enviado no corpo da requisição
+    const IdPrato = parseInt(req.params.id);  // Garantir que o id é convertido para número
+    const preco = req.body.preco;
 
     console.log(`[DEBUG] ID do prato recebido: ${IdPrato}`);
     console.log(`[DEBUG] Preço recebido: ${preco}`);
@@ -16,34 +17,32 @@ exports.definirPrecoPrato = async (req, res) => {
     }
 
     try {
-        // Remover a validação do ObjectId, caso o ID seja numérico
-        if (isNaN(IdPrato)) {
-            console.error(`[ERRO] ID inválido: ${IdPrato}`);
-            return res.status(400).json({ error: 'ID do prato inválido.' });
+        // Buscar o prato na base de dados .NET
+        const pratoData = await cozinhaService.getPratoById(IdPrato);
+
+        if (!pratoData) {
+            console.error(`[ERRO] Prato com ID ${IdPrato} não encontrado na base de dados .NET.`);
+            return res.status(404).json({ error: 'Prato não encontrado na base de dados .NET.' });
         }
 
+        // Adicionar o preço ao prato recuperado da base de dados .NET
+        const pratoMongo = new PratoModel({
+            _id: IdPrato,  // ID do prato recuperado
+            nome: pratoData.nome,  // Nome do prato
+            tipoPrato: pratoData.tipoPrato || 'Tipo não especificado',  // Tipo de prato (caso esteja vazio, usa um valor padrão)
+            ingredientes: pratoData.ingredientes || [],  // Ingredientes
+            receita: pratoData.receita || 'Receita não especificada',  // Receita
+            ativo: pratoData.ativo !== undefined ? pratoData.ativo : true,  // Verificar se o prato está ativo
+            preco: preco  // Preço recebido da requisição
+        });
 
-        // Chamando o serviço para buscar o prato na API .NET
-        const prato = await CozinhaService.getPratoById(IdPrato);
-        if (!prato) {
-            console.error(`[ERRO] Prato com ID ${IdPrato} não encontrado na API .NET.`);
-            return res.status(404).json({ error: 'Prato não encontrado.' });
-        }
+        // Salvar o prato com o preço na base de dados MongoDB
+        await pratoMongo.save();
+        console.log(`[SUCESSO] Prato com ID ${IdPrato} e preço ${preco} salvo com sucesso no MongoDB.`);
 
-        // Atualizar o preço do prato
-        prato.preco = preco;
-
-        // Guardar o prato com o novo preço na base de dados MongoDB
-        const pratoSalvo = await pratoService.definirPrecoPrato(prato.id, preco);
-        if (!pratoSalvo) {
-            console.error(`[ERRO] Falha ao salvar o prato na base de dados.`);
-            return res.status(500).json({ error: 'Erro ao salvar o prato com o preço.' });
-        }
-
-        console.log(`[SUCESSO] Preço de ${preco} atribuído ao prato com ID ${IdPrato}.`);
-        return res.status(200).json({ message: 'Preço atribuído com sucesso ao prato.', prato: pratoSalvo });
+        return res.status(200).json({ message: 'Preço atribuído e prato salvo com sucesso no MongoDB.', prato: pratoMongo });
     } catch (error) {
         console.error(`[ERRO] Erro ao definir preço: ${error.message}`);
-        return res.status(500).json({ error: 'Erro interno ao tentar definir o preço.' });
+        return res.status(500).json({ error: 'Erro ao tentar definir o preço e salvar o prato no MongoDB.' });
     }
 };
