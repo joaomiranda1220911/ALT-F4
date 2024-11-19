@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+var {celebrate, Joi} = require('celebrate');
+
 const EncomendaController = require('../controllers/encomendaController');
 
 //US008: Encomendar Prato

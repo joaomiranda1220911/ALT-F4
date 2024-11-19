@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+
+var {celebrate, Joi} = require('celebrate');
+
 const clienteController = require('../controllers/clienteController');
 
 //US001: Registar cliente
