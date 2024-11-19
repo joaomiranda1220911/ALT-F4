@@ -1,4 +1,18 @@
 const CozinhaService = require('../services/cozinhaService');
+const pratoService = require('../services/pratoService');
+
+exports.createPrato= async function (req, res) {
+    const result = await pratoService.createPrato(req.body);
+
+    if (result == false) {
+        res.status(400).json({ error: 'Error creating or saving prato' });
+
+    }
+
+    else {
+        res.status(201).json({ message: 'Prato created successfully' });
+    }
+}
 
 // US006: Definir prato
 exports.definirPrecoPrato = async (req, res) => {

@@ -1,5 +1,15 @@
 const PratoModel = require('../models/prato');
 
+exports.createPrato = async function (thePrato) {
+    try {
+        await thePrato.save();
+        return true;
+    }
+    catch (err) {
+        return false;
+    }
+}
+
 //US006: Definir prato
 exports.adicionarPreco = async function (idPrato, preco) {
     try {

@@ -1,13 +1,15 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
+
+var {celebrate, Joi} = require('celebrate');
 
 const EmentaController = require('../controllers/ementaController');
 const EncomendaController = require('../controllers/encomendaController');
 const RefeicaoController = require('../controllers/refeicaoController');
-const pratoController = require('../controllers/pratoController');
+// const pratoController = require('../controllers/pratoController');
 
-// US006: Definir Prato
-router.put('/prato/:id/preco', pratoController.definirPrecoPrato);
+// // US006: Definir Prato
+// router.put('/prato/:id/preco', pratoController.definirPrecoPrato);
 
 //US007: Consultar Ementa Disponível
 router.get('/ementa', EmentaController.getEmentaDisponivel);
