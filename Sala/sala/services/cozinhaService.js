@@ -14,7 +14,6 @@ exports.getPratoById = async (idPrato) => {
             return null; // Se não encontrar o prato, retorna null
         }
     } catch (error) {
-        console.error('Erro ao buscar prato na API .NET:', error.message);
         throw new Error('Erro ao buscar prato na API .NET');
     }
 };
