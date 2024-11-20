@@ -28,7 +28,7 @@ exports.getEncomendasByCliente = async function (clienteId) {
     const encomendas = await EncomendaRepo.getEncomendasByClienteId(clienteId);
     return encomendas.map(encomenda => ({
         data: encomenda.data.toLocaleString(),
-        pratoNome: encomenda.refeicao.pratoNome,
-        valor: encomenda.valor
+        pratos: encomenda.refeicao.pratos.map(prato => prato.nome).join(', '),
+        valor: encomenda.valor.toFixed(2) + "€"
     }));
 };

@@ -12,10 +12,20 @@ exports.encomendarPrato = async function (req, res) {
     }
 };
 
-//US010 - Listar Encomendas por Cliente
+// US010 - Listar Encomendas por Cliente
 exports.listarEncomendasCliente = async function (req, res) {
     const clienteId = req.params.clienteId;
-    const result = await EncomendaService.getEncomendasByCliente(clienteId);
-    res.status(200).json(result);
-};
 
+    try {
+        const result = await EncomendaService.getEncomendasByCliente(clienteId);
+
+        if (!result || result.length === 0) {
+            res.status(404).json({ error: 'Nenhuma encomenda encontrada para este cliente.' });
+        } else {
+            res.status(200).json(result);
+        }
+    } catch (error) {
+        console.error('Erro ao listar encomendas do cliente:', error);
+        res.status(500).json({ error: 'Erro interno do servidor.' });
+    }
+};
