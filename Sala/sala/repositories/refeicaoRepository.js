@@ -17,3 +17,13 @@ exports.getRefeicaoWithClientes = async function (refeicaoId) {
         }))
     };
 };
+
+//US008: Encomendar refeicao
+exports.decrementarQuantidadeRefeicao = async function (refeicaoId) {
+    const refeicao = await RefeicaoModel.findById(refeicaoId);
+    if (!refeicao || refeicao.quantidadeProduzida <= 0) return false;
+
+    refeicao.quantidadeProduzida -= 1;
+    await refeicao.save();
+    return true;
+};

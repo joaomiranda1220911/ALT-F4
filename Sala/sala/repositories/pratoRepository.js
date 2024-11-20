@@ -36,12 +36,3 @@ exports.getPratosEmEmenta = async function () {
     }
 };
 
-//US007: Consultar Ementa Disponível
-exports.decrementarQuantidadePrato = async function (pratoId) {
-    const prato = await PratoModel.findById(pratoId);
-    if (!prato || prato.quantidade <= 0) return false;
-
-    prato.quantidade -= 1;
-    await prato.save();
-    return true;
-};

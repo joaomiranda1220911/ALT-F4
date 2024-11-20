@@ -19,7 +19,7 @@ exports.listarEncomendasCliente = async function (req, res) {
     try {
         const result = await EncomendaService.getEncomendasByCliente(clienteId);
 
-        if (!result || result.length === 0) {
+        if (result == null) {
             res.status(404).json({ error: 'Nenhuma encomenda encontrada para este cliente.' });
         } else {
             res.status(200).json(result);
