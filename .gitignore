@@ -60,3 +60,6 @@ Grupo2A.AssemblyInfo.cs
 
 # Ignore cache files
 Grupo2A.AssemblyInfoInput.cache
+
+# Ignorar node_modules
+node_modules/
