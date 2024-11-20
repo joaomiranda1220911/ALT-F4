@@ -17,3 +17,19 @@ exports.getPratoById = async (idPrato) => {
         throw new Error('Erro ao buscar prato na API .NET');
     }
 };
+
+exports.getRefeicaoById = async (idRefeicao) => {
+    try {
+        // Fazendo a chamada HTTP para buscar os pratos
+        const response = await axios.get(`${DOTNET_API_URL}/${idRefeicao}`);
+
+        if (response.data) {
+            return response.data; // Retorna o prato encontrado
+        } else {
+            return null; // Se não encontrar o prato, retorna null
+        }
+    } catch (error) {
+        throw new Error('Erro ao buscar refeicao na API .NET');
+    }
+};
+

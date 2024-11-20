@@ -1,6 +1,8 @@
 const RefeicaoModel = require('../models/refeicao');
 const EncomendaModel = require('../models/encomenda');
 
+
+//US009: Listar Todas Refeições Servidas
 exports.getRefeicaoWithClientes = async function (refeicaoId) {
     const refeicao = await RefeicaoModel.findById(refeicaoId).populate('pratos');
     if (!refeicao) return null;

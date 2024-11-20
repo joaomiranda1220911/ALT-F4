@@ -2,7 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var RefeicaoSchema = new Schema({
-    tipo: String, // Exemplo: "almoço", "jantar"
+    _id: { type: Number }, 
+    tipoRefeicao: {
+        type: String,
+        required: true,
+        maxlength: 100,
+        trim: true
+    },
+    data: {
+        type: DateTime,
+        required: true
+    },
+    quantidadeProduzida: {  
+        type: Number,
+        default: null
+    },
     pratos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Prato' }]
 });
 
