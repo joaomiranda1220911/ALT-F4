@@ -10,7 +10,7 @@ var RefeicaoSchema = new Schema({
         trim: true
     },
     data: {
-        type: Date, default: Date.now(),
+        type: Date,
         required: true
     },
     quantidadeProduzida: {  

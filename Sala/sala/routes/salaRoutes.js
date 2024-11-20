@@ -1,19 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router(); // Declara o router
+ 
 
 var { celebrate, Joi } = require('celebrate');
 
-const EmentaController = require('../controllers/ementaController');
-const RefeicaoController = require('../controllers/refeicaoController');
-// const pratoController = require('../controllers/pratoController');
-
-// // US006: Definir Prato
-// router.put('/prato/:id/preco', pratoController.definirPrecoPrato);
 
 //US007: Consultar Ementa Disponível
+const EmentaController = require('../controllers/ementaController');
 router.get('/ementa', EmentaController.getEmentaDisponivel);
 
 //US009: Listar Todas Refeições Servidas
+const RefeicaoController = require('../controllers/refeicaoController');
 router.get('/refeicoes/:refeicaoId', RefeicaoController.listarRefeicoesByData);
 
 //Teste
