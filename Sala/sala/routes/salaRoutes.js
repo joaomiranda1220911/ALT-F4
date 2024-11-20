@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var {celebrate, Joi} = require('celebrate');
+var { celebrate, Joi } = require('celebrate');
 
 const EmentaController = require('../controllers/ementaController');
 const RefeicaoController = require('../controllers/refeicaoController');
@@ -15,7 +15,6 @@ router.get('/ementa', EmentaController.getEmentaDisponivel);
 
 //US009: Listar Todas Refeições Servidas
 router.get('/refeicoes/:refeicaoId', RefeicaoController.listarRefeicoes);
-
 
 //Teste
 router.get('/test', (req, res) => res.status(200).send('Servidor está ativo!'));
