@@ -40,7 +40,7 @@ namespace Grupo2A.Controllers
                 return BadRequest(mensagem);
             }
 
-            
+
             return CreatedAtAction(nameof(PostRefeicao), new { id = novaRefeicao.IdRefeicao }, novaRefeicao);
         }
 
@@ -103,6 +103,18 @@ namespace Grupo2A.Controllers
             return Ok(refeicoes);
         }
 
+
+        [HttpGet("{IdRefeicao}")]
+        public async Task<IActionResult> GetRefeicaoById(long IdRefeicao)
+        {
+            var refeicao = await _context.Refeicoes.FindAsync(IdRefeicao);
+            if (refeicao == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(refeicao);
+        }
     }
 }
 
