@@ -1,43 +1,37 @@
 const RefeicaoService = require('../services/refeicaoService');
+const RefeicaoModel = require('../models/refeicao');
 
 //US009: Listar Todas Refeições Servidas
 exports.listarRefeicoesByData = async function (req, res) {
-    const refeicaoId = req.params.refeicaoId;
-    const data = req.body.data;
-    const tipoRefeicao = req.body.tipoRefeicao
+    const { data, tipoRefeicao } = req.body; // Desestruturação dos filtros enviados pelo cliente
+
+    // Validação inicial para garantir que os filtros estão presentes
+    if (!data || !tipoRefeicao) {
+        return res.status(400).json({ error: 'Os campos data e tipoRefeicao são obrigatórios.' });
+    }
 
     try {
-        // Buscar o prato na base de dados .NET
-        const pratoData = await cozinhaService.getRefeicaoById(refeicaoId);
+        // Converter a data para o formato correto
+        const dataFiltrada = new Date(data);
 
-        if (!pratoData) {
-            console.error(`[ERRO] Refeição com ID ${refeicaoId} não encontrado na base de dados .NET.`);
-            return res.status(404).json({ error: 'Refeição não encontrada na base de dados .NET.' });
-        }
-
-        // refeicao recuperado da base de dados .NET
-        const refeicaoMongo = new RefeicaoModel({
-            _id: refeicaoId,
-            tipoRefeicao: refeicaoData.tipoRefeicao,
-            data: refeicaoData.data,
-            quantidadeProduzida: refeicaoData.quantidadeProduzida,
-            idPrato: await pratoController.getPratoById(pratoData.prato),
+        // Buscar refeições no MongoDB que correspondam à data e ao tipo
+        const refeicoes = await RefeicaoModel.find({
+            data: { $eq: dataFiltrada }, // Verifica igualdade exata da data
+            tipoRefeicao: { $eq: tipoRefeicao } // Verifica igualdade do tipo
         });
 
-        // Salvar a refeicao com na base de dados MongoDB
-        await refeicaoMongo.save();
-        console.log(`[SUCESSO] Refeição com ID ${refeicaoId} salva com sucesso no MongoDB.`);
+        // Verificar se há resultados
+        if (!refeicoes || refeicoes.length === 0) {
+            console.log(`[INFO] Nenhuma refeição encontrada para a data ${data} e tipo ${tipoRefeicao}.`);
+            return res.status(404).json({ error: 'Nenhuma refeição encontrada para os critérios especificados.' });
+        }
 
+        // Responder com as refeições encontradas
+        console.log(`[SUCESSO] Encontradas ${refeicoes.length} refeições para os critérios especificados.`);
+        return res.status(200).json(refeicoes);
     } catch (error) {
-        console.error(`[ERRO] Erro ao definir preço: ${error.message}`);
-        return res.status(500).json({ error: 'Erro ao tentar definir o preço e salvar o prato no MongoDB.' });
+        // Log de erro e resposta apropriada
+        console.error(`[ERRO] Erro ao listar refeições: ${error.message}`);
+        return res.status(500).json({ error: 'Erro ao listar refeições.' });
     }
-
-    const result = await RefeicaoService.getRefeicaoWithClientes(refeicaoId);
-
-    if (result) {
-        res.status(200).json(result);
-    } else {
-        res.status(404).json({ error: 'Refeição não encontrada' });
-    }
-}
+};
