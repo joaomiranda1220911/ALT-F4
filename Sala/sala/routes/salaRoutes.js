@@ -10,6 +10,7 @@ const EmentaController = require('../controllers/ementaController');
 router.get('/ementa', EmentaController.getEmentaDisponivel);
 
 //US009: Listar Todas Refeições Servidas
+const RefeicaoController = require('../controllers/refeicaoController');
 router.get('/refeicoes/:refeicaoId', RefeicaoController.listarRefeicoesByData);
 
 //Teste
