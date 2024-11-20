@@ -10,9 +10,7 @@ const EmentaController = require('../controllers/ementaController');
 router.get('/ementa', EmentaController.getEmentaDisponivel);
 
 //US009: Listar Todas Refeições Servidas
-const RefeicaoController = require('../controllers/refeicaoController');
-router.get('/refeicao/:refeicaoId', RefeicaoController.listarRefeicoesByData);
-
+router.get('/refeicoes/:refeicaoId', RefeicaoController.listarRefeicoes);
 
 //Teste
 router.get('/test', (req, res) => res.status(200).send('Servidor está ativo!'));

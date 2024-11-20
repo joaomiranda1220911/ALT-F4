@@ -8,13 +8,13 @@ exports.encomendarRefeicao = async function (clienteId, refeicaoId) {
     if (!conta) return { success: false, message: 'Conta do cliente não encontrada' };
 
     // ve se a refeicao pedida esta na ementa
-    const refeicao = await RefeicaoRepo.getRefeicaoEmEmenta(); // MUDAR ESTA FUNCAO
+    const refeicao = await RefeicaoRepo.getRefeicoesEmEmenta();
     const refeicaoSelecionado = refeicao.find(p => p._id.toString() === refeicaoId);
     if (!refeicaoSelecionado) return { success: false, message: 'Refeicao não encontrada ou indisponível' };
 
 
     // ve o preco do prato associado à refeicao
-    const pratoRefeicao = await
+    const pratoRefeicao = await 
     if (conta.saldo < refeicaoSelecionado.preco) {
         return { success: false, message: 'Saldo insuficiente' };
     }
