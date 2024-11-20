@@ -4,7 +4,7 @@ const ClienteModel = require('../models/cliente');
 
 //US001: Criar cliente
 //Criar um novo cliente associando a conta com saldo inicial de 0€
-exports.createClient = async function (clienteDTO) {
+exports.createCliente = async function (clienteDTO) {
     const newCliente = new ClienteModel({
         name: clienteDTO.name,
         nif: clienteDTO.nif,

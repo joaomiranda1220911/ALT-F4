@@ -6,7 +6,7 @@ var {celebrate, Joi} = require('celebrate');
 const clienteController = require('../controllers/clienteController');
 
 //US001: Registar cliente
-router.post('/', clienteController.createCliente); //Recebe dados para criar um novo cliente
+router.post('/', clienteController.createCliente);//Recebe dados para criar um novo cliente
 
 //US002: Listar todos os clientes
 router.get('/', clienteController.getAllClientes); //Recupera todos os clientes existentes
