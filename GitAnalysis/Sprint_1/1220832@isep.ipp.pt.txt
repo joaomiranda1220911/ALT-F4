@@ -1,288 +1,127 @@
-commit 34765fcf5e608241a835be3128254e8c935314c7	refs/tags/v1.0.0
+commit 2161d1e24a1d6f9e46afca8ac50d32667676832d	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sun Nov 3 12:15:43 2024 +0000
+Date:   Mon Nov 18 00:39:19 2024 +0000
 
-    Correção Erros
+    Commit - Organização do Código (pt.4)
 
-M	Grupo2A/Controllers/PratosController.cs
-M	Grupo2A/Controllers/RefeicoesController.cs
+M	Sala/sala/models/encomenda.js
+M	Sala/sala/models/refeicao.js
+M	Sala/sala/repositories/contaClienteRepository.js
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/repositories/refeicaoRepository.js
 
-commit e749a41bc7f0d03a28c46e58caf582155c449c76	refs/tags/v1.0.0
+commit 766a9a00deeb27aea34e2ac6c2d64d99d1c5d4e9	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 19:05:19 2024 +0000
+Date:   Mon Nov 18 00:22:28 2024 +0000
 
-    Commit - Adicionar descrição a Tipo de Prato
+    Commit - Organização do Código (pt.3)
 
-M	Grupo2A/Model/DTO/TipoDePrato2create_dto.cs
-M	Grupo2A/Model/DTO/TipoDePrato2detail_dto.cs
-M	Grupo2A/Model/DTO/TipoDePrato2listing_dto.cs
-M	Grupo2A/Model/TipoDePrato.cs
-M	Grupo2A/Services/TipoDePratoService.cs
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/pratoService.js
 
-commit d368780ae3346e424283b63ac48deeea3236acad	refs/tags/v1.0.0
+commit 1423d38559f70ff835705318197d69f880dbe50e	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 02:42:56 2024 +0000
+Date:   Mon Nov 18 00:17:41 2024 +0000
 
-    teste 3
+    Commit - Organização Código (pt.2)
 
-M	Grupo2A/Model/Refeicao.cs
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/services/refeicaoService.js
 
-commit a006d362a4a2f57f430db1a8ff2183b56cb366b2	refs/tags/v1.0.0
+commit 77ae34abcc2ae4f54b25fd8ffa72f40e82ace771	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 02:39:10 2024 +0000
+Date:   Mon Nov 18 00:14:08 2024 +0000
 
-    Teste 2
+    Commit - Organização do Código
 
-M	Grupo2A/Controllers/IngredientesController.cs
+M	Sala/sala/controllers/ementaController.js
+M	Sala/sala/controllers/encomendaController.js
+M	Sala/sala/repositories/encomendaRepository.js
+M	Sala/sala/services/encomendaService.js
 
-commit daec177bab080a966c01ca7360cb5a4d9cf7ca33	refs/tags/v1.0.0
+commit 304f20f908cc90148abe2da75b5a5464788c82b4	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 02:32:41 2024 +0000
+Date:   Mon Nov 18 00:05:09 2024 +0000
 
-    Teste
+    Commit - Alteração nome método (US003)
 
-M	Grupo2A/Controllers/IngredientesController.cs
+M	Sala/sala/services/clienteService.js
 
-commit 3cfafa04e241f6c8bdb1a162721f5d33eb8f13f3	refs/tags/v1.0.0
+commit 1646262f1f47c3a31610acd3a0cc67779a0cd5d1	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 02:08:35 2024 +0000
+Date:   Mon Nov 18 00:02:57 2024 +0000
 
-    Commit - Mudança de Nome (IdTipoPrato)
+    Commit - Rota para US004
 
-M	Grupo2A/Model/DTO/TipoDePrato2detail_dto.cs
-M	Grupo2A/Model/DTO/TipoDePrato2listing_dto.cs
-M	Grupo2A/Model/TipoDePrato.cs
-M	Grupo2A/Services/TipoDePratoService.cs
+M	Sala/sala/routes/clienteRoutes.js
 
-commit cfbe40afbaefaa85f91e8674537697a037127bad	refs/tags/v1.0.0
+commit 1b913f6ddaf031a9827935f21164d5cdce20a6a3	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 02:06:11 2024 +0000
+Date:   Sun Nov 17 23:57:55 2024 +0000
 
-    Commit - Mudança Nome (IdRefeicao)
+    Commit - Coerência US003 e US004
 
-M	Grupo2A/Model/DTO/Refeicao2detail_dto.cs
-M	Grupo2A/Model/Refeicao.cs
-M	Grupo2A/Services/RefeicoesService.cs
+M	Sala/sala/controllers/clienteController.js
 
-commit ee49c16d9d92d9ce6b30cba0496bceec577b5f53	refs/tags/v1.0.0
+commit 2eb99b151e6fe46d30101c185227f5b75750e7bc	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 01:56:11 2024 +0000
+Date:   Sun Nov 17 23:54:30 2024 +0000
+
+    Commit - Service US004
+
+M	Sala/sala/services/clienteService.js
+
+commit 1df2a3736266e9534bc7381bc870e47a547c7fec	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 23:47:34 2024 +0000
+
+    Commit - Repository US004
+
+M	Sala/sala/repositories/clienteRepository.js
+
+commit 73d33cecaec8dd5a2955a9ab6d678ce0e45b11cd	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 23:42:26 2024 +0000
 
     Correção Erro
 
-M	Grupo2A/Services/IngredientesService.cs
+M	Sala/sala/controllers/clienteController.js
 
-commit 96675420336f427302bb352beb72928f1773098e	refs/tags/v1.0.0
+commit 289a2849c96a9c520e2f3a2112df3a750bce54f2	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 01:54:20 2024 +0000
+Date:   Sun Nov 17 23:41:09 2024 +0000
 
-    Commit - Coerência dos Nomes (Ingredientes)
+    Commit - Controller US004
 
-M	Grupo2A/Model/DTO/Ingrediente2create_dto.cs
+M	Sala/sala/controllers/clienteController.js
 
-commit 55074b0f8d11452ff10db231e01073a177cd074b	refs/tags/v1.0.0
+commit c745da262b13ad032ed8065aa0c208c4a2fde169	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 01:52:36 2024 +0000
+Date:   Sun Nov 17 20:37:24 2024 +0000
 
-    Commit - Coerência nos nomes
+    US003 - Transações
 
-M	Grupo2A/Model/DTO/Ingrediente2create_dto.cs
+A	Sala/sala/models/transaction.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/services/clienteService.js
 
-commit bda1ebfe69587bfbad5385443a6771c2ecacbb10	refs/tags/v1.0.0
+commit 9ed0d7c910adf30d39b303c815c5ea812b3ca086	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 01:30:25 2024 +0000
+Date:   Sun Nov 17 19:10:09 2024 +0000
 
-    Commit - Warning (EmentasService)
+    US003 - Obter Info de um Cliente através do NIF
 
-M	Grupo2A/Services/EmentasService.cs
+M	Sala/sala/controllers/clienteController.js
+M	Sala/sala/models/cliente.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/routes/clienteRoutes.js
+M	Sala/sala/services/clienteService.js
 
-commit a121e52683d4b1afc81271ed5eced8f5e417fcac	refs/tags/v1.0.0
+commit 4f09fd5ef09ab7648cad0e4468b0bebf74f8bbc0	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Nov 2 01:28:18 2024 +0000
+Date:   Fri Nov 15 15:15:21 2024 +0000
 
-    Commmit - Warning (Receita)
-
-M	Grupo2A/Model/Receita.cs
-
-commit 224b9e46249ebd9bf3b2b79206170af17e5da9a7	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Fri Nov 1 23:49:42 2024 +0000
-
-    Commit - Correção Erro
+    Commit - Correção no Decrementar Refeições
 
 M	Grupo2A/Controllers/RefeicoesController.cs
-
-commit 9d5deff4d85d44549a721c30c32049eca671294e	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Fri Nov 1 23:44:37 2024 +0000
-
-    Commit - Resolução de Warnings (RefeicoesService)
-
 M	Grupo2A/Services/RefeicoesService.cs
-
-commit a7fd4bde2dce487789f22e042405551e603bf74b	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Fri Nov 1 10:40:12 2024 +0000
-
-    Commit - Correção de Erros
-
-M	Grupo2A/Controllers/IngredientesController.cs
-M	Grupo2A/Repositories/IngredientesRepository.cs
-
-commit 2327fda9340d9cf5ffa04f9f1f083feeb7609236	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Fri Nov 1 10:38:26 2024 +0000
-
-    Commit - US007
-
-M	Grupo2A/Controllers/PratosController.cs
-M	Grupo2A/Repositories/PratosRepository.cs
-M	Grupo2A/Services/PratosService.cs
-
-commit 3eec646c612a596aab9bcb4482caab975cf16f64	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Thu Oct 31 22:20:24 2024 +0000
-
-    Commit - Create (Prato)
-
-A	Grupo2A/Model/DTO/Prato2create_dto.cs
-
-commit 8e70ee4481b2f4d0e466e1d10dac16eca199b0a3	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Thu Oct 31 19:45:32 2024 +0000
-
-    Commit - US006
-
-M	Grupo2A/Controllers/TipoDePratoController.cs
-M	Grupo2A/Repositories/TipoDePratoRepository.cs
-M	Grupo2A/Services/TipoDePratoService.cs
-
-commit e449b0b527a04a86d957516d8aff460cff078d4c	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Thu Oct 31 19:32:52 2024 +0000
-
-    Commit - Listar tipos de pratos
-
-M	Grupo2A/Controllers/TipoDePratoController.cs
-M	Grupo2A/Repositories/TipoDePratoRepository.cs
-M	Grupo2A/Services/TipoDePratoService.cs
-
-commit 89ae00c193df0fbaa37fd92deb276d060a5f44b1	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Thu Oct 31 19:18:34 2024 +0000
-
-    Commit - US004
-
-M	Grupo2A/Controllers/TipoDePratoController.cs
-M	Grupo2A/Repositories/TipoDePratoRepository.cs
-M	Grupo2A/Services/TipoDePratoService.cs
-
-commit 7ca62401a2628fc32ff70a5203439121e317d3ef	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Thu Oct 31 17:43:15 2024 +0000
-
-    Commit - TipoDePrato (contr, service e repo)
-
-A	Grupo2A/Controllers/TipoDePratoController.cs
-A	Grupo2A/Repositories/TipoDePratoRepository.cs
-A	Grupo2A/Services/TipoDePratoService.cs
-
-commit 31ed3cc64e349bf036b5994261e637b61b601a4b	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Thu Oct 31 17:30:59 2024 +0000
-
-    Commit - DTOs TipoDePrato
-
-A	Grupo2A/Model/DTO/TipoDePrato2create_dto.cs
-A	Grupo2A/Model/DTO/TipoDePrato2detail_dto.cs
-A	Grupo2A/Model/DTO/TipoDePrato2listing_dto.cs
-
-commit d1e1afc3a2e864ba33f4a0c8c1a11eeafa80d7c2	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Mon Oct 28 11:25:32 2024 +0000
-
-    Commit - Ementas (Service e Repository)
-
-A	Grupo2A/Repositories/EmentasRepository.cs
-A	Grupo2A/Services/EmentasService.cs
-
-commit 745e042adb41287b033e1f8ea054cf92f384441d	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Oct 26 23:26:48 2024 +0100
-
-    Commit - Receitas (Contr, Serv, Repo) - Base
-
-M	Grupo2A/Controllers/ReceitasController.cs
-M	Grupo2A/Repositories/ReceitasRepository.cs
-M	Grupo2A/Services/ReceitasService.cs
-
-commit 3bf3d491b0339737bce3fb4574ed290081781cfd	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Oct 26 23:20:11 2024 +0100
-
-    Commit - Ingred (Contr, Repo e Service)
-
-M	Grupo2A/Controllers/IngredientesController.cs
-M	Grupo2A/Repositories/IngredientesRepository.cs
-M	Grupo2A/Services/IngredientesService.cs
-
-commit 5844e56aad9e28edf40ac44009f03c2119c3e880	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Oct 26 23:10:31 2024 +0100
-
-    Commit - Pratos (Contr, Repo e Service) - Base
-
-M	Grupo2A/Controllers/PratosController.cs
-M	Grupo2A/Repositories/PratosRepository.cs
-M	Grupo2A/Services/PratosService.cs
-
-commit 32d7dbbae381b8749ac1bbb3a9d890d50c8662f4	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Oct 26 22:14:11 2024 +0100
-
-    Commit - 2listing_dto: Ingrediente Receita Prato
-
-M	Grupo2A/Model/DTO/Ingrediente2listing_dto.cs
-M	Grupo2A/Model/DTO/Prato2listing_dto.cs
-M	Grupo2A/Model/DTO/Receita2listing_dto.cs
-
-commit 0f5478b275938e83a95713ccef32d17970325199	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Sat Oct 26 22:02:00 2024 +0100
-
-    Commit - 2detail_dto: Ingrediente, Prato e Receita
-
-M	Grupo2A/Model/DTO/Ingrediente2detail_dto.cs
-M	Grupo2A/Model/DTO/Prato2detail_dto.cs
-M	Grupo2A/Model/DTO/Receita2detail_dto.cs
-
-commit 7c73fbe4ef7d0d4d25fe7d4139c710464f1ea2fe	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Fri Oct 25 20:08:29 2024 +0100
-
-    Commit - Folder DTO e ficheiros
-
-A	Grupo2A/Model/DTO/Ingrediente2detail_dto.cs
-A	Grupo2A/Model/DTO/Ingrediente2listing_dto.cs
-A	Grupo2A/Model/DTO/Prato2detail_dto.cs
-A	Grupo2A/Model/DTO/Prato2listing_dto.cs
-A	Grupo2A/Model/DTO/Receita2detail_dto.cs
-
-commit 96e76a53c1966b355788929ebc5a8436830bf11c	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Thu Oct 24 19:07:29 2024 +0100
-
-    Commmit - Folder Repositories
-
-A	Grupo2A/Repositories/IngredientesRepository.cs
-A	Grupo2A/Repositories/PratosRepository.cs
-
-commit 94780d15faecfe57077b15bf7ee386cd5e6f91fc	refs/tags/v1.0.0
-Author: Gabriela <1220832@isep.ipp.pt>
-Date:   Wed Oct 23 21:49:14 2024 +0100
-
-    Commit - Folder Services
-
-A	Grupo2A/Services/IngredientesService.cs
-A	Grupo2A/Services/PratosService.cs
-A	Grupo2A/Services/ReceitasService.cs

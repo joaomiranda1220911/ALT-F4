@@ -1,256 +1,91 @@
-commit 16f39491c8bd5e21e5d2f54079075bea1a9f7ddf	refs/tags/v1.0.0
+commit ac903cd1274f897a2d906e564d4861c63d9c163e	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 22:54:51 2024 +0000
+Date:   Sun Nov 17 23:09:23 2024 +0000
 
-    correção de erros
+    US002- Listar todos os clientes
 
-M	Grupo2A/Services/RefeicoesService.cs
-M	Grupo2A/Services/TipoDeRefeicaoService.cs
+M	Sala/sala/controllers/clienteController.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/routes/clienteRoutes.js
+M	Sala/sala/services/clienteService.js
 
-commit a6d24fe7fc355778ec2d02c0226df9beddc24542	refs/tags/v1.0.0
+commit f6bcbd75e705465e09163f12deaa8cb1cbd741d9	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 22:02:09 2024 +0000
+Date:   Sun Nov 17 10:35:01 2024 +0000
 
-    correção
+    US001- cliente.js
 
-M	Grupo2A/Repositories/PratosRepository.cs
-M	Grupo2A/Services/PratosService.cs
+M	Sala/sala/models/cliente.js
 
-commit 72c778dfe49bdca1d351b0836b119cbd4c3876a0	refs/tags/v1.0.0
+commit 279d99ef1f96186023e822a3aceaf2185ff91726	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 18:57:34 2024 +0000
+Date:   Sat Nov 16 20:52:36 2024 +0000
 
-    correção de erros
+    US001 - clienteService.js
 
-M	Grupo2A/Controllers/RefeicoesController.cs
+M	Sala/sala/services/clienteService.js
 
-commit e7bb425fe5d30063327e9341f9d6ed75a398f986	refs/tags/v1.0.0
+commit b1c40d1b2b823f905c27a7d693968bac60a82ea9	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 18:54:00 2024 +0000
+Date:   Sat Nov 16 17:00:10 2024 +0000
 
-    correção de erros
+    US001 - clienteRepository.js
 
-M	Grupo2A/Controllers/RefeicoesController.cs
-M	Grupo2A/Services/RefeicoesService.cs
+M	Sala/sala/repositories/clienteRepository.js
 
-commit b1cc9bbf7dfac4112871ca16f3022d804a8cc4c9	refs/tags/v1.0.0
+commit 073f5f3b8676bcb807d96f3fabe993d922c7ade6	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 18:41:16 2024 +0000
+Date:   Sat Nov 16 16:52:35 2024 +0000
 
-    correção de erros
+    US001 - clienteController.js
 
-M	Grupo2A/Services/RefeicoesService.cs
+M	Sala/sala/controllers/clienteController.js
+M	Sala/sala/routes/clienteRoutes.js
 
-commit c3ee2aaa3a3cd48d8c8bcc7200cd4c34f507a511	refs/tags/v1.0.0
+commit 51bdcdd8a1abd6d8cb78995bc3421452f95a0c66	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 18:36:24 2024 +0000
+Date:   Sat Nov 16 16:45:23 2024 +0000
 
-    correção de erros
+    Criação de cliente.js
 
-M	Grupo2A/Controllers/RefeicoesController.cs
+A	Sala/sala/models/cliente.js
 
-commit 6984044c7632af18851c5df4a4b3ecbdee82dc44	refs/tags/v1.0.0
+commit 66833212328a292b977f1c227b56075fcdca2602	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 16:14:12 2024 +0000
+Date:   Sat Nov 16 16:44:32 2024 +0000
 
-    correção de erros
+    Criação de clienteService.js
 
-M	Grupo2A/Controllers/IngredientesController.cs
+A	Sala/sala/services/clienteService.js
 
-commit f745340c48a89c1ae3c1b7b808f5b82fc3a4f6c9	refs/tags/v1.0.0
+commit ac7f7da474d105190fe0aef3f8d5f0931bc8e1d1	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 16:09:14 2024 +0000
+Date:   Sat Nov 16 16:43:58 2024 +0000
 
-    correção de erros
+    Criação de clienteRepository.js
 
-M	Grupo2A/Controllers/IngredientesController.cs
+A	Sala/sala/repositories/clienteRepository.js
 
-commit fea09c3a44aec887cc7ed1f51bda162ae22857f0	refs/tags/v1.0.0
+commit 21c597297e1a6fef15660c480006943945c2bca8	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 15:49:21 2024 +0000
+Date:   Sat Nov 16 16:41:49 2024 +0000
 
-    correção de erros
+    US001 - clienteRoutes.js
 
-M	Grupo2A/Controllers/IngredientesController.cs
+M	Sala/sala/routes/clienteRoutes.js
 
-commit 7fccd30b90d00c59c0ecaa5eb2913c0c0b6e6200	refs/tags/v1.0.0
+commit a821d5f0d4a2abe379278edcec0a0582f4a9b0f4	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 15:03:28 2024 +0000
+Date:   Sat Nov 16 16:16:27 2024 +0000
 
-    correção de erros
+    Criação de clienteController.js
 
-M	Grupo2A/Controllers/PratosController.cs
-M	Grupo2A/Repositories/PratosRepository.cs
-M	Grupo2A/Services/PratosService.cs
+A	Sala/sala/controllers/clienteController.js
 
-commit 9b9ed9b0e76f016cf8cf8d97a2c2367e8676ff92	refs/tags/v1.0.0
+commit cb9be4ec3be6cb66cd2b03e0a388f5c16154872b	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 14:01:40 2024 +0000
+Date:   Sat Nov 16 16:13:39 2024 +0000
 
-    Correção de erros
+    Criação do clienteRoutes.js
 
-M	Grupo2A/Controllers/PratosController.cs
-
-commit 2f51ea9577c71255e49f5b05a3886af7f9746aed	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sun Nov 3 13:56:48 2024 +0000
-
-    Correção de erros
-
-M	Grupo2A/Model/DTO/Prato2create_dto.cs
-M	Grupo2A/Services/PratosService.cs
-
-commit 7df4786550a92888b2009c6ee84755e2d93c4539	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sat Nov 2 00:17:19 2024 +0000
-
-    Correção de erros
-
-M	Grupo2A/Model/Ingrediente.cs
-M	Grupo2A/Repositories/EmentasRepository.cs
-M	Grupo2A/Services/EmentasService.cs
-M	Grupo2A/Services/TipoDePratoService.cs
-
-commit e9711391c467584f1d43cf47804c4364dbc3d645	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Fri Nov 1 21:27:19 2024 +0000
-
-    Correção de erros
-
-M	Grupo2A/Model/DTO/Prato2detail_dto.cs
-M	Grupo2A/Model/Prato.cs
-M	Grupo2A/Services/PratosService.cs
-
-commit 96562df0f506a59ddb2133f131a994cb8fb6d6f1	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Fri Nov 1 16:56:36 2024 +0000
-
-    Correção de erros US016
-
-M	Grupo2A/Controllers/RefeicoesController.cs
-M	Grupo2A/Services/RefeicoesService.cs
-
-commit 89c398f9581c86b321c4491439625614fa132bac	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Thu Oct 31 21:39:31 2024 +0000
-
-    US016, PratosController.cs
-
-M	Grupo2A/Controllers/PratosController.cs
-
-commit 72e734cc4a6929d0bc8a073f5d5d26d303e19072	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Thu Oct 31 21:36:06 2024 +0000
-
-    US016: PratosController.cs
-
-M	Grupo2A/Controllers/EmentasController.cs
-M	Grupo2A/Controllers/PratosController.cs
-
-commit b9c205972f7c2e4b86f8a0c98196017e32a2ffea	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Thu Oct 31 21:14:28 2024 +0000
-
-    US016, PratosServices.cs
-
-M	Grupo2A/Model/DTO/Prato2detail_dto.cs
-M	Grupo2A/Model/DTO/Prato2listing_dto.cs
-M	Grupo2A/Services/PratosService.cs
-
-commit 53ebb6566c7e64ff6c4a643736d09a920943a436	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Thu Oct 31 18:11:02 2024 +0000
-
-    US015, PratosController.cs
-
-M	Grupo2A/Controllers/PratosController.cs
-M	Grupo2A/Services/PratosService.cs
-
-commit 3d1fd43814bbd538f1a6ea5745286b07e7108b4c	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Tue Oct 29 21:28:43 2024 +0000
-
-    US015, PratosService.cs
-
-M	Grupo2A/Model/Prato.cs
-M	Grupo2A/Services/PratosService.cs
-
-commit adf96ec9db0c6078b6bda5dc3e6d93b2ddbddb1a	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Mon Oct 28 02:34:53 2024 +0000
-
-    US014, PratosController.cs
-
-M	Grupo2A/Controllers/PratosController.cs
-
-commit 034ea4d226738e7da98397bff1a8438fdf19a042	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Mon Oct 28 02:26:36 2024 +0000
-
-    US014, PratosServices.cs
-
-M	Grupo2A/Services/PratosService.cs
-
-commit 910bdf3c3a06e693461ad407278c3a1cdb531693	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Mon Oct 28 01:39:17 2024 +0000
-
-    Criação de ementasController.cs
-
-A	Grupo2A/Controllers/EmentasController.cs
-
-commit 3f6db41ee71a2a6e494b33f3499e523245fef1f9	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Mon Oct 28 01:38:24 2024 +0000
-
-    Acrescimo da quantidade, data e TipoRefeicao no prato.cs
-
-M	Grupo2A/Model/Prato.cs
-M	Grupo2A/Repositories/PratosRepository.cs
-
-commit b1eb65880f6ff67ed6c92c263ad3eb07d4c0f165	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sat Oct 26 22:49:42 2024 +0100
-
-    Commit - 2update_dto: Receita
-
-M	Grupo2A/Model/DTO/Prato2update_dto.cs
-M	Grupo2A/Model/DTO/Receita2update_dto.cs
-
-commit bc309affd3a966b6269c579ced63895d0f6d728a	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Sat Oct 26 22:44:41 2024 +0100
-
-    Commit - 2update_dto: Ingrediente e Prato
-
-M	Grupo2A/Model/DTO/Ingrediente2update_dto.cs
-M	Grupo2A/Model/DTO/Prato2update_dto.cs
-
-commit 6f62cb1143775d4b95187e40be603bf08e584b98	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Fri Oct 25 20:13:13 2024 +0100
-
-    Criação de ficheiros dto
-
-A	Grupo2A/Model/DTO/Ingrediente2update_dto.cs
-A	Grupo2A/Model/DTO/Prato2update_dto.cs
-A	Grupo2A/Model/DTO/Receita2listing_dto.cs
-A	Grupo2A/Model/DTO/Receita2update_dto.cs
-
-commit fcbc0f52b2901703793a92153070b3060299ef72	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Thu Oct 24 19:22:43 2024 +0100
-
-    Criação do ficheiro ReceitasRepository.cs
-
-A	Grupo2A/Repositories/ReceitasRepository.cs
-
-commit 0abd84b1cde16569a2b17385f9cc1b8e5d28724d	refs/tags/v1.0.0
-Author: Seu Nome <1220827@isep.ipp.pt>
-Date:   Wed Oct 23 22:04:46 2024 +0100
-
-    Criação da pasta models e respetivos ficheiros
-
-A	Grupo2A/Models/Ingredientes.cs
-A	Grupo2A/Models/Pratos.cs
-A	Grupo2A/Models/Receitas.cs
+A	Sala/sala/routes/clienteRoutes.js

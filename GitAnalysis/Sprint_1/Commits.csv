@@ -1,140 +1,64 @@
-163914c,2024-11-05 22:30:12 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
-69dd569,2024-11-05 22:07:57 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
-79c18f0,2024-11-05 20:54:54 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
-63a8e31,2024-11-05 16:43:18 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
-d9afca3,2024-11-03 23:27:30 +0000,João Miranda,1220911@isep.ipp.pt,postman_collection
-5b00cdc,2024-11-03 23:13:36 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,Database
-8b2f5bc,2024-11-03 23:12:07 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
-d001bf2,2024-11-03 22:55:33 +0000,1221040,1221040@isep.ipp.pt,Correção de erros
-16f3949,2024-11-03 22:54:51 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-104a6c2,2024-11-03 22:45:38 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correções finais
-a6d24fe,2024-11-03 22:02:09 +0000,Seu Nome,1220827@isep.ipp.pt,correção
-10342a9,2024-11-03 21:56:37 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,[HttpPost("filtrar")]
-ca6d1b1,2024-11-03 21:28:22 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,RefeicoesController
-673a869,2024-11-03 21:23:56 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção erros
-3f83f0c,2024-11-03 21:02:34 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção
-c3c30b4,2024-11-03 21:00:47 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
-72c778d,2024-11-03 18:57:34 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-e7bb425,2024-11-03 18:54:00 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-b1cc9bb,2024-11-03 18:41:16 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-c3ee2aa,2024-11-03 18:36:24 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-8150fab,2024-11-03 18:11:49 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção erros
-f5b1038,2024-11-03 16:42:28 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,commit
-8e4f0d4,2024-11-03 16:30:39 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correções finais !
-ee09e2d,2024-11-03 16:27:32 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção
-c3a631b,2024-11-03 16:24:52 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção final!
-6984044,2024-11-03 16:14:12 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-f745340,2024-11-03 16:09:14 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-fea09c3,2024-11-03 15:49:21 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-2785bf3,2024-11-03 15:45:05 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,cooreção de erros
-ade5f59,2024-11-03 15:30:49 +0000,1221040,1221040@isep.ipp.pt,GetEstadoDePrato
-9686812,2024-11-03 15:28:00 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,erros
-2f3776a,2024-11-03 15:23:33 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,erro ;
-7454665,2024-11-03 15:22:35 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,GetIngredienteById e DeleteIngrediente
-69ecac7,2024-11-03 15:12:27 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-7fccd30,2024-11-03 15:03:28 +0000,Seu Nome,1220827@isep.ipp.pt,correção de erros
-5b5ae28,2024-11-03 14:58:12 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,DeleteTipoDePratoById
-6ce77d8,2024-11-03 14:56:33 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-94bbf6a,2024-11-03 14:42:53 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros US008
-775839f,2024-11-03 14:28:48 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros - final!
-8a40d22,2024-11-03 14:26:06 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-5e91c13,2024-11-03 14:24:17 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-9efeb9a,2024-11-03 14:21:10 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-d5dd866,2024-11-03 14:11:36 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,corrigir erros
-9b9ed9b,2024-11-03 14:01:40 +0000,Seu Nome,1220827@isep.ipp.pt,Correção de erros
-2f51ea9,2024-11-03 13:56:48 +0000,Seu Nome,1220827@isep.ipp.pt,Correção de erros
-91fe7af,2024-11-03 13:54:29 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
-d342a9d,2024-11-03 13:18:40 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-52c0df9,2024-11-03 13:09:32 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,corrigir erros
-aeb37b6,2024-11-03 13:06:26 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,GetTipoRefeicaoById
-1df7aac,2024-11-03 12:34:25 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,correÃ§Ã£o criar prato
-34765fc,2024-11-03 12:15:43 +0000,Gabriela,1220832@isep.ipp.pt,Correção Erros
-bc92310,2024-11-03 00:44:04 +0000,1221040,1221040@isep.ipp.pt,Correção de Erros- TipoDeRefeiçãoCtl, Refeicao, TipoDeRefeicao
-75c7e6a,2024-11-02 23:57:04 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,PUT: ativar e inativar
-0d7da8c,2024-11-02 22:46:19 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
-2ce2d47,2024-11-02 22:10:24 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,migrations e database
-791d08d,2024-11-02 22:05:06 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,migrations update
-dda66a2,2024-11-02 19:12:37 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,mudar receita para string
-e749a41,2024-11-02 19:05:19 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Adicionar descrição a Tipo de Prato
-8168eab,2024-11-02 13:34:14 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ã£o de Warnings
-f02566b,2024-11-02 13:19:59 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,Migrations, update database, correÃ§Ã£o de erros
-83bfd95,2024-11-02 12:04:35 +0000,1221040,1221040@isep.ipp.pt,Alteração no Program.cs
-a04c500,2024-11-02 11:59:14 +0000,1221040,1221040@isep.ipp.pt,Program.cs Alterações MyPolicy
-d368780,2024-11-02 02:42:56 +0000,Gabriela,1220832@isep.ipp.pt,teste 3
-a006d36,2024-11-02 02:39:10 +0000,Gabriela,1220832@isep.ipp.pt,Teste 2
-daec177,2024-11-02 02:32:41 +0000,Gabriela,1220832@isep.ipp.pt,Teste
-3cfafa0,2024-11-02 02:08:35 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Mudança de Nome (IdTipoPrato)
-cfbe40a,2024-11-02 02:06:11 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Mudança Nome (IdRefeicao)
-ee49c16,2024-11-02 01:56:11 +0000,Gabriela,1220832@isep.ipp.pt,Correção Erro
-9667542,2024-11-02 01:54:20 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Coerência dos Nomes (Ingredientes)
-55074b0,2024-11-02 01:52:36 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Coerência nos nomes
-bda1ebf,2024-11-02 01:30:25 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Warning (EmentasService)
-a121e52,2024-11-02 01:28:18 +0000,Gabriela,1220832@isep.ipp.pt,Commmit - Warning (Receita)
-7df4786,2024-11-02 00:17:19 +0000,Seu Nome,1220827@isep.ipp.pt,Correção de erros
-224b9e4,2024-11-01 23:49:42 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Correção Erro
-9d5deff,2024-11-01 23:44:37 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Resolução de Warnings (RefeicoesService)
-e971139,2024-11-01 21:27:19 +0000,Seu Nome,1220827@isep.ipp.pt,Correção de erros
-60bb276,2024-11-01 19:12:04 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-96562df,2024-11-01 16:56:36 +0000,Seu Nome,1220827@isep.ipp.pt,Correção de erros US016
-a00ea9d,2024-11-01 16:21:14 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-751e76f,2024-11-01 15:43:52 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção erros US012 e US013
-9be4f91,2024-11-01 13:11:52 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correçaõ erros US011
-9933db4,2024-11-01 12:35:00 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erros
-7af011b,2024-11-01 11:54:06 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,UpdateEstadoIngredienteInativar  (US009) (Controller e Service do Ingrediente) + simplificação do método de UpdateEstadoPrato (controller e service do Prato) (US008/US009/US010)
-a7fd4bd,2024-11-01 10:40:12 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Correção de Erros
-2327fda,2024-11-01 10:38:26 +0000,Gabriela,1220832@isep.ipp.pt,Commit - US007
-3eec646,2024-10-31 22:20:24 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Create (Prato)
-89c398f,2024-10-31 21:39:31 +0000,Seu Nome,1220827@isep.ipp.pt,US016, PratosController.cs
-72e734c,2024-10-31 21:36:06 +0000,Seu Nome,1220827@isep.ipp.pt,US016: PratosController.cs
-b9c2059,2024-10-31 21:14:28 +0000,Seu Nome,1220827@isep.ipp.pt,US016, PratosServices.cs
-8e70ee4,2024-10-31 19:45:32 +0000,Gabriela,1220832@isep.ipp.pt,Commit - US006
-e449b0b,2024-10-31 19:32:52 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Listar tipos de pratos
-89ae00c,2024-10-31 19:18:34 +0000,Gabriela,1220832@isep.ipp.pt,Commit - US004
-53ebb65,2024-10-31 18:11:02 +0000,Seu Nome,1220827@isep.ipp.pt,US015, PratosController.cs
-7ca6240,2024-10-31 17:43:15 +0000,Gabriela,1220832@isep.ipp.pt,Commit - TipoDePrato (contr, service e repo)
-31ed3cc,2024-10-31 17:30:59 +0000,Gabriela,1220832@isep.ipp.pt,Commit - DTOs TipoDePrato
-fee38da,2024-10-31 15:33:12 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ã£o de erros
-6f51fe2,2024-10-31 15:14:43 +0000,1221040,1221040@isep.ipp.pt,Alterações no Service e Controller -  TipoDeRefeicao
-ac0fdd8,2024-10-31 15:04:44 +0000,1221040,1221040@isep.ipp.pt,Alterações da ementa para o tipo de refeição - controller, service e repository
-fcd87df,2024-10-31 15:00:13 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,GetAllInactiveIngredientes
-3d1fd43,2024-10-29 21:28:43 +0000,Seu Nome,1220827@isep.ipp.pt,US015, PratosService.cs
-1ef1fd9,2024-10-29 17:18:09 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,GetAllActiveIngredientes
-9466102,2024-10-29 15:02:55 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CreateIngredientes
-23885f6,2024-10-28 21:06:31 +0000,1221040,1221040@isep.ipp.pt,US13 - Controller, Repository, Services - CreateRefeicao
-b9f3f31,2024-10-28 20:59:14 +0000,1221040,1221040@isep.ipp.pt,US12 - Controller Repository Service, GetAllTiposRefeicao
-2bb6492,2024-10-28 19:23:50 +0000,1221040,1221040@isep.ipp.pt,US11-  Criar Tipo de refeição, alterações no codigo, DTO's refeição e tipoRefeição
-d1e1afc,2024-10-28 11:25:32 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Ementas (Service e Repository)
-adf96ec,2024-10-28 02:34:53 +0000,Seu Nome,1220827@isep.ipp.pt,US014, PratosController.cs
-034ea4d,2024-10-28 02:26:36 +0000,Seu Nome,1220827@isep.ipp.pt,US014, PratosServices.cs
-910bdf3,2024-10-28 01:39:17 +0000,Seu Nome,1220827@isep.ipp.pt,Criação de ementasController.cs
-3f6db41,2024-10-28 01:38:24 +0000,Seu Nome,1220827@isep.ipp.pt,Acrescimo da quantidade, data e TipoRefeicao no prato.cs
-c8b07f6,2024-10-27 17:43:47 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,erro no ingredientesService
-0d58376,2024-10-27 17:42:27 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,UpdateEstadoIngredienteInativar (cont Ingrediente) + UpdatePratoByIngrediente (serv. e rep Prato ) + GetPratosByIngredienteId; IngredienteDetail; UpdateIngrediente (serv Ingredientes)
-3271d0b,2024-10-27 16:48:10 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,método UpdateEstadoPrato (contr. repo e ser.) + UpdatePrato e getPratoById (repo) alteração bool? (prato + prato2update) + pratoDetail (serv)
-1b5a538,2024-10-26 23:04:31 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
-745e042,2024-10-26 23:26:48 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Receitas (Contr, Serv, Repo) - Base
-3bf3d49,2024-10-26 23:20:11 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Ingred (Contr, Repo e Service)
-5844e56,2024-10-26 23:10:31 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Pratos (Contr, Repo e Service) - Base
-b1eb658,2024-10-26 22:49:42 +0100,Seu Nome,1220827@isep.ipp.pt,Commit - 2update_dto: Receita
-bc309af,2024-10-26 22:44:41 +0100,Seu Nome,1220827@isep.ipp.pt,Commit - 2update_dto: Ingrediente e Prato
-32d7dbb,2024-10-26 22:14:11 +0100,Gabriela,1220832@isep.ipp.pt,Commit - 2listing_dto: Ingrediente Receita Prato
-0f5478b,2024-10-26 22:02:00 +0100,Gabriela,1220832@isep.ipp.pt,Commit - 2detail_dto: Ingrediente, Prato e Receita
-00ff2bf,2024-10-26 15:42:04 +0100,1221040,1221040@isep.ipp.pt,CreateTipoRefeição - Receitas Service, Controller, Repository
-0947f83,2024-10-25 20:37:38 +0100,AnaAlexandraMatos,1221035@isep.ipp.pt,base dos controller + método updatePrato no controller
-6f62cb1,2024-10-25 20:13:13 +0100,Seu Nome,1220827@isep.ipp.pt,Criação de ficheiros dto
-7c73fbe,2024-10-25 20:08:29 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Folder DTO e ficheiros
-fcbc0f5,2024-10-24 19:22:43 +0100,Seu Nome,1220827@isep.ipp.pt,Criação do ficheiro ReceitasRepository.cs
-96e76a5,2024-10-24 19:07:29 +0100,Gabriela,1220832@isep.ipp.pt,Commmit - Folder Repositories
-843ef9b,2024-10-23 23:38:54 +0100,JoaÌƒo Miranda,1220911@isep.ipp.pt,CozinhaContext, Ingrediente, Prato, Receita, TipoDePrato e TipoDeRefeicao, migrations e Database.
-0abd84b,2024-10-23 22:04:46 +0100,Seu Nome,1220827@isep.ipp.pt,Criação da pasta models e respetivos ficheiros
-94780d1,2024-10-23 21:49:14 +0100,Gabriela,1220832@isep.ipp.pt,Commit - Folder Services
-47f5437,2024-10-23 21:10:40 +0100,João Miranda,1220911@isep.ipp.pt,Update .gitignore
-d1b2913,2024-10-23 21:08:02 +0100,João Miranda,1220911@isep.ipp.pt,Delete Grupo2A/obj directory
-f6a5bdf,2024-10-23 20:58:52 +0100,João Miranda,1220911@isep.ipp.pt,Update .gitignore
-39f525f,2024-10-23 19:52:12 +0100,AnaAlexandraMatos,1221035@isep.ipp.pt,updateEstadoIngredienteInativar - controller
-2f92037,2024-10-23 19:22:12 +0100,1221040,1221040@isep.ipp.pt,Erro de Pull
-ddda4d8,2024-10-23 19:17:50 +0100,João Miranda,1220911@isep.ipp.pt,Update .gitignore
-a9638c3,2024-10-23 16:40:44 +0100,AnaAlexandraMatos,1221035@isep.ipp.pt,Criar Controllers
-be88aa4,2024-10-23 16:36:29 +0100,JoaÌƒo Miranda,1220911@isep.ipp.pt,setup
-7833d43,2024-10-23 15:13:55 +0100,João Miranda,1220911@isep.ipp.pt,Create .gitignore
-36f7d53,2024-10-22 11:00:37 +0100,1221040,1221040@isep.ipp.pt,Inicialização do Projeto
+5eace1c,2024-11-20 10:08:13 +0000,Tiago Santos,1221040@isep.ipp.pt,US09 - Alterações
+310d383,2024-11-20 09:54:14 +0000,Tiago Santos,1221040@isep.ipp.pt,US10- Alterações
+ab9e0f8,2024-11-19 02:35:11 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ã£o US6
+9fdf367,2024-11-19 01:51:57 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,Associar um preÃ§o a um prato
+f93c9de,2024-11-19 01:01:08 +0000,Tiago Santos,1221040@isep.ipp.pt,Package BodyParser e PunyCode
+49dfc1b,2024-11-19 00:57:59 +0000,Tiago Santos,1221040@isep.ipp.pt,Package Celebrate
+5968127,2024-11-19 00:31:51 +0000,Tiago Santos,1221040@isep.ipp.pt,Alterações no Routes
+c99278a,2024-11-19 00:25:32 +0000,Tiago Santos,1221040@isep.ipp.pt,EncomendaRoutes
+f3276ba,2024-11-19 00:23:53 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,createPrato
+dda1a01,2024-11-18 22:08:19 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,US007 - consultar ementa
+0a36ac5,2024-11-18 20:42:50 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ã£o US006
+fa5ce63,2024-11-18 17:00:33 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,ip mongo + US006 +  tentativa conexão À cozinha
+3b8f593,2024-11-18 11:19:17 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+deec143,2024-11-18 11:16:49 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,base de dados nova
+6975d23,2024-11-18 11:15:33 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+20d64b0,2024-11-18 11:14:08 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção migrations sprint 1
+c4c5f0e,2024-11-18 10:49:04 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,US006
+50d2264,2024-11-18 10:04:37 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correçao de erros apontados na apresentação da iteração 1
+2161d1e,2024-11-18 00:39:19 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Organização do Código (pt.4)
+766a9a0,2024-11-18 00:22:28 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Organização do Código (pt.3)
+1423d38,2024-11-18 00:17:41 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Organização Código (pt.2)
+77ae34a,2024-11-18 00:14:08 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Organização do Código
+304f20f,2024-11-18 00:05:09 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Alteração nome método (US003)
+1646262,2024-11-18 00:02:57 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Rota para US004
+1b913f6,2024-11-17 23:57:55 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Coerência US003 e US004
+2eb99b1,2024-11-17 23:54:30 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Service US004
+1df2a37,2024-11-17 23:47:34 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Repository US004
+73d33ce,2024-11-17 23:42:26 +0000,Gabriela,1220832@isep.ipp.pt,Correção Erro
+289a284,2024-11-17 23:41:09 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Controller US004
+5a7b414,2024-11-17 23:16:52 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,US006 - controller+repo+serv
+ac903cd,2024-11-17 23:09:23 +0000,Seu Nome,1220827@isep.ipp.pt,US002- Listar todos os clientes
+0fdc04c,2024-11-17 22:24:02 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ãµes
+74809ff,2024-11-17 21:52:44 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,US005 controller+ repository + service
+c745da2,2024-11-17 20:37:24 +0000,Gabriela,1220832@isep.ipp.pt,US003 - Transações
+9ed0d7c,2024-11-17 19:10:09 +0000,Gabriela,1220832@isep.ipp.pt,US003 - Obter Info de um Cliente através do NIF
+0902f49,2024-11-17 15:18:54 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
+be47aed,2024-11-17 14:33:23 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
+0698c24,2024-11-17 14:12:07 +0000,Tiago Santos,1221040@isep.ipp.pt,Routes - US009, US010
+f6bcbd7,2024-11-17 10:35:01 +0000,Seu Nome,1220827@isep.ipp.pt,US001- cliente.js
+279d99e,2024-11-16 20:52:36 +0000,Seu Nome,1220827@isep.ipp.pt,US001 - clienteService.js
+b1c40d1,2024-11-16 17:00:10 +0000,Seu Nome,1220827@isep.ipp.pt,US001 - clienteRepository.js
+073f5f3,2024-11-16 16:52:35 +0000,Seu Nome,1220827@isep.ipp.pt,US001 - clienteController.js
+51bdcdd,2024-11-16 16:45:23 +0000,Seu Nome,1220827@isep.ipp.pt,Criação de cliente.js
+6683321,2024-11-16 16:44:32 +0000,Seu Nome,1220827@isep.ipp.pt,Criação de clienteService.js
+ac7f7da,2024-11-16 16:43:58 +0000,Seu Nome,1220827@isep.ipp.pt,Criação de clienteRepository.js
+21c5972,2024-11-16 16:41:49 +0000,Seu Nome,1220827@isep.ipp.pt,US001 - clienteRoutes.js
+a821d5f,2024-11-16 16:16:27 +0000,Seu Nome,1220827@isep.ipp.pt,Criação de clienteController.js
+cb9be4e,2024-11-16 16:13:39 +0000,Seu Nome,1220827@isep.ipp.pt,Criação do clienteRoutes.js
+53bd7cb,2024-11-15 21:51:31 +0000,Tiago Santos,1221040@isep.ipp.pt,cozinha service
+2d2afd3,2024-11-15 15:42:48 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,US08
+c075f00,2024-11-15 15:42:29 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,US07
+5dc16da,2024-11-15 15:27:39 +0000,Tiago Santos,1221040@isep.ipp.pt,Refeicao-model, repository, controller e service, modificação da encomenda
+df8e3ae,2024-11-15 15:19:51 +0000,Tiago Santos,1221040@isep.ipp.pt,encomenda- controller,model,service,repository
+a9f33c9,2024-11-15 15:18:48 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,issue tracking sprint 2
+4f09fd5,2024-11-15 15:15:21 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Correção no Decrementar Refeições
+f97dfe1,2024-11-15 15:10:25 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,middleware.js
+9af2995,2024-11-15 15:07:13 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,teste pastas
+f02ddf2,2024-11-15 14:55:40 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+0a883a5,2024-11-15 14:44:24 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,app.js
+263c240,2024-11-15 14:43:27 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,app.js, node_module
+f2157be,2024-11-15 14:34:29 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção de erro - parametros prato
+a7c273a,2024-11-15 14:26:19 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,node_modules
+781ebcd,2024-11-15 12:40:16 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,Setup Sala
+753ca30,2024-11-15 11:24:09 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis

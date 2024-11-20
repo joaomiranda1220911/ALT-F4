@@ -1,71 +1,40 @@
-commit 163914ce66df082a314cacc6fe11153cb6e792d4	refs/heads/main (HEAD -> main, origin/main)
+commit 0902f49088a21df2515055157a1d731604e86915	refs/heads/main
 Author: Paulo Proenca <prp@isep.ipp.pt>
-Date:   Tue Nov 5 22:30:12 2024 +0000
+Date:   Sun Nov 17 15:18:54 2024 +0000
 
     Repository Analysis
 
-M	GitAnalysis/Sprint_1/Commits.csv
-M	GitAnalysis/Sprint_1/prp@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/1221040@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/Commits.csv
+M	GitAnalysis/Sprint_2/prp@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/report_2024-11-17.html
 
-commit 69dd56900305aad07e5944ed66728935959f8558	refs/heads/main
+commit be47aedb36291f7c3360086632aea3736f403f17	refs/heads/main
 Author: Paulo Proenca <prp@isep.ipp.pt>
-Date:   Tue Nov 5 22:07:57 2024 +0000
+Date:   Sun Nov 17 14:33:23 2024 +0000
 
     Repository Analysis
 
-M	GitAnalysis/Sprint_1/Commits.csv
-M	GitAnalysis/Sprint_1/prp@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/1220827@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/1220832@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/1220911@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/1221035@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/1221040@isep.ipp.pt.txt
+M	GitAnalysis/Sprint_2/Commits.csv
+M	GitAnalysis/Sprint_2/prp@isep.ipp.pt.txt
+A	GitAnalysis/Sprint_2/report_2024-11-17.html
 
-commit 79c18f0e271c0e6da8101aec72d211ca19d6191c	refs/heads/main
+commit 753ca302eba15d9896ba89ee91ceb424fd56f466	refs/heads/main
 Author: Paulo Proenca <prp@isep.ipp.pt>
-Date:   Tue Nov 5 20:54:54 2024 +0000
+Date:   Fri Nov 15 11:24:09 2024 +0000
 
     Repository Analysis
 
-M	GitAnalysis/Sprint_1/1220911@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/Commits.csv
-M	GitAnalysis/Sprint_1/prp@isep.ipp.pt.txt
-
-commit 63a8e3193e14409108d9b2ffb85cc811cba2e87b	refs/heads/main
-Author: Paulo Proenca <prp@isep.ipp.pt>
-Date:   Tue Nov 5 16:43:18 2024 +0000
-
-    Repository Analysis
-
-M	GitAnalysis/Sprint_1/1220827@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/1220832@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/1220911@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/1221035@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/1221040@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/Commits.csv
-M	GitAnalysis/Sprint_1/prp@isep.ipp.pt.txt
-A	GitAnalysis/Sprint_1/report_2024-11-05.html
-
-commit c3c30b490efdea6aa97282430b13ec987e916fb4	refs/tags/v1.0.0
-Author: Paulo Proenca <prp@isep.ipp.pt>
-Date:   Sun Nov 3 21:00:47 2024 +0000
-
-    Repository Analysis
-
-M	GitAnalysis/Sprint_1/1220827@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/1220832@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/1220911@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/1221035@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/1221040@isep.ipp.pt.txt
-M	GitAnalysis/Sprint_1/Commits.csv
-A	GitAnalysis/Sprint_1/prp@isep.ipp.pt.txt
-A	GitAnalysis/Sprint_1/report_2024-11-03.html
-
-commit 1b5a53884bdf9ddd71588347b5e95eacd2075c9c	refs/tags/v1.0.0
-Author: Paulo Proenca <prp@isep.ipp.pt>
-Date:   Sat Oct 26 23:04:31 2024 +0000
-
-    Repository Analysis
-
-A	GitAnalysis/Sprint_1/1220827@isep.ipp.pt.txt
-A	GitAnalysis/Sprint_1/1220832@isep.ipp.pt.txt
-A	GitAnalysis/Sprint_1/1220911@isep.ipp.pt.txt
-A	GitAnalysis/Sprint_1/1221035@isep.ipp.pt.txt
-A	GitAnalysis/Sprint_1/1221040@isep.ipp.pt.txt
-A	GitAnalysis/Sprint_1/Commits.csv
-A	GitAnalysis/Sprint_1/report_2024-10-26.html
+A	GitAnalysis/Sprint_2/1220827@isep.ipp.pt.txt
+A	GitAnalysis/Sprint_2/1220832@isep.ipp.pt.txt
+A	GitAnalysis/Sprint_2/1220911@isep.ipp.pt.txt
+A	GitAnalysis/Sprint_2/1221035@isep.ipp.pt.txt
+A	GitAnalysis/Sprint_2/1221040@isep.ipp.pt.txt
+A	GitAnalysis/Sprint_2/Commits.csv
+A	GitAnalysis/Sprint_2/prp@isep.ipp.pt.txt
+A	GitAnalysis/Sprint_2/report_2024-11-15.html
