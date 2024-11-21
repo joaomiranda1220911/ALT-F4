@@ -26,14 +26,14 @@ exports.getAllClientes = async function (req, res) {
 //US003: Obter informação detalhada de um cliente
 exports.getCliente = async function (req, res) {
     try{
-    const result = await ClienteService.getClienteByNif(req.params.nif);
+        const result = await ClienteService.getClienteByNif(req.params.nif);
 
-    if (result === null) {
-        res.status(404).json({ error: 'Cliente não existe.' });
-    }else {
-        res.status(200).json(result);
-    }
-    } catch(error){
+        if (result === null) {
+            res.status(404).json({ error: 'Cliente não existe.' });
+        }else {
+            res.status(200).json(result);
+        }
+    }catch(error){
         console.error('Erro ao obter a informação do cliente:', error);
         res.status(500).json({ error: 'Erro interno do servidor.' });
     }
