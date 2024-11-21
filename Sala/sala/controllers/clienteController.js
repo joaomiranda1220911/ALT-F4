@@ -41,7 +41,7 @@ exports.getClienteSaldo = async function (req, res){
         if(saldo === null){
             res.status(404).json({ error: 'Cliente não encontrado.' });
         } else{
-            res.status(202).json({ balance: saldo });
+            res.status(200).json({ balance: saldo });
         }
     } catch(error){
         console.error('Erro ao obter o saldo do cliente:', error);
