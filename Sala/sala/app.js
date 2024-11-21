@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+const { syncRefeicoesToMongoDB } = require('./services/refeicaoService');
 
 //Persistence ============
 var mongoose = require('mongoose');
@@ -7,7 +8,12 @@ mongoose.set('strictQuery', true);
 mongoose.connect(
     'mongodb+srv://TPSINF2user:TPSINF2pass@tpsinf2cluster.fbe14.mongodb.net/?retryWrites=true&w=majority&appName=TPSINF2Cluster'
 )
-    .then(() => console.log('Conexão à base de dados bem-sucedida.'))
+.then(() => {
+    console.log('Conexão à base de dados bem-sucedida.');
+
+    // Sincronizar refeições da API .NET para o MongoDB
+    syncRefeicoesToMongoDB();
+})
     .catch((error) => console.error('Erro ao conectar à base de dados:', error));
 
 //Parser  =================================

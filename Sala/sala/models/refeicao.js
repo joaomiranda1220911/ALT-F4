@@ -20,4 +20,6 @@ var RefeicaoSchema = new Schema({
     pratos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Prato' }]
 });
 
-module.exports = mongoose.model('Refeicao', RefeicaoSchema);
+const RefeicaoModel = mongoose.model('Refeicao', RefeicaoSchema);
+
+module.exports = RefeicaoModel;

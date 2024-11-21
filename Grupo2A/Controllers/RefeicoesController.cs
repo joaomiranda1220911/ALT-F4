@@ -115,7 +115,19 @@ namespace Grupo2A.Controllers
 
             return Ok(refeicao);
         }
+        private readonly RefeicoesService _refeicoesService;
+
+        // GET: api/refeicoes
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Refeicao>>> GetRefeicoes()
+        {
+            var refeicoes = await _service.GetAllRefeicoes(); 
+            if (refeicoes == null || refeicoes.Count == 0)
+            {
+                return NotFound("Nenhuma refeição encontrada.");
+            }
+            return Ok(refeicoes);
+        }
     }
 }
-
 

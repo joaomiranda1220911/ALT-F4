@@ -18,7 +18,7 @@ namespace Cozinha_BE.Model.Repositories
         {
             var refeicao = await _context.Refeicoes.FindAsync(id);
 
-            
+
             if (refeicao == null)
             {
                 throw new KeyNotFoundException($"Refeição com ID {id} não encontrada.");
@@ -33,13 +33,13 @@ namespace Cozinha_BE.Model.Repositories
             return await _context.Refeicoes.ToListAsync();
         }
 
-        public async Task<Refeicao> AddRefeicao(Refeicao refeicao)
+        public async Task AddRefeicao(Refeicao refeicao)
         {
-            var newRefeicao = await _context.Refeicoes.AddAsync(refeicao);
-            await _context.SaveChangesAsync();
+            // Adiciona a refeição ao contexto
+            await _context.Refeicoes.AddAsync(refeicao);
 
-            // Retorna a refeição adicionada
-            return newRefeicao.Entity;
+            // Chama o SaveChangesAsync para persistir as mudanças e gerar o ID
+            await _context.SaveChangesAsync();
         }
 
 

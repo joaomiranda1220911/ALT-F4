@@ -33,3 +33,20 @@ exports.getRefeicaoById = async (idRefeicao) => {
     }
 };
 
+exports.getRefeicoesFromDotNetAPI = async () => {
+    try {
+        // Chamada para obter todas as refeições
+        const response = await axios.get(DOTNET_API_URL);
+
+        if (response.data && Array.isArray(response.data)) {
+            console.log(`[SUCESSO] Obtidas ${response.data.length} refeições da API .NET.`);
+            return response.data; // Retorna todas as refeições
+        } else {
+            console.log('[INFO] Nenhuma refeição encontrada na API .NET.');
+            return [];
+        }
+    } catch (error) {
+        console.error(`[ERRO] Erro ao buscar refeições da API .NET: ${error.message}`);
+        throw new Error('Erro ao buscar refeições da API .NET.');
+    }
+};

@@ -68,6 +68,9 @@ namespace Grupo2A.Services
             // Adiciona a nova refeição ao repositório
             await _repo.AddRefeicao(novaRefeicao);
 
+            // Verifica se o ID foi atribuído
+            Console.WriteLine("ID da refeição após salvar: " + novaRefeicao.IdRefeicao);
+
             return (novaRefeicao, null);
         }
 
@@ -123,8 +126,6 @@ namespace Grupo2A.Services
             return true;
         }
 
-
-
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade
         public async Task<IEnumerable<Refeicao>> GetRefeicaoByDataETipo(DateTime data, TipoDeRefeicao tipoRefeicao)
         {
@@ -132,5 +133,11 @@ namespace Grupo2A.Services
                 .Where(r => r.Data == data && r.TipoRefeicao == tipoRefeicao)
                 .ToListAsync();
         }
+
+        public async Task<List<Refeicao>> GetAllRefeicoes()
+        {
+            return await _repo.GetAllRefeicoes();
+        }
+
     }
 }
