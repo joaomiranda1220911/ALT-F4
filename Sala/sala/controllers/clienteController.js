@@ -1,4 +1,6 @@
 const ClienteService = require('../services/clienteService');
+const ClienteRepo = require('../repositories/clienteRepository');
+const ClienteModel = require('../models/cliente');
 
 //US001: Criar cliente
 exports.createCliente = async function (req, res) {
@@ -49,16 +51,30 @@ exports.getClienteSaldo = async function (req, res){
     }
 };
 
-//US005: Atualizar o saldo da conta de um cliente
-exports.carregarContaCliente = async function (req, res) {
-    const { nif, valor } = req.body; // Recebe o NIF e o valor a carregar
+// US005: Carregar saldo de um cliente através do NIF
+exports.carregarSaldo = async (req, res) => {
+    try {
+        const { nif } = req.params; // NIF do cliente, por exemplo
+        const { valor } = req.body; // Valor a ser carregado no saldo
 
-    const result = await ClienteService.carregarSaldo(nif, valor);
+        // Buscar o cliente pelo NIF
+        const cliente = await ClienteModel.findOne({ nif: nif });
 
-    // Verifica se ocorreu algum erro no Service
-    if (result.error) {
-        res.status(400).json({ error: result.error });
-    } else {
-        res.status(200).json(result);
+        if (!cliente) {
+            return res.status(404).json({ message: 'Cliente não encontrado' });
+        }
+
+        // Atualizar o saldo
+        cliente.account.balance += valor; // Acrescentar o valor ao saldo
+
+        await ClienteModel.updateOne(
+            { nif: nif }, // critério de busca
+            { $inc: { "account.balance": valor } } // Atualiza o saldo
+        );
+
+        res.status(200).json({ message: 'Saldo atualizado com sucesso', cliente });
+    } catch (err) {
+        console.error('Erro ao carregar saldo:', err);
+        res.status(500).json({ message: 'Erro ao carregar saldo', error: err.message });
     }
 };

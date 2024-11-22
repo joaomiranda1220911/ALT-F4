@@ -45,16 +45,22 @@ exports.getClienteSaldoByNif = async function (clienteNif) {
     } 
 };
 
-// US005: Atualizar o saldo da conta de um cliente
-exports.updateSaldo = async function (nif, valor) {
+//US005: US005: Atualizar o saldo da conta de um cliente
+exports.carregarSaldo = async function (nif, valor) {
     try {
-        const cliente = await ClienteModel.findOne({ nif: nif });
-        if (!cliente) return null; // Cliente não encontrado
+        const cliente = await ClienteModel.findOne({ nif }); // Localiza pelo NIF
+        if (!cliente) {
+            throw new Error('Cliente não encontrado.');
+        }
 
-        cliente.saldo += valor; // Atualiza o saldo
-        await cliente.save();
-        return cliente; // Retorna o cliente atualizado
-    } catch (err) {
-        return null;
+        cliente.account.balance += valor; // Atualiza o saldo
+        await cliente.save(); // Grava a atualização
+        return cliente.account.balance;
+    } catch (error) {
+        console.error('Erro ao carregar saldo:', error);
+        throw error;
     }
 };
+
+
+

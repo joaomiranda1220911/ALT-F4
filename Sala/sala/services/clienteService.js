@@ -79,23 +79,22 @@ exports.getSaldoByNif = async function (clienteNif){
 
 
 // US005: Atualizar o saldo da conta de um cliente
+// Carregar saldo de um cliente
 exports.carregarSaldo = async function (nif, valor) {
-    // Validação: o valor não pode ser negativo
-    if (valor <= 0) {
-        return { error: 'Erro no carregamento. O valor não pode ser negativo.' };
-    }
+    try {
+        const cliente = await ClienteRepo.updateSaldo(nif, valor);
 
-    const clienteAtualizado = await ClienteRepo.updateSaldo(nif, valor);
-    if (!clienteAtualizado) {
-        return { error: 'Cliente não encontrado' };
-    }
-
-    return {
-        message: 'Saldo carregado com sucesso!',
-        cliente: {
-            nome: clienteAtualizado.nome,
-            nif: clienteAtualizado.nif,
-            saldo: clienteAtualizado.saldo
+        if (!cliente) {
+            return `Cliente com NIF ${nif} não encontrado.`;
         }
-    };
+
+        return `Saldo atualizado com sucesso! Novo saldo: ${cliente.account.balance.toFixed(2)}€`;
+    } catch (error) {
+        console.error('Erro ao carregar saldo do cliente:', error);
+        throw error; // Relança o erro para tratamento no controlador
+    }
 };
+
+
+
+

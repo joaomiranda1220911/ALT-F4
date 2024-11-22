@@ -17,5 +17,8 @@ router.get('/cliente/:nif', clienteController.getCliente);
 //US004: Obter informação do saldo de um cliente
 router.get('/cliente/:nif/saldo', clienteController.getClienteSaldo);
 
+//US005: US005: Atualizar o saldo da conta de um cliente
+router.patch('/:nif/carregar', clienteController.carregarSaldo);
+
 module.exports = router;
 
