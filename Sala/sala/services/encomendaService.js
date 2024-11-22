@@ -14,7 +14,7 @@ exports.encomendarRefeicao = async function (clienteId, refeicaoId) {
 
 
     // ve o preco do prato associado à refeicao
-    const pratoRefeicao = await 
+    const pratoRefeicao = await PratoRepo.getPratosEmEmenta();
     if (conta.saldo < refeicaoSelecionado.preco) {
         return { success: false, message: 'Saldo insuficiente' };
     }
