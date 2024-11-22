@@ -39,8 +39,8 @@ app.use('/api/pratos', pratoRouter);
 var clienteRouter = require('./routes/clienteRoutes');
 app.use('/api/cliente', clienteRouter);
 
-// var ementaRouter = require('./routes/ementaRouter');
-// app.use('/api/ementa', ementaRouter);
+var encomendaRouter = require('./routes/encomendaRoutes');
+app.use('/api/encomenda', encomendaRouter);
 
 // Middleware =================================
 app.use(bodyParser.urlencoded({ extended: true }));
