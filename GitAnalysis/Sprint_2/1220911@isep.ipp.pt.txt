@@ -1,3 +1,201 @@
+commit f50cbc54446581f2c5a10038ec6104531e606c69	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Fri Nov 22 22:36:59 2024 +0000
+
+    Correção US007 (problema do array vazio)
+
+M	Sala/sala/controllers/ementaController.js
+M	Sala/sala/models/refeicao.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/services/refeicaoService.js
+
+commit 8ee834d3e7da16d38b2b3762a8eeaf887a6bd5e9	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Fri Nov 22 19:04:26 2024 +0000
+
+    Correção nulls
+
+M	Grupo2A/Controllers/IngredientesController.cs
+M	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Controllers/RefeicoesController.cs
+M	Grupo2A/Controllers/TipoDePratoController.cs
+M	Grupo2A/Controllers/TipoDeRefeicaoController.cs
+M	Grupo2A/Database/CozinhaDB
+M	Grupo2A/Model/DTO/Prato2listing_dto.cs
+M	Grupo2A/Model/Prato.cs
+M	Grupo2A/Repositories/PratosRepository.cs
+
+commit bc73d5c140075b36c1697a8e07d7d233d125814c	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Fri Nov 22 00:06:14 2024 +0000
+
+    counter
+
+A	Grupo2A/Database/CozinhaDB-shm
+A	Grupo2A/Database/CozinhaDB-wal
+M	Sala/sala/counter/initializeCounter.js
+M	Sala/sala/models/counter.js
+
+commit e3586db78c416b36681b8d235f1aa704701fc4cb	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Thu Nov 21 23:59:35 2024 +0000
+
+    IDs numericos nos clientes
+
+D	Grupo2A/Database/CozinhaDB-shm
+D	Grupo2A/Database/CozinhaDB-wal
+M	Sala/sala/app.js
+A	Sala/sala/counter/initializeCounter.js
+M	Sala/sala/models/cliente.js
+A	Sala/sala/models/counter.js
+
+commit 0c64aad3204c1bb030191717281b77c4afe0514b	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Thu Nov 21 01:01:01 2024 +0000
+
+    Guardar Refeicoes no MongoDB
+
+M	Grupo2A/Controllers/RefeicoesController.cs
+A	Grupo2A/Database/CozinhaDB-shm
+A	Grupo2A/Database/CozinhaDB-wal
+M	Grupo2A/Repositories/RefeicoesRepository.cs
+M	Grupo2A/Services/RefeicoesService.cs
+M	Sala/sala/app.js
+M	Sala/sala/models/refeicao.js
+M	Sala/sala/services/cozinhaService.js
+M	Sala/sala/services/refeicaoService.js
+
+commit 75c73fb03948c0d19de538bf75f98046b92a7265	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Nov 20 23:58:11 2024 +0000
+
+    ementa
+
+M	Sala/sala/controllers/ementaController.js
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/services/pratoService.js
+M	Sala/sala/services/refeicaoService.js
+
+commit cc7483732ca914cc09c382aeba74177b85803232	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Nov 20 19:19:01 2024 +0000
+
+    Update .gitignore
+
+M	.gitignore
+
+commit b836b22ace7864cd34d1f1ba45fb205556d1fca6	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Nov 20 18:38:45 2024 +0000
+
+    correção de erros
+
+M	Sala/sala/models/refeicao.js
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/encomendaService.js
+
+commit ed3430ca6e3f9aade715a910e2e774a6f95e4c2a	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Nov 20 14:56:16 2024 +0000
+
+    base de dados
+
+M	Grupo2A/Database/CozinhaDB
+
+commit 390fbdf1c638d14955bb4c3f85ab5b92737e3fc0	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Wed Nov 20 14:55:48 2024 +0000
+
+    Update .gitignore
+
+M	.gitignore
+
+commit ab9e0f8c26f6b3aacfe585a6a1c6d9e5d4657a69	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Tue Nov 19 02:35:11 2024 +0000
+
+    Correção US6
+
+M	Sala/sala/controllers/pratoController.js
+M	Sala/sala/models/prato.js
+
+commit 9fdf367a747270ace58e4e7cf487c94a67634943	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Tue Nov 19 01:51:57 2024 +0000
+
+    Associar um preço a um prato
+
+M	Sala/sala/controllers/pratoController.js
+M	Sala/sala/models/prato.js
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/routes/pratoRoutes.js
+M	Sala/sala/services/cozinhaService.js
+M	Sala/sala/services/pratoService.js
+
+commit f3276ba09c56b5efeb5a9d8b11676d2104f262bc	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Tue Nov 19 00:23:53 2024 +0000
+
+    createPrato
+
+M	Sala/sala/app.js
+M	Sala/sala/controllers/pratoController.js
+M	Sala/sala/models/prato.js
+M	Sala/sala/repositories/pratoRepository.js
+A	Sala/sala/routes/pratoRoutes.js
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/pratoService.js
+
+commit dda1a01f6e0f826ab198709358a7b3b608521335	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Mon Nov 18 22:08:19 2024 +0000
+
+    US007 - consultar ementa
+
+M	Sala/sala/app.js
+M	Sala/sala/controllers/ementaController.js
+M	Sala/sala/models/prato.js
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/services/pratoService.js
+
+commit 0a36ac5876b7923bdcffdeb4db573155cd0ddcbf	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Mon Nov 18 20:42:50 2024 +0000
+
+    Correção US006
+
+M	Sala/sala/app.js
+M	Sala/sala/controllers/pratoController.js
+M	Sala/sala/models/prato.js
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/cozinhaService.js
+
+commit 3b8f59357e9c45000b1f7409b6a20414e4a58637	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Mon Nov 18 11:19:17 2024 +0000
+
+    Update .gitignore
+
+M	.gitignore
+
+commit 6975d23b0186e068adf3e64297eae2fadfb91a7f	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Mon Nov 18 11:15:33 2024 +0000
+
+    Update .gitignore
+
+M	.gitignore
+
+commit 0fdc04c38c0a30af1bcf7409c235097f0d4eadf8	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sun Nov 17 22:24:02 2024 +0000
+
+    Correções
+
+R100	middleware.js	Sala/sala/middleware.js
+D	Sala/sala/routes/teste_routes
+
 commit 2d2afd3f0af8e8304dab123e6f2520411796ac35	refs/heads/main
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 15 15:42:48 2024 +0000
