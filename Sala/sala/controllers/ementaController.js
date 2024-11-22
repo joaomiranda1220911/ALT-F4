@@ -1,6 +1,7 @@
 const RefeicaoService = require('../services/refeicaoService');
 
 // US007 - Consultar Ementa Disponível
+
 exports.getEmentaDisponivel = async function (req, res) {
     const { data, tipoRefeicaoId } = req.params;
 
@@ -9,8 +10,12 @@ exports.getEmentaDisponivel = async function (req, res) {
     }
 
     try {
-        // Chama o serviço passando os parâmetros recebidos
-        const ementa = await RefeicaoService.getEmentaDisponivel(data, tipoRefeicaoId);
+        // Converte os parâmetros
+        const dataFormatada = new Date(data); // Converte para Date
+        const tipoRefeicaoIdNumero = parseInt(tipoRefeicaoId); // Converte para número
+
+        // Chama o serviço passando os parâmetros convertidos
+        const ementa = await RefeicaoService.getRefeicoesEmEmenta(dataFormatada, tipoRefeicaoIdNumero);
         res.status(200).json(ementa);
     } catch (error) {
         console.error('Erro ao obter ementa:', error);

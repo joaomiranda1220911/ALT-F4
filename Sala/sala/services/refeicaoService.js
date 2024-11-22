@@ -1,17 +1,37 @@
 const RefeicaoRepo = require('../repositories/refeicaoRepository');
+const PratoModel = require('../models/prato');
 
 // US007: Consultar Ementa Disponível
-exports.getEmentaDisponivel = async function (data, tipoRefeicaoId) {
+exports.getRefeicoesEmEmenta = async function (data, tipoRefeicaoId) {
     try {
-        console.log('A procurar refeições para a data:', data, 'e tipo de refeição:', tipoRefeicaoId);
+        // Obter os pratos ativos
+        const pratosAtivos = await PratoModel.find({ ativo: true }).select('_id'); // IDs dos pratos ativos
+        console.log('Pratos ativos encontrados:', pratosAtivos);
 
-        // Passa os parâmetros para o repositório e filtra as refeições pela data e tipo de refeição
-        const refeicoes = await RefeicaoRepo.getRefeicoesEmEmenta(data, tipoRefeicaoId);
+        if (pratosAtivos.length === 0) {
+            console.log('Nenhum prato ativo encontrado.');
+            return [];
+        }
 
+        const dataFormatada = new Date(data); 
+        console.log('Data formatada para query:', dataFormatada);
+
+        // Filtra as refeições pela data e tipo de refeição
+        const refeicoes = await RefeicaoModel.find({
+            data: { $eq: dataFormatada }, 
+            tipoRefeicao: Number(tipoRefeicaoId),
+            pratos: { $in: pratosAtivos.map(prato => prato._id) } 
+        });
+
+        console.log('Query executada no MongoDB:', {
+            data: { $eq: dataFormatada },
+            tipoRefeicao: Number(tipoRefeicaoId),
+            pratos: { $in: pratosAtivos.map(prato => prato._id) }
+        });
         console.log('Refeições encontradas:', refeicoes);
         return refeicoes;
     } catch (error) {
-        console.error('Erro ao obter a ementa:', error);
+        console.error('Erro ao obter refeições:', error);
         throw error;
     }
 };
@@ -58,12 +78,18 @@ exports.syncRefeicoesToMongoDB = async () => {
         }
 
         for (const refeicao of refeicoesFromAPI) {
+            // Utiliza idRefeicao como _id no MongoDB
+            if (!refeicao.idRefeicao) {
+                console.error(`[ERRO] Refeição sem ID encontrada. Dados: ${JSON.stringify(refeicao)}`);
+                continue;
+            }
+
             const novaRefeicao = {
-                _id: refeicao.id,
-                tipoRefeicao: refeicao.tipoRefeicao,
+                _id: refeicao.idRefeicao, // Mapeia idRefeicao para _id
+                tipoRefeicao: refeicao.tipoRefeicao.id, // Armazena apenas o ID do tipo de refeição
                 data: new Date(refeicao.data),
                 quantidadeProduzida: refeicao.quantidadeProduzida || null,
-                pratos: refeicao.pratos || []
+                pratos: refeicao.prato ? [refeicao.prato.idPrato] : [] // Garante que os IDs dos pratos são armazenados num array
             };
 
             await RefeicaoModel.updateOne(
@@ -71,7 +97,7 @@ exports.syncRefeicoesToMongoDB = async () => {
                 novaRefeicao,
                 { upsert: true }
             );
-            console.log(`[SUCESSO] Refeição sincronizada: ${novaRefeicao.tipoRefeicao}`);
+            console.log(`[SUCESSO] Refeição sincronizada: ${novaRefeicao._id}`);
         }
 
         console.log('[SUCESSO] Todas as refeições foram sincronizadas com o MongoDB.');

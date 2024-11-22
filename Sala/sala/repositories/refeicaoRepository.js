@@ -6,25 +6,25 @@ const EncomendaModel = require('../models/encomenda');
 exports.getRefeicoesEmEmenta = async function (data, tipoRefeicaoId) {
     try {
         // Obter os pratos ativos
-        const pratosAtivos = await PratoModel.find({ ativo: true }).select('_id'); // Retorna apenas os IDs dos pratos
+        const pratosAtivos = await PratoModel.find({ ativo: true }).select('_id'); // IDs dos pratos ativos
 
-        // Se não existirem pratos ativos, retorna lista vazia
         if (pratosAtivos.length === 0) {
-            console.log('Nenhum prato ativo encontrado na data selecionada.');
+            console.log('Nenhum prato ativo encontrado.');
             return [];
         }
 
-        // Filtra as refeições com base na data e tipo de refeição fornecidos
+        // Filtra as refeições pela data e tipo de refeição
         const refeicoes = await RefeicaoModel.find({
-            pratos: { $in: pratosAtivos.map(prato => prato._id) },
-            data: data,                 
-            tipoRefeicaoId: tipoRefeicaoId._id  
+            data: { $eq: new Date(data) }, 
+            tipoRefeicao: Number(tipoRefeicaoId),
+            pratos: { $in: pratosAtivos.map(prato => prato._id) }
         });
 
+        console.log('Data formatada na consulta:', new Date(data));
         return refeicoes;
     } catch (error) {
         console.error('Erro ao obter refeições:', error);
-        throw error; 
+        throw error;
     }
 };
 
