@@ -4,10 +4,8 @@ const Schema = mongoose.Schema;
 var RefeicaoSchema = new Schema({
     _id: { type: Number }, 
     tipoRefeicao: {
-        type: String,
-        required: true,
-        maxlength: 100,
-        trim: true
+        id: { type: Number}, 
+        tipo: { type: String, required: true, maxlength:100, trim: true}
     },
     data: {
         type: Date,
