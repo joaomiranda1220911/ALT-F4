@@ -15,7 +15,7 @@ var RefeicaoSchema = new Schema({
         type: Number,
         default: null
     },
-    pratos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Prato' }]
+    pratos: [{ type: mongoose.Schema.Types.Number, ref: 'Prato' }]
 });
 
 const RefeicaoModel = mongoose.model('Refeicao', RefeicaoSchema);
