@@ -44,9 +44,17 @@ namespace Grupo2A.Controllers
         [HttpGet("GetAllTiposRefeicao")]
         public async Task<IActionResult> GetAllTiposRefeicao()
         {
-            var tiposRefeicao = await _service.GetAllTiposRefeicao();
+            var tiposRefeicao = await _context.TiposDeRefeicao
+                .ToListAsync(); // Converte a consulta para uma lista
+
+            if (tiposRefeicao == null || !tiposRefeicao.Any())
+            {
+                return NotFound("Nenhum tipo de refeição encontrado.");
+            }
+
             return Ok(tiposRefeicao);
         }
+
 
         // GET: api/TipoDeRefeicao/{id}
         [HttpGet("{id}")]
@@ -59,6 +67,6 @@ namespace Grupo2A.Controllers
             }
             return Ok(tipoRefeicao); // Retorna 200 com os detalhes do tipo de refeição
         }
-        
+
     }
 }

@@ -25,8 +25,12 @@ namespace Grupo2A.Repositories
 
         public async Task<Prato?> GetPratoById(long id)
         {
-            return await _context.Pratos.FindAsync(id);
+            return await _context.Pratos
+                .Include(p => p.TipoPrato)
+                .Include(p => p.Ingredientes)
+                .FirstOrDefaultAsync(p => p.IdPrato == id);
         }
+
         public async Task<Prato> UpdatePrato(Prato prato)
         {
             _context.Entry(prato).State = EntityState.Modified;

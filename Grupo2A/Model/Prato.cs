@@ -1,11 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cozinha_BE.Model
 {
     public class Prato
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long IdPrato { get; set; } // Identificador único do prato
 
         [Required]

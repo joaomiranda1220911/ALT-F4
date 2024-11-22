@@ -36,15 +36,30 @@ namespace Grupo2A.Controllers
         [HttpGet("active")]
         public async Task<ActionResult<IEnumerable<Ingrediente2listing_dto>>> GetAllActiveIngredientes()
         {
-            return await _service.GetIngredientesByAtiveState(true);
+            var ingredientes = await _service.GetIngredientesByAtiveState(true);
+
+            if (ingredientes == null || !ingredientes.Any())
+            {
+                return NotFound("Nenhum ingrediente ativo encontrado.");
+            }
+
+            return Ok(ingredientes);
         }
 
         // GET: api/Ingredientes/inactive
         [HttpGet("inactive")]
         public async Task<ActionResult<IEnumerable<Ingrediente2listing_dto>>> GetAllInactiveIngredientes()
         {
-            return await _service.GetIngredientesByAtiveState(false);
+            var ingredientes = await _service.GetIngredientesByAtiveState(false);
+
+            if (ingredientes == null || !ingredientes.Any())
+            {
+                return NotFound("Nenhum ingrediente inativo encontrado.");
+            }
+
+            return Ok(ingredientes);
         }
+
 
 
         // PUT: api/Ingredientes/inativar/{idIngrediente}
@@ -90,7 +105,7 @@ namespace Grupo2A.Controllers
             }
 
             // Ativar o ingrediente
-            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente, true); 
+            var theUpdateIngrediente = await _service.UpdateIngrediente(idIngrediente, true);
             if (theUpdateIngrediente == null)
             {
                 return NotFound();
@@ -104,7 +119,7 @@ namespace Grupo2A.Controllers
             }
 
             // Lista para armazenar os pratos que foram ativados
-            var pratosAtualizados = new List<Prato2detail_dto>(); 
+            var pratosAtualizados = new List<Prato2detail_dto>();
 
             // Verificar o estado de cada prato e ativá-lo apenas se todos os ingredientes estiverem ativos
             foreach (var prato in pratos)

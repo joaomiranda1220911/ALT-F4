@@ -29,14 +29,19 @@ namespace Grupo2A.Controllers
         [HttpGet("{idPrato}")]
         public async Task<IActionResult> GetPratoById(long idPrato)
         {
-            var prato = await _context.Pratos.FindAsync(idPrato);
+            var prato = await _context.Pratos
+                .Include(p => p.TipoPrato) 
+                .Include(p => p.Ingredientes) 
+                .FirstOrDefaultAsync(p => p.IdPrato == idPrato); // Procura o prato pelo ID fornecido
+
             if (prato == null)
             {
-                return NotFound();
+                return NotFound("Prato não encontrado.");
             }
 
             return Ok(prato);
         }
+
         //US007 - Criar Prato
         [HttpPost]
         public async Task<ActionResult<Prato2detail_dto>> PostPrato(Prato2create_dto prato)

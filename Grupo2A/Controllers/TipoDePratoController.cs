@@ -2,6 +2,7 @@ using Cozinha_BE.Model;
 using Microsoft.AspNetCore.Mvc;
 using Grupo2A.Services;
 using Cozinha_BE.Model.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace Grupo2A.Controllers
 {
@@ -26,12 +27,20 @@ namespace Grupo2A.Controllers
             return await _service.CreateNewTipoDePrato(tipoDePrato);
         }
 
-        //US005 - Listar todos os Tipos de Prato
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TipoDePrato2listing_dto>>> GetTiposDePratos()
+        public async Task<IActionResult> GetTiposDePratos()
         {
-            return await _service.GetTiposDePratos();
+            var tiposDePratos = await _context.TiposDePrato
+                .ToListAsync(); // Converte a consulta para uma lista
+
+            if (tiposDePratos == null || !tiposDePratos.Any())
+            {
+                return NotFound("Nenhum tipo de prato encontrado.");
+            }
+
+            return Ok(tiposDePratos);
         }
+
 
         //US006 - Obter informação sobre um Tipo de Prato Específico
         [HttpGet("{Id}")]

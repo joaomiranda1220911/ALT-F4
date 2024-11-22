@@ -100,34 +100,58 @@ namespace Grupo2A.Controllers
                 return NotFound("Nenhuma refeição disponível para os critérios especificados.");
             }
 
-            return Ok(refeicoes);
+            return await _context.Refeicoes
+                .Include(r => r.TipoRefeicao) // Inclui TipoRefeicao
+                .Include(r => r.Prato) // Inclui Prato
+                .ThenInclude(p => p.TipoPrato) // Inclui TipoPrato do Prato
+                .Include(r => r.Prato.Ingredientes) // Inclui Ingredientes do Prato
+                .Where(r => r.Data == data && r.TipoRefeicao.Id == tipoRefeicao.Id)
+                .ToListAsync();
         }
-
 
         [HttpGet("{IdRefeicao}")]
         public async Task<IActionResult> GetRefeicaoById(long IdRefeicao)
         {
-            var refeicao = await _context.Refeicoes.FindAsync(IdRefeicao);
+            var refeicao = await _context.Refeicoes
+                .Include(r => r.TipoRefeicao) // Inclui a propriedade TipoRefeicao
+                .Include(r => r.Prato) // Inclui a propriedade Prato
+                    .ThenInclude(p => p.TipoPrato) // Inclui a propriedade TipoPrato de Prato
+                .Include(r => r.Prato) // Inclui a propriedade Prato novamente
+                    .ThenInclude(p => p.Ingredientes) // Inclui a coleção de Ingredientes de Prato
+                .FirstOrDefaultAsync(r => r.IdRefeicao == IdRefeicao); // Filtra pela IdRefeicao
+
             if (refeicao == null)
             {
-                return NotFound();
+                return NotFound(); // Retorna 404 se nenhuma refeição for encontrada
             }
 
-            return Ok(refeicao);
+            return Ok(refeicao); // Retorna os dados da refeição encontrada
         }
+
+
         private readonly RefeicoesService _refeicoesService;
 
         // GET: api/refeicoes
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Refeicao>>> GetRefeicoes()
         {
-            var refeicoes = await _service.GetAllRefeicoes(); 
-            if (refeicoes == null || refeicoes.Count == 0)
+            var refeicoes = await _context.Refeicoes
+                .Include(r => r.TipoRefeicao) // Inclui a propriedade TipoRefeicao
+                .Include(r => r.Prato) // Inclui a propriedade Prato
+                    .ThenInclude(p => p.TipoPrato) // Inclui a propriedade TipoPrato de Prato
+                .Include(r => r.Prato) // Inclui a propriedade Prato novamente
+                    .ThenInclude(p => p.Ingredientes) // Inclui a coleção de Ingredientes de Prato
+                .ToListAsync(); // Carrega todas as refeições com as propriedades relacionadas
+
+            if (refeicoes == null || !refeicoes.Any()) // Verifica se a lista está vazia ou é nula
             {
                 return NotFound("Nenhuma refeição encontrada.");
             }
-            return Ok(refeicoes);
+
+            return Ok(refeicoes); // Retorna as refeições com todas as propriedades carregadas
         }
+
+
     }
 }
 
