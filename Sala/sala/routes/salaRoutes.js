@@ -7,7 +7,7 @@ var { celebrate, Joi } = require('celebrate');
 
 //US007: Consultar Ementa Disponível
 const EmentaController = require('../controllers/ementaController');
-router.get('/ementa', EmentaController.getEmentaDisponivel);
+router.get('/ementa/:data/:tipoRefeicaoId', EmentaController.getEmentaDisponivel);
 
 //US009: Listar Todas Refeições Servidas
 const RefeicaoController = require('../controllers/refeicaoController');

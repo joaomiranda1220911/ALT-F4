@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 // Definir o esquema do prato
 var PratoSchema = new Schema({
-    _id: { type: Number },  // ID numérico
+    _id: { type: Number }, 
     nome: {
         type: String,
         required: true,
@@ -11,13 +11,16 @@ var PratoSchema = new Schema({
         trim: true
     },
     tipoPrato: {
-        type: String,
-        required: true
+        id: { type: Number },
+        //tipo: { type: String, required: true, maxlength: 100, trim: true },
+       // descrição: { type: String, required: false, maxlength: 100 }
     },
-    ingredientes: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Ingrediente'  // Referência para o modelo de Ingrediente
-    }],
+    ingredientes: {
+        id: { type: Number },
+        //nome: { type: String, required: true, maxlength: 100, trim: true },
+        //categoria: {type: String, required: true},
+        //ativo:{type: Boolean, required: true}
+    },
     receita: {
         type: String,
         default: null
@@ -27,7 +30,7 @@ var PratoSchema = new Schema({
         required: true,
         default: true
     },
-    preco: {  
+    preco: {
         type: Number,
         default: null
     }
