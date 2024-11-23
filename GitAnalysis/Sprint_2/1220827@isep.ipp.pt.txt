@@ -1,3 +1,23 @@
+commit 993ecc57fa41fe15e5670eb5c639dcebc6ef2067	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Wed Nov 20 23:30:20 2024 +0000
+
+    Alterações para os testes
+
+M	Sala/sala/routes/clienteRoutes.js
+M	Sala/sala/services/clienteService.js
+
+commit ac903cd1274f897a2d906e564d4861c63d9c163e	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sun Nov 17 23:09:23 2024 +0000
+
+    US002- Listar todos os clientes
+
+M	Sala/sala/controllers/clienteController.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/routes/clienteRoutes.js
+M	Sala/sala/services/clienteService.js
+
 commit f6bcbd75e705465e09163f12deaa8cb1cbd741d9	refs/heads/main
 Author: Seu Nome <1220827@isep.ipp.pt>
 Date:   Sun Nov 17 10:35:01 2024 +0000

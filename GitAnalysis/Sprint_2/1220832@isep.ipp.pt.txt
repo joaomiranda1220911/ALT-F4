@@ -1,3 +1,162 @@
+commit c102231543847d50e99cf5a9fe124d49cc838041	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Thu Nov 21 10:41:33 2024 +0000
+
+    Commit - correção
+
+M	Sala/sala/controllers/clienteController.js
+
+commit ab62b54a6d72196691f859770d254c1956f82182	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Thu Nov 21 10:01:05 2024 +0000
+
+    Commit - Teste 3
+
+M	Sala/sala/controllers/clienteController.js
+
+commit ab51ee2709116c0724b21b4d82465889c827b1e1	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Thu Nov 21 09:15:36 2024 +0000
+
+    Commit - Teste 2
+
+M	Sala/sala/controllers/clienteController.js
+
+commit 8a44165d26225fd550886d5a16b164bb3422dcbb	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Thu Nov 21 09:12:59 2024 +0000
+
+    Commit - Teste
+
+M	Sala/sala/controllers/clienteController.js
+
+commit f64d6a471880355e2f20a9a98cd452c460cf6378	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Nov 20 15:57:50 2024 +0000
+
+    Commit - Teste
+
+M	Sala/sala/app.js
+
+commit 2161d1e24a1d6f9e46afca8ac50d32667676832d	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Mon Nov 18 00:39:19 2024 +0000
+
+    Commit - Organização do Código (pt.4)
+
+M	Sala/sala/models/encomenda.js
+M	Sala/sala/models/refeicao.js
+M	Sala/sala/repositories/contaClienteRepository.js
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/repositories/refeicaoRepository.js
+
+commit 766a9a00deeb27aea34e2ac6c2d64d99d1c5d4e9	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Mon Nov 18 00:22:28 2024 +0000
+
+    Commit - Organização do Código (pt.3)
+
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/pratoService.js
+
+commit 1423d38559f70ff835705318197d69f880dbe50e	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Mon Nov 18 00:17:41 2024 +0000
+
+    Commit - Organização Código (pt.2)
+
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/services/refeicaoService.js
+
+commit 77ae34abcc2ae4f54b25fd8ffa72f40e82ace771	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Mon Nov 18 00:14:08 2024 +0000
+
+    Commit - Organização do Código
+
+M	Sala/sala/controllers/ementaController.js
+M	Sala/sala/controllers/encomendaController.js
+M	Sala/sala/repositories/encomendaRepository.js
+M	Sala/sala/services/encomendaService.js
+
+commit 304f20f908cc90148abe2da75b5a5464788c82b4	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Mon Nov 18 00:05:09 2024 +0000
+
+    Commit - Alteração nome método (US003)
+
+M	Sala/sala/services/clienteService.js
+
+commit 1646262f1f47c3a31610acd3a0cc67779a0cd5d1	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Mon Nov 18 00:02:57 2024 +0000
+
+    Commit - Rota para US004
+
+M	Sala/sala/routes/clienteRoutes.js
+
+commit 1b913f6ddaf031a9827935f21164d5cdce20a6a3	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 23:57:55 2024 +0000
+
+    Commit - Coerência US003 e US004
+
+M	Sala/sala/controllers/clienteController.js
+
+commit 2eb99b151e6fe46d30101c185227f5b75750e7bc	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 23:54:30 2024 +0000
+
+    Commit - Service US004
+
+M	Sala/sala/services/clienteService.js
+
+commit 1df2a3736266e9534bc7381bc870e47a547c7fec	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 23:47:34 2024 +0000
+
+    Commit - Repository US004
+
+M	Sala/sala/repositories/clienteRepository.js
+
+commit 73d33cecaec8dd5a2955a9ab6d678ce0e45b11cd	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 23:42:26 2024 +0000
+
+    Correção Erro
+
+M	Sala/sala/controllers/clienteController.js
+
+commit 289a2849c96a9c520e2f3a2112df3a750bce54f2	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 23:41:09 2024 +0000
+
+    Commit - Controller US004
+
+M	Sala/sala/controllers/clienteController.js
+
+commit c745da262b13ad032ed8065aa0c208c4a2fde169	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 20:37:24 2024 +0000
+
+    US003 - Transações
+
+A	Sala/sala/models/transaction.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/services/clienteService.js
+
+commit 9ed0d7c910adf30d39b303c815c5ea812b3ca086	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Sun Nov 17 19:10:09 2024 +0000
+
+    US003 - Obter Info de um Cliente através do NIF
+
+M	Sala/sala/controllers/clienteController.js
+M	Sala/sala/models/cliente.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/routes/clienteRoutes.js
+M	Sala/sala/services/clienteService.js
+
 commit 4f09fd5ef09ab7648cad0e4468b0bebf74f8bbc0	refs/heads/main
 Author: Gabriela <1220832@isep.ipp.pt>
 Date:   Fri Nov 15 15:15:21 2024 +0000

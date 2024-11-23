@@ -1,3 +1,710 @@
+commit 6926e35e05040e8b1e8b5c46ef13ad9d7f462ddd	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 22 20:08:37 2024 +0000
+
+    refeicao estava com id prato como objectId, agora esta number
+
+M	Sala/sala/models/refeicao.js
+
+commit 95d63d1c81d0878dd92fd1e72308daed84abf85d	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 22 20:01:56 2024 +0000
+
+    correção pratos/refeicoes/tipoRefeicao
+
+M	Sala/sala/controllers/ementaController.js
+M	Sala/sala/models/prato.js
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/pratoService.js
+M	Sala/sala/services/refeicaoService.js
+
+commit d685cb29a0044becf7a8bd9c3885b040671e9a97	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 22 19:29:50 2024 +0000
+
+    tornar TipoRefeicao array
+
+M	Sala/sala/models/refeicao.js
+
+commit afa3346911594d8d323a61f056c010428cf97d3e	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 22 01:24:44 2024 +0000
+
+    correção US005
+
+M	Sala/sala/controllers/clienteController.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/routes/clienteRoutes.js
+M	Sala/sala/services/clienteService.js
+
+commit b29c17c9c26d2481cb5317b92727445e91c6c813	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 22 01:24:27 2024 +0000
+
+    correção US008
+
+M	Sala/sala/services/encomendaService.js
+
+commit 2569c5b5772305610b38c2adbbe3b1c7ce14c5c6	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Nov 20 23:08:24 2024 +0000
+
+    erro sintaxe pt 2 sry
+
+M	Sala/sala/routes/salaRoutes.js
+
+commit c0e4895b22b3bffdec831e478a5293d21415fbaf	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Nov 20 22:59:02 2024 +0000
+
+    erro sintaxe
+
+M	Sala/sala/routes/salaRoutes.js
+
+commit 45efe830bf1a139e8f138ce695685c4f40a9c391	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Nov 20 22:49:44 2024 +0000
+
+    diferenciação prato e refeicao
+
+M	Sala/sala/app.js
+M	Sala/sala/controllers/ementaController.js
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/models/refeicao.js
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/pratoService.js
+M	Sala/sala/services/refeicaoService.js
+
+commit 30c48f44585cead6bd04300e10ca1c034a3b4291	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Nov 20 16:17:39 2024 +0000
+
+    alterações US008-US010
+
+M	Sala/sala/controllers/encomendaController.js
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/services/encomendaService.js
+
+commit 9a0e497662c20a2f08de0535b03c3c9c0cf84925	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Nov 20 15:36:44 2024 +0000
+
+    logica do get refeicao by id
+
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/models/refeicao.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/services/cozinhaService.js
+
+commit fa5ce63317612f3f26a26419b5b25f71f78f140f	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Mon Nov 18 17:00:33 2024 +0000
+
+    ip mongo + US006 +  tentativa conexão À cozinha
+
+M	Grupo2A/Controllers/PratosController.cs
+M	Sala/sala/app.js
+A	Sala/sala/controllers/pratoController.js
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/models/prato.js
+M	Sala/sala/node_modules/.bin/acorn
+A	Sala/sala/node_modules/.bin/acorn.cmd
+A	Sala/sala/node_modules/.bin/acorn.ps1
+M	Sala/sala/node_modules/.bin/cleancss
+A	Sala/sala/node_modules/.bin/cleancss.cmd
+A	Sala/sala/node_modules/.bin/cleancss.ps1
+M	Sala/sala/node_modules/.bin/jade
+A	Sala/sala/node_modules/.bin/jade.cmd
+A	Sala/sala/node_modules/.bin/jade.ps1
+M	Sala/sala/node_modules/.bin/mime
+A	Sala/sala/node_modules/.bin/mime.cmd
+A	Sala/sala/node_modules/.bin/mime.ps1
+M	Sala/sala/node_modules/.bin/mkdirp
+A	Sala/sala/node_modules/.bin/mkdirp.cmd
+A	Sala/sala/node_modules/.bin/mkdirp.ps1
+M	Sala/sala/node_modules/.bin/uglifyjs
+A	Sala/sala/node_modules/.bin/uglifyjs.cmd
+A	Sala/sala/node_modules/.bin/uglifyjs.ps1
+M	Sala/sala/node_modules/.package-lock.json
+A	Sala/sala/node_modules/asynckit/LICENSE
+A	Sala/sala/node_modules/asynckit/README.md
+A	Sala/sala/node_modules/asynckit/bench.js
+A	Sala/sala/node_modules/asynckit/index.js
+A	Sala/sala/node_modules/asynckit/lib/abort.js
+A	Sala/sala/node_modules/asynckit/lib/async.js
+A	Sala/sala/node_modules/asynckit/lib/defer.js
+A	Sala/sala/node_modules/asynckit/lib/iterate.js
+A	Sala/sala/node_modules/asynckit/lib/readable_asynckit.js
+A	Sala/sala/node_modules/asynckit/lib/readable_parallel.js
+A	Sala/sala/node_modules/asynckit/lib/readable_serial.js
+A	Sala/sala/node_modules/asynckit/lib/readable_serial_ordered.js
+A	Sala/sala/node_modules/asynckit/lib/state.js
+A	Sala/sala/node_modules/asynckit/lib/streamify.js
+A	Sala/sala/node_modules/asynckit/lib/terminator.js
+A	Sala/sala/node_modules/asynckit/package.json
+A	Sala/sala/node_modules/asynckit/parallel.js
+A	Sala/sala/node_modules/asynckit/serial.js
+A	Sala/sala/node_modules/asynckit/serialOrdered.js
+A	Sala/sala/node_modules/asynckit/stream.js
+A	Sala/sala/node_modules/axios/CHANGELOG.md
+A	Sala/sala/node_modules/axios/LICENSE
+A	Sala/sala/node_modules/axios/MIGRATION_GUIDE.md
+A	Sala/sala/node_modules/axios/README.md
+A	Sala/sala/node_modules/axios/SECURITY.md
+A	Sala/sala/node_modules/axios/dist/axios.js
+A	Sala/sala/node_modules/axios/dist/axios.js.map
+A	Sala/sala/node_modules/axios/dist/axios.min.js
+A	Sala/sala/node_modules/axios/dist/axios.min.js.map
+A	Sala/sala/node_modules/axios/dist/browser/axios.cjs
+A	Sala/sala/node_modules/axios/dist/browser/axios.cjs.map
+A	Sala/sala/node_modules/axios/dist/esm/axios.js
+A	Sala/sala/node_modules/axios/dist/esm/axios.js.map
+A	Sala/sala/node_modules/axios/dist/esm/axios.min.js
+A	Sala/sala/node_modules/axios/dist/esm/axios.min.js.map
+A	Sala/sala/node_modules/axios/dist/node/axios.cjs
+A	Sala/sala/node_modules/axios/dist/node/axios.cjs.map
+A	Sala/sala/node_modules/axios/index.d.cts
+A	Sala/sala/node_modules/axios/index.d.ts
+A	Sala/sala/node_modules/axios/index.js
+A	Sala/sala/node_modules/axios/lib/adapters/README.md
+A	Sala/sala/node_modules/axios/lib/adapters/adapters.js
+A	Sala/sala/node_modules/axios/lib/adapters/fetch.js
+A	Sala/sala/node_modules/axios/lib/adapters/http.js
+A	Sala/sala/node_modules/axios/lib/adapters/xhr.js
+A	Sala/sala/node_modules/axios/lib/axios.js
+A	Sala/sala/node_modules/axios/lib/cancel/CancelToken.js
+A	Sala/sala/node_modules/axios/lib/cancel/CanceledError.js
+A	Sala/sala/node_modules/axios/lib/cancel/isCancel.js
+A	Sala/sala/node_modules/axios/lib/core/Axios.js
+A	Sala/sala/node_modules/axios/lib/core/AxiosError.js
+A	Sala/sala/node_modules/axios/lib/core/AxiosHeaders.js
+A	Sala/sala/node_modules/axios/lib/core/InterceptorManager.js
+A	Sala/sala/node_modules/axios/lib/core/README.md
+A	Sala/sala/node_modules/axios/lib/core/buildFullPath.js
+A	Sala/sala/node_modules/axios/lib/core/dispatchRequest.js
+A	Sala/sala/node_modules/axios/lib/core/mergeConfig.js
+A	Sala/sala/node_modules/axios/lib/core/settle.js
+A	Sala/sala/node_modules/axios/lib/core/transformData.js
+A	Sala/sala/node_modules/axios/lib/defaults/index.js
+A	Sala/sala/node_modules/axios/lib/defaults/transitional.js
+A	Sala/sala/node_modules/axios/lib/env/README.md
+A	Sala/sala/node_modules/axios/lib/env/classes/FormData.js
+A	Sala/sala/node_modules/axios/lib/env/data.js
+A	Sala/sala/node_modules/axios/lib/helpers/AxiosTransformStream.js
+A	Sala/sala/node_modules/axios/lib/helpers/AxiosURLSearchParams.js
+A	Sala/sala/node_modules/axios/lib/helpers/HttpStatusCode.js
+A	Sala/sala/node_modules/axios/lib/helpers/README.md
+A	Sala/sala/node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js
+A	Sala/sala/node_modules/axios/lib/helpers/bind.js
+A	Sala/sala/node_modules/axios/lib/helpers/buildURL.js
+A	Sala/sala/node_modules/axios/lib/helpers/callbackify.js
+A	Sala/sala/node_modules/axios/lib/helpers/combineURLs.js
+A	Sala/sala/node_modules/axios/lib/helpers/composeSignals.js
+A	Sala/sala/node_modules/axios/lib/helpers/cookies.js
+A	Sala/sala/node_modules/axios/lib/helpers/deprecatedMethod.js
+A	Sala/sala/node_modules/axios/lib/helpers/formDataToJSON.js
+A	Sala/sala/node_modules/axios/lib/helpers/formDataToStream.js
+A	Sala/sala/node_modules/axios/lib/helpers/fromDataURI.js
+A	Sala/sala/node_modules/axios/lib/helpers/isAbsoluteURL.js
+A	Sala/sala/node_modules/axios/lib/helpers/isAxiosError.js
+A	Sala/sala/node_modules/axios/lib/helpers/isURLSameOrigin.js
+A	Sala/sala/node_modules/axios/lib/helpers/null.js
+A	Sala/sala/node_modules/axios/lib/helpers/parseHeaders.js
+A	Sala/sala/node_modules/axios/lib/helpers/parseProtocol.js
+A	Sala/sala/node_modules/axios/lib/helpers/progressEventReducer.js
+A	Sala/sala/node_modules/axios/lib/helpers/readBlob.js
+A	Sala/sala/node_modules/axios/lib/helpers/resolveConfig.js
+A	Sala/sala/node_modules/axios/lib/helpers/speedometer.js
+A	Sala/sala/node_modules/axios/lib/helpers/spread.js
+A	Sala/sala/node_modules/axios/lib/helpers/throttle.js
+A	Sala/sala/node_modules/axios/lib/helpers/toFormData.js
+A	Sala/sala/node_modules/axios/lib/helpers/toURLEncodedForm.js
+A	Sala/sala/node_modules/axios/lib/helpers/trackStream.js
+A	Sala/sala/node_modules/axios/lib/helpers/validator.js
+A	Sala/sala/node_modules/axios/lib/platform/browser/classes/Blob.js
+A	Sala/sala/node_modules/axios/lib/platform/browser/classes/FormData.js
+A	Sala/sala/node_modules/axios/lib/platform/browser/classes/URLSearchParams.js
+A	Sala/sala/node_modules/axios/lib/platform/browser/index.js
+A	Sala/sala/node_modules/axios/lib/platform/common/utils.js
+A	Sala/sala/node_modules/axios/lib/platform/index.js
+A	Sala/sala/node_modules/axios/lib/platform/node/classes/FormData.js
+A	Sala/sala/node_modules/axios/lib/platform/node/classes/URLSearchParams.js
+A	Sala/sala/node_modules/axios/lib/platform/node/index.js
+A	Sala/sala/node_modules/axios/lib/utils.js
+A	Sala/sala/node_modules/axios/package.json
+A	Sala/sala/node_modules/combined-stream/License
+A	Sala/sala/node_modules/combined-stream/Readme.md
+A	Sala/sala/node_modules/combined-stream/lib/combined_stream.js
+A	Sala/sala/node_modules/combined-stream/package.json
+A	Sala/sala/node_modules/combined-stream/yarn.lock
+A	Sala/sala/node_modules/delayed-stream/.npmignore
+A	Sala/sala/node_modules/delayed-stream/License
+A	Sala/sala/node_modules/delayed-stream/Makefile
+A	Sala/sala/node_modules/delayed-stream/Readme.md
+A	Sala/sala/node_modules/delayed-stream/lib/delayed_stream.js
+A	Sala/sala/node_modules/delayed-stream/package.json
+A	Sala/sala/node_modules/follow-redirects/LICENSE
+A	Sala/sala/node_modules/follow-redirects/README.md
+A	Sala/sala/node_modules/follow-redirects/debug.js
+A	Sala/sala/node_modules/follow-redirects/http.js
+A	Sala/sala/node_modules/follow-redirects/https.js
+A	Sala/sala/node_modules/follow-redirects/index.js
+A	Sala/sala/node_modules/follow-redirects/package.json
+A	Sala/sala/node_modules/form-data/License
+A	Sala/sala/node_modules/form-data/Readme.md
+A	Sala/sala/node_modules/form-data/index.d.ts
+A	Sala/sala/node_modules/form-data/lib/browser.js
+A	Sala/sala/node_modules/form-data/lib/form_data.js
+A	Sala/sala/node_modules/form-data/lib/populate.js
+A	Sala/sala/node_modules/form-data/package.json
+A	Sala/sala/node_modules/kareem/CHANGELOG.md
+A	Sala/sala/node_modules/kareem/LICENSE
+A	Sala/sala/node_modules/kareem/README.md
+A	Sala/sala/node_modules/kareem/SECURITY.md
+A	Sala/sala/node_modules/kareem/index.d.ts
+A	Sala/sala/node_modules/kareem/index.js
+A	Sala/sala/node_modules/kareem/package.json
+A	Sala/sala/node_modules/mongoose/LICENSE.md
+A	Sala/sala/node_modules/mongoose/README.md
+A	Sala/sala/node_modules/mongoose/SECURITY.md
+A	Sala/sala/node_modules/mongoose/browser.js
+A	Sala/sala/node_modules/mongoose/dist/browser.umd.js
+A	Sala/sala/node_modules/mongoose/index.js
+A	Sala/sala/node_modules/mongoose/lib/aggregate.js
+A	Sala/sala/node_modules/mongoose/lib/browser.js
+A	Sala/sala/node_modules/mongoose/lib/browserDocument.js
+A	Sala/sala/node_modules/mongoose/lib/cast.js
+A	Sala/sala/node_modules/mongoose/lib/cast/bigint.js
+A	Sala/sala/node_modules/mongoose/lib/cast/boolean.js
+A	Sala/sala/node_modules/mongoose/lib/cast/date.js
+A	Sala/sala/node_modules/mongoose/lib/cast/decimal128.js
+A	Sala/sala/node_modules/mongoose/lib/cast/number.js
+A	Sala/sala/node_modules/mongoose/lib/cast/objectid.js
+A	Sala/sala/node_modules/mongoose/lib/cast/string.js
+A	Sala/sala/node_modules/mongoose/lib/collection.js
+A	Sala/sala/node_modules/mongoose/lib/connection.js
+A	Sala/sala/node_modules/mongoose/lib/connectionState.js
+A	Sala/sala/node_modules/mongoose/lib/constants.js
+A	Sala/sala/node_modules/mongoose/lib/cursor/aggregationCursor.js
+A	Sala/sala/node_modules/mongoose/lib/cursor/changeStream.js
+A	Sala/sala/node_modules/mongoose/lib/cursor/queryCursor.js
+A	Sala/sala/node_modules/mongoose/lib/document.js
+A	Sala/sala/node_modules/mongoose/lib/documentProvider.js
+A	Sala/sala/node_modules/mongoose/lib/driver.js
+A	Sala/sala/node_modules/mongoose/lib/drivers/SPEC.md
+A	Sala/sala/node_modules/mongoose/lib/drivers/browser/binary.js
+A	Sala/sala/node_modules/mongoose/lib/drivers/browser/decimal128.js
+A	Sala/sala/node_modules/mongoose/lib/drivers/browser/index.js
+A	Sala/sala/node_modules/mongoose/lib/drivers/browser/objectid.js
+A	Sala/sala/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js
+A	Sala/sala/node_modules/mongoose/lib/drivers/node-mongodb-native/connection.js
+A	Sala/sala/node_modules/mongoose/lib/drivers/node-mongodb-native/index.js
+A	Sala/sala/node_modules/mongoose/lib/error/browserMissingSchema.js
+A	Sala/sala/node_modules/mongoose/lib/error/bulkSaveIncompleteError.js
+A	Sala/sala/node_modules/mongoose/lib/error/bulkWriteError.js
+A	Sala/sala/node_modules/mongoose/lib/error/cast.js
+A	Sala/sala/node_modules/mongoose/lib/error/createCollectionsError.js
+A	Sala/sala/node_modules/mongoose/lib/error/divergentArray.js
+A	Sala/sala/node_modules/mongoose/lib/error/eachAsyncMultiError.js
+A	Sala/sala/node_modules/mongoose/lib/error/index.js
+A	Sala/sala/node_modules/mongoose/lib/error/invalidSchemaOption.js
+A	Sala/sala/node_modules/mongoose/lib/error/messages.js
+A	Sala/sala/node_modules/mongoose/lib/error/missingSchema.js
+A	Sala/sala/node_modules/mongoose/lib/error/mongooseError.js
+A	Sala/sala/node_modules/mongoose/lib/error/notFound.js
+A	Sala/sala/node_modules/mongoose/lib/error/objectExpected.js
+A	Sala/sala/node_modules/mongoose/lib/error/objectParameter.js
+A	Sala/sala/node_modules/mongoose/lib/error/overwriteModel.js
+A	Sala/sala/node_modules/mongoose/lib/error/parallelSave.js
+A	Sala/sala/node_modules/mongoose/lib/error/parallelValidate.js
+A	Sala/sala/node_modules/mongoose/lib/error/serverSelection.js
+A	Sala/sala/node_modules/mongoose/lib/error/setOptionError.js
+A	Sala/sala/node_modules/mongoose/lib/error/strict.js
+A	Sala/sala/node_modules/mongoose/lib/error/strictPopulate.js
+A	Sala/sala/node_modules/mongoose/lib/error/syncIndexes.js
+A	Sala/sala/node_modules/mongoose/lib/error/validation.js
+A	Sala/sala/node_modules/mongoose/lib/error/validator.js
+A	Sala/sala/node_modules/mongoose/lib/error/version.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/aggregate/prepareDiscriminatorPipeline.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/aggregate/stringifyFunctionOperators.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/arrayDepth.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/clone.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/common.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/cursor/eachAsync.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/discriminator/applyEmbeddedDiscriminators.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/discriminator/areDiscriminatorValuesEqual.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/discriminator/checkEmbeddedDiscriminatorKeyProjection.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/discriminator/getConstructor.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/discriminator/getDiscriminatorByValue.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/discriminator/getSchemaDiscriminatorByValue.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/discriminator/mergeDiscriminatorSchema.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/document/applyDefaults.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/document/applyTimestamps.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/document/applyVirtuals.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/document/cleanModifiedSubpaths.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/document/compile.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/document/getDeepestSubdocumentForPath.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/document/getEmbeddedDiscriminatorPath.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/document/handleSpreadDoc.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/each.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/error/combinePathErrors.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/firstKey.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/get.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/getConstructorName.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/getDefaultBulkwriteResult.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/getFunctionName.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/immediate.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/indexes/applySchemaCollation.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/indexes/decorateDiscriminatorIndexOptions.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/indexes/getRelatedIndexes.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/indexes/isDefaultIdIndex.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/indexes/isIndexEqual.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/indexes/isTextIndex.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/isAsyncFunction.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/isBsonType.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/isMongooseObject.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/isObject.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/isPOJO.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/isPromise.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/isSimpleValidator.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/minimize.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/model/applyDefaultsToPOJO.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/model/applyHooks.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/model/applyMethods.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/model/applyStaticHooks.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/model/applyStatics.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/model/castBulkWrite.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/model/discriminator.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/model/pushNestedArrayPaths.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/omitUndefined.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/once.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/parallelLimit.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/path/parentPaths.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/path/setDottedPath.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/pluralize.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/assignRawDocsToIdStructure.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/assignVals.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/createPopulateQueryFilter.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/getModelsMapForPopulate.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/getSchemaTypes.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/getVirtual.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/leanPopulateMap.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/lookupLocalFields.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/markArraySubdocsPopulated.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/modelNamesFromRefPath.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/removeDeselectedForeignField.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/setPopulatedVirtualValue.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/skipPopulateValue.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/populate/validateRef.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/printJestWarning.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/processConnectionOptions.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/applyProjection.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/hasIncludedChildren.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/isDefiningProjection.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/isExclusive.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/isInclusive.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/isNestedProjection.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/isPathExcluded.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/isPathSelectedInclusive.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/isSubpath.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/projection/parseProjection.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/promiseOrCallback.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/applyGlobalOption.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/cast$expr.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/castFilterPath.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/castUpdate.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/getEmbeddedDiscriminatorPath.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/handleImmutable.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/handleReadPreferenceAliases.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/hasDollarKeys.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/isOperator.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/sanitizeFilter.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/sanitizeProjection.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/selectPopulatedFields.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/trusted.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/query/validOps.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/addAutoId.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/applyBuiltinPlugins.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/applyPlugins.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/applyReadConcern.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/applyWriteConcern.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/cleanPositionalOperators.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/getIndexes.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/getKeysInSchemaOrder.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/getPath.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/getSubdocumentStrictValue.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/handleIdOption.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/handleTimestampOption.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/idGetter.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schema/merge.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/schematype/handleImmutable.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/setDefaultsOnInsert.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/specialProperties.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/symbols.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/timers.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/timestamps/setDocumentTimestamps.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/timestamps/setupTimestamps.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/topology/allServersUnknown.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/topology/isAtlas.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/topology/isSSLError.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/update/applyTimestampsToChildren.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/update/applyTimestampsToUpdate.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/update/castArrayFilters.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/update/decorateUpdateWithVersionKey.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/update/modifiedPaths.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/update/moveImmutableProperties.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/update/removeUnusedArrayFilters.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/update/updatedPathsByArrayFilter.js
+A	Sala/sala/node_modules/mongoose/lib/helpers/updateValidators.js
+A	Sala/sala/node_modules/mongoose/lib/index.js
+A	Sala/sala/node_modules/mongoose/lib/internal.js
+A	Sala/sala/node_modules/mongoose/lib/model.js
+A	Sala/sala/node_modules/mongoose/lib/modifiedPathsSnapshot.js
+A	Sala/sala/node_modules/mongoose/lib/mongoose.js
+A	Sala/sala/node_modules/mongoose/lib/options.js
+A	Sala/sala/node_modules/mongoose/lib/options/populateOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/propertyOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/saveOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaArrayOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaBufferOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaDateOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaDocumentArrayOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaMapOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaNumberOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaObjectIdOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaStringOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaSubdocumentOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/schemaTypeOptions.js
+A	Sala/sala/node_modules/mongoose/lib/options/virtualOptions.js
+A	Sala/sala/node_modules/mongoose/lib/plugins/index.js
+A	Sala/sala/node_modules/mongoose/lib/plugins/saveSubdocs.js
+A	Sala/sala/node_modules/mongoose/lib/plugins/sharding.js
+A	Sala/sala/node_modules/mongoose/lib/plugins/trackTransaction.js
+A	Sala/sala/node_modules/mongoose/lib/plugins/validateBeforeSave.js
+A	Sala/sala/node_modules/mongoose/lib/query.js
+A	Sala/sala/node_modules/mongoose/lib/queryHelpers.js
+A	Sala/sala/node_modules/mongoose/lib/schema.js
+A	Sala/sala/node_modules/mongoose/lib/schema/array.js
+A	Sala/sala/node_modules/mongoose/lib/schema/bigint.js
+A	Sala/sala/node_modules/mongoose/lib/schema/boolean.js
+A	Sala/sala/node_modules/mongoose/lib/schema/buffer.js
+A	Sala/sala/node_modules/mongoose/lib/schema/date.js
+A	Sala/sala/node_modules/mongoose/lib/schema/decimal128.js
+A	Sala/sala/node_modules/mongoose/lib/schema/documentArray.js
+A	Sala/sala/node_modules/mongoose/lib/schema/documentArrayElement.js
+A	Sala/sala/node_modules/mongoose/lib/schema/index.js
+A	Sala/sala/node_modules/mongoose/lib/schema/map.js
+A	Sala/sala/node_modules/mongoose/lib/schema/mixed.js
+A	Sala/sala/node_modules/mongoose/lib/schema/number.js
+A	Sala/sala/node_modules/mongoose/lib/schema/objectId.js
+A	Sala/sala/node_modules/mongoose/lib/schema/operators/bitwise.js
+A	Sala/sala/node_modules/mongoose/lib/schema/operators/exists.js
+A	Sala/sala/node_modules/mongoose/lib/schema/operators/geospatial.js
+A	Sala/sala/node_modules/mongoose/lib/schema/operators/helpers.js
+A	Sala/sala/node_modules/mongoose/lib/schema/operators/text.js
+A	Sala/sala/node_modules/mongoose/lib/schema/operators/type.js
+A	Sala/sala/node_modules/mongoose/lib/schema/string.js
+A	Sala/sala/node_modules/mongoose/lib/schema/subdocument.js
+A	Sala/sala/node_modules/mongoose/lib/schema/symbols.js
+A	Sala/sala/node_modules/mongoose/lib/schema/uuid.js
+A	Sala/sala/node_modules/mongoose/lib/schemaType.js
+A	Sala/sala/node_modules/mongoose/lib/stateMachine.js
+A	Sala/sala/node_modules/mongoose/lib/types/array/index.js
+A	Sala/sala/node_modules/mongoose/lib/types/array/isMongooseArray.js
+A	Sala/sala/node_modules/mongoose/lib/types/array/methods/index.js
+A	Sala/sala/node_modules/mongoose/lib/types/arraySubdocument.js
+A	Sala/sala/node_modules/mongoose/lib/types/buffer.js
+A	Sala/sala/node_modules/mongoose/lib/types/decimal128.js
+A	Sala/sala/node_modules/mongoose/lib/types/documentArray/index.js
+A	Sala/sala/node_modules/mongoose/lib/types/documentArray/isMongooseDocumentArray.js
+A	Sala/sala/node_modules/mongoose/lib/types/documentArray/methods/index.js
+A	Sala/sala/node_modules/mongoose/lib/types/index.js
+A	Sala/sala/node_modules/mongoose/lib/types/map.js
+A	Sala/sala/node_modules/mongoose/lib/types/objectid.js
+A	Sala/sala/node_modules/mongoose/lib/types/subdocument.js
+A	Sala/sala/node_modules/mongoose/lib/types/uuid.js
+A	Sala/sala/node_modules/mongoose/lib/utils.js
+A	Sala/sala/node_modules/mongoose/lib/validOptions.js
+A	Sala/sala/node_modules/mongoose/lib/virtualType.js
+A	Sala/sala/node_modules/mongoose/node_modules/ms/index.js
+A	Sala/sala/node_modules/mongoose/node_modules/ms/license.md
+A	Sala/sala/node_modules/mongoose/node_modules/ms/package.json
+A	Sala/sala/node_modules/mongoose/node_modules/ms/readme.md
+A	Sala/sala/node_modules/mongoose/package.json
+A	Sala/sala/node_modules/mongoose/types/aggregate.d.ts
+A	Sala/sala/node_modules/mongoose/types/augmentations.d.ts
+A	Sala/sala/node_modules/mongoose/types/callback.d.ts
+A	Sala/sala/node_modules/mongoose/types/collection.d.ts
+A	Sala/sala/node_modules/mongoose/types/connection.d.ts
+A	Sala/sala/node_modules/mongoose/types/cursor.d.ts
+A	Sala/sala/node_modules/mongoose/types/document.d.ts
+A	Sala/sala/node_modules/mongoose/types/error.d.ts
+A	Sala/sala/node_modules/mongoose/types/expressions.d.ts
+A	Sala/sala/node_modules/mongoose/types/helpers.d.ts
+A	Sala/sala/node_modules/mongoose/types/index.d.ts
+A	Sala/sala/node_modules/mongoose/types/indexes.d.ts
+A	Sala/sala/node_modules/mongoose/types/inferrawdoctype.d.ts
+A	Sala/sala/node_modules/mongoose/types/inferschematype.d.ts
+A	Sala/sala/node_modules/mongoose/types/middlewares.d.ts
+A	Sala/sala/node_modules/mongoose/types/models.d.ts
+A	Sala/sala/node_modules/mongoose/types/mongooseoptions.d.ts
+A	Sala/sala/node_modules/mongoose/types/pipelinestage.d.ts
+A	Sala/sala/node_modules/mongoose/types/populate.d.ts
+A	Sala/sala/node_modules/mongoose/types/query.d.ts
+A	Sala/sala/node_modules/mongoose/types/schemaoptions.d.ts
+A	Sala/sala/node_modules/mongoose/types/schematypes.d.ts
+A	Sala/sala/node_modules/mongoose/types/session.d.ts
+A	Sala/sala/node_modules/mongoose/types/types.d.ts
+A	Sala/sala/node_modules/mongoose/types/utility.d.ts
+A	Sala/sala/node_modules/mongoose/types/validation.d.ts
+A	Sala/sala/node_modules/mongoose/types/virtuals.d.ts
+A	Sala/sala/node_modules/mpath/.travis.yml
+A	Sala/sala/node_modules/mpath/History.md
+A	Sala/sala/node_modules/mpath/LICENSE
+A	Sala/sala/node_modules/mpath/README.md
+A	Sala/sala/node_modules/mpath/SECURITY.md
+A	Sala/sala/node_modules/mpath/index.js
+A	Sala/sala/node_modules/mpath/lib/index.js
+A	Sala/sala/node_modules/mpath/lib/stringToParts.js
+A	Sala/sala/node_modules/mpath/package.json
+A	Sala/sala/node_modules/mpath/test/.eslintrc.yml
+A	Sala/sala/node_modules/mpath/test/index.js
+A	Sala/sala/node_modules/mpath/test/stringToParts.js
+A	Sala/sala/node_modules/mquery/.github/ISSUE_TEMPLATE.md
+A	Sala/sala/node_modules/mquery/.github/PULL_REQUEST_TEMPLATE.md
+A	Sala/sala/node_modules/mquery/History.md
+A	Sala/sala/node_modules/mquery/LICENSE
+A	Sala/sala/node_modules/mquery/README.md
+A	Sala/sala/node_modules/mquery/SECURITY.md
+A	Sala/sala/node_modules/mquery/lib/collection/collection.js
+A	Sala/sala/node_modules/mquery/lib/collection/index.js
+A	Sala/sala/node_modules/mquery/lib/collection/node.js
+A	Sala/sala/node_modules/mquery/lib/env.js
+A	Sala/sala/node_modules/mquery/lib/mquery.js
+A	Sala/sala/node_modules/mquery/lib/permissions.js
+A	Sala/sala/node_modules/mquery/lib/utils.js
+A	Sala/sala/node_modules/mquery/node_modules/ms/index.js
+A	Sala/sala/node_modules/mquery/node_modules/ms/license.md
+A	Sala/sala/node_modules/mquery/node_modules/ms/package.json
+A	Sala/sala/node_modules/mquery/node_modules/ms/readme.md
+A	Sala/sala/node_modules/mquery/package.json
+A	Sala/sala/node_modules/proxy-from-env/.eslintrc
+A	Sala/sala/node_modules/proxy-from-env/.travis.yml
+A	Sala/sala/node_modules/proxy-from-env/LICENSE
+A	Sala/sala/node_modules/proxy-from-env/README.md
+A	Sala/sala/node_modules/proxy-from-env/index.js
+A	Sala/sala/node_modules/proxy-from-env/package.json
+A	Sala/sala/node_modules/proxy-from-env/test.js
+A	Sala/sala/node_modules/sift/MIT-LICENSE.txt
+A	Sala/sala/node_modules/sift/README.md
+A	Sala/sala/node_modules/sift/es/index.js
+A	Sala/sala/node_modules/sift/es/index.js.map
+A	Sala/sala/node_modules/sift/es5m/index.js
+A	Sala/sala/node_modules/sift/es5m/index.js.map
+A	Sala/sala/node_modules/sift/index.d.ts
+A	Sala/sala/node_modules/sift/index.js
+A	Sala/sala/node_modules/sift/lib/core.d.ts
+A	Sala/sala/node_modules/sift/lib/index.d.ts
+A	Sala/sala/node_modules/sift/lib/index.js
+A	Sala/sala/node_modules/sift/lib/index.js.map
+A	Sala/sala/node_modules/sift/lib/operations.d.ts
+A	Sala/sala/node_modules/sift/lib/utils.d.ts
+A	Sala/sala/node_modules/sift/package.json
+A	Sala/sala/node_modules/sift/sift.csp.min.js
+A	Sala/sala/node_modules/sift/sift.csp.min.js.map
+A	Sala/sala/node_modules/sift/sift.min.js
+A	Sala/sala/node_modules/sift/sift.min.js.map
+A	Sala/sala/node_modules/sift/src/core.ts
+A	Sala/sala/node_modules/sift/src/index.ts
+A	Sala/sala/node_modules/sift/src/operations.ts
+A	Sala/sala/node_modules/sift/src/utils.ts
+M	Sala/sala/node_modules/transformers/node_modules/.bin/uglifyjs
+A	Sala/sala/node_modules/transformers/node_modules/.bin/uglifyjs.cmd
+A	Sala/sala/node_modules/transformers/node_modules/.bin/uglifyjs.ps1
+M	Sala/sala/node_modules/with/node_modules/.bin/acorn
+A	Sala/sala/node_modules/with/node_modules/.bin/acorn.cmd
+A	Sala/sala/node_modules/with/node_modules/.bin/acorn.ps1
+M	Sala/sala/package-lock.json
+M	Sala/sala/package.json
+M	Sala/sala/repositories/pratoRepository.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/cozinhaService.js
+M	Sala/sala/services/pratoService.js
+M	Sala/sala/services/refeicaoService.js
+
+commit deec143929c0f77248a681db3000bf3377039311	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Mon Nov 18 11:16:49 2024 +0000
+
+    base de dados nova
+
+M	Grupo2A/Database/CozinhaDB
+
+commit 20d64b0c38566b16eb24188482b527d6781b23f6	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Mon Nov 18 11:14:08 2024 +0000
+
+    correção migrations sprint 1
+
+D	Grupo2A/Database/CozinhaDB-shm
+D	Grupo2A/Database/CozinhaDB-wal
+D	Grupo2A/Migrations/20241102215558_CozinhaCreation.Designer.cs
+D	Grupo2A/Migrations/20241102220906_AddDescricaoTipoPratoColumn.Designer.cs
+D	Grupo2A/Migrations/20241102220906_AddDescricaoTipoPratoColumn.cs
+D	Grupo2A/Migrations/20241103180233_AdicionarPratoIdNaRefeicao.cs
+R089	Grupo2A/Migrations/20241103180233_AdicionarPratoIdNaRefeicao.Designer.cs	Grupo2A/Migrations/20241118105416_BaseIt2.Designer.cs
+R077	Grupo2A/Migrations/20241102215558_CozinhaCreation.cs	Grupo2A/Migrations/20241118105416_BaseIt2.cs
+M	Grupo2A/Migrations/CozinhaContextModelSnapshot.cs
+
+commit c4c5f0eade9bdbbc8b57cef56fd1fac928ff11bb	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Mon Nov 18 10:49:04 2024 +0000
+
+    US006
+
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/models/prato.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/services/cozinhaService.js
+M	Sala/sala/services/refeicaoService.js
+
+commit 50d226469c0a276b282e30e136fa9be500b73ee1	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Mon Nov 18 10:04:37 2024 +0000
+
+    correçao de erros apontados na apresentação da iteração 1
+
+M	Grupo2A/Services/PratosService.cs
+M	Grupo2A/Services/RefeicoesService.cs
+
+commit 5a7b414e6fd7e849fe373c678b353060a5017638	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Sun Nov 17 23:16:52 2024 +0000
+
+    US006 - controller+repo+serv
+
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/models/prato.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/services/cozinhaService.js
+M	Sala/sala/services/refeicaoService.js
+
+commit 74809fff744a0ff27b98b26fb6297d4a851db0aa	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Sun Nov 17 21:52:44 2024 +0000
+
+    US005 controller+ repository + service
+
+M	Sala/sala/controllers/clienteController.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/services/clienteService.js
+
 commit a9f33c9a8c5de090749e23cd5c2f968e80cbddd6	refs/heads/main
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 15 15:18:48 2024 +0000
