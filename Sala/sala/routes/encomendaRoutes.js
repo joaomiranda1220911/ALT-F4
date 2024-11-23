@@ -10,6 +10,6 @@ const EncomendaController = require('../controllers/encomendaController');
 router.post('/encomendar', EncomendaController.createEncomenda);
 
 //US010: Listar Encomendas por Cliente
-router.get('/encomendas/:clienteId', EncomendaController.listarEncomendasCliente);
+router.get('/:clienteId', EncomendaController.listarEncomendasCliente);
 
 module.exports = router;
