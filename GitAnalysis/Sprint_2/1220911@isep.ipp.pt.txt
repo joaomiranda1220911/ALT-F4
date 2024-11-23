@@ -1,3 +1,74 @@
+commit b20b6c2fb20fc022250205e436bee95aea39f8a6	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 23 18:42:32 2024 +0000
+
+    correção nulls
+
+M	Grupo2A/Controllers/RefeicoesController.cs
+
+commit 378e8614680b6a9eb2da3efb91c9ab1d22fd56f9	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 23 17:59:47 2024 +0000
+
+    correção US9
+
+M	Sala/sala/controllers/refeicaoController.js
+M	Sala/sala/repositories/refeicaoRepository.js
+M	Sala/sala/routes/salaRoutes.js
+M	Sala/sala/services/refeicaoService.js
+
+commit 0725d770a982d508805a17735877fbf8a209af17	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 23 16:31:33 2024 +0000
+
+    URL clientes
+
+M	Sala/sala/routes/clienteRoutes.js
+
+commit 9ebab55e9ef20ef2bb369ea5728b461ebcf6dbb9	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 23 16:02:40 2024 +0000
+
+    correção URL
+
+M	Sala/sala/routes/encomendaRoutes.js
+
+commit 6807c78b7765d93bc32034ff743fae390fa6c022	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 23 16:01:54 2024 +0000
+
+    correção URL encomendar
+
+M	Sala/sala/app.js
+M	Sala/sala/routes/encomendaRoutes.js
+
+commit 3d13946dd2444dc9df51cf2cbbb78d089ba19229	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 23 15:39:41 2024 +0000
+
+    US8 (corrigir quantidade após encomendar)
+
+M	Sala/sala/controllers/encomendaController.js
+M	Sala/sala/repositories/clienteRepository.js
+M	Sala/sala/repositories/contaClienteRepository.js
+M	Sala/sala/repositories/encomendaRepository.js
+M	Sala/sala/routes/encomendaRoutes.js
+M	Sala/sala/services/encomendaService.js
+
+commit cbc0f83ab491ac7a5d7dd8b57e167fd540bfbc42	refs/heads/main
+Author: João Miranda <1220911@isep.ipp.pt>
+Date:   Sat Nov 23 00:27:32 2024 +0000
+
+    US8 Encomendar
+
+M	Sala/sala/app.js
+M	Sala/sala/controllers/encomendaController.js
+M	Sala/sala/models/contaCliente.js
+M	Sala/sala/models/encomenda.js
+M	Sala/sala/repositories/contaClienteRepository.js
+M	Sala/sala/routes/encomendaRoutes.js
+M	Sala/sala/services/encomendaService.js
+
 commit f50cbc54446581f2c5a10038ec6104531e606c69	refs/heads/main
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 22 22:36:59 2024 +0000
