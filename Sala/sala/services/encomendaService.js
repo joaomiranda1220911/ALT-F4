@@ -17,6 +17,10 @@ exports.criarEncomenda = async function (encomendaDTO) {
         }
 
         // verificar se o valor da encomenda = preco do prato
+        const valorPreco = await PratoRepo.verificarPreco(encomendaDTO.valor, encomendaDTO.refeicao);
+        if (!valorPreco){
+            throw new Error("Valor da encomenda deve ser igual ou superior ao preço do prato");
+        }
 
         // Criar a encomenda
         const novaEncomenda = await EncomendaRepo.createEncomenda({

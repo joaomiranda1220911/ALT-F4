@@ -1,6 +1,6 @@
 const EncomendaModel = require('../models/encomenda');
 
-// US8 
+//US008 - Encomendar Refeicao
 exports.createEncomenda = async function (encomendaData) {
     try {
         const encomenda = new EncomendaModel(encomendaData);
