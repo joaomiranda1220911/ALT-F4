@@ -62,4 +62,4 @@ Grupo2A.AssemblyInfo.cs
 Grupo2A.AssemblyInfoInput.cache
 
 # Ignore node_modules
-node_modules/
+Sala/sala/node_modules/
