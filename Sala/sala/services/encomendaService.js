@@ -1,6 +1,8 @@
 const PratoRepo = require('../repositories/pratoRepository');
 const ContaClienteRepo = require('../repositories/contaClienteRepository');
 const EncomendaRepo = require('../repositories/encomendaRepository');
+const RefeicaoRepo = require('../repositories/refeicaoRepository');
+
 
 //US008 - Encomendar Refeicao
 exports.encomendarPrato = async function (clienteId, refeicaoId) {
