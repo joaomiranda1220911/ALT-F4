@@ -4,6 +4,7 @@ const EncomendaModel = require('../models/encomenda');
 
 //US007: Consultar Ementa Disponível
 exports.getRefeicoesEmEmenta = async function (data, tipoRefeicaoId) {
+       console.log('[DEBUG] Chamando getRefeicoesEmEmenta com parâmetros:', data, tipoRefeicaoId);
     try {
         // Obter os pratos ativos
         const pratosAtivos = await PratoModel.find({ ativo: true }).select('_id'); // IDs dos pratos ativos

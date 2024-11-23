@@ -4,34 +4,40 @@ const PratoModel = require('../models/prato');
 // US007: Consultar Ementa Disponível
 exports.getRefeicoesEmEmenta = async function (data, tipoRefeicaoId) {
     try {
+        console.log('[DEBUG] Início do método getRefeicoesEmEmenta');
+        console.log(`[DEBUG] Parâmetros recebidos - data: ${data}, tipoRefeicaoId: ${tipoRefeicaoId}`);
+
         // Obter os pratos ativos
         const pratosAtivos = await PratoModel.find({ ativo: true }).select('_id'); // IDs dos pratos ativos
-        console.log('Pratos ativos encontrados:', pratosAtivos);
+        console.log('[DEBUG] Pratos ativos encontrados:', pratosAtivos);
 
         if (pratosAtivos.length === 0) {
-            console.log('Nenhum prato ativo encontrado.');
+            console.log('[INFO] Nenhum prato ativo encontrado.');
             return [];
         }
 
-        const dataFormatada = new Date(data); 
-        console.log('Data formatada para query:', dataFormatada);
+        // Formatar a data recebida para um objeto Date válido
+        const dataFormatada = new Date(data);
+        console.log('[DEBUG] Data formatada para query:', dataFormatada);
 
         // Filtra as refeições pela data e tipo de refeição
         const refeicoes = await RefeicaoModel.find({
-            data: { $eq: dataFormatada }, 
-            tipoRefeicao: Number(tipoRefeicaoId),
-            pratos: { $in: pratosAtivos.map(prato => prato._id) } 
-        });
-
-        console.log('Query executada no MongoDB:', {
             data: { $eq: dataFormatada },
             tipoRefeicao: Number(tipoRefeicaoId),
             pratos: { $in: pratosAtivos.map(prato => prato._id) }
         });
-        console.log('Refeições encontradas:', refeicoes);
+
+        console.log('[DEBUG] Query executada no MongoDB:', {
+            data: { $eq: dataFormatada },
+            tipoRefeicao: Number(tipoRefeicaoId),
+            pratos: { $in: pratosAtivos.map(prato => prato._id) }
+        });
+        console.log('[DEBUG] Refeições encontradas:', refeicoes);
+
         return refeicoes;
     } catch (error) {
-        console.error('Erro ao obter refeições:', error);
+        console.error('[ERRO] Erro ao obter refeições:', error.message);
+        console.error('[DEBUG] Stack do erro:', error.stack);
         throw error;
     }
 };
