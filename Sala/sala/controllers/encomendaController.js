@@ -19,7 +19,7 @@ exports.createEncomenda = async function (req, res) {
 
 // US010 - Listar Encomendas por Cliente
 exports.listarEncomendasCliente = async function (req, res) {
-    const clienteId = req.params.clienteId;
+    const clienteId = Number(req.params.clienteId);
 
     try {
         const result = await EncomendaService.getEncomendasByCliente(clienteId);

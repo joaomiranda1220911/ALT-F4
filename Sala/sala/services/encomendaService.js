@@ -23,6 +23,10 @@ exports.criarEncomenda = async function (encomendaDTO) {
             valor: encomendaDTO.valor
         });
 
+        // Decrementar a quantidade da refeição
+        const refeicaoId = encomendaDTO.refeicao;  // ID da refeição da encomenda
+        await RefeicaoRepo.decrementarQuantidadeRefeicao(refeicaoId);
+
         // Atualizar saldo do cliente
         await ClienteRepo.carregarSaldo(encomendaDTO.cliente, -encomendaDTO.valor);
 
@@ -36,9 +40,12 @@ exports.criarEncomenda = async function (encomendaDTO) {
 //US010 - Listar Encomendas por Cliente
 exports.getEncomendasByCliente = async function (clienteId) {
     const encomendas = await EncomendaRepo.getEncomendasByClienteId(clienteId);
+    if (!encomendas || encomendas.length === 0) {
+        return [];
+    }
     return encomendas.map(encomenda => ({
-        data: encomenda.data.toLocaleString(), // converte a data para string
-        pratos: encomenda.refeicao.pratos.map(prato => prato.nome).join(', '),
-        valor: encomenda.valor.toFixed(2) + "€" //um preço nao pode ter mais que 2 casas decimais 
+        data: encomenda.data?.toLocaleString() || "Data indisponível",
+        refeicao: encomenda.refeicao?._id || encomenda.refeicao || "ID de refeição indisponível",
+        valor: encomenda.valor?.toFixed(2) + "€" || "0.00€"
     }));
 };
