@@ -12,13 +12,12 @@ router.post('/', clienteController.createCliente);//Recebe dados para criar um n
 router.get('/', clienteController.getAllClientes); //Recupera todos os clientes existentes
 
 //US003: Obter informação detalhada de um cliente
-router.get('/cliente/:nif', clienteController.getCliente);
+router.get('/:nif', clienteController.getCliente);
 
 //US004: Obter informação do saldo de um cliente
-router.get('/cliente/:nif/saldo', clienteController.getClienteSaldo);
+router.get('/:nif/saldo', clienteController.getClienteSaldo);
 
 //US005: US005: Atualizar o saldo da conta de um cliente
 router.patch('/:nif/carregar', clienteController.carregarSaldo);
 
 module.exports = router;
-
