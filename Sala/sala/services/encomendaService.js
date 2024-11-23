@@ -16,6 +16,8 @@ exports.criarEncomenda = async function (encomendaDTO) {
             throw new Error("Saldo insuficiente.");
         }
 
+        // verificar se o valor da encomenda = preco do prato
+
         // Criar a encomenda
         const novaEncomenda = await EncomendaRepo.createEncomenda({
             cliente: encomendaDTO.cliente,
@@ -24,8 +26,10 @@ exports.criarEncomenda = async function (encomendaDTO) {
         });
 
         // Decrementar a quantidade da refeição
-        const refeicaoId = encomendaDTO.refeicao;  // ID da refeição da encomenda
-        await RefeicaoRepo.decrementarQuantidadeRefeicao(refeicaoId);
+        const quantidadeDecrementada = await RefeicaoRepo.decrementarQuantidadeRefeicao(encomendaDTO.refeicao);
+        if (!quantidadeDecrementada) {
+            throw new Error("Refeição sem stock.");
+        }
 
         // Atualizar saldo do cliente
         await ClienteRepo.carregarSaldo(encomendaDTO.cliente, -encomendaDTO.valor);

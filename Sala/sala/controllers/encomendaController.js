@@ -11,6 +11,8 @@ exports.createEncomenda = async function (req, res) {
         console.error("Erro ao criar encomenda:", error.message);
         if (error.message === "Saldo insuficiente.") {
             res.status(400).json({ error: 'Saldo insuficiente para realizar a encomenda.' });
+        } if (error.message === "Refeição sem stock."){
+            res.status(500).json({ error: 'Refeição sem stock.' });
         } else {
             res.status(500).json({ error: 'Erro interno ao processar a encomenda.' });
         }
