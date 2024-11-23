@@ -1,6 +1,6 @@
 const ClienteModel = require('../models/cliente');
 
-//US001: Criar cliente
+//US001: Criar cliente 
 //Criar um novo cliente na BD, associando uma conta com saldo inicial de 0€
 exports.createCliente = async function (clienteData) {
     try {
@@ -17,7 +17,7 @@ exports.createCliente = async function (clienteData) {
 //US002: Listar todos os clientes
 exports.getAllClientes = async function () {
     try {
-        return ClienteModel.find({});
+        return ClienteModel.find({}); // procura todos os documentos da coleção de clientes na db
     }
     catch (err) {
         return null;
@@ -27,7 +27,7 @@ exports.getAllClientes = async function () {
 //US003: Obter informação detalhada de um cliente
 exports.getClienteByNif = async function (clienteNif) {
     try {
-        return await ClienteModel.findOne({ nif: clienteNif }).populate('account.transactions');
+        return await ClienteModel.findOne({ nif: clienteNif }).populate('account.transactions'); //procura um cliente pelo nif e popula o campo transactions da conta.
     } catch (error) {
         console.error("Erro ao encontrar cliente pelo NIF:", error);
         throw error;
@@ -37,7 +37,7 @@ exports.getClienteByNif = async function (clienteNif) {
 //US004: Obter informação do saldo de um cliente
 exports.getClienteSaldoByNif = async function (clienteNif) {
     try {
-        const cliente = await ClienteModel.findOne({ nif: clienteNif }).select('account.balance');
+        const cliente = await ClienteModel.findOne({ nif: clienteNif }).select('account.balance'); //encontra um cliente pelo nif e retorna apenas account.balance.
         return cliente ? cliente.account.balance : null; // Retornar o número puro
     } catch (error) {
         console.error("Erro ao obter saldo do cliente pelo NIF:", error);
@@ -48,7 +48,7 @@ exports.getClienteSaldoByNif = async function (clienteNif) {
 //US005: Atualizar o saldo da conta de um cliente
 exports.carregarSaldo = async function (nif, valor) {
     try {
-        const cliente = await ClienteModel.findOne({ nif });
+        const cliente = await ClienteModel.findOne({ nif }); // encontra um único documento com base no critério de pesquisa
         if (!cliente) {
             throw new Error('Cliente não encontrado.');
         }

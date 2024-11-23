@@ -1,11 +1,11 @@
 const axios = require('axios');
 
 // URL da API .NET onde os pratos estão disponíveis
-const DOTNET_API_URL = 'http://localhost:5057/api/pratos';  // Ajusta para o URL correto
+const DOTNET_API_URL = 'http://localhost:5057/api/pratos';
 
 exports.getPratoById = async (idPrato) => {
     try {
-        // Fazendo a chamada HTTP para buscar os pratos
+        // chamada HTTP para buscar os pratos
         const response = await axios.get(`${DOTNET_API_URL}/${idPrato}`);
 
         if (response.data) {
@@ -20,7 +20,7 @@ exports.getPratoById = async (idPrato) => {
 
 exports.getRefeicaoById = async (idRefeicao) => {
     try {
-        // Fazendo a chamada HTTP para buscar os pratos
+        // chamada HTTP para buscar os pratos
         const response = await axios.get(`${DOTNET_API_URL}/${idRefeicao}`);
 
         if (response.data) {

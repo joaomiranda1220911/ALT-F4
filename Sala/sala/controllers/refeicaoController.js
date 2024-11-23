@@ -3,7 +3,7 @@ const RefeicaoModel = require('../models/refeicao');
 
 //US009: Listar Todas Refeições Servidas
 exports.listarRefeicoesByData = async function (req, res) {
-    const { data, tipoRefeicao } = req.params; // Receber filtros do cliente
+    const { data, tipoRefeicao } = req.params;
     console.log('[DEBUG] Chamando listarRefeicoesByData com:', req.params);
 
     // Valida se os parâmetros obrigatórios foram enviados

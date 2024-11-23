@@ -4,7 +4,6 @@ const RefeicaoModel = require('../models/refeicao');
 //US006: Definir prato
 exports.adicionarPreco = async function (idPrato, preco) {
     try {
-        // Busca o prato pelo ID
         const prato = await PratoModel.findById(idPrato);
 
         if (!prato) {
@@ -14,7 +13,7 @@ exports.adicionarPreco = async function (idPrato, preco) {
         // Atribui o preço ao prato
         prato.preco = preco;
 
-        // Atualiza o prato no banco de dados
+        // Atualiza o prato na db<
         await prato.save();
         return true;
     } catch (err) {
@@ -23,18 +22,16 @@ exports.adicionarPreco = async function (idPrato, preco) {
     }
 };
 
-// US008 
+//US008 - Encomendar Refeicao
 exports.verificarPreco = async function (valor, refeicaoId) {
-    // procurar a refeição pelo ID e verificar se ela possui um prato associado
-    const refeicao = await RefeicaoModel.findById(refeicaoId).populate('pratos'); // A refeição contém apenas um prato
+    const refeicao = await RefeicaoModel.findById(refeicaoId).populate('pratos'); //encontra uma refeição pelo refeicaoId e popula o campo pratos com os dados relacionados
 
     if (!refeicao) {
         throw new Error("Refeição não encontrada.");
     }
 
-    const pratoId = refeicao.pratos[0]; // A refeição contém apenas um prato, pegar o primeiro prato
+    const pratoId = refeicao.pratos;
 
-    // Buscar o prato correspondente
     const prato = await PratoModel.findById(pratoId);
 
     if (!prato) {

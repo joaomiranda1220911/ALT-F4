@@ -1,6 +1,6 @@
 const cozinhaService = require('../services/cozinhaService');
 const pratoService = require('../services/pratoService');
-const PratoModel = require('../models/prato');  
+const PratoModel = require('../models/prato');
 
 // US006: Definir preço de prato
 exports.definirPrecoPrato = async (req, res) => {
@@ -11,13 +11,13 @@ exports.definirPrecoPrato = async (req, res) => {
     console.log(`[DEBUG] Preço recebido: ${preco}`);
 
     // Validação do preço
-    if (preco === undefined || preco === null || preco <= 0 || isNaN(preco)) {
+    if (preco === undefined || preco === null || preco <= 0 || isNaN(preco)) { //isNaN devolve um boleano se é ou nao numero
         console.error(`[ERRO] Preço inválido: ${preco}`);
         return res.status(400).json({ error: 'Preço inválido. Deve ser um número positivo.' });
     }
 
     try {
-        // Buscar o prato na base de dados .NET
+        // ir buscar o prato à base de dados .NET
         const pratoData = await cozinhaService.getPratoById(IdPrato);
 
         if (!pratoData) {

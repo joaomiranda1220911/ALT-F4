@@ -19,7 +19,7 @@ exports.getEncomendasByClienteId = async function (clienteId) {
             path: 'refeicao',
             populate: {
                 path: 'pratos', // Faz o populate dos pratos associados à refeição
-                select: 'nome preco' // Seleciona os campos necessários de Prato
+                select: 'nome preco' // Seleciona os campos do Prato que sao necessarios - nome e preço
             }
         });
 };

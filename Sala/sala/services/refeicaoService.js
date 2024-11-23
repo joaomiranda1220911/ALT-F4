@@ -50,10 +50,10 @@ exports.getRefeicaoWithClientes = async function (refeicaoId) {
 
 // Adicionar Refeicoes ao MongoDB
 const axios = require('axios');
-const RefeicaoModel = require('../models/refeicao'); // Importa o modelo do MongoDB
+const RefeicaoModel = require('../models/refeicao'); 
 
 // URL da API .NET
-const DOTNET_API_URL = 'http://localhost:5057/api/refeicoes'; // Substitui pelo endpoint correto
+const DOTNET_API_URL = 'http://localhost:5057/api/refeicoes';
 
 // Função para obter refeições da API .NET
 exports.getRefeicoesFromDotNetAPI = async () => {

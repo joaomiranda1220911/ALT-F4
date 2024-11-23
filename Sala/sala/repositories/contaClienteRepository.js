@@ -3,7 +3,7 @@ const clienteModel = require('../models/cliente');
 
 //US008 - Encomendar Prato
 exports.getClienteById = async function (clienteId) {
-    return await clienteModel.findOne({ _id: clienteId });
+    return await clienteModel.findOne({ _id: clienteId }); // encontra um único documento com base no critério de pesquisa
 };
 
 exports.atualizarSaldo = async function (clienteId, novoSaldo) {

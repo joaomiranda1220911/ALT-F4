@@ -13,10 +13,10 @@ const clienteSchema = new mongoose.Schema({
 });
 
 // Gera um novo ID numérico para o cliente, ao invés de usar o ObjectId
-clienteSchema.pre('save', async function(next) {
+clienteSchema.pre('save', async function (next) {
     if (this.isNew) {
         // Pega o próximo valor de ID do contador
-        const counter = await Counter.findOneAndUpdate(
+        const counter = await Counter.findOneAndUpdate( // encontra um único documento com base no critério de pesquisa, retornando o documento atualizado ou original.
             { _id: 'cliente_id' },
             { $inc: { seq: 1 } },
             { new: true, upsert: true }

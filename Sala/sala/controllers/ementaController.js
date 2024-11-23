@@ -1,7 +1,6 @@
 const RefeicaoService = require('../services/refeicaoService');
 
 // US007 - Consultar Ementa Disponível
-
 exports.getEmentaDisponivel = async function (req, res) {
     const { data, tipoRefeicaoId } = req.params;
 

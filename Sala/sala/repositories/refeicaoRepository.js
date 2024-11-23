@@ -49,7 +49,7 @@ exports.getRefeicaoWithClientes = async function (refeicaoId) {
 exports.decrementarQuantidadeRefeicao = async function (refeicaoId) {
     const refeicao = await RefeicaoModel.findById(refeicaoId);
     
-    if (refeicao && refeicao.quantidadeProduzida > 0) {
+    if (refeicao && refeicao.quantidadeProduzida > 0) { 
         refeicao.quantidadeProduzida -= 1; // Decrementa 1 unidade
         await refeicao.save();
         return true; // Retorna true caso a quantidade tenha sido decrementada

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var RefeicaoSchema = new Schema({
-    _id: { type: Number }, 
+    _id: { type: Number },
     tipoRefeicao: { type: Number, required: true }, // Apenas o ID do tipo de refeição
     data: { type: Date, required: true },
     quantidadeProduzida: { type: Number, default: null },

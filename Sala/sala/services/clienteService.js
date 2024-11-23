@@ -14,7 +14,7 @@ exports.createCliente = async function (clienteDTO) {
             transactions: [] //Inicializa a lista de transações vazias uma vez que ainda não foram realizadas transações
         }
     });
-    return await ClienteRepo.createCliente(newCliente);//Chama o repository para salvar o cliente 
+    return await ClienteRepo.createCliente(newCliente); //Chama o repository para salvar o cliente 
 }
 
 //US002: Listar todos os clientes
@@ -78,8 +78,7 @@ exports.getSaldoByNif = async function (clienteNif){
 };
 
 
-// US005: Atualizar o saldo da conta de um cliente
-// Carregar saldo de um cliente
+// US005: Atualizar o saldo da conta de um cliente (carregar)
 exports.carregarSaldo = async function (nif, valor) {
     try {
         const cliente = await ClienteRepo.updateSaldo(nif, valor);
@@ -88,10 +87,10 @@ exports.carregarSaldo = async function (nif, valor) {
             return `Cliente com NIF ${nif} não encontrado.`;
         }
 
-        return `Saldo atualizado com sucesso! Novo saldo: ${cliente.account.balance.toFixed(2)}€`;
+        return `Saldo atualizado com sucesso! Novo saldo: ${cliente.account.balance.toFixed(2)}€`; //2 casas decimais
     } catch (error) {
         console.error('Erro ao carregar saldo do cliente:', error);
-        throw error; // Relança o erro para tratamento no controlador
+        throw error; 
     }
 };
 

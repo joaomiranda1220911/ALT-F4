@@ -1,5 +1,4 @@
 const PratoRepo = require('../repositories/pratoRepository');
-const ContaClienteRepo = require('../repositories/contaClienteRepository');
 const EncomendaRepo = require('../repositories/encomendaRepository');
 const RefeicaoRepo = require('../repositories/refeicaoRepository');
 const ClienteRepo = require('../repositories/clienteRepository');
@@ -16,7 +15,7 @@ exports.criarEncomenda = async function (encomendaDTO) {
             throw new Error("Saldo insuficiente.");
         }
 
-        // verificar se o valor da encomenda = preco do prato
+        // verificar se o valor da encomenda => preco do prato
         const valorPreco = await PratoRepo.verificarPreco(encomendaDTO.valor, encomendaDTO.refeicao);
         if (!valorPreco){
             throw new Error("Valor da encomenda deve ser igual ou superior ao preço do prato");
@@ -37,8 +36,8 @@ exports.criarEncomenda = async function (encomendaDTO) {
 
         // Atualizar saldo do cliente
         await ClienteRepo.carregarSaldo(encomendaDTO.cliente, -encomendaDTO.valor);
-
         return novaEncomenda;
+
     } catch (error) {
         console.error("Erro ao criar encomenda:", error);
         throw error;
@@ -52,7 +51,7 @@ exports.getEncomendasByCliente = async function (clienteId) {
         return [];
     }
     return encomendas.map(encomenda => ({
-        data: encomenda.data?.toLocaleString() || "Data indisponível",
+        data: encomenda.data?.toLocaleString() || "Data indisponível", //converte a date para uma string
         refeicao: encomenda.refeicao?._id || encomenda.refeicao || "ID de refeição indisponível",
         valor: encomenda.valor?.toFixed(2) + "€" || "0.00€"
     }));

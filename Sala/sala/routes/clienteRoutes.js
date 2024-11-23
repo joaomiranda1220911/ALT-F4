@@ -9,7 +9,7 @@ const clienteController = require('../controllers/clienteController');
 router.post('/', clienteController.createCliente);//Recebe dados para criar um novo cliente
 
 //US002: Listar todos os clientes
-router.get('/', clienteController.getAllClientes); //Recupera todos os clientes existentes
+router.get('/', clienteController.getAllClientes);//Recupera todos os clientes existentes
 
 //US003: Obter informação detalhada de um cliente
 router.get('/:nif', clienteController.getCliente);
