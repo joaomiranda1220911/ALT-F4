@@ -6,7 +6,8 @@ var {celebrate, Joi} = require('celebrate');
 const EncomendaController = require('../controllers/encomendaController');
 
 //US008: Encomendar Prato
-router.post('/', EncomendaController.encomendarPrato);
+// POST - Criar uma encomenda
+router.post('/', EncomendaController.createEncomenda);
 
 //US010: Listar Encomendas por Cliente
 router.get('/clientes/:clienteId/encomendas', EncomendaController.listarEncomendasCliente);

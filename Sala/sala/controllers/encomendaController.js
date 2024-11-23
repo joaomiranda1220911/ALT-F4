@@ -3,26 +3,17 @@ const EncomendaService = require('../services/encomendaService');
 //US008 - Encomendar Prato
 const mongoose = require('mongoose');
 
-exports.encomendarPrato = async function (req, res) {
+exports.createEncomenda = async function (req, res) {
     try {
-        const clienteId = req.body.clienteId;
-        const pratoId = req.body.pratoId;
-
-        // Validação: Certifica-te de que os IDs são números
-        if (typeof clienteId !== 'number' || typeof pratoId !== 'number') {
-            return res.status(400).json({ error: 'IDs inválidos. Deve ser um número.' });
-        }
-
-        const result = await EncomendaService.encomendarPrato(clienteId, pratoId);
-
-        if (result.success) {
-            res.status(201).json({ message: result.message });
-        } else {
-            res.status(400).json({ error: result.message });
-        }
+        const encomenda = await EncomendaService.criarEncomenda(req.body);
+        res.status(201).json({ message: 'Encomenda criada com sucesso!', encomenda });
     } catch (error) {
-        console.error('Erro ao encomendar prato:', error.message);
-        res.status(500).json({ error: 'Erro interno do servidor.' });
+        console.error("Erro ao criar encomenda:", error.message);
+        if (error.message === "Saldo insuficiente.") {
+            res.status(400).json({ error: 'Saldo insuficiente para realizar a encomenda.' });
+        } else {
+            res.status(500).json({ error: 'Erro interno ao processar a encomenda.' });
+        }
     }
 };
 

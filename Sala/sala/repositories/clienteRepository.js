@@ -36,31 +36,29 @@ exports.getClienteByNif = async function (clienteNif) {
 
 //US004: Obter informação do saldo de um cliente
 exports.getClienteSaldoByNif = async function (clienteNif) {
-    try{
-        const cliente = await ClienteModel.findOne({ nif: clienteNif }).select('account.balance');
-        return cliente ? cliente.account.balance : null;
-    } catch (error){
-        console.error("Erro ao obter saldo do cliente pelo NIF:", error);
-        throw error;
-    } 
-};
-
-//US005: US005: Atualizar o saldo da conta de um cliente
-exports.carregarSaldo = async function (nif, valor) {
     try {
-        const cliente = await ClienteModel.findOne({ nif }); // Localiza pelo NIF
-        if (!cliente) {
-            throw new Error('Cliente não encontrado.');
-        }
-
-        cliente.account.balance += valor; // Atualiza o saldo
-        await cliente.save(); // Grava a atualização
-        return cliente.account.balance;
+        const cliente = await ClienteModel.findOne({ nif: clienteNif }).select('account.balance');
+        return cliente ? cliente.account.balance : null; // Retornar o número puro
     } catch (error) {
-        console.error('Erro ao carregar saldo:', error);
+        console.error("Erro ao obter saldo do cliente pelo NIF:", error);
         throw error;
     }
 };
 
+//US005: Atualizar o saldo da conta de um cliente
+exports.carregarSaldo = async function (nif, valor) {
+    try {
+        const cliente = await ClienteModel.findOne({ nif });
+        if (!cliente) {
+            throw new Error('Cliente não encontrado.');
+        }
 
+        cliente.account.balance += valor;
+        await cliente.save();
 
+        return cliente.account.balance;
+    } catch (error) {
+        console.error('Erro ao atualizar saldo:', error);
+        throw error;
+    }
+};

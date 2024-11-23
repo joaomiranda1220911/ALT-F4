@@ -2,37 +2,35 @@ const PratoRepo = require('../repositories/pratoRepository');
 const ContaClienteRepo = require('../repositories/contaClienteRepository');
 const EncomendaRepo = require('../repositories/encomendaRepository');
 const RefeicaoRepo = require('../repositories/refeicaoRepository');
+const ClienteRepo = require('../repositories/clienteRepository');
 
 
 //US008 - Encomendar Refeicao
-exports.encomendarPrato = async function (clienteId, refeicaoId) {
-    const conta = await ContaClienteRepo.getContaClienteById(clienteId);
-    if (!conta) return { success: false, message: 'Conta do cliente não encontrada' };
+exports.criarEncomenda = async function (encomendaDTO) {
+    try {
+        // Verificar saldo do cliente
+        const clienteSaldo = await ClienteRepo.getClienteSaldoByNif(encomendaDTO.cliente);
+        console.log("Saldo retornado:", clienteSaldo);
 
-    // ve se a refeicao pedida esta na ementa
-    const refeicao = await RefeicaoRepo.getRefeicoesEmEmenta();
-    const refeicaoSelecionado = refeicao.find(p => p._id.toString() === refeicaoId);
-    if (!refeicaoSelecionado) return { success: false, message: 'Refeicao não encontrada ou indisponível' };
+        if (!clienteSaldo || clienteSaldo < encomendaDTO.valor) {
+            throw new Error("Saldo insuficiente.");
+        }
 
+        // Criar a encomenda
+        const novaEncomenda = await EncomendaRepo.createEncomenda({
+            cliente: encomendaDTO.cliente,
+            refeicao: encomendaDTO.refeicao,
+            valor: encomendaDTO.valor
+        });
 
-    // ve o preco do prato associado à refeicao
-    const pratoRefeicao = await PratoRepo.getPratosEmEmenta();
-    if (conta.account.balance < refeicaoSelecionado.preco) {
-        return { success: false, message: 'Saldo insuficiente' };    
+        // Atualizar saldo do cliente
+        await ClienteRepo.carregarSaldo(encomendaDTO.cliente, -encomendaDTO.valor);
+
+        return novaEncomenda;
+    } catch (error) {
+        console.error("Erro ao criar encomenda:", error);
+        throw error;
     }
-    // se o saldo for suficiente decrementa a quantidade de refeicao
-    const atualizado = await RefeicaoRepo.decrementarQuantidadeRefeicao(refeicaoId);
-    if (!atualizado) return { success: false, message: 'Erro ao processar o pedido' };
-
-    // e atualiza saldo
-    exports.atualizarSaldo = async function (clienteId, novoSaldo) {
-        const conta = await clienteModel.findOne({ _id: clienteId });
-        if (!conta) return false;
-    
-        conta.account.balance = novoSaldo; // Modifica o saldo dentro de account
-        await conta.save();
-        return true;
-    };    
 };
 
 //US010 - Listar Encomendas por Cliente
