@@ -1,4 +1,37 @@
-commit c0fbd181bf29ca5c5313e56ba9228c2fc3ce7fa9	refs/heads/main (HEAD -> main, origin/main)
+commit 0b0d5ad5ebdaa9c2319a736b5c7b590d8ff15249	refs/heads/main (HEAD -> main, origin/main)
+Author: Tiago Santos <1221040@isep.ipp.pt>
+Date:   Sat Nov 23 20:57:44 2024 +0000
+
+    US8/10 - Correções
+
+M	Sala/sala/controllers/encomendaController.js
+M	Sala/sala/services/encomendaService.js
+
+commit 90914782a0a8f852cb27cda9ad8bb2e17df8922b	refs/heads/main
+Author: Tiago Santos <1221040@isep.ipp.pt>
+Date:   Sat Nov 23 12:19:31 2024 +0000
+
+    import Refeição repo
+
+M	Sala/sala/services/encomendaService.js
+
+commit bc4ae3148bb29c29958daf310a50cfe0cd16679c	refs/heads/main
+Author: Tiago Santos <1221040@isep.ipp.pt>
+Date:   Sat Nov 23 12:08:52 2024 +0000
+
+    US8 - Nome da função
+
+M	Sala/sala/controllers/encomendaController.js
+
+commit 98d6afcb604e95cc75246cbc1f5acdf5fb4a772f	refs/heads/main
+Author: Tiago Santos <1221040@isep.ipp.pt>
+Date:   Sat Nov 23 11:56:04 2024 +0000
+
+    US8 - Alteração do nome da função, que estava diferente
+
+M	Sala/sala/services/encomendaService.js
+
+commit c0fbd181bf29ca5c5313e56ba9228c2fc3ce7fa9	refs/heads/main
 Author: Tiago Santos <1221040@isep.ipp.pt>
 Date:   Fri Nov 22 22:54:23 2024 +0000
 
