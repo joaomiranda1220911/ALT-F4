@@ -13,7 +13,7 @@ exports.encomendarPrato = async function (req, res) {
             return res.status(400).json({ error: 'IDs inválidos. Deve ser um número.' });
         }
 
-        const result = await EncomendaService.encomendarRefeicao(clienteId, pratoId);
+        const result = await EncomendaService.encomendarPrato(clienteId, pratoId);
 
         if (result.success) {
             res.status(201).json({ message: result.message });
