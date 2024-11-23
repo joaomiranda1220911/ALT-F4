@@ -46,20 +46,27 @@ namespace Grupo2A.Controllers
 
         //US014: Servir Refeição (decrementar quantidade)
         [HttpPost("{idRefeicao}/servir")]
-        public async Task<ActionResult> ServirRefeicao(long idRefeicao)
+        // US014: Servir Refeição (decrementar quantidade)
+        public async Task<Refeicao?> ServirRefeicao(long idRefeicao)
         {
-            // Chama o Service para servir uma refeição (decrementar a quantidade)
-            var refeicao = await _service.ServirRefeicao(idRefeicao);
+            // Procura a refeição na base de dados, incluindo as entidades relacionadas (TipoRefeicao, Prato, TipoPrato e Ingredientes)
+            var refeicao = await _context.Refeicoes
+                                          .Include(r => r.TipoRefeicao)  // Inclui o TipoRefeicao
+                                          .Include(r => r.Prato)         // Inclui o Prato
+                                          .ThenInclude(p => p.TipoPrato) // Inclui TipoPrato dentro de Prato
+                                          .Include(r => r.Prato.Ingredientes) // Inclui Ingredientes dentro de Prato
+                                          .FirstOrDefaultAsync(r => r.IdRefeicao == idRefeicao);
 
-            // Verifica se a refeição existe e possui quantidade disponível
-            if (refeicao == null)
+            // Verifica se a refeição possui quantidade suficiente para ser servida
+            if (refeicao == null || refeicao.QuantidadeProduzida <= 0)
             {
-                return NotFound("Refeição não encontrada ou quantidade insuficiente."); // Retorna 404 se não for encontrada ou se não houver quantidade suficiente
+                return null; // Retorna null se a refeição não for encontrada ou se a quantidade for insuficiente
             }
 
-            return Ok(refeicao); // Retorna a refeição atualizada com a quantidade decrementada
+            refeicao.QuantidadeProduzida--; // Decrementa a quantidade disponível da refeição
+            await _context.SaveChangesAsync(); // Guarda as mudanças
+            return refeicao; // Retorna a refeição atualizada com a nova quantidade
         }
-
 
         //US015: Remover refeição futura
         [HttpDelete("{idRefeicao}")]
