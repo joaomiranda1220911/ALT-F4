@@ -3,7 +3,7 @@ const ContaClienteRepo = require('../repositories/contaClienteRepository');
 const EncomendaRepo = require('../repositories/encomendaRepository');
 
 //US008 - Encomendar Refeicao
-exports.encomendarRefeicao = async function (clienteId, refeicaoId) {
+exports.encomendarPrato = async function (clienteId, refeicaoId) {
     const conta = await ContaClienteRepo.getContaClienteById(clienteId);
     if (!conta) return { success: false, message: 'Conta do cliente não encontrada' };
 
