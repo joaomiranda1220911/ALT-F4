@@ -1,3 +1,68 @@
+c0fbd18,2024-11-22 22:54:23 +0000,Tiago Santos,1221040@isep.ipp.pt,Encomenda Router app.js
+f50cbc5,2024-11-22 22:36:59 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ã£o US007 (problema do array vazio)
+6926e35,2024-11-22 20:08:37 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,refeicao estava com id prato como objectId, agora esta number
+95d63d1,2024-11-22 20:01:56 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção pratos/refeicoes/tipoRefeicao
+d685cb2,2024-11-22 19:29:50 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,tornar TipoRefeicao array
+8ee834d,2024-11-22 19:04:26 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ã£o nulls
+afa3346,2024-11-22 01:24:44 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção US005
+b29c17c,2024-11-22 01:24:27 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção US008
+bc73d5c,2024-11-22 00:06:14 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,counter
+e3586db,2024-11-21 23:59:35 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,IDs numericos nos clientes
+c102231,2024-11-21 10:41:33 +0000,Gabriela,1220832@isep.ipp.pt,Commit - correção
+ab62b54,2024-11-21 10:01:05 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Teste 3
+ab51ee2,2024-11-21 09:15:36 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Teste 2
+8a44165,2024-11-21 09:12:59 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Teste
+0c64aad,2024-11-21 01:01:01 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,Guardar Refeicoes no MongoDB
+75c73fb,2024-11-20 23:58:11 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,ementa
+993ecc5,2024-11-20 23:30:20 +0000,Seu Nome,1220827@isep.ipp.pt,Alterações para os testes
+2569c5b,2024-11-20 23:08:24 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,erro sintaxe pt 2 sry
+c0e4895,2024-11-20 22:59:02 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,erro sintaxe
+45efe83,2024-11-20 22:49:44 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,diferenciação prato e refeicao
+cc74837,2024-11-20 19:19:01 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+b836b22,2024-11-20 18:38:45 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,correÃ§Ã£o de erros
+30c48f4,2024-11-20 16:17:39 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,alterações US008-US010
+f64d6a4,2024-11-20 15:57:50 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Teste
+9a0e497,2024-11-20 15:36:44 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,logica do get refeicao by id
+46d20e5,2024-11-20 15:35:56 +0000,Tiago Santos,1221040@isep.ipp.pt,GetRefeicaoByID
+ed3430c,2024-11-20 14:56:16 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,base de dados
+390fbdf,2024-11-20 14:55:48 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+3053331,2024-11-20 12:01:17 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
+5eace1c,2024-11-20 10:08:13 +0000,Tiago Santos,1221040@isep.ipp.pt,US09 - Alterações
+310d383,2024-11-20 09:54:14 +0000,Tiago Santos,1221040@isep.ipp.pt,US10- Alterações
+ab9e0f8,2024-11-19 02:35:11 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ã£o US6
+9fdf367,2024-11-19 01:51:57 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,Associar um preÃ§o a um prato
+f93c9de,2024-11-19 01:01:08 +0000,Tiago Santos,1221040@isep.ipp.pt,Package BodyParser e PunyCode
+49dfc1b,2024-11-19 00:57:59 +0000,Tiago Santos,1221040@isep.ipp.pt,Package Celebrate
+5968127,2024-11-19 00:31:51 +0000,Tiago Santos,1221040@isep.ipp.pt,Alterações no Routes
+c99278a,2024-11-19 00:25:32 +0000,Tiago Santos,1221040@isep.ipp.pt,EncomendaRoutes
+f3276ba,2024-11-19 00:23:53 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,createPrato
+dda1a01,2024-11-18 22:08:19 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,US007 - consultar ementa
+0a36ac5,2024-11-18 20:42:50 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ã£o US006
+fa5ce63,2024-11-18 17:00:33 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,ip mongo + US006 +  tentativa conexão À cozinha
+3b8f593,2024-11-18 11:19:17 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+deec143,2024-11-18 11:16:49 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,base de dados nova
+6975d23,2024-11-18 11:15:33 +0000,João Miranda,1220911@isep.ipp.pt,Update .gitignore
+20d64b0,2024-11-18 11:14:08 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correção migrations sprint 1
+c4c5f0e,2024-11-18 10:49:04 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,US006
+50d2264,2024-11-18 10:04:37 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,correçao de erros apontados na apresentação da iteração 1
+2161d1e,2024-11-18 00:39:19 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Organização do Código (pt.4)
+766a9a0,2024-11-18 00:22:28 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Organização do Código (pt.3)
+1423d38,2024-11-18 00:17:41 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Organização Código (pt.2)
+77ae34a,2024-11-18 00:14:08 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Organização do Código
+304f20f,2024-11-18 00:05:09 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Alteração nome método (US003)
+1646262,2024-11-18 00:02:57 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Rota para US004
+1b913f6,2024-11-17 23:57:55 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Coerência US003 e US004
+2eb99b1,2024-11-17 23:54:30 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Service US004
+1df2a37,2024-11-17 23:47:34 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Repository US004
+73d33ce,2024-11-17 23:42:26 +0000,Gabriela,1220832@isep.ipp.pt,Correção Erro
+289a284,2024-11-17 23:41:09 +0000,Gabriela,1220832@isep.ipp.pt,Commit - Controller US004
+5a7b414,2024-11-17 23:16:52 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,US006 - controller+repo+serv
+ac903cd,2024-11-17 23:09:23 +0000,Seu Nome,1220827@isep.ipp.pt,US002- Listar todos os clientes
+0fdc04c,2024-11-17 22:24:02 +0000,JoaÌƒo Miranda,1220911@isep.ipp.pt,CorreÃ§Ãµes
+74809ff,2024-11-17 21:52:44 +0000,AnaAlexandraMatos,1221035@isep.ipp.pt,US005 controller+ repository + service
+c745da2,2024-11-17 20:37:24 +0000,Gabriela,1220832@isep.ipp.pt,US003 - Transações
+9ed0d7c,2024-11-17 19:10:09 +0000,Gabriela,1220832@isep.ipp.pt,US003 - Obter Info de um Cliente através do NIF
+0902f49,2024-11-17 15:18:54 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
 be47aed,2024-11-17 14:33:23 +0000,Paulo Proenca,prp@isep.ipp.pt,Repository Analysis
 0698c24,2024-11-17 14:12:07 +0000,Tiago Santos,1221040@isep.ipp.pt,Routes - US009, US010
 f6bcbd7,2024-11-17 10:35:01 +0000,Seu Nome,1220827@isep.ipp.pt,US001- cliente.js
