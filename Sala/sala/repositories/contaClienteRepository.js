@@ -1,8 +1,8 @@
 const contaClienteModel = require('../models/contaCliente');
 
 //US008 - Encomendar Prato
-exports.getclienteById = async function (clienteId) {
-    return await contaClienteModel.findOne({ cliente: clienteId });
+exports.getClienteById = async function (clienteId) {
+    return await clienteModel.findOne({ _id: clienteId });
 };
 
 //US008 - Encomendar Prato

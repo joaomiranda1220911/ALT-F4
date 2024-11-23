@@ -40,7 +40,7 @@ var clienteRouter = require('./routes/clienteRoutes');
 app.use('/api/cliente', clienteRouter);
 
 var encomendaRouter = require('./routes/encomendaRoutes');
-app.use('/api/encomenda', encomendaRouter);
+app.use('/api/encomendar', encomendaRouter);
 
 // Middleware =================================
 app.use(bodyParser.urlencoded({ extended: true }));
