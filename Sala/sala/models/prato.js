@@ -8,7 +8,7 @@ var PratoSchema = new Schema({
     ingredientes: { id: { type: Number } },
     receita: { type: String, default: null },
     ativo: { type: Boolean, required: true, default: true },
-    preco: { type: Long, default: null }
+    preco: { type: Number, default: null }
 });
 
 module.exports = mongoose.model('Prato', PratoSchema);
