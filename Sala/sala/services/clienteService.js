@@ -46,12 +46,12 @@ exports.getInfoClienteByNif = async function (clienteNif) {
                 'nif': theCliente.nif,
                 'email': theCliente.email,
                 'balance': theCliente.account.balance.toFixed(2) + "€",
-                'transactions': theCliente.account.transactions.map(transactions => ({
-                    'id': transactions._id,
-                    'type': transactions.type,
-                    'amount': transactions.amount.toFixed(2) + "€",
-                    'date': transactions.date.toLocaleString()
-                }))
+                //'transactions': theCliente.account.transactions.map(transactions => ({
+                    //'id': transactions._id,
+                    //'type': transactions.type,
+                    //'amount': transactions.amount.toFixed(2) + "€",
+                    //'date': transactions.date.toLocaleString()
+                //}))
             };
 
             return aux;

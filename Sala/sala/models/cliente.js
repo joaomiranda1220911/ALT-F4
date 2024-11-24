@@ -8,7 +8,7 @@ const clienteSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     account: {
         balance: { type: Number, default: 0 }, //Saldo inicial é 0
-        transactions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Transaction' }] //Transações associadas ao cliente
+        //transactions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Transaction' }] //Transações associadas ao cliente
     }
 });
 
