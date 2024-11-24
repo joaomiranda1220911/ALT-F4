@@ -1,4 +1,3 @@
-const transaction = require('../models/transaction');
 const ClienteRepo = require('../repositories/clienteRepository');
 const ClienteModel = require('../models/cliente');
 
