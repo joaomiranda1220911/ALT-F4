@@ -27,7 +27,11 @@ exports.getAllClientes = async function () {
 //US003: Obter informação detalhada de um cliente
 exports.getClienteByNif = async function (clienteNif) {
     try {
-        return await ClienteModel.findOne({ nif: clienteNif }).populate('account.transactions'); //procura um cliente pelo nif e popula o campo transactions da conta.
+        return await ClienteModel.findOne({ nif: clienteNif })
+            .populate({
+                path: 'account.transactions',
+                model: 'Transaction'
+            }); //procura um cliente pelo nif e popula o campo transactions da conta.
     } catch (error) {
         console.error("Erro ao encontrar cliente pelo NIF:", error);
         throw error;
