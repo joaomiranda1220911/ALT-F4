@@ -93,7 +93,3 @@ exports.carregarSaldo = async function (nif, valor) {
         throw error; 
     }
 };
-
-
-
-

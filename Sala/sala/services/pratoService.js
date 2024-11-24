@@ -1,5 +1,4 @@
 const PratoModel = require('../models/prato');
-const PratoRepo = require('../repositories/pratoRepository');
 
 //US006: Definir prato
 exports.definirPrecoPrato = async (pratoId, preco) => {

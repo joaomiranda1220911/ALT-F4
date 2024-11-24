@@ -3,7 +3,6 @@ const EncomendaRepo = require('../repositories/encomendaRepository');
 const RefeicaoRepo = require('../repositories/refeicaoRepository');
 const ClienteRepo = require('../repositories/clienteRepository');
 
-
 //US008 - Encomendar Refeicao
 exports.criarEncomenda = async function (encomendaDTO) {
     try {

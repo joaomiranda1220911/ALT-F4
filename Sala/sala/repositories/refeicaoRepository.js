@@ -57,4 +57,3 @@ exports.decrementarQuantidadeRefeicao = async function (refeicaoId) {
         return false; // Retorna false caso não haja stock disponível
     }
 };
-

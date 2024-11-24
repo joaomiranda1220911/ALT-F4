@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router(); // Declara o router
  
-
 var { celebrate, Joi } = require('celebrate');
-
 
 //US007: Consultar Ementa Disponível
 const EmentaController = require('../controllers/ementaController');
