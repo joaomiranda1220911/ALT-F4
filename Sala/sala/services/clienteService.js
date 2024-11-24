@@ -84,10 +84,21 @@ exports.carregarSaldo = async function (nif, valor) {
         const cliente = await ClienteRepo.updateSaldo(nif, valor);
 
         if (!cliente) {
-            return `Cliente com NIF ${nif} não encontrado.`;
+            return 'Cliente com NIF ${nif} não encontrado.';
         }
 
-        return `Saldo atualizado com sucesso! Novo saldo: ${cliente.account.balance.toFixed(2)}€`; //2 casas decimais
+        const newTransaction = new Transaction({
+            type:'credito',
+            amount: valor,
+            date: new Date ()
+        });
+        await newTransaction.save();
+
+        cliente.account.transactions.push(newTransaction._id);
+        cliente.account.balance += valor;
+        await cliente.save();
+
+        return 'Saldo atualizado com sucesso! Novo saldo: ${cliente.account.balance.toFixed(2)}€'; //2 casas decimais
     } catch (error) {
         console.error('Erro ao carregar saldo do cliente:', error);
         throw error; 
