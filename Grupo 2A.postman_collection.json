@@ -1,0 +1,1718 @@
+{
+	"info": {
+		"_postman_id": "b25fc149-ef5d-4bbb-bb3e-01d35d8de475",
+		"name": "Grupo 2A",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38486654",
+		"_collection_link": "https://alt-f4-4678.postman.co/workspace/ALT-F4-Workspace~bb8f5c82-6a20-4ef0-8718-54fa66add78f/collection/38486485-b25fc149-ef5d-4bbb-bb3e-01d35d8de475?action=share&source=collection_link&creator=38486654"
+	},
+	"item": [
+		{
+			"name": "Cozinha",
+			"item": [
+				{
+					"name": "US001 - Criar Ingrediente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido POST foi bem-sucedido\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+									"});\r",
+									"\r",
+									"// Verificar o objeto criado para garantir que os dados são corretos\r",
+									"pm.test(\"Verificar o objeto criado\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    // Verificar que o Nome está presente\r",
+									"    pm.expect(jsonData).to.have.property(\"nome\").that.is.not.empty; // Nome deve estar presente e não ser vazio\r",
+									"\r",
+									"    // Verificar que a Categoria está presente\r",
+									"    pm.expect(jsonData).to.have.property(\"categoria\").that.is.not.empty; // Categoria deve estar presente e não ser vazia\r",
+									"\r",
+									"    // Verificar que o ingrediente está ativo\r",
+									"    pm.expect(jsonData).to.have.property(\"ativo\"); // Verifica se a propriedade \"Ativo\" está presente\r",
+									"\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"massa\",\n    \"categoria\": \"hidrato de carbono\",\n    \"ativo\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/Ingredientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Ingredientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US002 - Listar Ingredientes Ativos",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que a requisição GET foi bem-sucedida\r",
+									"pm.test(\"Successful GET request for active ingredients\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200); // Verifica se o código de resposta é 200\r",
+									"});\r",
+									"\r",
+									"// Verificar que o corpo da resposta não está vazio\r",
+									"pm.test(\"Response body is not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.be.empty; // Verifica que o corpo da resposta não está vazio\r",
+									"});\r",
+									"\r",
+									"// Verificar que o corpo da resposta é um array\r",
+									"pm.test(\"Response body is an array\", function () {\r",
+									"    var jsonData = pm.response.json(); // Parseia a resposta JSON\r",
+									"    pm.expect(jsonData).to.be.an('array'); // Verifica se é um array\r",
+									"});\r",
+									"\r",
+									"// Verificar que todos os ingredientes na resposta estão ativos\r",
+									"pm.test(\"All ingredients in the response are active\", function () {\r",
+									"    var jsonData = pm.response.json(); // Parseia a resposta JSON\r",
+									"    pm.expect(jsonData).to.be.an('array'); // Verifica se é um array\r",
+									"\r",
+									"    jsonData.forEach(function (ingrediente, index) {\r",
+									"        console.log(\"Ingrediente ${index}:\", ingrediente); // Exibe o conteúdo de cada ingrediente para diagnóstico\r",
+									"\r",
+									"        // Verifica se o ingrediente possui a propriedade \"Ativo\"\r",
+									"        if (ingrediente.hasOwnProperty(\"Ativo\")) {\r",
+									"            // Verifica que a propriedade \"Ativo\" é true\r",
+									"            pm.expect(ingrediente.Ativo).to.eql(true);\r",
+									"        } else {\r",
+									"            // Exibe um aviso no console e continua sem falhar\r",
+									"            console.warn(\"Ingrediente ${index} não possui a propriedade 'Ativo'.\");\r",
+									"        }\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/Ingredientes/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Ingredientes",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US003 - Listar Ingredientes Inativos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que a requisição GET foi bem-sucedida\r",
+									"pm.test(\"Successful GET request for active ingredients\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200); // Verifica se o código de resposta é 200\r",
+									"});\r",
+									"\r",
+									"// Verificar que o corpo da resposta não está vazio\r",
+									"pm.test(\"Response body is not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.be.empty; // Verifica que o corpo da resposta não está vazio\r",
+									"});\r",
+									"\r",
+									"// Verificar que o corpo da resposta é um array\r",
+									"pm.test(\"Response body is an array\", function () {\r",
+									"    var jsonData = pm.response.json(); // Parseia a resposta JSON\r",
+									"    pm.expect(jsonData).to.be.an('array'); // Verifica se é um array\r",
+									"});\r",
+									"\r",
+									"// Verificar ingredientes inativos na resposta\r",
+									"pm.test(\"List inactive ingredients in the response\", function () {\r",
+									"    var jsonData = pm.response.json(); // Parseia a resposta JSON\r",
+									"    pm.expect(jsonData).to.be.an('array'); // Verifica se é um array\r",
+									"\r",
+									"    // Array para armazenar ingredientes inativos\r",
+									"    let inactiveIngredients = [];\r",
+									"\r",
+									"    jsonData.forEach(function (ingrediente, index) {\r",
+									"        console.log(`Ingrediente ${index}:`, ingrediente); // Exibe o conteúdo de cada ingrediente para diagnóstico\r",
+									"\r",
+									"        // Verifica se o ingrediente possui a propriedade \"Ativo\"\r",
+									"        if (ingrediente.hasOwnProperty(\"Ativo\")) {\r",
+									"            // Verifica se a propriedade \"Ativo\" é false\r",
+									"            if (ingrediente.Ativo === false) {\r",
+									"                inactiveIngredients.push(ingrediente); // Adiciona o ingrediente inativo ao array\r",
+									"            }\r",
+									"        } else {\r",
+									"            // Exibe um aviso no console se não possui a propriedade 'Ativo'\r",
+									"            console.warn(`Ingrediente ${index} não possui a propriedade 'Ativo'.`);\r",
+									"        }\r",
+									"    });\r",
+									"\r",
+									"    // Exibe a lista de ingredientes inativos no console\r",
+									"    if (inactiveIngredients.length > 0) {\r",
+									"        console.log(\"Ingredientes inativos:\", inactiveIngredients);\r",
+									"    } else {\r",
+									"        console.log(\"Não há ingredientes inativos.\");\r",
+									"    }\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/Ingredientes/inactive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Ingredientes",
+								"inactive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US004 - Criar Tipo de Prato",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido POST foi bem-sucedido\r",
+									"pm.test(\"Successful POST request for TipoDePrato\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+									"});\r",
+									"\r",
+									"// Verificar se as propriedades obrigatórias do objeto TipoDePrato estão preenchidas\r",
+									"pm.test(\"Verificar se as propriedades obrigatórias do TipoDePrato estão preenchidas\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    // Verificar que o objeto tem um ID\r",
+									"    pm.expect(jsonData).to.have.property(\"idTipoPrato\");\r",
+									"    \r",
+									"    // Verificar que o nome está preenchido\r",
+									"    pm.expect(jsonData).to.have.property(\"nome\").that.is.not.empty;\r",
+									"    \r",
+									"    // Verificar que a descrição do tipo de prato está preenchida\r",
+									"    pm.expect(jsonData).to.have.property(\"descricaoTipoPrato\").that.is.not.empty;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"carne\",\r\n    \"descricaoTipoPrato\": \"Prato confecionado com carne.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/TipoDePrato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"TipoDePrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US005 - Listar Tipos de Prato",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido GET foi bem-sucedido\r",
+									"pm.test(\"Pedido GET bem-sucedido\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"// Teste para verificar a estrutura da resposta\r",
+									"pm.test(\"Verificar lista de TipoDePrato\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Verificar se a resposta é um array\r",
+									"    pm.expect(jsonData).to.be.an('array');\r",
+									"\r",
+									"    // Verificar que cada item no array tem a estrutura correta\r",
+									"    jsonData.forEach(function(item) {\r",
+									"        pm.expect(item).to.have.property(\"idTipoPrato\");\r",
+									"        pm.expect(item).to.have.property(\"nome\").that.is.not.empty; // Verificar que o nome não está vazio\r",
+									"        pm.expect(item.nome).to.be.a('string');\r",
+									"        pm.expect(item.nome.length).to.be.at.most(50); // Verificar que o nome tem até 50 caracteres\r",
+									"        pm.expect(item).to.have.property(\"descricaoTipoPrato\").that.is.not.empty; // Verificar que a descrição não está vazia\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/TipoDePrato",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"TipoDePrato"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US006 - Obter Info de um Tipo de Prato",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido GET foi bem-sucedido\r",
+									"pm.test(\"Successful GET request for tipo de prato\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200); // Verifica se o status é 200 (OK)\r",
+									"});\r",
+									"\r",
+									"// Verificar que o corpo da resposta não está vazio\r",
+									"pm.test(\"Response body is not empty\", function () {\r",
+									"    var jsonData = pm.response.json(); // Faz o parse da resposta JSON\r",
+									"    pm.expect(jsonData).to.not.be.empty; // Verifica que o corpo da resposta não está vazio\r",
+									"});\r",
+									"\r",
+									"// Verificar que o corpo da resposta é um objeto\r",
+									"pm.test(\"Response body is an object\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.be.an('object'); // Verifica se o corpo da resposta é um objeto\r",
+									"});\r",
+									"\r",
+									"// Verificar que o objeto contém as propriedades necessárias\r",
+									"pm.test(\"Object has required properties\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"idTipoPrato\"); // Verifica que o objeto tem um ID\r",
+									"    pm.expect(jsonData).to.have.property(\"nome\"); // Verifica que o objeto tem um nome\r",
+									"    pm.expect(jsonData).to.have.property(\"descricaoTipoPrato\"); // Verifica que o objeto tem um tipo de prato\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/TipoDePrato/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"TipoDePrato",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US007 - Criar Prato",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido POST foi bem-sucedido\r",
+									"pm.test(\"Successful POST request for Prato\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+									"});\r",
+									"\r",
+									"// Verificar se as propriedades obrigatórias do objeto Prato estão preenchidas\r",
+									"pm.test(\"Verificar se as propriedades obrigatórias do Prato estão preenchidas\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    // Verificar que o objeto tem um ID\r",
+									"    pm.expect(jsonData).to.have.property(\"idPrato\");\r",
+									"    \r",
+									"    // Verificar que o nome está preenchido\r",
+									"    pm.expect(jsonData).to.have.property(\"nome\").that.is.not.empty;\r",
+									"    \r",
+									"    // Verificar que o tipo do prato está preenchido\r",
+									"    pm.expect(jsonData).to.have.property(\"tipoPrato\");\r",
+									"    pm.expect(jsonData.tipoPrato).to.have.property(\"idTipoPrato\"); // Verifica que o tipo de prato tem um ID\r",
+									"    \r",
+									"    // Verificar se a lista de ingredientes é opcional e não deve ser vazia se preenchida\r",
+									"    pm.expect(jsonData).to.have.property(\"ingredientes\");\r",
+									"    if (jsonData.ingredientes) {\r",
+									"        pm.expect(jsonData.ingredientes).to.be.an('array');\r",
+									"    }\r",
+									"\r",
+									"    // Verificar que o estado ativo está definido\r",
+									"    pm.expect(jsonData).to.have.property(\"ativo\");\r",
+									"    \r",
+									"    // Verificar que a quantidade é um número e está definida\r",
+									"    pm.expect(jsonData).to.have.property(\"quantidade\");\r",
+									"    pm.expect(jsonData.quantidade).to.be.a('number');\r",
+									"\r",
+									"    // Verificar que a data de serviço está definida\r",
+									"    pm.expect(jsonData).to.have.property(\"dataServico\");\r",
+									"    pm.expect(new Date(jsonData.dataServico)).to.be.a('date').that.is.not.NaN; // Verificar se a data é válida\r",
+									"\r",
+									"    // Verificar que o tipo de refeição é opcional\r",
+									"    pm.expect(jsonData).to.have.property(\"tipoRefeicao\").that.is.not.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nome\": \"massa com carne\",\r\n    \"TipoPratoId\": 1,\r\n    \"IngredientesIds\": [\r\n        1,\r\n        2\r\n    ],\r\n    \"Receita\": \"cozinhe.\",\r\n    \"Ativo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/Pratos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Pratos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US008 - Ativar/Inativar Prato",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido PUT foi bem-sucedido\r",
+									"pm.test(\"Pedido PUT bem-sucedido\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200); // Verifica se o código de resposta é 200\r",
+									"});\r",
+									"\r",
+									"// Verifica se a propriedade 'ativo' é do tipo booleano\r",
+									"pm.test(\"Verificar se 'ativo' é um booleano\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Verifica que 'ativo' é um booleano\r",
+									"    pm.expect(jsonData.ativo).to.be.a('boolean');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ativo\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/Pratos/estadoPrato/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Pratos",
+								"estadoPrato",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US009 - Inativar Ingrediente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido para inativar um ingrediente foi bem-sucedido\r",
+									"pm.test(\"Successful inactivation request for Ingrediente\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200); // Verifica se o código de resposta é 200\r",
+									"});\r",
+									"\r",
+									"// Verificar se o ingrediente foi inativado\r",
+									"pm.test(\"Verificar que o ingrediente está inativo\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    // Verificar que o objeto 'ingrediente' existe na resposta\r",
+									"    pm.expect(jsonData).to.have.property(\"ingrediente\");\r",
+									"    \r",
+									"    // Verificar que o ingrediente tem a propriedade 'ativo' e que está definido como false\r",
+									"    pm.expect(jsonData.ingrediente).to.have.property(\"ativo\", false);\r",
+									"});\r",
+									"\r",
+									"// Teste para garantir que todos os pratos que contêm o ingrediente também foram inativados\r",
+									"pm.test(\"Verificar que os pratos associados ao ingrediente foram inativados\", function () {\r",
+									"    var jsonData = pm.response.json(); // Definir jsonData aqui\r",
+									"\r",
+									"    // Supondo que a resposta inclui uma lista de pratos atualizados\r",
+									"    var pratosAtualizados = jsonData.pratosInativados || []; // Ajuste conforme a estrutura real da resposta, and initialize as empty array if not present\r",
+									"\r",
+									"    // Verificar que cada prato associado ao ingrediente está inativo\r",
+									"    pratosAtualizados.forEach(function(prato) {\r",
+									"        pm.expect(prato).to.have.property(\"ativo\", false);\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Ativo\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/Ingredientes/inativar/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Ingredientes",
+								"inativar",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US010 - Ativar Ingrediente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido para ativar um ingrediente foi bem-sucedido\r",
+									"pm.test(\"Successful activation request for Ingrediente\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200); // Verifica se o código de resposta é 200\r",
+									"});\r",
+									"\r",
+									"// Obter os dados da resposta\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"// Verificar se o ingrediente foi ativado\r",
+									"pm.test(\"Verificar que o ingrediente está ativo\", function () {\r",
+									"    // Log da resposta para depuração\r",
+									"    console.log(jsonData);\r",
+									"    \r",
+									"    // Verificar se o ingrediente tem a propriedade 'ativo' e que está definido como true\r",
+									"    pm.expect(jsonData.ingrediente).to.have.property(\"ativo\", true); // Acessar ativo através do objeto ingrediente\r",
+									"});\r",
+									"\r",
+									"// Teste para garantir que os pratos associados ao ingrediente foram ativados\r",
+									"pm.test(\"Verificar que os pratos associados ao ingrediente foram ativados\", function () {\r",
+									"    var pratosAtualizados = jsonData.pratosAtualizados; // Ajuste conforme a estrutura real da resposta\r",
+									"\r",
+									"    // Verificar que cada prato associado ao ingrediente está ativo\r",
+									"    pratosAtualizados.forEach(function(prato) {\r",
+									"        pm.expect(prato).to.have.property(\"ativo\", true);\r",
+									"\r",
+									"        // Verificar se não existem ingredientes inativos no prato\r",
+									"        pm.expect(prato).to.have.property(\"ingredientes\");\r",
+									"        var ingredientes = prato.ingredientes; // Ajuste conforme a estrutura real dos ingredientes\r",
+									"        if (ingredientes) {\r",
+									"            ingredientes.forEach(function(ingrediente) {\r",
+									"                pm.expect(ingrediente).to.have.property(\"ativo\", true); // Todos os ingredientes devem estar ativos\r",
+									"            });\r",
+									"        }\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Ativo\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/Ingredientes/ativar/3\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Ingredientes",
+								"ativar",
+								"3\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US011 - Definir Tipo de Refeição",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o pedido POST foi bem-sucedido\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]); // Verifica se a resposta é 200, 201 ou 202\r",
+									"});\r",
+									"\r",
+									"// Verificar o objeto criado para garantir que os dados são corretos\r",
+									"pm.test(\"Verificar o objeto criado\", function () {\r",
+									"    var jsonData = pm.response.json(); // Parseia a resposta JSON\r",
+									"    \r",
+									"    // Verificar que o objeto tem um ID\r",
+									"    pm.expect(jsonData).to.have.property(\"id\"); // Verifica se a propriedade \"id\" está presente\r",
+									"\r",
+									"    // Verificar que o Nome está presente e não é vazio\r",
+									"    pm.expect(jsonData).to.have.property(\"nome\").that.is.not.empty; // Verifica se \"nome\" não está vazio\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nome\": \"jantar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/TipoDeRefeicao/CreateTipoRefeicao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"TipoDeRefeicao",
+								"CreateTipoRefeicao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US012 - Listar Tipos de Refeição",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que a requisição GET foi bem-sucedida\r",
+									"pm.test(\"Successful GET request for tipos de refeição\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200); // Verifica se o código de resposta é 200\r",
+									"});\r",
+									"\r",
+									"// Verificar que o corpo da resposta não está vazio\r",
+									"pm.test(\"Response body is not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.be.empty; // Verifica que o corpo da resposta não está vazio\r",
+									"});\r",
+									"\r",
+									"// Verificar que o corpo da resposta é um array\r",
+									"pm.test(\"Response body is an array\", function () {\r",
+									"    var jsonData = pm.response.json(); // Parseia a resposta JSON\r",
+									"    pm.expect(jsonData).to.be.an('array'); // Verifica se é um array\r",
+									"});\r",
+									"\r",
+									"// Verificar que cada tipo de refeição tem um ID e um Nome\r",
+									"pm.test(\"Each tipo de refeição has Id and Nome\", function () {\r",
+									"    var jsonData = pm.response.json(); // Parseia a resposta JSON\r",
+									"\r",
+									"    jsonData.forEach(function (tipo) {\r",
+									"        pm.expect(tipo).to.have.property(\"id\"); // Verifica se a propriedade \"id\" está presente\r",
+									"        pm.expect(tipo).to.have.property(\"nome\").that.is.not.empty; // Verifica se \"nome\" não está vazio\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/TipoDeRefeicao/GetAllTiposRefeicao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"TipoDeRefeicao",
+								"GetAllTiposRefeicao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US013 - Criar Refeição",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Response should be in JSON format\", function () {",
+									"    pm.response.to.be.json;",
+									"});",
+									"",
+									"pm.test(\"Response should contain IdRefeicao\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('idRefeicao'); // Verifica se existe a propriedade 'idRefeicao'",
+									"});",
+									"pm.test(\"Response should contain quantidadeProduzida\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('quantidadeProduzida'); // Verifica se existe a propriedade 'IdPrato'",
+									"});",
+									"pm.test(\"Response should contain data\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('data'); // Verifica se existe a propriedade 'IdPrato'",
+									"});",
+									"",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Data\": \"2024-11-27T00:12:00\",\n    \"IdPrato\": 1,\n    \"QuantidadeProduzida\": 25,\n    \"TipoRefeicaoId\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/Refeicoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Refeicoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US014 - Servir Refeição",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o POST foi bem-sucedido",
+									"pm.test(\"Successful POST request for ServirRefeicao\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									"",
+									"// Verifica se a quantidade foi decrementada corretamente",
+									"pm.test(\"Quantidade decrementada com sucesso\", function () {",
+									"    var jsonData = pm.response.json();",
+									"",
+									"    // Verifica que a quantidade é um número e maior ou igual a zero",
+									"    pm.expect(jsonData).to.have.property(\"quantidade\").that.is.a(\"number\").and.is.at.least(0);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/Refeicoes/1/servir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Refeicoes",
+								"1",
+								"servir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US015 - Remover Refeição Futura",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o DELETE foi bem-sucedido",
+									"pm.test(\"Successful DELETE request for DeleteRefeicao\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"});",
+									"",
+									"// Verificar se a resposta é 204 No Content ao remover uma refeição",
+									"pm.test(\"Verificar se a refeição foi removida\", function () {",
+									"    if (pm.response.code === 204) {",
+									"        pm.expect(pm.response.body).to.be.empty; // O corpo da resposta deve estar vazio",
+									"    }",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/Refeicoes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Refeicoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US016 - Apresentar Ementa",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para garantir que o POST foi bem-sucedido",
+									"pm.test(\"Successful POST request for ApresentarEmenta\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+									"});",
+									"",
+									"// Verificar se a resposta contém uma lista de pratos quando a ementa está disponível",
+									"pm.test(\"Verificar se a ementa está disponível\", function () {",
+									"    if (pm.response.code === 200) {",
+									"        var jsonData = pm.response.json();",
+									"        pm.expect(jsonData).to.be.an('array').that.is.not.empty; // Deve ser uma lista não vazia",
+									"    } else if (pm.response.code === 404) {",
+									"        pm.expect(pm.response.text()).to.include(\"Nenhuma ementa disponível.\"); // Mensagem correta para 404",
+									"    }",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"2024-11-27T00:12:00\",\r\n    \"tipoRefeicao\": {\r\n        \"id\": 1,\r\n        \"nome\": \"Almoço\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5057/api/refeicoes/filtrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"refeicoes",
+								"filtrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verificar estado prato",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/Pratos/2/estado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Pratos",
+								"2",
+								"estado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPratoById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/Pratos/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Pratos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRefeicaoById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/Refeicoes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"Refeicoes",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRefeicoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5057/api/refeicoes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5057",
+							"path": [
+								"api",
+								"refeicoes",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sala",
+			"item": [
+				{
+					"name": "US001 - Registar um cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Testa se o status da resposta é 201 (Sucesso ao criar cliente)\r",
+									"pm.test(\"Status de resposta é 201 - Cliente criado com sucesso\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"// Testa se a resposta contém a mensagem de sucesso correta\r",
+									"pm.test(\"Mensagem de sucesso está correta\", function () {\r",
+									"    var responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson.message).to.eql('Cliente criado com sucesso.');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"João Miranda\",\r\n  \"nif\": \"987654321\",\r\n  \"email\": \"JoaoMiranda@email.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cliente/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US002 - Listar clientes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Testa se o status da resposta é 200 (Sucesso ao buscar cliente)\r",
+									"pm.test(\"Status de resposta é 200 - Sucesso ao buscar cliente\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Testa se a resposta contém os campos corretos\r",
+									"pm.test(\"Campos da resposta estão corretos\", function () {\r",
+									"    var responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson[0]).to.have.property('name');\r",
+									"    pm.expect(responseJson[0]).to.have.property('nif');\r",
+									"    pm.expect(responseJson[0]).to.have.property('email');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cliente/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US003 - Listar Cliente Por NIF",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Testa se o status da resposta é 200 (sucesso ao buscar o cliente)",
+									"pm.test(\"Status de resposta é 200 - Sucesso ao buscar cliente\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Testa se a resposta contém os campos corretos",
+									"pm.test(\"Campos da resposta estão corretos\", function () {",
+									"    var responseJson = pm.response.json();",
+									"    pm.expect(responseJson).to.have.property('name');  // Verifica 'name'",
+									"    pm.expect(responseJson).to.have.property('nif');   // Verifica 'nif'",
+									"    pm.expect(responseJson).to.have.property('email'); // Verifica 'email'",
+									"    pm.expect(responseJson).to.have.property('balance'); // Verifica 'balance'",
+									"    pm.expect(responseJson).to.have.property('transactions'); // Verifica 'transactions'",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cliente/987654321",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								"987654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US004 - Obter info da conta de um Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Testa se o status da resposta é 202 (sucesso ao obter saldo)",
+									"pm.test(\"Status de resposta é 200 - Sucesso ao obter saldo\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"// Testa se a resposta contém o campo 'balance'",
+									"pm.test(\"Resposta contém o campo 'balance'\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('balance');",
+									"});",
+									"",
+									"// Testa se o status da resposta é 404 - Cliente não encontrado",
+									"pm.test(\"Status de resposta é 404 - Cliente não encontrado\", function () {",
+									"    // Só testa se a resposta foi 404",
+									"    if (pm.response.status === 404) {",
+									"        var jsonData = pm.response.json();",
+									"        pm.expect(jsonData.error).to.eql(\"Cliente não encontrado.\");",
+									"    }",
+									"});",
+									"",
+									"// Testa se o status da resposta é 500 - Erro interno do servidor",
+									"pm.test(\"Status de resposta é 500 - Erro interno do servidor\", function () {",
+									"    // Só testa se a resposta foi 500",
+									"    if (pm.response.status === 500) {",
+									"        var jsonData = pm.response.json();",
+									"        pm.expect(jsonData.error).to.eql(\"Erro interno do servidor.\");",
+									"    }",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cliente/987654321/saldo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								"987654321",
+								"saldo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US005 - Carregar a Conta Cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response structure is valid\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    // Verificar se a propriedade `message` existe\r",
+									"    pm.expect(responseJson).to.have.property(\"message\").that.is.a(\"string\");\r",
+									"\r",
+									"    // Verificar se a propriedade `cliente` existe\r",
+									"    pm.expect(responseJson).to.have.property(\"cliente\").that.is.an(\"object\");\r",
+									"\r",
+									"    const cliente = responseJson.cliente;\r",
+									"\r",
+									"    // Verificar as propriedades do objeto `cliente`\r",
+									"    pm.expect(cliente).to.have.property(\"account\").that.is.an(\"object\");\r",
+									"    pm.expect(cliente).to.have.property(\"_id\").that.is.a(\"number\");\r",
+									"    pm.expect(cliente).to.have.property(\"name\").that.is.a(\"string\");\r",
+									"    pm.expect(cliente).to.have.property(\"nif\").that.is.a(\"string\");\r",
+									"    pm.expect(cliente).to.have.property(\"email\").that.is.a(\"string\");\r",
+									"    pm.expect(cliente).to.have.property(\"__v\").that.is.a(\"number\");\r",
+									"\r",
+									"    // Verificar as propriedades do objeto `account`\r",
+									"    const account = cliente.account;\r",
+									"    pm.expect(account).to.have.property(\"balance\").that.is.a(\"number\");\r",
+									"    pm.expect(account).to.have.property(\"transactions\").that.is.an(\"array\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 999999\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cliente/987654321/carregar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								"987654321",
+								"carregar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US006 - Definir um Prato da ementa",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Verificar se a resposta é válida\r",
+									"pm.test(\"A resposta está presente e é válida\", function () {\r",
+									"    pm.response.to.have.status(200); // Certifica-se que o status HTTP é 200\r",
+									"    pm.response.to.be.json; // Garante que a resposta é JSON\r",
+									"});\r",
+									"\r",
+									"// Verificar se o prato foi encontrado\r",
+									"pm.test(\"O prato foi encontrado\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.have.property(\"idPrato\"); // Verifica se existe \"idPrato\" na resposta\r",
+									"    pm.expect(responseJson.idPrato).to.be.a(\"number\"); // Verifica se \"idPrato\" é um número\r",
+									"});\r",
+									"\r",
+									"// Verificar se o preço é válido\r",
+									"pm.test(\"O preço é válido\", function () {\r",
+									"    const requestBody = pm.request.body ? JSON.parse(pm.request.body.raw) : {};\r",
+									"    const preco = requestBody.preco;\r",
+									"\r",
+									"    pm.expect(preco).to.be.a(\"number\"); // Garante que o preço é um número\r",
+									"    pm.expect(preco).to.be.greaterThanOrEqual(0); // Verifica se o preço é maior ou igual a 0\r",
+									"});\r",
+									"\r",
+									"// Verificar se a associação foi bem feita\r",
+									"pm.test(\"Associação do prato foi bem-sucedida\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.have.property(\"mensagem\"); // Verifica se a resposta contém \"mensagem\"\r",
+									"    pm.expect(responseJson.mensagem).to.eql(\"Prato integrado com sucesso!\"); // Verifica o texto exato da mensagem\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"preco\": 15\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/pratos/1/preco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pratos",
+								"1",
+								"preco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US007 - Consultar a ementa para a refeição que está a ser servida",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is an array\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an(\"array\").that.is.not.empty;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Array elements have the correct structure\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    responseJson.forEach(item => {\r",
+									"        // Verificar as propriedades do objeto principal\r",
+									"        pm.expect(item).to.have.property(\"_id\").that.is.a(\"number\");\r",
+									"        pm.expect(item).to.have.property(\"__v\").that.is.a(\"number\");\r",
+									"        pm.expect(item).to.have.property(\"data\").that.is.a(\"string\");\r",
+									"        pm.expect(item).to.have.property(\"pratos\").that.is.an(\"array\");\r",
+									"        pm.expect(item).to.have.property(\"quantidadeProduzida\").that.is.a(\"number\");\r",
+									"        pm.expect(item).to.have.property(\"tipoRefeicao\").that.is.a(\"number\");\r",
+									"\r",
+									"        // Verificar a estrutura da propriedade `pratos` (array de números)\r",
+									"        item.pratos.forEach(prato => {\r",
+									"            pm.expect(prato).to.be.a(\"number\");\r",
+									"        });\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sala/ementa/2024-11-27T00:12:00.00/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sala",
+								"ementa",
+								"2024-11-27T00:12:00.00",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US008 - Encomendar um prato da ementa",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response structure is valid\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    // Verificar a mensagem principal\r",
+									"    pm.expect(responseJson).to.have.property(\"message\", \"Encomenda criada com sucesso!\");\r",
+									"\r",
+									"    // Verificar a propriedade `encomenda`\r",
+									"    pm.expect(responseJson).to.have.property(\"encomenda\").that.is.an(\"object\");\r",
+									"\r",
+									"    const encomenda = responseJson.encomenda;\r",
+									"\r",
+									"    // Verificar as propriedades do objeto `encomenda`\r",
+									"    pm.expect(encomenda).to.have.property(\"cliente\").that.is.a(\"number\");\r",
+									"    pm.expect(encomenda).to.have.property(\"refeicao\").that.is.a(\"number\");\r",
+									"    pm.expect(encomenda).to.have.property(\"valor\").that.is.a(\"number\");\r",
+									"    pm.expect(encomenda).to.have.property(\"_id\").that.is.a(\"string\");\r",
+									"    pm.expect(encomenda).to.have.property(\"data\").that.is.a(\"string\");\r",
+									"    pm.expect(encomenda).to.have.property(\"__v\").that.is.a(\"number\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente\": \"255124566\",\r\n    \"refeicao\": \"1\",\r\n    \"valor\": 15.00\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/encomendas/encomendar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"encomendas",
+								"encomendar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US009 - Listar todas as refeições servidas numa dada refeição",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is an array\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an(\"array\").that.is.not.empty;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Array elements have the correct structure\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    responseJson.forEach(item => {\r",
+									"        // Verificar as propriedades de cada objeto\r",
+									"        pm.expect(item).to.have.property(\"_id\").that.is.a(\"number\");\r",
+									"        pm.expect(item).to.have.property(\"__v\").that.is.a(\"number\");\r",
+									"        pm.expect(item).to.have.property(\"data\").that.is.a(\"string\");\r",
+									"        pm.expect(item).to.have.property(\"pratos\").that.is.an(\"array\");\r",
+									"        pm.expect(item).to.have.property(\"quantidadeProduzida\").that.is.a(\"number\");\r",
+									"        pm.expect(item).to.have.property(\"tipoRefeicao\").that.is.a(\"number\");\r",
+									"\r",
+									"        // Verificar o array `pratos` (cada elemento deve ser um número)\r",
+									"        item.pratos.forEach(prato => {\r",
+									"            pm.expect(prato).to.be.a(\"number\");\r",
+									"        });\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sala/refeicoes/2024-11-27T00:12:00.00/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sala",
+								"refeicoes",
+								"2024-11-27T00:12:00.00",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US010 - Listar todas as encomendas por mim realizadas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is an array\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.expect(responseJson).to.be.an(\"array\").that.is.not.empty;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Array elements have the correct structure\", function () {\r",
+									"    const responseJson = pm.response.json();\r",
+									"\r",
+									"    responseJson.forEach(item => {\r",
+									"        // Verificar as propriedades do objeto\r",
+									"        pm.expect(item).to.have.property(\"data\").that.is.a(\"string\");\r",
+									"        pm.expect(item).to.have.property(\"refeicao\").that.is.a(\"number\");\r",
+									"        pm.expect(item).to.have.property(\"valor\").that.is.a(\"string\");\r",
+									"\r",
+									"        // Verificar o formato esperado de `valor`\r",
+									"        pm.expect(item.valor).to.match(/^\\d+(\\.\\d{2})?€$/); // Exemplo: \"15.00€\"\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/encomendas/255124566",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"encomendas",
+								"255124566"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
