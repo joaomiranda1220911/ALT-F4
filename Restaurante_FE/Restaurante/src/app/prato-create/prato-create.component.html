@@ -1,0 +1,35 @@
+<!-- <p>prato-create works!</p>
+<div class="container">
+    <h2>Criar Prato</h2>
+    <form [formGroup]="pratoForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label>Nome:</label>
+            <input formControlName="nome" type="text" />
+        </div>
+        <div>
+            <label>Tipo de Prato:</label>
+            <select formControlName="tipoPratoId">
+                <option *ngFor="let tipo of tiposDePrato" [value]="tipo.id">{{ tipo.nome }}</option>
+            </select>
+        </div>
+        <div>
+            <label>Ingredientes:</label>
+            <select formControlName="ingredientesIds" multiple>
+                <option *ngFor="let ingrediente of ingredientes" [value]="ingrediente.id">
+                    {{ ingrediente.nome }}
+                </option>
+            </select>
+        </div>
+        <div>
+            <label>Receita:</label>
+            <textarea formControlName="receita"></textarea>
+        </div>
+        <div>
+            <label>Ativo:</label>
+            <input formControlName="ativo" type="checkbox" />
+        </div>
+        <button type="submit" [disabled]="pratoForm.invalid">Salvar</button>
+    </form>
+    <div *ngIf="successMessage">{{ successMessage }}</div>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+</div> -->
