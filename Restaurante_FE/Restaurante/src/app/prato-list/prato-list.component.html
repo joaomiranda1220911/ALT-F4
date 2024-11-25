@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Lista de Pratos</h2>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Tipo de Prato</th>
+                <th>Estado</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prato of pratos">
+                <td>{{ prato.idPrato }}</td>
+                <td>{{ prato.nome }}</td>
+                <td>{{ prato.tipoPratoId }}</td>
+                <td>{{ prato.ativo ? 'Ativo' : 'Inativo' }}</td>
+                <td>
+                    <button class="btn" [ngClass]="prato.ativo ? 'btn-danger' : 'btn-success'"
+                        (click)="toggleEstado(prato)">
+                        {{ prato.ativo ? 'Inativar' : 'Ativar' }}
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
