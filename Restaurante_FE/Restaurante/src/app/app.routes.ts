@@ -15,8 +15,8 @@ export const routes: Routes = [
     // Rota para a cozinha
     { path: 'cozinha', component: CozinhaComponent },
     { path: 'cozinha/pratos-management', component: PratosManagementComponent },  // Nova rota para Pratos Management
-    { path: 'cozinha/pratos', component: PratoListComponent },
-    { path: 'cozinha/create-prato', component: PratoCreateComponent },
+    { path: 'cozinha/pratos-management/pratos', component: PratoListComponent },
+    { path: 'cozinha/pratos-management/create-prato', component: PratoCreateComponent },
 
     // Rota para a sala
     { path: 'sala', component: SalaComponent },  // Rota para Sala

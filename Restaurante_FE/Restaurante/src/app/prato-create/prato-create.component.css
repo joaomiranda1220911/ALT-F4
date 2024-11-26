@@ -1,0 +1,54 @@
+.prato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Espaçamento entre os campos */
+    width: 100%;
+    max-width: 500px;
+    /* Ajuste para a largura que deseja */
+    margin: 0 auto;
+}
+
+.prato-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.prato-form input,
+.prato-form select,
+.prato-form textarea,
+.prato-form button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    /* Espaçamento entre os campos */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.prato-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.prato-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.success-message,
+.error-message {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.success-message {
+    color: green;
+}
+
+.error-message {
+    color: red;
+}
