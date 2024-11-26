@@ -9,9 +9,6 @@ import { SalaComponent } from './sala/sala.component';  // Novo componente Sala
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-    // Rota inicial (página com os botões principais)
-    { path: '', component: AppComponent },  // Página inicial com os botões
-
     // Rota para a cozinha
     { path: 'cozinha', component: CozinhaComponent },
     { path: 'cozinha/pratos-management', component: PratosManagementComponent },  // Nova rota para Pratos Management
