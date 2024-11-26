@@ -1,35 +1,31 @@
-<p>prato-create works!</p>
-<div class="container">
-    <h2>Criar Prato</h2>
+<div class="prato-form">
+    <button class="btn" routerLink="../create-prato">Criar Novo Prato</button>
+
     <form [formGroup]="pratoForm" (ngSubmit)="onSubmit()">
-        <div>
-            <label>Nome:</label>
-            <input formControlName="nome" type="text" />
+        <label for="nome">Nome do Prato</label>
+        <input id="nome" formControlName="nome" type="text" />
+        <div *ngIf="pratoForm.get('nome')?.invalid && pratoForm.get('nome')?.touched">
+            Nome é obrigatório.
         </div>
-        <div>
-            <label>Tipo de Prato:</label>
-            <select formControlName="tipoPratoId">
-                <option *ngFor="let tipo of tiposDePrato" [value]="tipo.id">{{ tipo.nome }}</option>
-            </select>
-        </div>
-        <div>
-            <label>Ingredientes:</label>
-            <select formControlName="ingredientesIds" multiple>
-                <option *ngFor="let ingrediente of ingredientes" [value]="ingrediente.id">
-                    {{ ingrediente.nome }}
-                </option>
-            </select>
-        </div>
-        <div>
-            <label>Receita:</label>
-            <textarea formControlName="receita"></textarea>
-        </div>
-        <div>
-            <label>Ativo:</label>
-            <input formControlName="ativo" type="checkbox" />
-        </div>
-        <button type="submit" [disabled]="pratoForm.invalid">Salvar</button>
+
+        <label for="tipoPrato">Tipo de Prato</label>
+        <select id="tipoPrato" formControlName="tipoPratoId">
+            <option *ngFor="let tipo of tiposDePrato" [value]="tipo.id">{{ tipo.nome }}</option>
+        </select>
+
+        <label for="ingredientes">Ingredientes</label>
+        <select id="ingredientes" formControlName="ingredientesIds" multiple>
+            <option *ngFor="let ingrediente of ingredientes" [value]="ingrediente.id">
+                {{ ingrediente.nome }}
+            </option>
+        </select>
+
+        <label for="receita">Receita</label>
+        <textarea id="receita" formControlName="receita"></textarea>
+
+        <button type="submit" [disabled]="pratoForm.invalid">Criar Prato</button>
     </form>
-    <div *ngIf="successMessage">{{ successMessage }}</div>
-    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
 </div>

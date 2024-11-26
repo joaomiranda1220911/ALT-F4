@@ -1,23 +1,25 @@
 import { Routes } from '@angular/router';
-//US001 
 import { PratoCreateComponent } from './prato-create/prato-create.component';
-//US002 
 import { PratoListComponent } from './prato-list/prato-list.component';
-
-//US007
+import { PratosManagementComponent } from './pratos-management/pratos-management.component';  
 import { CreateEncomendaComponent } from './encomenda-create/encomenda-create.component';
-//US008
 import { ListEncomendasComponent } from './list-encomendas/list-encomendas.component';
-
+import { CozinhaComponent } from './cozinha/cozinha.component';  // Novo componente Cozinha
+import { SalaComponent } from './sala/sala.component';  // Novo componente Sala
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-    //US001 
-    { path: 'create-prato', component: PratoCreateComponent },
-    //US002 
-    { path: 'pratos', component: PratoListComponent },
+    // Rota inicial (página com os botões principais)
+    { path: '', component: AppComponent },  // Página inicial com os botões
 
-    //US007 
-    { path: 'create-encomenda', component: CreateEncomendaComponent },
-    //US008
-    { path: 'list-encomendas', component: ListEncomendasComponent }
+    // Rota para a cozinha
+    { path: 'cozinha', component: CozinhaComponent },
+    { path: 'cozinha/pratos-management', component: PratosManagementComponent },  // Nova rota para Pratos Management
+    { path: 'cozinha/pratos', component: PratoListComponent },
+    { path: 'cozinha/create-prato', component: PratoCreateComponent },
+
+    // Rota para a sala
+    { path: 'sala', component: SalaComponent },  // Rota para Sala
+    { path: 'sala/encomendas', component: ListEncomendasComponent },
+    { path: 'sala/create-encomenda', component: CreateEncomendaComponent }
 ];

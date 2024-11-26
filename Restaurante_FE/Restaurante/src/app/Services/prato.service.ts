@@ -24,11 +24,8 @@ export class PratoService {
     }
 
     //US002
-    updateEstadoPrato(id: number, ativo: boolean): Observable<any> {
-        const body = { ativo };  // O corpo da requisição contém o campo 'ativo'
-        const url = `http://localhost:5057/api/Pratos/estadoPrato/${id}`;  // Definindo a URL diretamente
-
-        return this.http.put(url, body);  // Fazendo a requisição PUT com a URL definida diretamente
+    updateEstadoPrato(id: number, estado: boolean): Observable<any> {
+        return this.http.put(`${this.apiUrl}/estadoPrato/${id}`, { estado });
     }
 
 
