@@ -18,7 +18,7 @@ export class EncomendaService {
 
   // US7
   // Método para encomendar (POST /encomendar)
-  encomendar(encomenda: any): Observable<any> {
+  createEncomenda(encomenda: any): Observable<any> {
     const url = `${this.apiUrl}/encomendar`;
     return this.webApiClient.post(url, encomenda, this.httpOptions);
   }
