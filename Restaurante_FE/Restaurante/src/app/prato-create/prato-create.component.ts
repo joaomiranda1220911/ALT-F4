@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PratoService } from '../Services/prato.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NgIf, NgFor } from '@angular/common'; 
+import { ReactiveFormsModule } from '@angular/forms'; 
+import { PratoService } from '../Services/prato.service'; 
 
 @Component({
   selector: 'app-prato-create',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf, NgFor],
   templateUrl: './prato-create.component.html',
   styleUrls: ['./prato-create.component.css'],
 })

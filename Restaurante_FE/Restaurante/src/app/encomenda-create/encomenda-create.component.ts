@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { EncomendaService } from '../Services/encomenda.service';
-import { Location, NgFor, NgIf } from '@angular/common';
+import { Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-create-encomenda',
   standalone: true,
-  imports: [NgFor, FormsModule, NgIf],
+  imports: [FormsModule],
   templateUrl: './encomenda-create.component.html',
   styleUrls: ['./encomenda-create.component.css']
 })
