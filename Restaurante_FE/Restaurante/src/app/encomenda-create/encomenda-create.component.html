@@ -1,0 +1,23 @@
+<h2>Encomendar Prato</h2>
+  
+<div>
+    <label for="cliente">Cliente: </label>
+    <input type="nifCliente" [(ngModel)]="nifCliente" placeholder="nifCliente">
+</div>
+<div>
+    <label for="refeicao">Refeição: </label>
+    <input type="refeicao" [(ngModel)]="refeicao" placeholder="refeicao">
+</div>
+<div>
+    <label for="data">Data: </label>
+    <input type="data" [(ngModel)]="data" placeholder="data">
+</div>
+<div>
+    <label for="valor">Valor: </label>
+    <input type="valor" [(ngModel)]="valor" placeholder="valor">
+</div>
+
+<p></p>
+<div>
+    <button class="btn" (click)="createEncomenda()">CREATE ENCOMENDA</button>
+</div>
