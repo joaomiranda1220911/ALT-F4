@@ -7,6 +7,8 @@ import { PratoListComponent } from './prato-list/prato-list.component';
 //US007
 import { CreateEncomendaComponent } from './encomenda-create/encomenda-create.component';
 //US008
+import { ListEncomendasComponent } from './list-encomendas/list-encomendas.component';
+
 
 export const routes: Routes = [
     //US001 
@@ -17,4 +19,5 @@ export const routes: Routes = [
     //US007 
     { path: 'create-encomenda', component: CreateEncomendaComponent },
     //US008
+    { path: 'list-encomendas', component: ListEncomendasComponent }
 ];

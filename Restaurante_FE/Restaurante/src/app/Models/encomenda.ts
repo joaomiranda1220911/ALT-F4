@@ -1,5 +1,5 @@
 export interface Encomenda {
-    cliente: string;
+    nifCliente: string;
     refeicao: string;
     data: string;
     valor: string;
