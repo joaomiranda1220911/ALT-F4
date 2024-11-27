@@ -14,6 +14,9 @@
         <label for="valor">Valor</label>
         <input id="valor" formControlName="valor" type="number" placeholder="Valor da Encomenda" required />
 
+        <label for="data">Data</label>
+        <input id="data" formControlName="data" type="date" placeholder="Data da Encomenda" required />
+
         <button type="submit" [disabled]="encomendaForm.invalid">Criar Encomenda</button>
     </form>
 
