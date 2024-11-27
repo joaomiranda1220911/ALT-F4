@@ -1,10 +1,13 @@
 <div>
   <h2>Pratos Management</h2>
   <button class="btn" (click)="toggleFormulario()">Criar Novo Prato</button>
-  <button class="btn" routerLink="/cozinha/pratos">Lista de Pratos</button>
+  <button class="btn" (click)="toggleFormularioListar()">Alterar Estado dum Prato</button>
 
   <div *ngIf="mostrarFormulario">
-    <app-prato-create></app-prato-create> 
+    <app-prato-create></app-prato-create>
   </div>
 
+  <div *ngIf="mostrarFormularioListar">
+    <app-prato-list></app-prato-list>
+  </div>
 </div>
