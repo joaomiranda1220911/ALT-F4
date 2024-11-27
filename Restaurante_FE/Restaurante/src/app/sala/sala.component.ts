@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sala',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './sala.component.html',
   styleUrl: './sala.component.css'
 })
-export class SalaComponent {
+export class SalaComponent { 
+  constructor(private router: Router) { }
 
+navigateToEncomendasManagement(): void {
+  this.router.navigate(['/sala/encomendas-management']);
+}
 }

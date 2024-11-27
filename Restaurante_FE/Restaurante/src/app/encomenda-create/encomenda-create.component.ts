@@ -1,37 +1,53 @@
-import { Component } from '@angular/core';
 import { EncomendaService } from '../Services/encomenda.service';
-import { Location } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators,ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NgIf, NgFor, CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-create-encomenda',
+  selector: 'app-encomenda-create',
   standalone: true,
-  imports: [FormsModule],
+  imports: [ReactiveFormsModule, FormsModule ,NgIf, NgFor, CommonModule],
   templateUrl: './encomenda-create.component.html',
   styleUrls: ['./encomenda-create.component.css']
 })
 
-export class CreateEncomendaComponent {
-
-  nifCliente: string = '';
-  refeicao: string = '';
+export class EncomendaCreateComponent implements OnInit {
+  encomendaForm: FormGroup;
+  nifCliente: any[] = [];
+  refeicao: any[] = [];
+  valor: any[] = [];
   data: string = '';
-  valor: string = '';
+  successMessage = '';
+  errorMessage = '';
 
-  constructor(
-    private encomendaSrv:EncomendaService,
-    private browserLocation:Location 
-  ) { }
+  constructor(private fb: FormBuilder, private encomendaSrv: EncomendaService) {
+    // Inicializa o formulário com validações
+    this.encomendaForm = this.fb.group({
+      nifCliente: [null, [Validators.required]],
+      refeicao: [null, [Validators.required]],
+      data: [[], [Validators.required]],
+      valor: [null, [Validators.required]],
+    });
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
-  createEncomenda(): void {
-    let theNewEncomenda = {
-      nifCliente: this.nifCliente,
-      refeicao: this.refeicao,
-      data: this.data,
-      valor: this.valor
+  // Submissão do formulário
+  onSubmit(): void {
+    if (this.encomendaForm.valid) {
+      this.encomendaSrv.createEncomenda(this.encomendaForm.value).subscribe({
+        next: () => {
+          this.successMessage = 'Encomenda criada com sucesso!';
+          this.encomendaForm.reset(); // Reseta o formulário após submissão bem-sucedida
+        },
+        error: (err) => {
+          this.errorMessage = 'Erro ao criar encomenda. Tente novamente.';
+          console.error(err);
+        },
+      });
+    } else {
+      this.errorMessage = 'Preencha todos os campos obrigatórios.';
     }
-    this.encomendaSrv.createEncomenda(theNewEncomenda).subscribe( 
-      () => this.browserLocation.back()
-    );
   }
 }

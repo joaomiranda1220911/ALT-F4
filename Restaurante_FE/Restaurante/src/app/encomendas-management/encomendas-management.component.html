@@ -1,0 +1,10 @@
+<div>
+    <h2>Encomendas Management</h2>
+    <button class="btn" (click)="toggleFormulario()">Criar Nova Encomenda</button>
+    <button class="btn" routerLink="/sala/encomendas">Lista de Encomendas</button>
+  
+    <div *ngIf="mostrarFormulario">
+      <app-encomenda-create></app-encomenda-create> 
+    </div>
+  
+  </div>

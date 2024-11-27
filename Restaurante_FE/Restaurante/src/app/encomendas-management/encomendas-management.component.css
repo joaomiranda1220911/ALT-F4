@@ -4,11 +4,10 @@ div {
     flex-direction: column; /* Organiza os botões verticalmente */
     align-items: center;    /* Centraliza os botões horizontalmente */
     justify-content: center; /* Centraliza os botões verticalmente (opcional, útil se a div tiver mais altura) */
-    width: 100%;
     max-width: 500px; /* Limita a largura máxima */
     margin: 0 auto;   /* Garante a centralização da div em relação ao body */
     padding: 1rem;
-    background-color: white; 
+    background-color: white; /* Exemplo de estilo adicional */
     border-radius: 8px; /* Bordas arredondadas */
     border: 2px solid rgb(100, 0, 160);
 }

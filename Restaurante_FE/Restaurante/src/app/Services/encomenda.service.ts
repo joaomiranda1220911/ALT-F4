@@ -24,9 +24,9 @@ export class EncomendaService {
   }
 
   // US8
-  // Método para consultar encomendas (GET /nifCliente)
-  getEncomendas(nifCliente: string): Observable<{ data: string; prato: string; valor: number }[]> {
-    const url = `${this.apiUrl}/${nifCliente}`;
-    return this.webApiClient.get<{ data: string; prato: string; valor: number }[]>(url);
+  // Método para obter as encomendas de um cliente específico
+  getEncomendasByCliente(clienteId: number): Observable<Encomenda[]> {
+    const url = `${this.apiUrl}/${clienteId}`; // Constrói a URL com o clienteId
+    return this.webApiClient.get<Encomenda[]>(url);
   }
 }

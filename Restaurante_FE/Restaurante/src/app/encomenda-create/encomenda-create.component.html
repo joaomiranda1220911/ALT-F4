@@ -1,23 +1,22 @@
-<h2>Encomendar Prato</h2>
-  
-<div>
-    <label for="cliente">Cliente: </label>
-    <input type="nifCliente" [(ngModel)]="nifCliente" placeholder="nifCliente">
-</div>
-<div>
-    <label for="refeicao">Refeição: </label>
-    <input type="refeicao" [(ngModel)]="refeicao" placeholder="refeicao">
-</div>
-<div>
-    <label for="data">Data: </label>
-    <input type="data" [(ngModel)]="data" placeholder="data">
-</div>
-<div>
-    <label for="valor">Valor: </label>
-    <input type="valor" [(ngModel)]="valor" placeholder="valor">
-</div>
+<div class="encomenda-form">
 
-<p></p>
-<div>
-    <button class="btn" (click)="createEncomenda()">CREATE ENCOMENDA</button>
+    <form [formGroup]="encomendaForm" (ngSubmit)="onSubmit()">
+        <label for="cliente">Cliente</label>
+        <input id="cliente" formControlName="cliente" type="number" placeholder="ID do Cliente" required />
+
+        <label for="refeicao">Refeição</label>
+        <select id="refeicao" formControlName="refeicao" required>
+            <option *ngFor="let refeicao of refeicao" [value]="refeicao.id">
+                {{ refeicao.nome }} - {{ refeicao.preco | currency }}
+            </option>
+        </select>
+
+        <label for="valor">Valor</label>
+        <input id="valor" formControlName="valor" type="number" placeholder="Valor da Encomenda" required />
+
+        <button type="submit" [disabled]="encomendaForm.invalid">Criar Encomenda</button>
+    </form>
+
+    <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
 </div>
