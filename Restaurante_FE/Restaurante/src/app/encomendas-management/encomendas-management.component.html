@@ -1,10 +1,14 @@
 <div>
     <h2>Encomendas Management</h2>
-    <button class="btn" (click)="toggleFormulario()">Criar Nova Encomenda</button>
-    <button class="btn" routerLink="/sala/encomendas">Lista de Encomendas</button>
+    <button class="btn" (click)="toggleFormularioCriar()">Criar Nova Encomenda</button>
+    <button class="btn" (click)="toggleFormularioListar()">Lista de Encomendas</button>
   
-    <div *ngIf="mostrarFormulario">
+    <div *ngIf="mostrarFormularioCriar">
       <app-encomenda-create></app-encomenda-create> 
     </div>
   
+    <div *ngIf="mostrarFormularioListar">
+      <app-encomenda-list></app-encomenda-list> 
+    </div>
+
   </div>
