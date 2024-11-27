@@ -1,14 +1,71 @@
-.btn{
-    transition-duration: 0.4s;
-    background-color: white;
-    color: black;
-    border: 2px solid rgb(100, 0, 160);
-    width: 250px;
-    height: 40px;
-    font-size: 14pt;
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: white;
 }
 
-.btn:hover{
+/* Estilo do nav */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+}
+
+nav .btn {
     background-color: rgb(100, 0, 160);
-    color:white;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+nav .btn:hover {
+    background-color: white;
+    color: rgb(100, 0, 160);;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav .btn:active {
+    transform: scale(0.98);
+    box-shadow: none;
+}
+
+/* Barra horizontal */
+hr {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 1rem 0;
+}
+
+/* Conteúdo do router-outlet */
+router-outlet {
+    display: block;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Layout responsivo */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav .btn {
+        margin: 0.5rem 0;
+        width: 90%;
+    }
 }
