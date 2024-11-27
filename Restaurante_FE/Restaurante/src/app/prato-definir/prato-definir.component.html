@@ -1,0 +1,39 @@
+<div class="prato-sala-form-container">
+    <h2>Definir PratoSala</h2>
+    <form class="prato-sala-form" (ngSubmit)="onSubmit()">
+      <!-- Dropdown para selecionar o prato -->
+      <div class="form-group">
+        <label for="prato">Prato:</label>
+        <select
+          id="prato"
+          [(ngModel)]="selectedPrato"
+          name="prato"
+          required
+        >
+          <option *ngFor="let prato of pratos" [ngValue]="prato">
+            {{ prato.nome }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Campo para introduzir o preço -->
+      <div class="form-group">
+        <label for="preco">Preço:</label>
+        <input
+          id="preco"
+          type="number"
+          [(ngModel)]="preco"
+          name="preco"
+          required
+          placeholder="Insira o preço"
+        />
+      </div>
+  
+      <!-- Botão de submissão -->
+      <button type="submit" [disabled]="!selectedPrato || !preco">
+        Criar PratoSala
+      </button>
+    </form>
+  </div>
+  
+
