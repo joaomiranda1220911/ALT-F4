@@ -2,6 +2,7 @@
   <h2>Pratos Management</h2>
   <button class="btn" (click)="toggleFormulario()">Criar Novo Prato</button>
   <button class="btn" (click)="toggleFormularioListar()">Alterar Estado dum Prato</button>
+  <button class="btn" (click)="toggleFormularioDefinirPrato()">Definir o Preço de um Prato</button>
 
   <div *ngIf="mostrarFormulario">
     <app-prato-create></app-prato-create>
@@ -9,5 +10,9 @@
 
   <div *ngIf="mostrarFormularioListar">
     <app-prato-list></app-prato-list>
+  </div>
+
+  <div *ngIf="mostrarFormularioDefinirPrato">
+    <app-prato-definir></app-prato-definir>
   </div>
 </div>

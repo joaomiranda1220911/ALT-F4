@@ -11,11 +11,11 @@
         <h3>{{ prato.nome }}</h3>
         <strong>Tipo de Prato:</strong> {{ getTipoPratoNome(prato.tipoPratoId) }} <br />
         <strong>Estado:</strong> {{ getEstadoTexto(prato.ativo) }} <br />
-        <button (click)="toggleEstado(prato)">Alternar Estado</button> <!-- Botão para alternar estado -->
+        <button (click)="toggleEstado(prato)">Alterar Estado</button> <!-- Botão para alternar estado -->
     </div>
 
     <ng-template #loading>
-        <p>Preparando o prato...</p>
+        <p>O seu prato está a ser preparado...</p>
     </ng-template>
 
     <div *ngIf="errorMessage">

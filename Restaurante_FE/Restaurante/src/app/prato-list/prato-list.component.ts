@@ -60,14 +60,14 @@ export class PratoListComponent implements OnInit {
 
   // Ativar/Inativar prato
   toggleEstado(prato: Prato): void {
-    const novoEstado = !prato.ativo; // Define o novo estado (ativo ou inativo)
+    const novoEstado = !prato.ativo; // Alterna o estado
     this.pratoService.updateEstadoPrato(prato.idPrato!, novoEstado).subscribe({
       next: () => {
-        prato.ativo = novoEstado; // Atualiza o estado na UI após sucesso
+        prato.ativo = novoEstado; // Atualiza o estado localmente após sucesso
       },
       error: (err) => {
         this.errorMessage = 'Erro ao atualizar o estado do prato.';
-        console.error(err);
+        console.error('Erro no updateEstadoPrato:', err); // Log do erro
       },
     });
   }
