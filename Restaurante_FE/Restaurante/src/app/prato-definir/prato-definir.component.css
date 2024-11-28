@@ -1,62 +1,107 @@
+/* Estilo do formulário de PratoSala */
 .prato-sala-form {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Ajuste o espaçamento entre os campos */
+    gap: 20px;
+    /* Espaçamento entre os elementos */
     width: 100%;
-    max-width: 400px; /* Largura máxima para melhorar o layout */
+    max-width: 400px;
+    /* Largura máxima */
     margin: 0 auto;
+    /* Centraliza o formulário */
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar destaque */
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.prato-sala-form label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: #333;
-}
-
-.prato-sala-form input,
-.prato-sala-form select,
-.prato-sala-form textarea,
-.prato-sala-form button {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px; /* Ajuste para espaçamento entre os campos */
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
+    /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
     box-sizing: border-box;
 }
 
-.prato-sala-form input,
-.prato-sala-form select,
-.prato-sala-form textarea {
-    font-family: 'Roboto', sans-serif;
+/* Estilo para os grupos de campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Ajusta o espaçamento interno */
 }
 
-.prato-sala-form button {
-    background-color: white;
-    color: black;
-    border: 2px solid #6400a0; /* Cor principal do botão */
-    cursor: pointer;
+/* Estilo para os rótulos */
+.prato-sala-form label {
+    font-weight: bold;
     font-size: 1rem;
-    transition-duration: 0.4s; /* Transição para hover */
+    color: #333;
+    /* Cor neutra para o texto */
 }
 
+/* Estilo para os inputs e selects */
+.prato-sala-form input,
+.prato-sala-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    /* Borda padrão */
+    border-radius: 6px;
+    /* Cantos arredondados */
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    /* Fundo claro */
+    transition: border-color 0.3s ease;
+    /* Transição suave */
+}
+
+/* Foco nos inputs e selects */
+.prato-sala-form input:focus,
+.prato-sala-form select:focus {
+    border-color: #6400a0;
+    /* Destaque no foco */
+    outline: none;
+}
+
+/* Estilo para o botão */
+.prato-sala-form button {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #6400a0;
+    /* Borda principal */
+    background-color: white;
+    /* Fundo inicial */
+    color: black;
+    /* Texto inicial */
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    /* Transição completa */
+}
+
+/* Botão desativado */
 .prato-sala-form button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
 
+/* Hover no botão */
 .prato-sala-form button:hover:not(:disabled) {
     background-color: #6400a0;
     color: white;
+}
+
+/* Ajuste para mensagens e detalhes adicionais */
+.prato-sala-form p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Títulos */
+.prato-sala-form h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
