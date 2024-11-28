@@ -80,7 +80,7 @@ div button:disabled {
 /* Efeito hover nos botões */
 div button:hover:not(:disabled) {
     background-color: #45a0;
-    color: white;
+    color: black;
 }
 
 /* Estilo para mensagens e texto adicional */
