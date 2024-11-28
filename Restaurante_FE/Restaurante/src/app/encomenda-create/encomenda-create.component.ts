@@ -1,12 +1,12 @@
 import { EncomendaService } from '../Services/encomenda.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators,ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgIf, NgFor, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-encomenda-create',
   standalone: true,
-  imports: [ReactiveFormsModule, FormsModule ,NgIf, NgFor, CommonModule],
+  imports: [ReactiveFormsModule, FormsModule, NgIf, NgFor, CommonModule],
   templateUrl: './encomenda-create.component.html',
   styleUrls: ['./encomenda-create.component.css']
 })
@@ -29,13 +29,18 @@ export class EncomendaCreateComponent implements OnInit {
       valor: [null, [Validators.required]],
     });
   }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // Carregar as refeicoes
+    this.encomendaSrv.getRefeicoes().subscribe({
+      next: (data) => this.refeicao = data,
+      error: (err) => console.error('Erro ao carregar tipos de prato:', err),
+    });
   }
 
-  // Submissão do formulário
-  onSubmit(): void {
-    if (this.encomendaForm.valid) {
+    // Submissão do formulário
+    onSubmit(): void {
+      if(this.encomendaForm.valid) {
       this.encomendaSrv.createEncomenda(this.encomendaForm.value).subscribe({
         next: () => {
           this.successMessage = 'Encomenda criada com sucesso!';
