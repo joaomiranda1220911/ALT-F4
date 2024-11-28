@@ -5,11 +5,11 @@
         <input id="cliente" formControlName="cliente" type="number" placeholder="ID do Cliente" required />
 
         <label for="refeicao">Refeição</label>
-        <select id="refeicao" formControlName="refeicao" required>
-            <option *ngFor="let refeicao of refeicao" [value]="refeicao.id">
-                {{ refeicao.nome }} - {{ refeicao.preco | currency }}
+        <select id="refeicao" formControlName="refeicaoId">
+            <option *ngFor="let refeicao of refeicao" [value]="refeicao.idRefeicao">
+                {{ refeicao.prato.nome }} ({{ refeicao.tipoRefeicao.nome }})
             </option>
-        </select>
+        </select>        
 
         <label for="valor">Valor</label>
         <input id="valor" formControlName="valor" type="number" placeholder="Valor da Encomenda" required />
