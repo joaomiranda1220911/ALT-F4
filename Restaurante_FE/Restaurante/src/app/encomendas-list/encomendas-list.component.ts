@@ -44,19 +44,15 @@ export class EncomendasListComponent implements OnInit {
   }
 
   loadEncomendas(): void {
-    if (this.clienteId > 0) {  // Verifica se o clienteId é válido
-      // Passa o clienteId para a URL da requisição GET
-      this.encomendaSrv.getEncomendasByCliente(this.clienteId).subscribe({
-        next: (data: Encomenda[]) => {
+    this.encomendaSrv.getEncomendasByCliente(this.clienteId).subscribe({
+      next: (data: Encomenda[]) => {
           this.encomendas = data;
-        },
-        error: (err) => {
+          this.errorMessage = ''; // Limpa mensagens de erro
+      },
+      error: (err) => {
           this.errorMessage = 'Erro ao carregar as encomendas';
           console.error(err);
-        }
-      });
-    } else {
-      this.errorMessage = 'Por favor, insira um clienteId válido';
-    }
+      }
+  });
   }
 }
