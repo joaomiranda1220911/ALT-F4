@@ -2,10 +2,14 @@ import { Routes } from '@angular/router';
 
 import { PratoCreateComponent } from './prato-create/prato-create.component';
 import { PratoListComponent } from './prato-list/prato-list.component';
+import { PratoDefinirComponent } from './prato-definir/prato-definir.component';
+
 import { PratosManagementComponent } from './pratos-management/pratos-management.component';  
+
 
 import { EncomendaCreateComponent } from './encomenda-create/encomenda-create.component';
 import { EncomendasListComponent } from './encomendas-list/encomendas-list.component';
+
 import { EncomendasManagementComponent } from './encomendas-management/encomendas-management.component';
 
 import { CozinhaComponent } from './cozinha/cozinha.component';
@@ -18,6 +22,7 @@ export const routes: Routes = [
     { path: 'cozinha/pratos-management', component: PratosManagementComponent }, 
     { path: 'cozinha/pratos-management/pratos', component: PratoListComponent },
     { path: 'cozinha/pratos-management/create-prato', component: PratoCreateComponent },
+    { path: 'cozinha/pratos-management/definir-prato', component: PratoDefinirComponent},
 
     // Rota para a sala
     { path: 'sala', component: SalaComponent },  

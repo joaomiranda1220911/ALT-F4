@@ -50,6 +50,7 @@ export class PratoCreateComponent implements OnInit {
           this.pratoForm.reset(); // Reseta o formulário após submissão bem-sucedida
         },
         error: (err) => {
+          console.log('Dados do formulário:', this.pratoForm.value);
           this.errorMessage = 'Erro ao criar prato. Tente novamente.';
           console.error(err);
         },

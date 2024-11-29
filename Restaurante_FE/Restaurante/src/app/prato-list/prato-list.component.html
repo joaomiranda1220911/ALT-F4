@@ -1,31 +1,24 @@
-<div class="container">
-    <h2>Lista de Pratos</h2>
-    <div *ngIf="errorMessage" class="alert alert-danger">
-        {{ errorMessage }}
+<div>
+    <h3>Procurar Prato</h3>
+    <!-- Caixa de input para o utilizador inserir o ID -->
+    <label for="pratoId">ID do Prato:</label>
+    <input type="number" id="pratoId" [(ngModel)]="pratoId" />
+
+    <!-- Botão para buscar o prato -->
+    <button (click)="loadPratoById(pratoId)">Procurar</button>
+
+    <div *ngIf="prato; else loading">
+        <h3>{{ prato.nome }}</h3>
+        <strong>Tipo de Prato:</strong> {{ getTipoPratoNome(prato.tipoPratoId) }} <br />
+        <strong>Estado:</strong> {{ getEstadoTexto(prato.ativo) }} <br />
+        <button (click)="toggleEstado(prato)">Alterar Estado</button> <!-- Botão para alternar estado -->
     </div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Tipo de Prato</th>
-                <th>Estado</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let prato of pratos">
-                <td>{{ prato.idPrato }}</td>
-                <td>{{ prato.nome }}</td>
-                <td>{{ prato.tipoPratoId }}</td>
-                <td>{{ prato.ativo ? 'Ativo' : 'Inativo' }}</td>
-                <td>
-                    <button class="btn" [ngClass]="prato.ativo ? 'btn-danger' : 'btn-success'"
-                        (click)="toggleEstado(prato)">
-                        {{ prato.ativo ? 'Inativar' : 'Ativar' }}
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+
+    <ng-template #loading>
+        <p>O seu prato está a ser preparado...</p>
+    </ng-template>
+
+    <div *ngIf="errorMessage">
+        <p>{{ errorMessage }}</p>
+    </div>
 </div>
