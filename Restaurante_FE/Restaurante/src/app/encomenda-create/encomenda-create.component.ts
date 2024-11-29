@@ -36,7 +36,7 @@ export class EncomendaCreateComponent implements OnInit {
   }
 
   // Envia a encomenda
-  onSubmit(): void {
+  onSubmit() {
     if (this.encomendaForm.valid) {
       const encomendaData = this.encomendaForm.value;
       const encomenda = {
@@ -47,15 +47,19 @@ export class EncomendaCreateComponent implements OnInit {
 
       this.encomendaSrv.createEncomenda(encomenda).subscribe(
         response => {
+          // Exibe mensagem de sucesso
           this.successMessage = 'Encomenda criada com sucesso!';
+          this.errorMessage = ''; // Limpa a mensagem de erro
           this.saldoInsuficiente = false;
           this.encomendaForm.reset();
         },
         error => {
-          if (error.status === 400) {
+          if (error.status === 400 && error.error.message === 'Valor da encomenda deve ser igual ou superior ao preço do prato') {
+            this.errorMessage = 'Valor da encomenda deve ser igual ou superior ao preço do prato';
+          } else if (error.status === 400) {
             this.saldoInsuficiente = true;
           } else {
-            this.successMessage = '';
+            this.successMessage = ''; // Limpar a mensagem de sucesso se ocorrer erro
             alert('Erro ao criar a encomenda.');
           }
         }

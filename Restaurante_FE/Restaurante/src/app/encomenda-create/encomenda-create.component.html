@@ -11,7 +11,7 @@
       <div class="form-group">
         <label for="refeicaoId">Selecione a Refeição:</label>
         <select id="refeicaoId" class="form-control" formControlName="refeicaoId" required>
-          <option value="" disabled selected>Selecione uma refeição</option> <!-- Placeholder -->
+          <option value="" disabled selected>Selecione uma refeição</option>
           <option *ngFor="let refeicao of refeicoes" [value]="refeicao.idRefeicao">
             {{ refeicao.prato.nome }} - {{ refeicao.tipoRefeicao.nome }}
           </option>
@@ -30,8 +30,13 @@
       {{ successMessage }}
     </div>
   
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  
     <div *ngIf="saldoInsuficiente" class="alert alert-danger mt-3">
       <strong>Erro!</strong> Saldo insuficiente para realizar a encomenda.
     </div>
+  
   </div>
   
