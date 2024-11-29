@@ -4,12 +4,12 @@
         <h3>Procurar Cliente</h3>
 
         <!-- Caixa de input para o utilizador inserir o ID do cliente -->
-        <label for="clienteNif">ID do Cliente:</label>
+        <label for="clienteNif">NIF do Cliente:</label>
         <input 
-        id="clienteNif"
+        id="nif"
         type="string" 
-        [(ngModel)]="selectedclienteNif" 
-        name="clienteNif" required
+        [(ngModel)]="selectedNif" 
+        name="nif" required
         placeholder="Insira o nif do cliente" />
 
         <!-- Campo para introduzir o preço -->
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Botão de submissão -->
-        <button type="submit" [disabled]="!selectedclienteNif || valor === undefined || valor === null || selectedclienteNif === ''">        
+        <button type="submit" [disabled]="!selectedNif || valor === undefined || valor === null || selectedNif === ''">        
             Carregar conta cliente
         </button>
     </form>

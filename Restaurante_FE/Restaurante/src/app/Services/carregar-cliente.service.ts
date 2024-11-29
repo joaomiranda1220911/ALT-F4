@@ -10,8 +10,8 @@ export class CarregarClienteService {
 
   constructor(private http: HttpClient) {}
 
-  carregarSaldo(clienteNif: string, valor: number): Observable<void> {
-    const url = `${this.apiUrl}/${clienteNif}/carregar`;
+  carregarSaldo(selectedNif: string, valor: number): Observable<void> {
+    const url = `${this.apiUrl}/${selectedNif}/carregar`;
     return this.http.patch<void>(url, { valor });
   }
 }

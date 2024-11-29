@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./carregar-cliente.component.css']
 })
 export class CarregarClienteComponent {
-  selectedclienteNif: string | undefined;  // ID do cliente selecionado
+  selectedNif: string | undefined;  // nif do cliente selecionado
   valor: number | undefined;  // valor do carregamento 
 
   // Injeção dos serviços
@@ -20,23 +20,19 @@ export class CarregarClienteComponent {
     private carregarClienteService: CarregarClienteService,
   ) { }
 
-
   onSubmit(): void {
-    if (this.selectedclienteNif && this.valor != null && !isNaN(this.valor)) {
+    if (this.selectedNif && this.valor != null && !isNaN(this.valor)) {
       // Passa os dados para o carregarClienteService
-      this.carregarClienteService.carregarSaldo(this.selectedclienteNif, this.valor).subscribe(
-        response => {
-          console.log('Conta do cliente carregada com sucesso:', response);
+      this.carregarClienteService.carregarSaldo(this.selectedNif, this.valor).subscribe({
+        next: (response) => {
+          console.log('Conta carregada com sucesso:', response);
           alert('Conta carregada com sucesso!');
         },
-        error => {
+        error: (error) => {
           console.error('Erro ao carregar conta:', error);
           alert('Ocorreu um erro ao carregar conta. Tente novamente.');
         }
-      );
-    } else {
-      console.log('Por favor, preencha todos os campos!');
-      alert('Por favor, preencha todos os campos!');
+      });      
     }
   }
 }
