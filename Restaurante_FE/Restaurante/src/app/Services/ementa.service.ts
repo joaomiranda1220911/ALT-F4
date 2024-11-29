@@ -15,7 +15,7 @@ export class EmentaService {
     constructor(private webApiClient: HttpClient) { }
 
     // US006 - Consultar a ementa disponível para a refeição que está sendo servida
-    getEmentaDisponivel(): Observable<any> {
+    getEmentaDisponivel(data: string, tipoRefeicaoId: number): Observable<any> {
         // Constroi a URL para consultar a ementa atual
         const url = `${this.apiUrl}/consultarAtual`;
 

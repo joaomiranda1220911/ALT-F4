@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {tipoDeRefeicaoService} from '../Services/tipoDeRefeicao.service';
 import { EmentaService } from '../Services/ementa.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-ementa-consultar',
@@ -12,24 +10,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class EmentaConsultarComponent implements OnInit {
-  ementaForm: FormGroup;
-  ementaDisponivel: any[] = []; //Lista pratos da emneta
-  errorMessage: string = ''; //Mensagem de erro
-  successMessage: string = ''; 
-  tipoRefeicao: any[] = [];
+  ementa: any;
+  tipoRefeicaoId: number = 1; //Exemplo: ID do tipo de refeição
+  data: string = '2024-11-29'; //Exemplo: data atual ou selecionada
 
- constructor(
-  private fb: FormBuilder,
-  private ementaService: EmentaService,
-  private tipoDeRefeicaoService: tipoDeRefeicaoService,
-  private route: ActivatedRoute
- ){}
+  constructor(private ementaService: EmentaService) { }
 
-  ngOnInit(): void {
-    this.ementaForm.this.fb.group({
-      data: ['', Validators.required],
-      tipoDeRefeicaoId: [null, Validators.required]
-    });
-      
+
+  ngOnInit() {
+    this.getEmentaDisponivel();
+  }
+
+  getEmentaDisponivel() {
+    this.ementaService.getEmentaDisponivel(this.data, this.tipoRefeicaoId)
+      .subscribe({
+        next: data => this.ementa = data,
+        error: error => console.error('Erro a carregar a ementa', error),
+        complete: () => console.log('Consulta de ementa concluída.')
+      });
   }
 }
