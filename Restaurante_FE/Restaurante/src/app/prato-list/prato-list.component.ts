@@ -46,13 +46,16 @@ export class PratoListComponent implements OnInit {
       return;
     }
 
+    // Limpa as informações do prato anterior antes de procurar um novo
+    this.prato = null;
+    this.errorMessage = '';
+
     this.pratoService.getPratoById(id).subscribe({
       next: (data) => {
         this.prato = data; // Armazena o prato encontrado
-        this.errorMessage = ''; // Limpa mensagens de erro
       },
       error: (err) => {
-        this.errorMessage = 'Erro ao carregar o prato.';
+        this.errorMessage = 'O prato escolhido não existe na nossa cozinha.';
         console.error(err);
       },
     });

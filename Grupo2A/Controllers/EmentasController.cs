@@ -10,16 +10,18 @@ using Cozinha_BE.Model.DTO;
 using Grupo2A.Services;
 
 namespace Grupo2A.Controllers
+{
 
     public class EmentasController : ControllerBase
-{
-    private readonly CozinhaContext _context;
-    private readonly EmentasService _service;
-
-    public EmentasController(CozinhaContext context)
     {
-        _context = context;
-        _service = new EmentasService(context);
+        private readonly CozinhaContext _context;
+        private readonly EmentasService _service;
+
+        public EmentasController(CozinhaContext context)
+        {
+            _context = context;
+            _service = new EmentasService(context);
+        }
     }
 }
 

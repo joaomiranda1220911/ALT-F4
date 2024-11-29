@@ -4,7 +4,7 @@ export interface TipoPrato {
 }
 
 export interface Ingrediente {
-    id: number;
+    idingrediente: number;
     nome: string;
     ativo: boolean;
 }

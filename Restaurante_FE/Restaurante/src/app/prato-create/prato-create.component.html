@@ -2,22 +2,25 @@
 
     <form [formGroup]="pratoForm" (ngSubmit)="onSubmit()">
         <label for="nome">Nome do Prato</label>
-        <input id="nome" formControlName="nome" type="text"/>
+        <input id="nome" formControlName="nome" type="text" />
         <div *ngIf="pratoForm.get('nome')?.invalid && pratoForm.get('nome')?.touched">
         </div>
 
         <label for="tipoPrato">Tipo de Prato</label>
         <select id="tipoPrato" formControlName="tipoPratoId">
-            <option *ngFor="let tipo of tiposDePrato" [value]="tipo.id">{{ tipo.nome }}</option>
-        </select>
-
-        <label for="ingredientes">Ingredientes</label>
-        <select id="ingredientes" formControlName="ingredientesIds" multiple>
-            <option *ngFor="let ingrediente of ingredientes" [value]="ingrediente.id">
-                {{ ingrediente.nome }}
+            <option [value]="null" disabled selected>Selecione um tipo de prato</option>
+            <option *ngFor="let tipo of tiposDePrato" [value]="tipo.idTipoPrato">
+                {{ tipo.nome }}
             </option>
         </select>
 
+        <label for="ingredientes">Ingredientes</label>
+        <select formControlName="ingredientesIds" multiple>
+            <option *ngFor="let ingrediente of ingredientes" [value]="ingrediente.idIngrediente">
+                {{ ingrediente.nome }}
+            </option>
+        </select>
+        
         <label for="receita">Receita</label>
         <textarea id="receita" formControlName="receita"></textarea>
 

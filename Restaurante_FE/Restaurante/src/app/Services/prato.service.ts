@@ -39,7 +39,7 @@ export class PratoService {
         return this.http.get<Prato[]>(this.apiUrl);
     }
 
-    // Buscar um prato por ID
+    // Procurar um prato por ID
     getPratoById(id: number): Observable<Prato> {
         return this.http.get<Prato>(`${this.apiUrl}/${id}`);
     }
