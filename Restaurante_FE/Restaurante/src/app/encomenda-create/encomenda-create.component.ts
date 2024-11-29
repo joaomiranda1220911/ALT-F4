@@ -36,7 +36,7 @@ export class EncomendaCreateComponent implements OnInit {
   }
 
   // Envia a encomenda
-  onSubmit() {
+  onSubmit(): void {
     if (this.encomendaForm.valid) {
       const encomendaData = this.encomendaForm.value;
       const encomenda = {
@@ -47,9 +47,7 @@ export class EncomendaCreateComponent implements OnInit {
 
       this.encomendaSrv.createEncomenda(encomenda).subscribe(
         response => {
-          // Exibe mensagem de sucesso
           this.successMessage = 'Encomenda criada com sucesso!';
-          // Limpa a mensagem de erro e o formulário, se necessário
           this.saldoInsuficiente = false;
           this.encomendaForm.reset();
         },
@@ -57,7 +55,7 @@ export class EncomendaCreateComponent implements OnInit {
           if (error.status === 400) {
             this.saldoInsuficiente = true;
           } else {
-            this.successMessage = ''; // Limpar a mensagem de sucesso se ocorrer erro
+            this.successMessage = '';
             alert('Erro ao criar a encomenda.');
           }
         }

@@ -10,8 +10,12 @@
   
       <div class="form-group">
         <label for="refeicaoId">Selecione a Refeição:</label>
-        <input id="refeicaoId" class="form-control" formControlName="refeicaoId" placeholder="Digite o ID da Refeição" required>
-          <option *ngFor="let refeicao of refeicoes" [value]="refeicao.id">{{ refeicao.nome }}</option>
+        <select id="refeicaoId" class="form-control" formControlName="refeicaoId" required>
+          <option value="" disabled selected>Selecione uma refeição</option> <!-- Placeholder -->
+          <option *ngFor="let refeicao of refeicoes" [value]="refeicao.idRefeicao">
+            {{ refeicao.prato.nome }} - {{ refeicao.tipoRefeicao.nome }}
+          </option>
+        </select>
       </div>
       
       <div class="form-group">
