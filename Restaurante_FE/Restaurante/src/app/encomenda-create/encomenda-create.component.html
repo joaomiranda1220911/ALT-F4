@@ -1,25 +1,33 @@
 <div class="encomenda-form">
 
+    <h2>Encomendar Prato</h2>
+    
     <form [formGroup]="encomendaForm" (ngSubmit)="onSubmit()">
-        <label for="cliente">Cliente</label>
-        <input id="cliente" formControlName="cliente" type="number" placeholder="ID do Cliente" required />
-
-        <label for="refeicao">Refeição</label>
-        <select id="refeicao" formControlName="refeicaoId">
-            <option *ngFor="let refeicao of refeicao" [value]="refeicao.idRefeicao">
-                {{ refeicao.prato.nome }} ({{ refeicao.tipoRefeicao.nome }})
-            </option>
-        </select>        
-
-        <label for="valor">Valor</label>
-        <input id="valor" formControlName="valor" type="number" placeholder="Valor da Encomenda" required />
-
-        <label for="data">Data</label>
-        <input id="data" formControlName="data" type="date" placeholder="Data da Encomenda" required />
-
-        <button type="submit" [disabled]="encomendaForm.invalid">Criar Encomenda</button>
+      <div class="form-group">
+        <label for="clienteNif">NIF do Cliente:</label>
+        <input type="text" id="clienteNif" class="form-control" formControlName="clienteNif" placeholder="Digite o NIF" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="refeicaoId">Selecione a Refeição:</label>
+        <input id="refeicaoId" class="form-control" formControlName="refeicaoId" placeholder="Digite o ID da Refeição" required>
+          <option *ngFor="let refeicao of refeicoes" [value]="refeicao.id">{{ refeicao.nome }}</option>
+      </div>
+      
+      <div class="form-group">
+        <label for="valor">Valor da Encomenda:</label>
+        <input type="number" id="valor" class="form-control" formControlName="valor" placeholder="Digite o valor" required />
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="!encomendaForm.valid">Criar Encomenda</button>
     </form>
-
-    <p class="success-message" *ngIf="successMessage">{{ successMessage }}</p>
-    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
-</div>
+  
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+      {{ successMessage }}
+    </div>
+  
+    <div *ngIf="saldoInsuficiente" class="alert alert-danger mt-3">
+      <strong>Erro!</strong> Saldo insuficiente para realizar a encomenda.
+    </div>
+  </div>
+  
