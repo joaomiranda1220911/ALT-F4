@@ -1,39 +1,36 @@
 <div class="prato-sala-form-container">
-    <h2>Definir PratoSala</h2>
-    <form class="prato-sala-form" (ngSubmit)="onSubmit()">
-      <!-- Dropdown para selecionar o prato -->
-      <div class="form-group">
-        <label for="prato">Prato:</label>
-        <select
-          id="prato"
-          [(ngModel)]="selectedPrato"
-          name="prato"
-          required
-        >
-          <option *ngFor="let prato of pratos" [ngValue]="prato">
-            {{ prato.nome }}
-          </option>
-        </select>
-      </div>
-  
-      <!-- Campo para introduzir o preço -->
-      <div class="form-group">
-        <label for="preco">Preço:</label>
-        <input
-          id="preco"
-          type="number"
-          [(ngModel)]="preco"
-          name="preco"
-          required
-          placeholder="Insira o preço"
-        />
-      </div>
-  
-      <!-- Botão de submissão -->
-      <button type="submit" [disabled]="!selectedPrato || !preco">
-        Criar PratoSala
-      </button>
-    </form>
-  </div>
-  
+  <h2>Definir Preço do Prato</h2>
+  <form class="prato-sala-form" (ngSubmit)="onSubmit()">
+    <h3>Procurar Prato</h3>
+
+    <!-- Caixa de input para o utilizador inserir o ID do prato -->
+    <label for="pratoId">ID do Prato:</label>
+    <input 
+      type="number" 
+      id="pratoId" 
+      [(ngModel)]="selectedPratoId" 
+      name="pratoId" 
+      required
+      placeholder="Insira o ID do prato" 
+    />
+    
+    <!-- Campo para introduzir o preço -->
+    <div class="form-group">
+      <label for="preco">Preço:</label>
+      <input
+        id="preco"
+        type="number"
+        [(ngModel)]="preco"
+        name="preco"
+        required
+        placeholder="Insira o preço"
+      />
+    </div>
+
+    <!-- Botão de submissão -->
+    <button type="submit" [disabled]="!selectedPratoId || preco === undefined">
+      Criar PratoSala
+    </button>
+  </form>
+</div>
 
