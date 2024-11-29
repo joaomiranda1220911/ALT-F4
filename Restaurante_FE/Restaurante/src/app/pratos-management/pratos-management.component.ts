@@ -13,22 +13,34 @@ import { PratoDefinirComponent } from '../prato-definir/prato-definir.component'
   styleUrls: ['./pratos-management.component.css'],
 })
 export class PratosManagementComponent {
-  mostrarFormulario: boolean = false;  // Controla se o formulário de criação é exibido
-  mostrarFormularioListar: boolean = false;  // Controla se a lista de pratos é exibida
-  mostrarFormularioDefinirPrato: boolean = false // Controla se o formulario de definir prato é exibida
+  mostrarFormulario: boolean = false; // Controla se o formulário de criação é exibido
+  mostrarFormularioListar: boolean = false; // Controla se a lista de pratos é exibida
+  mostrarFormularioDefinirPrato: boolean = false; // Controla se o formulário de definir prato é exibido
 
-  // Alterna a exibição do formulário de criação de prato
+  // Exibe o formulário de criação e fecha os outros
   toggleFormulario(): void {
-    this.mostrarFormulario = !this.mostrarFormulario;
+    this.mostrarFormulario = !this.mostrarFormulario; // Altera o valor do mostrarFormulario para o oposto do seu valor atual
+    if (this.mostrarFormulario) { // Verifica se, após a alteração, o valor de mostrarFormulario ficou true
+      this.mostrarFormularioListar = false; // Fecha o formulário 
+      this.mostrarFormularioDefinirPrato = false; // Fecha o formulário 
+    }
   }
 
-  // Alterna a exibição da lista de pratos
+  // Exibe a lista de pratos e fecha os outros
   toggleFormularioListar(): void {
-    this.mostrarFormularioListar = !this.mostrarFormularioListar;
+    this.mostrarFormularioListar = !this.mostrarFormularioListar; // Altera o valor do mostrarFormulario para o oposto do seu valor atual
+    if (this.mostrarFormularioListar) { // Verifica se, após a alteração, o valor de mostrarFormulario ficou true
+      this.mostrarFormulario = false; // Fecha o formulário 
+      this.mostrarFormularioDefinirPrato = false; // Fecha o formulário 
+    }
   }
 
-  // Alterna a exibição do formulário de definir prato
+  // Exibe o formulário de definir prato e fecha os outros
   toggleFormularioDefinirPrato(): void {
-    this.mostrarFormularioDefinirPrato = !this.mostrarFormularioDefinirPrato;
+    this.mostrarFormularioDefinirPrato = !this.mostrarFormularioDefinirPrato; // Altera o valor do mostrarFormulario para o oposto do seu valor atual
+    if (this.mostrarFormularioDefinirPrato) { // Verifica se, após a alteração, o valor de mostrarFormulario ficou true
+      this.mostrarFormulario = false; // Fecha o formulário 
+      this.mostrarFormularioListar = false; // Fecha o formulário 
+    }
   }
 }
