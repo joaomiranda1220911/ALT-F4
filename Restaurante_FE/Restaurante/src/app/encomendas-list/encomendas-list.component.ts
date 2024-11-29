@@ -13,9 +13,10 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 })
 export class EncomendasListComponent implements OnInit {
   encomendaFormByCliente: FormGroup;
-  clienteId: number = 0; // Inicializa com um valor padrão
+  clienteId: number | null = null; // Inicializa como null
   encomendas: Encomenda[] = [];
   errorMessage: string = '';
+  isSubmitted: boolean = false; // Variável para controlar submissão
 
   constructor(private fb: FormBuilder, private encomendaSrv: EncomendaService) {
     // Inicializa o formulário com validações
@@ -44,15 +45,21 @@ export class EncomendasListComponent implements OnInit {
   }
 
   loadEncomendas(): void {
-    this.encomendaSrv.getEncomendasByCliente(this.clienteId).subscribe({
-      next: (data: Encomenda[]) => {
+    if (this.clienteId !== null) {
+      this.isSubmitted = true; // Marca como submetido
+      this.encomendaSrv.getEncomendasByCliente(this.clienteId).subscribe({
+        next: (data: Encomenda[]) => {
           this.encomendas = data;
-          this.errorMessage = ''; // Limpa mensagens de erro
-      },
-      error: (err) => {
+          this.errorMessage = ''; 
+        },
+        error: (err) => {
+          this.encomendas = []; // Garante que limpa a lista
           this.errorMessage = 'Erro ao carregar as encomendas';
           console.error(err);
-      }
-  });
+        },
+      });
+    } else {
+      this.errorMessage = 'Insira um NIF válido para carregar as encomendas.';
+    }
   }
 }
