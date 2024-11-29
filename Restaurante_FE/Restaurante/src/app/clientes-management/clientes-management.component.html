@@ -6,4 +6,9 @@
     <app-carregar-cliente></app-carregar-cliente>
   </div>
 
+  <button class="btn" (click)="toggleFormularioPerfil()">Consultar Dados do Cliente</button>
+
+  <div *ngIf="mostrarFormularioPerfil">
+    <app-perfil-cliente></app-perfil-cliente>
+  </div>
 </div>

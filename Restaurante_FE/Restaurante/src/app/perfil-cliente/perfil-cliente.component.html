@@ -1,0 +1,23 @@
+<div class="consultar-cliente-form">
+  <h2>Consultar Dados do Cliente</h2>
+
+  <form (ngSubmit)="consultarCliente()">
+    <label for="nif">NIF do Cliente:</label>
+    <input type="text" id="nif" [(ngModel)]="nif" name="nif" required />
+    <button type="submit" class="btn">Consultar</button>
+  </form>
+
+  <div class="dados">
+    <div *ngIf="cliente">
+      <h3>Dados do Cliente</h3>
+      <p><strong>Nome:</strong> {{ cliente.name }}</p>
+      <p><strong>NIF:</strong> {{ cliente.nif }}</p>
+      <p><strong>Email:</strong> {{ cliente.email }}</p>
+      <p><strong>Saldo:</strong> {{ cliente.balance }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="erro" class="erro">
+    <p>Erro: Cliente não encontrado com o NIF fornecido.</p>
+  </div>
+</div>
