@@ -1,9 +1,9 @@
 <div>
-    <h2>Área de Cliente</h2>
+  <h2>Área de Clientes</h2>
+  <button class="btn" (click)="toggleFormularioCarregar()">Carregar conta cliente</button>
 
-    <button class="btn" (click)="toggleFormularioCarregar()">Carregar conta cliente</button>
-    
-    <div *ngIf="mostrarFormularioCarregar">
-      <app-carregar-cliente></app-carregar-cliente>
-    </div>
+  <div *ngIf="mostrarFormularioCarregar">
+    <app-carregar-cliente></app-carregar-cliente>
   </div>
+
+</div>

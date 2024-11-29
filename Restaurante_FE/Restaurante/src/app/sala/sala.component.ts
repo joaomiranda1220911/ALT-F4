@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class SalaComponent { 
   constructor(private router: Router) { }
 
+  navigateToClientesManagement(): void {
+    this.router.navigate(['/sala/clientes-management']);
+  }
 navigateToEncomendasManagement(): void {
   this.router.navigate(['/sala/encomendas-management']);
 }

@@ -1,0 +1,105 @@
+/* Estilo do formulário de PratoSala */
+.carregar-cliente-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Espaçamento entre os elementos */
+    width: 100%;
+    max-width: 400px;
+    /* Largura máxima */
+    margin: 0 auto;
+    /* Centraliza o formulário */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    /* Sombra suave */
+    box-sizing: border-box;
+}
+
+/* Estilo para os grupos de campo */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Ajusta o espaçamento interno */
+}
+
+/* Estilo para os rótulos */
+.carregar-cliente-form label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    /* Cor neutra para o texto */
+}
+
+/* Estilo para os inputs e selects */
+.carregar-cliente-form input,
+.carregar-cliente-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    /* Borda padrão */
+    border-radius: 6px;
+    /* Cantos arredondados */
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-color: white;
+    /* Fundo claro */
+    transition: border-color 0.3s ease;
+    /* Transição suave */
+}
+
+/* Foco nos inputs e selects */
+.carregar-cliente-form input:focus,
+.carregar-cliente-form select:focus {
+    border-color: #6400a0;
+    /* Destaque no foco */
+    outline: none;
+}
+
+/* Estilo para o botão */
+.carregar-cliente-form button {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #6400a0;
+    /* Borda principal */
+    background-color: white;
+    /* Fundo inicial */
+    color: black;
+    /* Texto inicial */
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    /* Transição completa */
+}
+
+/* Botão desativado */
+.carregar-cliente-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Hover no botão */
+.carregar-cliente-form button:hover:not(:disabled) {
+    background-color: #6400a0;
+    color: white;
+}
+
+/* Ajuste para mensagens e detalhes adicionais */
+.carregar-cliente-form p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Títulos */
+.carregar-cliente-form h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}

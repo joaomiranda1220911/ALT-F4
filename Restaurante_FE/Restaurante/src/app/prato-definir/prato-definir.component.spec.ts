@@ -29,4 +29,4 @@ export class PratoSalaComponent {
       alert('Por favor, preencha todos os campos.');
     }
   }
-  
+}
