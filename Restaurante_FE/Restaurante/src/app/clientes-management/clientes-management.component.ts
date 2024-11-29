@@ -19,11 +19,21 @@ export class ClientesManagementComponent {
 
   // Alterna a exibição do formulário de definir prato
   toggleFormularioCarregar(): void {
-    this.mostrarFormularioCarregar = true;  // Sempre abre o formulário de carregar
-    this.mostrarFormularioPerfil = false;   // Fecha o formulário de perfil se estiver aberto
+    if (this.mostrarFormularioCarregar) {
+      this.mostrarFormularioCarregar = false; // Fecha se já estiver aberto
+    } else {
+      this.mostrarFormularioCarregar = true;  // Abre o formulário de carregar
+      this.mostrarFormularioPerfil = false;  // Fecha o formulário de perfil
+    }
   }
+
+  // Alterna a exibição do formulário de perfil do cliente
   toggleFormularioPerfil(): void {
-    this.mostrarFormularioPerfil = true;  // Sempre abre o formulário de perfil
-    this.mostrarFormularioCarregar = false;  // Fecha o formulário de carregar se estiver aberto
+    if (this.mostrarFormularioPerfil) {
+      this.mostrarFormularioPerfil = false; // Fecha se já estiver aberto
+    } else {
+      this.mostrarFormularioPerfil = true;  // Abre o formulário de perfil
+      this.mostrarFormularioCarregar = false; // Fecha o formulário de carregar
+    }
   }
 }
