@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 20px;
   /* Ajuste o espaçamento entre os campos */
-  width: 100%;
   max-width: 400px;
   /* Aumentei a largura máxima para melhorar o layout */
   margin: 0 auto;

@@ -2,13 +2,13 @@
   <h2>Listar Encomendas por Cliente</h2>
 
   <form (ngSubmit)="loadEncomendas()">
-    <label for="clienteId">Cliente ID:</label>
     <input
       type="number"
       id="clienteId"
       [(ngModel)]="clienteId"
       name="clienteId"
-      placeholder="Insira o ID do cliente"
+      placeholder="Insira o NIF do cliente"
+      [value]="clienteId === null ? '' : clienteId"
       required
     />
     <button type="submit">Carregar Encomendas</button>
@@ -18,7 +18,7 @@
     {{ errorMessage }}
   </div>
 
-  <div *ngIf="encomendas.length > 0; else noEncomendas">
+  <div *ngIf="isSubmitted && encomendas.length > 0; else noEncomendas">
     <ul>
       <li *ngFor="let encomenda of encomendas">
         <strong>Data:</strong> {{ encomenda.data }} <br />
@@ -29,6 +29,8 @@
   </div>
 
   <ng-template #noEncomendas>
-    <p>Nenhuma encomenda encontrada para o cliente.</p>
+    <p *ngIf="isSubmitted && encomendas.length === 0">
+      Nenhuma encomenda encontrada para o cliente.
+    </p>
   </ng-template>
 </div>

@@ -14,12 +14,19 @@ export class EncomendasManagementComponent {
   mostrarFormularioCriar: boolean = false;  // Variável para controlar a exibição do formulário
   mostrarFormularioListar: boolean = false;  // Variável para controlar a exibição do formulário
 
-  // Função para alternar a exibição do formulário
+  // Alterna a exibição do formulário de criar encomendas
   toggleFormularioCriar() {
-    this.mostrarFormularioCriar = !this.mostrarFormularioCriar;
+    this.mostrarFormularioCriar = !this.mostrarFormularioCriar; // Altera o valor do mostrarFormulario para o oposto do seu valor atual
+    if (this.mostrarFormularioCriar) { // Verifica se, após a alteração, o valor de mostrarFormulario ficou true
+      this.mostrarFormularioListar = false; // Fecha o formulário 
+    }
   }
 
+  // Alterna a exibição do formulário de listar encomendas
   toggleFormularioListar() {
-    this.mostrarFormularioListar = !this.mostrarFormularioListar;
+    this.mostrarFormularioListar = !this.mostrarFormularioListar; // Altera o valor do mostrarFormulario para o oposto do seu valor atual
+    if (this.mostrarFormularioListar) { // Verifica se, após a alteração, o valor de mostrarFormulario ficou true
+      this.mostrarFormularioCriar = false; // Fecha o formulário 
+    }
   }
 }

@@ -1,0 +1,31 @@
+<div class="carregar-cliente-form-container">
+    <h2>Definir Preço do Prato</h2>
+    <form class="carregar-cliente-form" (ngSubmit)="onSubmit()">
+        <h3>Procurar Cliente</h3>
+
+        <!-- Caixa de input para o utilizador inserir o ID do cliente -->
+        <label for="clienteNif">NIF do Cliente:</label>
+        <input 
+        id="nif"
+        type="string" 
+        [(ngModel)]="selectedNif" 
+        name="nif" required
+        placeholder="Insira o nif do cliente" />
+
+        <!-- Campo para introduzir o preço -->
+        <div class="form-group">
+            <label for="valor">Preço:</label>
+            <input 
+            id="valor" 
+            type="number" 
+            [(ngModel)]="valor" 
+            name="valor" 
+            required placeholder="Insira o valor" />
+        </div>
+
+        <!-- Botão de submissão -->
+        <button type="submit" [disabled]="!selectedNif || valor === undefined || valor === null || selectedNif === ''">        
+            Carregar conta cliente
+        </button>
+    </form>
+</div>

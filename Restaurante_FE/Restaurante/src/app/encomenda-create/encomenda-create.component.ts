@@ -13,46 +13,57 @@ import { NgIf, NgFor, CommonModule } from '@angular/common';
 
 export class EncomendaCreateComponent implements OnInit {
   encomendaForm: FormGroup;
-  nifCliente: any[] = [];
-  refeicao: any[] = [];
-  valor: any[] = [];
-  data: string = '';
+  saldoInsuficiente: boolean = false;
+  refeicoes: any[] = [];
   successMessage = '';
   errorMessage = '';
 
   constructor(private fb: FormBuilder, private encomendaSrv: EncomendaService) {
     // Inicializa o formulário com validações
     this.encomendaForm = this.fb.group({
-      nifCliente: [null, [Validators.required]],
-      refeicao: [null, [Validators.required]],
-      data: [[], [Validators.required]],
-      valor: [null, [Validators.required]],
+      clienteNif: ['', [Validators.required]],
+      refeicaoId: ['', [Validators.required]],
+      valor: ['', [Validators.required, Validators.min(1)]]
     });
   }
 
   ngOnInit(): void {
     // Carregar as refeicoes
     this.encomendaSrv.getRefeicoes().subscribe({
-      next: (data) => this.refeicao = data,
+      next: (data) => this.refeicoes = data,
       error: (err) => console.error('Erro ao carregar tipos de prato:', err),
     });
   }
 
-    // Submissão do formulário
-    onSubmit(): void {
-      if(this.encomendaForm.valid) {
-      this.encomendaSrv.createEncomenda(this.encomendaForm.value).subscribe({
-        next: () => {
+  // Envia a encomenda
+  onSubmit() {
+    if (this.encomendaForm.valid) {
+      const encomendaData = this.encomendaForm.value;
+      const encomenda = {
+        cliente: encomendaData.clienteNif,
+        refeicao: encomendaData.refeicaoId,
+        valor: encomendaData.valor,
+      };
+
+      this.encomendaSrv.createEncomenda(encomenda).subscribe(
+        response => {
+          // Exibe mensagem de sucesso
           this.successMessage = 'Encomenda criada com sucesso!';
-          this.encomendaForm.reset(); // Reseta o formulário após submissão bem-sucedida
+          this.errorMessage = ''; // Limpa a mensagem de erro
+          this.saldoInsuficiente = false;
+          this.encomendaForm.reset();
         },
-        error: (err) => {
-          this.errorMessage = 'Erro ao criar encomenda. Tente novamente.';
-          console.error(err);
-        },
-      });
-    } else {
-      this.errorMessage = 'Preencha todos os campos obrigatórios.';
+        error => {
+          if (error.status === 400 && error.error.message === 'Valor da encomenda deve ser igual ou superior ao preço do prato') {
+            this.errorMessage = 'Valor da encomenda deve ser igual ou superior ao preço do prato';
+          } else if (error.status === 400) {
+            this.saldoInsuficiente = true;
+          } else {
+            this.successMessage = ''; // Limpar a mensagem de sucesso se ocorrer erro
+            alert('Erro ao criar a encomenda.');
+          }
+        }
+      );
     }
   }
 }

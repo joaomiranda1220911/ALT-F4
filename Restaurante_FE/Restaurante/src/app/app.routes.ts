@@ -14,6 +14,8 @@ import { EncomendasManagementComponent } from './encomendas-management/encomenda
 
 import { CozinhaComponent } from './cozinha/cozinha.component';
 import { SalaComponent } from './sala/sala.component';  
+import { ClientesManagementComponent } from './clientes-management/clientes-management.component';
+import { CarregarClienteComponent } from './carregar-cliente/carregar-cliente.component';
 
 
 export const routes: Routes = [
@@ -26,6 +28,9 @@ export const routes: Routes = [
 
     // Rota para a sala
     { path: 'sala', component: SalaComponent },  
+    { path: 'sala/clientes-management', component: ClientesManagementComponent},
+    { path: 'sala/clientes-management', component: CarregarClienteComponent},
+
     { path: 'sala/encomendas-management', component: EncomendasManagementComponent },
     { path: 'sala/encomendas-management/encomendas', component: EncomendasListComponent },
     { path: 'sala/encomendas-management/create-encomenda', component: EncomendaCreateComponent }

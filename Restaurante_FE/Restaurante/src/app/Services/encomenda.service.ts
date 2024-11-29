@@ -33,7 +33,6 @@ export class EncomendaService {
   // US8
   // Método para obter as encomendas de um cliente específico
   getEncomendasByCliente(clienteId: number): Observable<Encomenda[]> {
-    const url = `${this.apiUrl}/${clienteId}`; // Constrói a URL com o clienteId
-    return this.http.get<Encomenda[]>(url);
+    return this.http.get<Encomenda[]>(`http://localhost:8080/api/encomendas/${clienteId}`);
   }
 }
