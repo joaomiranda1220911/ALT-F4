@@ -7,7 +7,7 @@ const cors = require('cors');
 // Configuração do CORS
 app.use(cors({
     origin: 'http://localhost:4200', // Permite apenas o frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true, // Permite envio de cookies, se necessário
 }));
