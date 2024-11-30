@@ -8,13 +8,17 @@ import { Router } from '@angular/router';
   templateUrl: './sala.component.html',
   styleUrl: './sala.component.css'
 })
-export class SalaComponent { 
+export class SalaComponent {
   constructor(private router: Router) { }
 
   navigateToClientesManagement(): void {
     this.router.navigate(['/sala/clientes-management']);
   }
-navigateToEncomendasManagement(): void {
-  this.router.navigate(['/sala/encomendas-management']);
-}
+  navigateToEncomendasManagement(): void {
+    this.router.navigate(['/sala/encomendas-management']);
+  }
+
+  navigateToEmentaConsultar(): void {
+    this.router.navigate(['sala/ementa-consultar']);
+  }
 }
