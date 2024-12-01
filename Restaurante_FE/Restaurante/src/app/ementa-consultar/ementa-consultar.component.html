@@ -1,58 +1,57 @@
 <div class="ementa-container">
-    <h2>Consultar Ementa</h2>
-  
-    <!-- Formulário para filtrar ementas -->
-    <form (ngSubmit)="getEmentaDisponivel()">
-      <div class="form-group">
-        <label for="data">Selecione a Data:</label>
-        <input
-          type="date"
-          id="data"
-          [(ngModel)]="data"
-          name="data"
-          class="form-control"
-          required
-        />
-      </div>
-  
-      <div class="form-group">
-        <label for="tipoRefeicaoId">Tipo de Refeição (ID):</label>
-        <input
-          type="number"
-          id="tipoRefeicaoId"
-          [(ngModel)]="tipoRefeicaoId"
-          name="tipoRefeicaoId"
-          class="form-control"
-          required
-          placeholder="Digite o ID do tipo de refeição"
-        />
-      </div>
-  
-      <button type="submit" class="btn btn-primary">Consultar</button>
-    </form>
-  
-    <!-- Exibir a mensagem de erro, caso exista -->
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
-      {{ errorMessage }}
+  <h2>Consultar Ementa</h2>
+
+  <!-- Formulário para filtrar ementas -->
+  <form (ngSubmit)="getEmentaDisponivel()">
+    <div class="form-group">
+      <label for="datatime">Selecione a Data e Hora:</label>
+      <input
+        type="datetime"
+        id="datetime-local"
+        [(ngModel)]="data"
+        name="data"
+        class="form-control"
+        required
+      />
     </div>
-  
-    <!-- Exibir a ementa consultada -->
-    <div *ngIf="ementa && ementa.length > 0; else noEmenta">
-      <h3>Ementa Disponível</h3>
-      <ul>
-        <li *ngFor="let item of ementa">
-          <strong>Prato:</strong> {{ item.prato.nome }} <br />
-          <strong>Tipo:</strong> {{ item.tipoRefeicao }} <br />
-          <strong>Data:</strong> {{ item.data }}
-        </li>
-      </ul>
+
+    <div class="form-group">
+      <label for="tipoRefeicaoId">Tipo de Refeição (ID):</label>
+      <input
+        type="number"
+        id="tipoRefeicaoId"
+        [(ngModel)]="tipoRefeicaoId"
+        name="tipoRefeicaoId"
+        class="form-control"
+        required
+        placeholder="Digite o ID do tipo de refeição"
+      />
     </div>
-  
-    <!-- Template para caso não haja ementa -->
-    <ng-template #noEmenta>
-      <p *ngIf="ementa && ementa.length === 0">
-        Nenhuma ementa encontrada para os critérios selecionados.
-      </p>
-    </ng-template>
+
+    <button type="submit" class="btn btn-primary">Consultar</button>
+  </form>
+
+  <!-- Exibir a mensagem de erro, caso exista -->
+  <div *ngIf="consultado && errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
   </div>
-  
+
+  <!-- Exibir a ementa consultada -->
+  <div *ngIf="consultado && ementa && ementa.length > 0; else noEmenta">
+    <h3>Ementa Disponível</h3>
+    <ul>
+      <li *ngFor="let item of ementa">
+        <strong>Prato:</strong> {{ item.prato?.nome }} <br />
+        <strong>Tipo de Refeição:</strong> {{ item.tipoRefeicao?.nome }} <br />
+        <strong>Data:</strong> {{ item.data | date: 'yyyy/MM/dd'}}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Template para caso não haja ementa -->
+  <ng-template #noEmenta>
+    <p *ngIf="consultado && ementa.length === 0">
+      Nenhuma ementa encontrada para os critérios selecionados.
+    </p>
+  </ng-template>
+</div>

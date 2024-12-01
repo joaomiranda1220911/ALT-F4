@@ -2,6 +2,8 @@ const RefeicaoRepo = require('../repositories/refeicaoRepository');
 const PratoModel = require('../models/prato');
 
 // US007: Consultar Ementa Disponível
+
+
 exports.getRefeicoesEmEmenta = async function (data, tipoRefeicaoId) {
     try {
         console.log('[DEBUG] Início do método getRefeicoesEmEmenta');

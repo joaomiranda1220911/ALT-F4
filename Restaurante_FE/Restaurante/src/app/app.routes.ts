@@ -27,7 +27,6 @@ export const routes: Routes = [
     { path: 'cozinha/pratos-management/pratos', component: PratoListComponent },
     { path: 'cozinha/pratos-management/create-prato', component: PratoCreateComponent },
     { path: 'cozinha/pratos-management/definir-prato', component: PratoDefinirComponent },
-    { path: 'cozinha/ementa-consultar', component: EmentaConsultarComponent },
 
 
     // Rota para a sala
