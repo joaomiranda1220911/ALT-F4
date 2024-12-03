@@ -17,6 +17,8 @@ import { ClientesManagementComponent } from './clientes-management/clientes-mana
 import { CarregarClienteComponent } from './carregar-cliente/carregar-cliente.component';
 import { EmentaManagementComponent } from './ementa-management/ementa-management.component';
 import { ConsultarEmentaComponent } from './ementa-consultar/ementa-consultar.component';
+import { RefeicoesManagementComponent} from './refeicao-management/refeicao-management.component';
+
 
 
 
@@ -27,6 +29,7 @@ export const routes: Routes = [
     { path: 'cozinha/pratos-management/pratos', component: PratoListComponent },
     { path: 'cozinha/pratos-management/create-prato', component: PratoCreateComponent },
     { path: 'cozinha/pratos-management/definir-prato', component: PratoDefinirComponent },
+    { path: 'cozinha/refeicao-management', component: RefeicoesManagementComponent},
 
 
     // Rota para a sala
