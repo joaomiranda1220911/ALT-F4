@@ -1,0 +1,13 @@
+<div>
+    <h2>Área de Refeições</h2>
+    <button class="btn" (click)="toggleFormulario()">Criar Nova Refeição</button>
+    <button class="btn" (click)="toggleFormularioRemover()">Remover Refeição</button>
+  
+    <div *ngIf="mostrarFormulario">
+      <app-refeicao-create></app-refeicao-create>
+    </div>
+  
+    <div *ngIf="mostrarFormularioRemover">
+      <app-refeicao-remove></app-refeicao-remove>
+    </div>
+  

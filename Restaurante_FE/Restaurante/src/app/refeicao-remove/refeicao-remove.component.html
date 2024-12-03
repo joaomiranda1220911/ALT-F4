@@ -1,0 +1,29 @@
+<div class="refeicao-Form">
+    <h2>Remover Refeição</h2>
+  
+    <!-- Mensagem caso não existam refeições -->
+    <div *ngIf="refeicoes.length === 0" class="alert alert-info">
+      Nenhuma refeição disponível para remoção.
+    </div>
+  
+    <!-- Dropdown para selecionar a refeição -->
+    <div *ngIf="refeicoes.length > 0">
+      <h3>Lista de Refeições</h3>
+      <label for="idRefeicao">Escolha a refeição para remover:</label>
+      <select id="idRefeicao" formControlName="idRefeicao" class="form-select">
+        <option *ngFor="let refeicao of refeicoes" [value]="refeicao.idRefeicao">{{ refeicao.idRefeicao }}</option>
+      </select>
+    </div>
+  
+    <!-- Formulário de remoção -->
+    <form [formGroup]="refeicaoRemoveForm" (ngSubmit)="onRemove()">
+      <button type="submit" [disabled]="refeicaoRemoveForm.invalid || refeicoes.length === 0" class="btn btn-danger mt-3">
+        Remover Refeição
+      </button>
+    </form>
+  
+    <!-- Mensagens de Sucesso ou Erro -->
+    <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+  </div>
+  
