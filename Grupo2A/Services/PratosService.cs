@@ -192,6 +192,7 @@ namespace Grupo2A.Services
             var prato = await _repo.GetPratoById(pratoId);
             return prato?.Ativo;
         }
+        
         public async Task<IEnumerable<Prato2listing_dto>> GetPratosAtivos(){ 
             // Obtém os pratos ativos do repositório
             var pratosAtivos = await _repo.GetPratosAtivos();

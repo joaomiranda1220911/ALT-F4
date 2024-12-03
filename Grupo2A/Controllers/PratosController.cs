@@ -124,10 +124,7 @@ namespace Grupo2A.Controllers
             return Ok(pratosAtivos);
         }
 
-
     }
-
-
 
 }
 
