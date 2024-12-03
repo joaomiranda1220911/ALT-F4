@@ -2,9 +2,9 @@
   <h2>Consultar Ementa</h2>
 
   <!-- Formulário para filtrar ementas -->
-  <form (ngSubmit)="getEmentaDisponivel()">
+  <form class="ementa-consultar-form" (ngSubmit)="getEmentaDisponivel()">
     <div class="form-group">
-      <label for="datatime">Selecione a Data e Hora:</label>
+      <label for="datetime-local">Selecione a Data e Hora:</label>
       <input
         type="datetime"
         id="datetime-local"
@@ -39,13 +39,11 @@
   <!-- Exibir a ementa consultada -->
   <div *ngIf="consultado && ementa && ementa.length > 0; else noEmenta">
     <h3>Ementa Disponível</h3>
-    <ul>
-      <li *ngFor="let item of ementa">
-        <strong>Prato:</strong> {{ item.prato?.nome }} <br />
-        <strong>Tipo de Refeição:</strong> {{ item.tipoRefeicao?.nome }} <br />
-        <strong>Data:</strong> {{ item.data | date: 'yyyy/MM/dd'}}
-      </li>
-    </ul>
+    <div *ngFor="let item of ementa" class="ementa-item">
+      <strong>Prato:</strong> {{ item.prato?.nome }} <br />
+      <strong>Tipo de Refeição:</strong> {{ item.tipoRefeicao?.nome }} <br />
+      <strong>Data:</strong> {{ item.data | date: 'yyyy/MM/dd' }}
+    </div>
   </div>
 
   <!-- Template para caso não haja ementa -->

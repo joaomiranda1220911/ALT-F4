@@ -1,75 +1,73 @@
 import { Component, OnInit } from '@angular/core';
 import { EmentaService } from '../Services/ementa.service';
 import { Ementa } from '../Models/ementa';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
-// import { TipoRefeicaoService } from '../Services/tipoRefeicao.service';
-// import { TipoRefeicao } from '../Models/tipoRefeicao';  // Caminho correto para o seu modelo
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-ementa-consultar',
   standalone: true,
   templateUrl: './ementa-consultar.component.html',
   styleUrls: ['./ementa-consultar.component.css'],
-  imports: [ReactiveFormsModule, FormsModule, NgIf, NgFor, CommonModule],
+  imports: [CommonModule, FormsModule]
 })
 
 export class EmentaConsultarComponent implements OnInit {
-  ementa: Ementa[] = []; // Armazena a resposta da consulta
-  tipoRefeicaoId: number = 1; // Definido de acordo com a lógica abaixo
-  // tipoRefeicao :  TipoRefeicao[] =[]; //Lista do tipo de refeição
-  // tipoRefeicaoSelecionado: string = ''; //Nome do tipo de refeição selecionadop«
-  data: string = ''; // Data atual
+  ementa: Ementa[] = [];
+  tipoRefeicaoId: number = 1;
+  data: string = '';
   errorMessage: string = '';
-  consultado: boolean = false; // Controla se a consulta foi feita
+  consultado: boolean = false;
 
   constructor(
-    private ementaService: EmentaService) { }
-  // private tipoRefeicaoService: TipoRefeicaoService) 
-
+    private ementaService: EmentaService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.data = this.formatDatetime(new Date());
-    // this.tipoRefeicaoService.getTiposRefeicao().subscribe((tipos) => {
-    //   this.tipoRefeicao = tipos;
-    //   this.tipoRefeicaoSelecionado = this.getTipoRefeicaoSelecionado();
-    // });
+
+    // Pega parâmetros da URL (caso sejam passados como parâmetros)
+    this.route.queryParams.subscribe(params => {
+      const tipoRefeicaoId = params['tipoRefeicaoId'] || 1; // Fallback para 1 caso o parâmetro não esteja presente
+      this.tipoRefeicaoId = tipoRefeicaoId;
+    });
   }
+
   private formatDatetime(date: Date): string {
-    return date.toISOString(); // Gera algo como "2024-11-27T12:00:00.000Z"
+    return date.toISOString(); // Converte a data para o formato ISO
   }
 
   getEmentaDisponivel() {
-    this.consultado = true;
+    this.consultado = true;  // Inicia o processo de consulta
     console.log('Consulta iniciada', this.consultado);
 
     const params = new HttpParams()
-      .set('data', new Date(this.data).toISOString())  // Garantindo que a data seja no formato ISO
-      .set('tipoRefeicaoId', this.tipoRefeicaoId.toString());  // Garantindo que o tipoRefeicaoId seja enviado corretamente
+      .set('data', new Date(this.data).toISOString())  // Garantindo que a data esteja no formato correto
+      .set('tipoRefeicaoId', this.tipoRefeicaoId.toString());  // Garantindo que o tipoRefeicaoId seja passado corretamente
 
-
-    // Definindo os cabeçalhos
     const headers = new HttpHeaders().set('Accept', 'application/json');
 
-    // Montando a URL
-    const url = `http://localhost:5057/api/refeicoes/filtrar`;
-    console.log('URL gerada: ', url);  // Verifique a URL gerada aqui
-
-
-    this.ementaService.getEmentaDisponivel(this.data, this.tipoRefeicaoId)
-      .subscribe({
-        next: data => {
-          this.ementa = data;
-          this.errorMessage = ''; // Limpa a mensagem de erro caso a consulta tenha sucesso
-          console.log('Ementa carregada', this.ementa);
-        },
-        complete: () => console.log('Consulta de ementa concluída.')
-      });
+    // Fazendo a consulta à API
+    this.ementaService.getEmentaDisponivel(this.data, this.tipoRefeicaoId).subscribe({
+      next: data => {
+        // Verifica se a resposta tem dados
+        if (data && data.length > 0) {
+          this.ementa = data;  // Armazena os dados da resposta
+          this.errorMessage = '';  // Limpa qualquer mensagem de erro
+        } else {
+          this.ementa = [];  // Se não houver dados, limpa a ementa
+          this.errorMessage = 'Nenhuma ementa encontrada para os critérios selecionados.';
+        }
+      },
+      error: err => {
+        // Se ocorrer um erro na requisição, exibe a mensagem de erro
+        console.error('Erro na requisição:', err);
+        this.ementa = [];  // Limpa qualquer dado da ementa em caso de erro
+      },
+      complete: () => console.log('Consulta de ementa concluída.')
+    });
   }
-  // getTipoRefeicaoSelecionado(): string{
-  //   const tipo = this.tipoRefeicao.find(t=> t.id === this.tipoRefeicaoId);
-  //   return tipo ? tipo.nome: 'Tipo de refeição não encontrado';
-  // }
 }
