@@ -37,7 +37,12 @@
         <label for="QuantidadeProduzida">Quantidade:</label>
         <input type="number" id="QuantidadeProduzida" formControlName="QuantidadeProduzida" required />
         <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.invalid && refeicaoCreateForm.get('QuantidadeProduzida')?.touched" class="text-danger">
-          A quantidade é obrigatória.
+          <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.errors?.['required']">
+            A quantidade é obrigatória.
+          </div>
+          <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.errors?.['min']">
+            A quantidade deve ser maior que 0.
+          </div>
         </div>
       </div>
   
