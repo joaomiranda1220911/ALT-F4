@@ -12,7 +12,7 @@ export class CozinhaComponent {
   constructor(private router: Router) { }
 
   navigateToPratosManagement(): void {
-    this.router.navigate(['/cozinha/pratos-management']);  // Navega para a página de gerenciamento de pratos
+    this.router.navigate(['/cozinha/pratos-management']);
   }
 
 }

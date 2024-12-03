@@ -46,14 +46,13 @@ export class PratoCreateComponent implements OnInit {
     });
   }
 
-  // Submissão do formulário
   onSubmit(): void {
     // Garantir que os valores de ingredientesIds são números
     const pratoData = { 
       ...this.pratoForm.value, 
-      Ativo: true,  // Definindo o prato como ativo
-      ingredientesIds: this.pratoForm.value.ingredientesIds.map((id: string) => +id), // Convertendo os ids para números
-      tipoPratoId: +this.pratoForm.value.tipoPratoId // Garantindo que tipoPratoId seja um número
+      Ativo: true,  // Definir o prato como ativo
+      ingredientesIds: this.pratoForm.value.ingredientesIds.map((id: string) => +id), // Converter os ids para números
+      tipoPratoId: +this.pratoForm.value.tipoPratoId // Garantir que tipoPratoId seja um número
     };
   
     console.log('Dados enviados:', pratoData);  // Verificar os dados antes de enviar
