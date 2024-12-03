@@ -1,0 +1,8 @@
+<div>
+  <h2>Área de Ementa</h2>
+  <button class="btn" (click)="toggleFormularioEmenta()">Consultar ementa</button>
+
+  <div *ngIf="mostrarFormularioEmenta">
+    <app-ementa-consultar></app-ementa-consultar>
+  </div>
+</div>

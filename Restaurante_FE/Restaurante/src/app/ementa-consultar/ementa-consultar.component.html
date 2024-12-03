@@ -1,4 +1,3 @@
-html
 <div>
   <h2>Consultar Ementa</h2>
 
@@ -9,7 +8,7 @@ html
     <label for="hora">Hora:</label>
     <input type="time" id="hora" [(ngModel)]="hora" name="hora" required>
 
-    <label for="id">ID da Sala:</label>
+    <label for="id">Tipo de refeicão (id):</label>
     <input type="number" id="id" [(ngModel)]="id" name="id" required>
 
     <button type="submit" [disabled]="loading">Consultar</button>

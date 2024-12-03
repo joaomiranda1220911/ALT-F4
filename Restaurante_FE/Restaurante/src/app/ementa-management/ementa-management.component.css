@@ -1,0 +1,44 @@
+/* Centraliza a div */
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid rgb(100, 0, 160);
+}
+
+/* Estilo do botão */
+.btn {
+    transition-duration: 0.4s;
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(100, 0, 160);
+    width: 250px;
+    height: 40px;
+    font-size: 14pt;
+    font-family: 'Roboto', Arial, sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+}
+
+.btn:hover {
+    background-color: rgb(100, 0, 160);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    background-color: rgba(100, 0, 160, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+}

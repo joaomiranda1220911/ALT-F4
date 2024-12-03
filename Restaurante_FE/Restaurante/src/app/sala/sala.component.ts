@@ -18,7 +18,7 @@ export class SalaComponent {
     this.router.navigate(['/sala/encomendas-management']);
   }
 
-  navigateToEmentaConsultar(): void {
-    this.router.navigate(['sala/ementa-consultar']);
+  navigateToEmentaManagement(): void {
+    this.router.navigate(['/sala/ementa-management']);
   }
 }
