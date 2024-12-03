@@ -1,55 +1,33 @@
-<div class="ementa-container">
+html
+<div>
   <h2>Consultar Ementa</h2>
 
-  <!-- Formulário para filtrar ementas -->
-  <form class="ementa-consultar-form" (ngSubmit)="getEmentaDisponivel()">
-    <div class="form-group">
-      <label for="datetime-local">Selecione a Data e Hora:</label>
-      <input
-        type="datetime"
-        id="datetime-local"
-        [(ngModel)]="data"
-        name="data"
-        class="form-control"
-        required
-      />
-    </div>
+  <form (ngSubmit)="consultarEmenta()">
+    <label for="data">Data:</label>
+    <input type="date" id="data" [(ngModel)]="data" name="data" required>
 
-    <div class="form-group">
-      <label for="tipoRefeicaoId">Tipo de Refeição (ID):</label>
-      <input
-        type="number"
-        id="tipoRefeicaoId"
-        [(ngModel)]="tipoRefeicaoId"
-        name="tipoRefeicaoId"
-        class="form-control"
-        required
-        placeholder="Digite o ID do tipo de refeição"
-      />
-    </div>
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" [(ngModel)]="hora" name="hora" required>
 
-    <button type="submit" class="btn btn-primary">Consultar</button>
+    <label for="id">ID da Sala:</label>
+    <input type="number" id="id" [(ngModel)]="id" name="id" required>
+
+    <button type="submit" [disabled]="loading">Consultar</button>
   </form>
-
-  <!-- Exibir a mensagem de erro, caso exista -->
-  <div *ngIf="consultado && errorMessage" class="alert alert-danger mt-3">
-    {{ errorMessage }}
-  </div>
-
-  <!-- Exibir a ementa consultada -->
-  <div *ngIf="consultado && ementa && ementa.length > 0; else noEmenta">
-    <h3>Ementa Disponível</h3>
-    <div *ngFor="let item of ementa" class="ementa-item">
-      <strong>Prato:</strong> {{ item.prato?.nome }} <br />
-      <strong>Tipo de Refeição:</strong> {{ item.tipoRefeicao?.nome }} <br />
-      <strong>Data:</strong> {{ item.data | date: 'yyyy/MM/dd' }}
+  
+  <div *ngIf="ementa">
+    <h2>Ementa para o dia {{ ementa[0]?.data | date: 'short' }}</h2>
+    <div *ngFor="let item of ementa">
+      <p><strong>ID:</strong> {{ item._id }}</p>
+      <p><strong>Data:</strong> {{ item.data | date: 'fullDate' }}</p>
+      <p><strong>Pratos:</strong> {{ item.pratos.join(', ') }}</p>
+      <p><strong>Quantidade Produzida:</strong> {{ item.quantidadeProduzida }}</p>
+      <p><strong>Tipo de Refeição:</strong> {{ item.tipoRefeicao }}</p>
     </div>
   </div>
-
-  <!-- Template para caso não haja ementa -->
-  <ng-template #noEmenta>
-    <p *ngIf="consultado && ementa.length === 0">
-      Nenhuma ementa encontrada para os critérios selecionados.
-    </p>
-  </ng-template>
+  
+  
+  <div *ngIf="loading">
+    <p>A carregar...</p>
+  </div>
 </div>

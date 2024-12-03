@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { EmentaConsultarComponent } from './ementa-consultar.component';
 
-describe('EmentaConsultarComponent', () => {
-  let component: EmentaConsultarComponent;
-  let fixture: ComponentFixture<EmentaConsultarComponent>;
+import { ConsultarEmentaComponent } from './ementa-consultar.component';
+
+describe('ConsultarEmentaComponent', () => {
+  let component: ConsultarEmentaComponent;
+  let fixture: ComponentFixture<ConsultarEmentaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [EmentaConsultarComponent]
+      imports: [ConsultarEmentaComponent]
     })
-      .compileComponents();
+    .compileComponents();
 
-    fixture = TestBed.createComponent(EmentaConsultarComponent);
+    fixture = TestBed.createComponent(ConsultarEmentaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
