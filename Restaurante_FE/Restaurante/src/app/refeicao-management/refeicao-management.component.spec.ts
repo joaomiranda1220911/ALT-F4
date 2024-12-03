@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RefeicaoManagementComponent } from './refeicao-management.component';
+import { RefeicoesManagementComponent } from './refeicao-management.component';
 
-describe('RefeicaoManagementComponent', () => {
-  let component: RefeicaoManagementComponent;
-  let fixture: ComponentFixture<RefeicaoManagementComponent>;
+describe('RefeicoesManagementComponent', () => {
+  let component: RefeicoesManagementComponent;
+  let fixture: ComponentFixture<RefeicoesManagementComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RefeicaoManagementComponent]
+      imports: [RefeicoesManagementComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(RefeicaoManagementComponent);
+    fixture = TestBed.createComponent(RefeicoesManagementComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

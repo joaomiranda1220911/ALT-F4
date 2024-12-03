@@ -15,4 +15,9 @@ export class CozinhaComponent {
     this.router.navigate(['/cozinha/pratos-management']);
   }
 
+  navigateToRefeicoesManagement(): void {
+    this.router.navigate(['/cozinha/refeicao-management']); // Navega para a página de gerenciamento de refeições
+
+  }
+
 }
