@@ -1,143 +1,139 @@
-/* div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 500px;
-    margin: 0;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border: 2px solid rgb(100,0,160);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Estilo do contêiner principal */
+.container-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn:hover{
-    background-color: rgb(100,0,160);
-    color: white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* Estilo do título e formulário dentro do mesmo contêiner */
+.container-titulo-ementa {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn:active{
-    background-color: rgb(100,0,160,0.8);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transform: scale(0.98);
+/* Estilo para o título */
+h2 {
+  color: rgb(100, 0, 160);
+  margin-bottom: 20px;
+  text-align: center;
+  justify-content: center;
 }
-     */
 
-     /* Estilo do contêiner da consulta de ementa */
-    /* Centraliza a div */
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centraliza o conteúdo do formulário */
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  /* Garante que o padding não ultrapasse as bordas */
+}
 
-.ementa-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 500px; /* Largura máxima */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border: 2px solid rgb(100, 0, 160); /* Cor da borda */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-  }
-  
-  /* Estilo do botão */
-  .btn {
-    transition-duration: 0.4s;
-    background-color: white;
-    color: black;
-    border: 2px solid rgb(100, 0, 160);
-    cursor: pointer;
-    font-size: 1rem;
-    transition-duration: 0.4s;
-  }
-  
-  .btn:hover {
-    background-color: rgb(100, 0, 160);
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .btn:active {
-    background-color: rgba(100, 0, 160, 0.8);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transform: scale(0.98);
-  }
-  
-  /* Formulário */
-  .ementa-consultar-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* Espaçamento entre os campos */
-    max-width: 400px; /* A largura máxima do formulário */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-  }
-  
-  /* Estilo para os campos do formulário */
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Estilo do label */
-  .ementa-consultar-form label {
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  /* Estilo para inputs, selects e buttons */
-  .ementa-consultar-form input,
-  .ementa-consultar-form select,
-  .ementa-consultar-form button {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px; /* Ajuste para espaçamento entre os campos */
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
-  
-  /* Fonte padrão */
-  .ementa-consultar-form input,
-  .ementa-consultar-form select {
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  /* Estilo do botão */
-  .ementa-consultar-form button {
-    transition-duration: 0.4s;
-    background-color: white;
-    color: black;
-    border: 2px solid rgb(100, 0, 160);
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .ementa-consultar-form button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .ementa-consultar-form button:hover:not(:disabled) {
-    background-color: rgb(100, 0, 160);
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+/* Campos do formulário */
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
 
-  .ementa-item{
-    line-height: 1.5;
-  }
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
 
-  .ementa-item strong{
-    color:  rgb(100, 0, 160);
-  }
-  
+/* Botão do formulário */
+button {
+  transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(100, 0, 160);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: rgb(100, 0, 160);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  background-color: rgba(100, 0, 160, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(0.98);
+}
+
+/* Exibição da ementa */
+.container-ementa {
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-ementa>h2 {
+  font-size: 1.2rem;
+  color: rgb(100, 0, 160);
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+p strong {
+  color: black;
+}
+
+.alert.alert-danger {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #f5c6cb;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

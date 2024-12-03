@@ -1,6 +1,7 @@
+
 import { Component } from '@angular/core';
-import { EmentaService } from '../Services/ementa.service'; 
-import { FormsModule } from '@angular/forms';  
+import { EmentaService } from '../Services/ementa.service';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -18,7 +19,8 @@ export class ConsultarEmentaComponent {
   erro: boolean = false; // Indicador de erro ao buscar dados
   loading: boolean = false; // Indicador de carregamento
 
-  constructor(private ementaService: EmentaService) {}
+
+  constructor(private ementaService: EmentaService) { }
 
   consultarEmenta(): void {
     // Validação básica
@@ -27,9 +29,12 @@ export class ConsultarEmentaComponent {
       this.ementa = null;
       return;
     }
-
+    // Formata a data e a hora para o formato ISO 
     const dataHora = new Date(`${this.data}T${this.hora}:00`).toISOString();
+    // Define o estado inicial antes da requisição
     this.loading = true;
+    this.erro = false; // Reinicia o erro antes de iniciar a chamada
+    this.ementa = null; // Limpa ementa antes de carregar
 
     // Chamada ao serviço
     this.ementaService.consultarEmenta(dataHora, this.id).subscribe({
