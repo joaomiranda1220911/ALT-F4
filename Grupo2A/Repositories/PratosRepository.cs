@@ -62,5 +62,12 @@ namespace Grupo2A.Repositories
             }
             return prato.Ativo; // Retorna o estado (Ativo ou Inativo)
         }
+
+        public async Task<IEnumerable<Prato>> GetPratosAtivos(){
+            return await _context.Pratos.Include(p => p.TipoPrato) // Inclui relações necessárias
+                                        .Include(p => p.Ingredientes)
+                                        .Where(p => p.Ativo) // Filtra somente os pratos ativos
+                                        .ToListAsync();
+        }
     }
 }

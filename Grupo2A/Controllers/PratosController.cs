@@ -115,6 +115,15 @@ namespace Grupo2A.Controllers
             return Ok(estado); // Retorna o estado do prato 
         }
 
+        [HttpGet("ativos")]
+        public async Task<ActionResult<IEnumerable<Prato2listing_dto>>> GetPratosAtivos(){
+            // Chama o serviço para obter os pratos ativos
+            var pratosAtivos = await _service.GetPratosAtivos();
+
+            // Retorna os pratos no formato DTO
+            return Ok(pratosAtivos);
+        }
+
 
     }
 
