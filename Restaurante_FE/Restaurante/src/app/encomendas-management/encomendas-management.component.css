@@ -1,18 +1,16 @@
-/* Centraliza a div */
 div {
     display: flex;
     flex-direction: column; /* Organiza os botões verticalmente */
     align-items: center;    /* Centraliza os botões horizontalmente */
-    justify-content: center; /* Centraliza os botões verticalmente (opcional, útil se a div tiver mais altura) */
-    max-width: 500px; /* Limita a largura máxima */
+    justify-content: center; /* Centraliza os botões verticalmente */
+    max-width: 500px; 
     margin: 0 auto;   /* Garante a centralização da div em relação ao body */
     padding: 1rem;
-    background-color: white; /* Exemplo de estilo adicional */
-    border-radius: 8px; /* Bordas arredondadas */
+    background-color: white; 
+    border-radius: 8px; 
     border: 2px solid rgb(100, 0, 160);
 }
 
-/* Estilo dos botões */
 .btn {
     transition-duration: 0.4s;
     background-color: white;
@@ -28,7 +26,7 @@ div {
     line-height: 38px; /* Centraliza o texto verticalmente */
     text-decoration: none; /* Remove sublinhado em links */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0.5rem 0; /* Adiciona espaçamento entre os botões */
+    margin: 0.5rem 0; 
 }
 
 .btn:hover {
