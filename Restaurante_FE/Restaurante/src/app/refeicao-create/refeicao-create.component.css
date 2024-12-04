@@ -5,14 +5,13 @@
   gap: 20px;
   /* Espaçamento entre os elementos */
   width: 100%;
-  max-width: 400px; /* Largura máxima para se alinhar com carregar-cliente-form */
+  max-width: 400px; /* Largura máxima para se alinhar com os restantes elementos */
   margin: 0 auto;
   /* Centraliza o formulário */
   padding: 20px;
   background-color: white;
   border-radius: 8px;
   /* Cantos arredondados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
 

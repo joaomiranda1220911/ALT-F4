@@ -16,8 +16,8 @@ export class RefeicaoCreateComponent implements OnInit {
   pratosAtivos: any[] = [];
   tipoRefeicao: any[] = [];
   tiposDePrato: any[] = [];
-  successMessage = '';
-  errorMessage = '';
+  successMessage?: string; 
+  errorMessage?: string;  
 
   constructor(private fb: FormBuilder, private refeicaoService: RefeicaoService) {
     this.refeicaoCreateForm = this.fb.group({

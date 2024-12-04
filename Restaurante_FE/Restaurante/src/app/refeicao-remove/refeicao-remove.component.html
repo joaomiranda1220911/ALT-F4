@@ -19,8 +19,15 @@
     <button type="submit" [disabled]="refeicaoRemoveForm.invalid">Remover Refeição</button>
   </form>
   
-    <!-- Mensagens de Sucesso ou Erro -->
-    <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+  <!-- Mensagens de Sucesso ou Erro -->
+  <!-- Mensagem de Sucesso -->
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
+  <!-- Mensagem de Erro -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
   </div>
   

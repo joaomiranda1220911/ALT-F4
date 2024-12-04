@@ -14,8 +14,8 @@ import { CommonModule, NgIf } from '@angular/common';
 export class RefeicaoRemoveComponent implements OnInit {
   refeicaoRemoveForm: FormGroup;
   refeicoes: Refeicao[] = [];
-  successMessage = '';
-  errorMessage = '';
+  successMessage?: string; 
+  errorMessage?: string;  
 
   constructor(private fb: FormBuilder, private refeicaoService: RefeicaoService) {
     this.refeicaoRemoveForm = this.fb.group({

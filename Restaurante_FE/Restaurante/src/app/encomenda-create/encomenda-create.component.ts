@@ -15,8 +15,8 @@ export class EncomendaCreateComponent implements OnInit {
   encomendaForm: FormGroup;
   saldoInsuficiente: boolean = false;
   refeicoes: any[] = [];
-  successMessage = '';
-  errorMessage = '';
+  successMessage?: string; 
+  errorMessage?: string;
 
   constructor(private fb: FormBuilder, private encomendaSrv: EncomendaService) {
     // Inicializa o formulário com validações
