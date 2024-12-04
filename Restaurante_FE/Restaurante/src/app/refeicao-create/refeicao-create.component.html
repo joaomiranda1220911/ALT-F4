@@ -1,10 +1,11 @@
 <div class="refeicaoCreateForm">
   <h2>Criar Refeição</h2>
   <form [formGroup]="refeicaoCreateForm" (ngSubmit)="onSubmit()">
+
     <!-- Campo para Data -->
     <div>
       <label for="Data">Data:</label>
-      <input type="date" id="Data" formControlName="Data" required />
+      <input type="datetime-local" id="Data" formControlName="Data" required />
       <div *ngIf="refeicaoCreateForm.get('Data')?.invalid && refeicaoCreateForm.get('Data')?.touched" class="text-danger">
         A data é obrigatória.
       </div>
