@@ -30,7 +30,6 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   /* Centraliza o conteúdo do formulário */
   justify-content: center;
   gap: 20px;
