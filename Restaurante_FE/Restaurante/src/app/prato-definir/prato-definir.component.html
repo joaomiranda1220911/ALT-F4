@@ -5,32 +5,27 @@
 
     <!-- Caixa de input para o utilizador inserir o ID do prato -->
     <label for="pratoId">ID do Prato:</label>
-    <input 
-      type="number" 
-      id="pratoId" 
-      [(ngModel)]="selectedPratoId" 
-      name="pratoId" 
-      required
-      placeholder="Insira o ID do prato" 
-    />
-    
+    <input type="number" id="pratoId" [(ngModel)]="selectedPratoId" name="pratoId" required
+      placeholder="Insira o ID do prato" />
+
     <!-- Campo para introduzir o preço -->
     <div class="form-group">
       <label for="preco">Preço:</label>
-      <input
-        id="preco"
-        type="number"
-        [(ngModel)]="preco"
-        name="preco"
-        required
-        placeholder="Insira o preço"
-      />
+      <input id="preco" type="number" [(ngModel)]="preco" name="preco" required placeholder="Insira o preço" />
     </div>
 
     <!-- Botão de submissão -->
     <button type="submit" [disabled]="!selectedPratoId || preco === undefined">
-      Criar PratoSala
+      Criar Prato
     </button>
+
+    <div *ngIf="submitMessage" class="submit-message">
+      {{submitMessage}}
+    </div>
+
+    <!-- Mensagem de erro -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
   </form>
 </div>
-

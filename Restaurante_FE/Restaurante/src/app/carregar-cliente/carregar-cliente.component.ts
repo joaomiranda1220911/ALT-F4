@@ -14,6 +14,7 @@ export class CarregarClienteComponent {
   selectedNif: string | undefined;  // nif do cliente selecionado
   valor: number | undefined;  // valor do carregamento 
   errorMessage: string | undefined;  // mensagem de erro
+  successMessage: string | undefined;
 
   // Injeção dos serviços
   constructor(
@@ -22,12 +23,13 @@ export class CarregarClienteComponent {
 
   onSubmit(): void {
     this.errorMessage = undefined;  // Limpar mensagem de erro antes de submeter
+    this.successMessage = undefined;
     if (this.selectedNif && this.valor != null && !isNaN(this.valor)) {
       // Passa os dados para o carregarClienteService
       this.carregarClienteService.carregarSaldo(this.selectedNif, this.valor).subscribe({
         next: (response) => {
           console.log('Conta carregada com sucesso:', response);
-          alert('Conta carregada com sucesso!');
+          this.successMessage = 'Conta carregada com sucesso!';
         },
         error: (error) => {
           console.error('Erro ao carregar conta:', error);

@@ -7,9 +7,7 @@
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 /* Estilo do título e formulário dentro do mesmo contêiner */
@@ -17,14 +15,12 @@
   width: 100%;
   padding: 20px;
   background-color: white;
-  border-radius: 8px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para o título */
 h2 {
-  color: rgb(100, 0, 160);
+  color: rgb(3, 0, 4);
   margin-bottom: 20px;
   text-align: center;
   justify-content: center;
@@ -44,7 +40,6 @@ form {
   padding: 20px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   /* Garante que o padding não ultrapasse as bordas */
 }
@@ -54,8 +49,8 @@ label {
   font-weight: bold;
   margin-bottom: 8px;
   font-size: 1rem;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   color: #333;
 }
 

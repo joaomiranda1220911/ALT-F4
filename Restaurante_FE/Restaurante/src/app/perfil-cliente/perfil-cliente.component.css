@@ -1,66 +1,118 @@
+/* Estilo do formulário de Consultar cliente */
 .consultar-cliente-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 400px;
-  margin: 0 auto;
+  /* Espaçamento entre os elementos */
+  width: 100%;
+  max-width: 300px;
+  /* Largura máxima */
+  margin: 0;
+  /* Centraliza o formulário */
   padding: 20px;
   background-color: white;
   border-radius: 8px;
+  /* Cantos arredondados */
+  box-sizing: border-box;
 }
 
+/* Estilo para os grupos de campo */
 .form-group {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  /* Ajusta o espaçamento interno */
 }
 
+/* Estilo para os rótulos */
 .consultar-cliente-form label {
   font-weight: bold;
-  margin-bottom: 8px;
   font-size: 1rem;
   color: #333;
 }
 
-.consultar-cliente-form input,
+/* Estilo para os inputs */
+.consultar-cliente-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  /* Borda padrão */
+  border-radius: 6px;
+  /* Cantos arredondados */
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  background-color: white;
+  /* Fundo claro */
+  transition: border-color 0.3s ease;
+  /* Transição suave */
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+
+/* Foco nos inputs */
+.consultar-cliente-form input:focus {
+  border-color: #6400a0;
+  /* Destaque no foco */
+  outline: none;
+
+}
+
+/* Estilo para o botão */
 .consultar-cliente-form button {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-
-.consultar-cliente-form input {
-  font-family: 'Roboto', sans-serif;
-}
-
-.consultar-cliente-form button {
-  transition-duration: 0.4s;
+  border: 2px solid #6400a0;
+  /* Borda principal */
   background-color: white;
+  /* Fundo inicial */
   color: black;
-  border: 2px solid rgb(100, 0, 160);
-  cursor: pointer;
+  /* Texto inicial */
   font-size: 1rem;
-  transition: 0.4s;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  /* Transição completa */
 }
 
+/* Botão desativado */
 .consultar-cliente-form button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
+/* Hover no botão */
 .consultar-cliente-form button:hover:not(:disabled) {
-  background-color: rgb(100, 0, 160);
+  background-color: #6400a0;
   color: white;
 }
 
-.consultar-cliente-form .dados {
-  background-color: white;
+/* Ajuste para mensagens e detalhes adicionais */
+.consultar-cliente-form p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Títulos */
+.consultar-cliente-form h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Mensagem de erro */
+.consultar-cliente-form .erro {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
   border-radius: 8px;
-  max-width: 400px;
-  margin: 0 auto; 
+  border: 1px solid #f5c6cb;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -80,13 +132,3 @@
   color: #333;
 }
 
-.consultar-cliente-form .erro {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #f8d7da;
-  color: #721c24;
-  border-radius: 8px;
-  border: 1px solid #f5c6cb;
-  font-size: 1rem;
-  text-align: center;
-}

@@ -1,63 +1,126 @@
+/* Estilo do formulário de Criar Refeição */
 .refeicaoCreateForm {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .refeicaoCreateForm form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .refeicaoCreateForm label {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .refeicaoCreateForm select, 
-  .refeicaoCreateForm input,
-  .refeicaoCreateForm button {
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box; /* Garante que padding não afete largura total */
-  }
-  
-  .refeicaoCreateForm input, .refeicao-Form select {
-    border: 1px solid #ccc;
-  }
-  
-  .refeicaoCreateForm input[type="date"], 
-  .refeicaoCreateForm input[type="number"] {
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  .refeicaoCreateForm button {
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .refeicaoCreateForm button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-  }
-  
-  .refeicaoCreateForm button:hover:not(:disabled) {
-    background-color: #45a049;
-  }
-  
-  @media (max-width: 600px) {
-    .refeicaoCreateForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Espaçamento entre os elementos */
+  width: 100%;
+  max-width: 400px; /* Largura máxima para se alinhar com carregar-cliente-form */
+  margin: 0 auto;
+  /* Centraliza o formulário */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  /* Cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Estilo para os grupos de campo */
+.refeicaoCreateForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estilo para os rótulos */
+.refeicaoCreateForm label {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Estilo para inputs e selects */
+.refeicaoCreateForm select, 
+.refeicaoCreateForm input {
+  width: 100%;
+  padding: 12px; /* Ajustado para alinhar com carregar-cliente-form */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Cantos arredondados */
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  background-color: white; /* Fundo claro */
+  transition: border-color 0.3s ease;
+}
+
+/* Foco nos inputs e selects */
+.refeicaoCreateForm select:focus, 
+.refeicaoCreateForm input:focus {
+  border-color: #6400a0; /* Destaque no foco */
+  outline: none;
+}
+
+/* Estilo para inputs específicos */
+.refeicaoCreateForm input[type="date"], 
+.refeicaoCreateForm input[type="number"] {
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Estilo para o botão */
+.refeicaoCreateForm button {
+  width: 100%;
+  padding: 12px; /* Ajustado para alinhar com carregar-cliente-form */
+  border: 2px solid #6400a0; /* Borda principal */
+  background-color: white; /* Fundo inicial */
+  color: black; /* Texto inicial */
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+/* Botão desativado */
+.refeicaoCreateForm button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Hover no botão */
+.refeicaoCreateForm button:hover:not(:disabled) {
+  background-color: #6400a0;
+  color: white;
+}
+
+/* Mensagens adicionais */
+.refeicaoCreateForm .error-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.refeicaoCreateForm .success-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #d9f5c6;
+  color: #4e721c;
+  border-radius: 8px;
+  border: 1px solid #d9f5c6;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Títulos */
+.refeicaoCreateForm h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .refeicaoCreateForm {
       padding: 15px;
-    }
   }
+}
+
   

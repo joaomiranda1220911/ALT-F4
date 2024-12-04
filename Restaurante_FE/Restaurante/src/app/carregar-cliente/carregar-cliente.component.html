@@ -16,6 +16,10 @@
             Carregar conta cliente
         </button>
         
+        <div *ngIf="successMessage" class="success-message">
+            {{successMessage}}
+        </div>
+
         <!-- Mensagem de erro -->
         <div *ngIf="errorMessage" class="error-message">
             {{ errorMessage }}

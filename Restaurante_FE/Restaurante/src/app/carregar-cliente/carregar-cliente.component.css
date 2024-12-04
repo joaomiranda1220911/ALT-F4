@@ -1,4 +1,4 @@
-/* Estilo do formulário de PratoSala */
+/* Estilo do formulário de Carregar cliente */
 .carregar-cliente-form {
     display: flex;
     flex-direction: column;
@@ -103,6 +103,7 @@
     color: #333;
     margin-bottom: 20px;
 }
+
 .error-message {
     margin-top: 20px;
     padding: 10px;
@@ -112,5 +113,15 @@
     border: 1px solid #f5c6cb;
     font-size: 1rem;
     text-align: center;
-  }
-  
+}
+
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d9f5c6;
+    color: #4e721c;
+    border-radius: 8px;
+    border: 1px solid #d9f5c6;
+    font-size: 1rem;
+    text-align: center;
+}
