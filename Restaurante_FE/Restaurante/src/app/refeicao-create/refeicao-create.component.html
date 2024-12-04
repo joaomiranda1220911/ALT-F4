@@ -14,7 +14,7 @@
     <div>
       <label for="prato">Prato:</label>
       <select id="IdPrato" formControlName="IdPrato" required>
-        <option *ngFor="let prato of pratosAtivos" [value]="prato.idPrato">{{ prato.idPrato }}</option>
+        <option *ngFor="let prato of pratosAtivos" [value]="prato.idPrato">{{ prato.idPrato }} - {{prato.nome}} </option>
       </select>
       <div *ngIf="refeicaoCreateForm.get('IdPrato')?.invalid && refeicaoCreateForm.get('IdPrato')?.touched" class="text-danger">
         O prato é obrigatório.
@@ -39,7 +39,7 @@
     <div>
       <label for="TipoRefeicaoId">Tipo de Refeição:</label>
       <select id="TipoRefeicaoId" formControlName="TipoRefeicaoId" required>
-        <option *ngFor="let tipo of tipoRefeicao" [value]="tipo.id"> {{tipo.id}} </option>
+        <option *ngFor="let tipo of tipoRefeicao" [value]="tipo.id"> {{tipo.id}} - {{tipo.nome}} </option>
       </select>
       <div *ngIf="refeicaoCreateForm.get('TipoRefeicaoId')?.invalid && refeicaoCreateForm.get('TipoRefeicaoId')?.touched" class="text-danger">
         O tipo de refeição é obrigatório.
