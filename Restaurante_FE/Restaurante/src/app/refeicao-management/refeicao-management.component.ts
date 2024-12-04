@@ -16,8 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class RefeicoesManagementComponent {
   mostrarFormulario: boolean = false; // Controla se o formulário de criação é exibido
   mostrarFormularioRemover: boolean = false; // Controla se a lista de pratos é exibida
-  mostrarFormularioDefinirPrato: boolean = false; // Controla se o formulário de definir prato é exibido
-
+  
   // Exibe o formulário de criação e fecha os outros
   toggleFormulario(): void {
     this.mostrarFormulario = !this.mostrarFormulario; // Altera o valor do mostrarFormulario para o oposto do seu valor atual

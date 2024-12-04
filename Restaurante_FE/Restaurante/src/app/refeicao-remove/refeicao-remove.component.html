@@ -1,6 +1,7 @@
-<div class="refeicao-Form">
+<div class="refeicaoRemoveForm">
     <h2>Remover Refeição</h2>
-  
+    <form [formGroup]="refeicaoRemoveForm" (ngSubmit)="onRemove()">
+
     <!-- Mensagem caso não existam refeições -->
     <div *ngIf="refeicoes.length === 0" class="alert alert-info">
       Nenhuma refeição disponível para remoção.
@@ -15,12 +16,8 @@
       </select>
     </div>
   
-    <!-- Formulário de remoção -->
-    <form [formGroup]="refeicaoRemoveForm" (ngSubmit)="onRemove()">
-      <button type="submit" [disabled]="refeicaoRemoveForm.invalid || refeicoes.length === 0" class="btn btn-danger mt-3">
-        Remover Refeição
-      </button>
-    </form>
+    <button type="submit" [disabled]="refeicaoRemoveForm.invalid">Remover Refeição</button>
+  </form>
   
     <!-- Mensagens de Sucesso ou Erro -->
     <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
