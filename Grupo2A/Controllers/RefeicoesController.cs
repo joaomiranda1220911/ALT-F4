@@ -82,7 +82,7 @@ namespace Grupo2A.Controllers
             }
 
             // Retorna uma mensagem de confirmação ao Postman
-            return Ok("Refeição eliminada com sucesso.");
+            return Ok( new {message = "Refeição eliminada com sucesso."});
         }
 
         //US016: Apresentar ementa disponível com base na data, tipo e quantidade[HttpPost("filtrar")][HttpPost("filtrar")]
@@ -158,6 +158,18 @@ namespace Grupo2A.Controllers
             return Ok(refeicoes); // Retorna as refeições com todas as propriedades carregadas
         }
 
+        [HttpGet("refeicoes-futuras")]
+        public async Task<ActionResult<List<Refeicao>>> GetRefeicoesFuturas()
+        {
+            var refeicoesFuturas = await _service.ObterRefeicoesFuturasAsync();
+
+            if (refeicoesFuturas == null || refeicoesFuturas.Count == 0)
+            {
+                return NotFound("Não há refeições futuras.");
+            }
+
+            return Ok(refeicoesFuturas);
+        }
 
     }
 }

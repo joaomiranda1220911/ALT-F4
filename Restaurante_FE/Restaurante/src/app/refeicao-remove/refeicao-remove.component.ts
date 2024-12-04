@@ -25,7 +25,7 @@ export class RefeicaoRemoveComponent implements OnInit {
 
   ngOnInit(): void {
     // Buscar todas as refeições
-    this.refeicaoService.getTodasRefeicoes().subscribe(
+    this.refeicaoService.getTodasRefeicoesFuturas().subscribe(
       (refeicoes) => {
         console.log('Refeições carregadas', refeicoes);
         this.refeicoes = refeicoes;

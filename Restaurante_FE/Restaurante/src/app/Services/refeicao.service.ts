@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Prato } from '../Models/prato';
 import { Refeicao } from '../Models/refeicao';
 import { TipoPrato } from '../Models/interfaces';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +26,11 @@ export class RefeicaoService {
   // Retorna todas as refeições
   getTodasRefeicoes(): Observable<Refeicao[]> {
     return this.http.get<Refeicao[]>(`${this.baUrl}`);
+  }
+
+  //Retorna todas as refeições futuras
+  getTodasRefeicoesFuturas(): Observable<Refeicao[]> {
+    return this.http.get<Refeicao[]>(`${this.baseUrl}/${"refeicoes-futuras"}`);
   }
   
   // Cria uma nova refeição

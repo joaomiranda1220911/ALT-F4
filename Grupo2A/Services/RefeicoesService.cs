@@ -139,5 +139,15 @@ namespace Grupo2A.Services
             return await _repo.GetAllRefeicoes();
         }
 
+        public async Task<List<Refeicao>> ObterRefeicoesFuturasAsync()
+        {
+            DateTime dataAtual = DateTime.UtcNow; // Data e hora atual em UTC
+
+            // Buscar as refeições com data maior que a data atual
+            return await _context.Refeicoes
+                                 .Where(r => r.Data > dataAtual)
+                                 .ToListAsync();
+        }
+
     }
 }
