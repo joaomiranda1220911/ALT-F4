@@ -1,69 +1,56 @@
-<div class="refeicao-Form">
-    <h2>Criar Refeição</h2>
-    <form [formGroup]="refeicaoCreateForm" (ngSubmit)="onSubmit()">
-      
-      <!-- Campo para Data -->
-      <div>
-        <label for="Data">Data:</label>
-        <input type="date" id="Data" formControlName="Data" class=form-control placeholder="dd-MM-yyyy" required />
-        <div *ngIf="refeicaoCreateForm.get('Data')?.invalid && refeicaoCreateForm.get('Data')?.touched" class="text-danger">
-          A data é obrigatória.
+<div class="refeicaoCreateForm">
+  <h2>Criar Refeição</h2>
+  <form [formGroup]="refeicaoCreateForm" (ngSubmit)="onSubmit()">
+    <!-- Campo para Data -->
+    <div>
+      <label for="Data">Data:</label>
+      <input type="date" id="Data" formControlName="Data" required />
+      <div *ngIf="refeicaoCreateForm.get('Data')?.invalid && refeicaoCreateForm.get('Data')?.touched" class="text-danger">
+        A data é obrigatória.
+      </div>
+    </div>
+
+    <!-- Campo para Seleção de Prato -->
+    <div>
+      <label for="prato">Prato:</label>
+      <select id="IdPrato" formControlName="IdPrato" required>
+        <option *ngFor="let prato of pratosAtivos" [value]="prato.idPrato">{{ prato.idPrato }}</option>
+      </select>
+      <div *ngIf="refeicaoCreateForm.get('IdPrato')?.invalid && refeicaoCreateForm.get('IdPrato')?.touched" class="text-danger">
+        O prato é obrigatório.
+      </div>
+    </div>
+
+    <!-- Campo para Quantidade -->
+    <div>
+      <label for="QuantidadeProduzida">Quantidade:</label>
+      <input type="number" id="QuantidadeProduzida" formControlName="QuantidadeProduzida" required />
+      <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.invalid && refeicaoCreateForm.get('QuantidadeProduzida')?.touched" class="text-danger">
+        <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.errors?.['required']">
+          A quantidade é obrigatória.
+        </div>
+        <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.errors?.['min']">
+          A quantidade deve ser maior que 0.
         </div>
       </div>
-  
-      <!-- Campo para Hora -->
-      <div>
-        <label for="Hora">Hora:</label>
-        <input type="time" step=1 id="Hora" formControlName="Hora" required />
-        <div *ngIf="refeicaoCreateForm.get('Hora')?.invalid && refeicaoCreateForm.get('Hora')?.touched" class="text-danger">
-          A hora é obrigatória.
-        </div>
+    </div>
+
+    <!-- Campo para Tipo de Refeição -->
+    <div>
+      <label for="TipoRefeicaoId">Tipo de Refeição:</label>
+      <select id="TipoRefeicaoId" formControlName="TipoRefeicaoId" required>
+        <option *ngFor="let tipo of tipoRefeicao" [value]="tipo.id"> {{tipo.id}} </option>
+      </select>
+      <div *ngIf="refeicaoCreateForm.get('TipoRefeicaoId')?.invalid && refeicaoCreateForm.get('TipoRefeicaoId')?.touched" class="text-danger">
+        O tipo de refeição é obrigatório.
       </div>
-  
-      
-      <!-- Campo para Seleção de Prato -->
-      <div>
-        <label for="prato">Prato:</label>
-        <select id="IdPrato" formControlName="IdPrato" required>
-          <option *ngFor="let prato of pratosAtivos" [value]="prato.idPrato">{{ prato.idPrato }}</option>
-        </select>
-        <div *ngIf="refeicaoCreateForm.get('IdPrato')?.invalid && refeicaoCreateForm.get('IdPrato')?.touched" class="text-danger">
-          O prato é obrigatório.
-        </div>
-      </div>
-  
-      <!-- Campo para Quantidade -->
-      <div>
-        <label for="QuantidadeProduzida">Quantidade:</label>
-        <input type="number" id="QuantidadeProduzida" formControlName="QuantidadeProduzida" required />
-        <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.invalid && refeicaoCreateForm.get('QuantidadeProduzida')?.touched" class="text-danger">
-          <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.errors?.['required']">
-            A quantidade é obrigatória.
-          </div>
-          <div *ngIf="refeicaoCreateForm.get('QuantidadeProduzida')?.errors?.['min']">
-            A quantidade deve ser maior que 0.
-          </div>
-        </div>
-      </div>
-  
-      <!-- Campo para Tipo de Refeição -->
-      <div>
-        <label for="TipoRefeicaoId">Tipo de Refeição:</label>
-        <select id="TipoRefeicaoId" formControlName="TipoRefeicaoId" required>
-          <option *ngFor="let tipo of tiposDePrato" [value]="tipo.id"> {{tipo.idTipoPrato}}</option>
-        </select>
-        <div *ngIf="refeicaoCreateForm.get('TipoRefeicaoId')?.invalid && refeicaoCreateForm.get('TipoRefeicaoId')?.touched" class="text-danger">
-          O tipo de refeição é obrigatório.
-        </div>
-      </div>
-  
-  
-      <!-- Botão de Envio -->
-      <button type="submit" [disabled]="refeicaoCreateForm.invalid">Criar Refeição</button>
-    </form>
-  
-    <!-- Mensagens de Sucesso ou Erro -->
-    <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
-  </div>
-  
+    </div>
+
+    <!-- Botão de Envio -->
+    <button type="submit" [disabled]="refeicaoCreateForm.invalid">Criar Refeição</button>
+  </form>
+
+  <!-- Mensagens de Sucesso ou Erro -->
+  <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+</div>

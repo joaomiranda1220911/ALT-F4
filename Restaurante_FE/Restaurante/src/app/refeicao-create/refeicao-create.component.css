@@ -1,4 +1,4 @@
-.refeicao-Form {
+.refeicaoCreateForm {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -7,20 +7,20 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .refeicao-Form form {
+  .refeicaoCreateForm form {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
   
-  .refeicao-Form label {
+  .refeicaoCreateForm label {
     font-weight: bold;
     color: #333;
   }
   
-  .refeicao-Form select, 
-  .refeicao-Form input,
-  .refeicao-Form button {
+  .refeicaoCreateForm select, 
+  .refeicaoCreateForm input,
+  .refeicaoCreateForm button {
     padding: 8px;
     font-size: 16px;
     border-radius: 4px;
@@ -28,17 +28,17 @@
     box-sizing: border-box; /* Garante que padding não afete largura total */
   }
   
-  .refeicao-Form input, .refeicao-Form select {
+  .refeicaoCreateForm input, .refeicao-Form select {
     border: 1px solid #ccc;
   }
   
-  .refeicao-Form input[type="date"], 
-  .refeicao-Form input[type="number"] {
+  .refeicaoCreateForm input[type="date"], 
+  .refeicaoCreateForm input[type="number"] {
     background-color: #fff;
     cursor: pointer;
   }
   
-  .refeicao-Form button {
+  .refeicaoCreateForm button {
     border: none;
     background-color: #4CAF50;
     color: white;
@@ -46,17 +46,17 @@
     transition: background-color 0.3s;
   }
   
-  .refeicao-Form button:disabled {
+  .refeicaoCreateForm button:disabled {
     background-color: #ddd;
     cursor: not-allowed;
   }
   
-  .refeicao-Form button:hover:not(:disabled) {
+  .refeicaoCreateForm button:hover:not(:disabled) {
     background-color: #45a049;
   }
   
   @media (max-width: 600px) {
-    .refeicao-Form {
+    .refeicaoCreateForm {
       padding: 15px;
     }
   }

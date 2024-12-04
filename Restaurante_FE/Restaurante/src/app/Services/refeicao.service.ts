@@ -5,6 +5,7 @@ import { Prato } from '../Models/prato';
 import { Refeicao } from '../Models/refeicao';
 import { TipoPrato } from '../Models/interfaces';
 import { map } from 'rxjs/operators';
+import { TipoRefeicao } from '../Models/tipoRefeicao';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,7 @@ export class RefeicaoService {
   private basUrl = 'http://localhost:5057/api/Pratos/ativos';
   private baUrl = 'http://localhost:5057/api/refeicoes';
   private bUrl = 'http://localhost:5057/api/TipoDePrato';
+  private url = 'http://localhost:5057/api/TipoDeRefeicao/GetAllTiposRefeicao';
 
 
   constructor(private http: HttpClient) {}
@@ -48,4 +50,8 @@ export class RefeicaoService {
     return this.http.get<TipoPrato[]>(`${this.bUrl}`);
   }
 
+  //Retorna os tipos de refeição
+  getTipoRefeicao(): Observable<TipoRefeicao[]> {
+    return this.http.get<TipoRefeicao[]>(`${this.url}`);
+  }
 }
