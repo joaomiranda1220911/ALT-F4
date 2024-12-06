@@ -1,0 +1,153 @@
+commit ea4afc997e5baaadddc3d708fd33349573e5f56d	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Dec 4 19:12:22 2024 +0000
+
+    tentativa data
+
+M	Grupo2A/Database/CozinhaDB
+M	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.html
+
+commit d883be91eaf74070ac0f89b43dbc4a3b1dc3e044	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Dec 4 16:00:36 2024 +0000
+
+    teste
+
+M	Grupo2A/Database/CozinhaDB
+
+commit c23982c500fdfbdaaee33b7eee2444a3bd26a13a	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Dec 4 15:58:18 2024 +0000
+
+    atualização - parte 3
+
+M	Grupo2A/Database/CozinhaDB
+M	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.html
+M	Restaurante_FE/Restaurante/src/app/refeicao-remove/refeicao-remove.component.html
+
+commit 213efd6fb2b350554a46afb964842998d8c5f005	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Dec 4 15:47:49 2024 +0000
+
+    atualização - parte 2
+
+M	Grupo2A/Database/CozinhaDB
+
+commit 8f13697f17a411cab02b78094eab43443647b31a	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Dec 4 15:45:47 2024 +0000
+
+    atualização - base de dados
+
+M	Grupo2A/Database/CozinhaDB
+
+commit 795189218f0cbdbf10a33c75f7d58d646b05f493	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Dec 4 15:41:32 2024 +0000
+
+    Finalização US003
+
+M	Grupo2A/Database/CozinhaDB
+M	Restaurante_FE/Restaurante/src/app/Models/refeicao.ts
+M	Restaurante_FE/Restaurante/src/app/Services/refeicao.service.ts
+M	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.css
+M	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.html
+M	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.ts
+
+commit 4934cebffddc654fca97c5458fb9b7fea9855e7c	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Dec 4 02:09:04 2024 +0000
+
+    US004 - completamente funcional
+
+M	Grupo2A/Controllers/RefeicoesController.cs
+M	Grupo2A/Services/RefeicoesService.cs
+M	Restaurante_FE/Restaurante/src/app/Models/refeicao.ts
+M	Restaurante_FE/Restaurante/src/app/Services/refeicao.service.ts
+M	Restaurante_FE/Restaurante/src/app/refeicao-remove/refeicao-remove.component.ts
+
+commit fcb73061ffba53cfaa3c2bde3be0ed21097e517d	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Wed Dec 4 00:07:03 2024 +0000
+
+    correção erros
+
+M	Restaurante_FE/Restaurante/src/app/refeicao-management/refeicao-management.component.ts
+M	Restaurante_FE/Restaurante/src/app/refeicao-remove/refeicao-remove.component.css
+M	Restaurante_FE/Restaurante/src/app/refeicao-remove/refeicao-remove.component.html
+
+commit 553c999a0861c682eb49bfac1591c15268347400	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Tue Dec 3 23:53:18 2024 +0000
+
+    teste
+
+M	Grupo2A/Database/CozinhaDB
+M	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.html
+
+commit e2bb192d12241b1e6c8a498ca9a57291b9bfbfe1	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Tue Dec 3 23:40:52 2024 +0000
+
+    correção erros
+
+M	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Services/PratosService.cs
+M	Sala/sala/node_modules/jade/jade.js
+
+commit 75dce9346cf098da1786953a3b7698d902305290	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Tue Dec 3 22:45:52 2024 +0000
+
+    caminhos
+
+M	Restaurante_FE/Restaurante/src/app/cozinha/cozinha.component.html
+M	Restaurante_FE/Restaurante/src/app/cozinha/cozinha.component.ts
+M	Restaurante_FE/Restaurante/src/app/refeicao-management/refeicao-management.component.spec.ts
+
+commit 4e58dd6fe39558877a4defd7855e23492f486008	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Tue Dec 3 22:38:16 2024 +0000
+
+    método adicional
+
+M	Grupo2A/Controllers/PratosController.cs
+M	Grupo2A/Repositories/PratosRepository.cs
+M	Grupo2A/Services/PratosService.cs
+
+commit 7e19c1f2092191da8a3e4b657e6420f7c05bb4c0	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Tue Dec 3 22:35:11 2024 +0000
+
+    Rotas
+
+M	Restaurante_FE/Restaurante/src/app/app.routes.ts
+
+commit 400331b9b1a1720a378f60b5cb5ce569f67ea56a	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Tue Dec 3 22:33:46 2024 +0000
+
+    US004
+
+A	Restaurante_FE/Restaurante/src/app/refeicao-management/refeicao-management.component.css
+A	Restaurante_FE/Restaurante/src/app/refeicao-management/refeicao-management.component.html
+A	Restaurante_FE/Restaurante/src/app/refeicao-management/refeicao-management.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/refeicao-management/refeicao-management.component.ts
+A	Restaurante_FE/Restaurante/src/app/refeicao-remove/refeicao-remove.component.css
+A	Restaurante_FE/Restaurante/src/app/refeicao-remove/refeicao-remove.component.html
+A	Restaurante_FE/Restaurante/src/app/refeicao-remove/refeicao-remove.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/refeicao-remove/refeicao-remove.component.ts
+
+commit 73281972489ea986e2a7f1a9f84397d572b9b6aa	refs/heads/main
+Author: Gabriela <1220832@isep.ipp.pt>
+Date:   Tue Dec 3 22:30:03 2024 +0000
+
+    US003
+
+A	Restaurante_FE/Restaurante/src/app/Models/refeicao.ts
+A	Restaurante_FE/Restaurante/src/app/Services/refeicao.service.spec.ts
+A	Restaurante_FE/Restaurante/src/app/Services/refeicao.service.ts
+A	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.css
+A	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.html
+A	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.ts

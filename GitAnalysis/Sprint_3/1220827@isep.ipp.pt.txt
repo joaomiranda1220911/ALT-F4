@@ -1,0 +1,158 @@
+commit f56b6dbf96af3380dfe9e1b11963d11ba8c8ff6c	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Tue Dec 3 18:51:43 2024 +0000
+
+    Implementação do CSS do US006 e ajustes no código
+
+M	Restaurante_FE/Restaurante/src/app/Services/ementa.service.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.css
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.html
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.spec.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.ts
+
+commit 114b39d6f64d901cffdad8a1a5e81079a925ce4a	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Tue Dec 3 14:10:43 2024 +0000
+
+    Alteração do US006
+
+M	Restaurante_FE/Restaurante/src/app/Services/ementa.service.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.html
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.spec.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.ts
+
+commit 89b3ca1d277c90859f5a8e31ee25d310ac4cc4c8	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Tue Dec 3 10:42:15 2024 +0000
+
+    Implementação do US006
+
+A	Restaurante_FE/Restaurante/src/app/Services/ementa.service.spec.ts
+M	Restaurante_FE/Restaurante/src/app/Services/ementa.service.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.css
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.html
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.ts
+
+commit be3041ce981740b272a03acf7ba4e29d2244fc51	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sun Dec 1 19:09:32 2024 +0000
+
+    Implementação do US006 - Consultar ementa
+
+M	Grupo2A/Database/CozinhaDB
+M	Restaurante_FE/Restaurante/src/app/Models/ementa.ts
+A	Restaurante_FE/Restaurante/src/app/Models/tipoRefeicao.ts
+M	Restaurante_FE/Restaurante/src/app/Services/ementa.service.ts
+D	Restaurante_FE/Restaurante/src/app/Services/tipoDeRefeicao.service.ts
+A	Restaurante_FE/Restaurante/src/app/Services/tipoRefeicao.service.ts
+M	Restaurante_FE/Restaurante/src/app/app.component.ts
+M	Restaurante_FE/Restaurante/src/app/app.routes.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.css
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.html
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.ts
+M	Sala/sala/services/refeicaoService.js
+
+commit 549aa49857262141ab58930a08b7eca646226e8a	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 30 15:37:28 2024 +0000
+
+    Criação de botão ementa na sala management
+
+M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
+M	Restaurante_FE/Restaurante/src/app/sala/sala.component.ts
+
+commit 41a8df7c1bf4ac93f82af797acfdf0c47eb1b3db	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Sat Nov 30 15:32:17 2024 +0000
+
+    US006- ementa-controlar.component.spec.ts, html e algumas alterações no ementa.ts e ementa.service.ts
+
+M	Grupo2A/Database/CozinhaDB
+A	Restaurante_FE/Restaurante/src/app/Models/ementa.ts
+M	Restaurante_FE/Restaurante/src/app/Services/ementa.service.ts
+M	Restaurante_FE/Restaurante/src/app/app.routes.ts
+R100	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.css	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.css
+A	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.html
+A	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.spec.ts
+R053	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.ts	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.ts
+D	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.html
+D	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.spec.ts
+
+commit a66412d635d72407b300d5c0094cc456fb7c802e	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Fri Nov 29 20:27:46 2024 +0000
+
+    Alteração de erros/ Implementação de código no ementa-consultar.component.ts-US006
+
+M	Grupo2A/Controllers/EmentasController.cs
+M	Restaurante_FE/Restaurante/src/app/Services/ementa.service.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.ts
+
+commit c009160f9a11a8561a2e7168a16b6662afacd5bd	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Fri Nov 29 19:23:49 2024 +0000
+
+    Ementa Atual- US006
+
+M	Grupo2A/Controllers/EmentasController.cs
+A	Restaurante_FE/Restaurante/src/app/Services/tipoDeRefeicao.service.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.spec.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.ts
+
+commit ef43acc7dc05ef2ac3ccec003c4e16e252d6f7fc	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Fri Nov 29 02:16:05 2024 +0000
+
+    US006- ementa-consultar.component.ts
+
+R100	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.css	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.css
+R100	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.html	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.html
+R100	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.spec.ts	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-consultar.component.ts
+D	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.ts
+
+commit c8ca1c4b38c43dc11c1dc715188a07eaf949e110	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Fri Nov 29 01:50:08 2024 +0000
+
+    US006- ementaService.ts
+
+D	Grupo2A/Model/DTO/Ementa2create_dto.cs
+D	Grupo2A/Model/DTO/Ementa2detail_dto.cs
+D	Grupo2A/Model/DTO/Ementa2update_dto.cs
+A	Restaurante_FE/Restaurante/src/app/Services/ementa.service.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.ts
+
+commit 4704e7796a549d3d6063909622ce386ab98c6e7f	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Tue Nov 26 10:22:45 2024 +0000
+
+    Alteração de nome de pastas e ficheiros
+
+R100	Restaurante_FE/Restaurante/src/app/menu-current/menu-current.component.css	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.css
+R100	Restaurante_FE/Restaurante/src/app/menu-current/menu-current.component.html	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.html
+R100	Restaurante_FE/Restaurante/src/app/menu-current/menu-current.component.spec.ts	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/ementa-current/ementa-current.component.ts
+D	Restaurante_FE/Restaurante/src/app/menu-current/menu-current.component.ts
+
+commit 8e6204981f2ee55abab31a326fcd0586dcae64e9	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Tue Nov 26 10:11:06 2024 +0000
+
+    Criação dos ficheiros do Model da ementa (Cozinha_BE)
+
+A	Grupo2A/Model/DTO/Ementa2create_dto.cs
+A	Grupo2A/Model/DTO/Ementa2detail_dto.cs
+A	Grupo2A/Model/DTO/Ementa2update_dto.cs
+A	Grupo2A/Model/Ementa.cs
+
+commit 6ff3ac321ea562456714da8c54abfb130eccca92	refs/heads/main
+Author: Seu Nome <1220827@isep.ipp.pt>
+Date:   Tue Nov 26 09:50:59 2024 +0000
+
+    Criação das pastas e ficheiros US006 - (Restaurante_FE - angular)
+
+A	Restaurante_FE/Restaurante/src/app/menu-current/menu-current.component.css
+A	Restaurante_FE/Restaurante/src/app/menu-current/menu-current.component.html
+A	Restaurante_FE/Restaurante/src/app/menu-current/menu-current.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/menu-current/menu-current.component.ts

@@ -1,0 +1,126 @@
+commit 3686dc6801ada9b2cc1392d254fea46f37a56e00	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Dec 4 19:22:50 2024 +0000
+
+    uniformização css
+
+M	Grupo2A/Database/CozinhaDB
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.css
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.html
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.css
+M	Restaurante_FE/Restaurante/src/app/perfil-cliente/perfil-cliente.component.css
+M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.css
+M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.css
+M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.html
+M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.ts
+M	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.css
+
+commit 517c019381866dd928a941f45baef209f832c953	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Tue Dec 3 14:15:25 2024 +0000
+
+    Divisão de tarefas sprint 3
+
+A	"Restaurante_FE/Restaurante/Divis\303\243o de tarefas - Grupo Alt-F4 - Sprint 3.pdf"
+
+commit 3f2fb5eaad5460fb37bb3360bc718fb017820771	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Tue Dec 3 14:15:08 2024 +0000
+
+    ementa management
+
+M	Restaurante_FE/Restaurante/src/app/app.routes.ts
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.html
+M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.ts
+A	Restaurante_FE/Restaurante/src/app/ementa-management/ementa-management.component.css
+A	Restaurante_FE/Restaurante/src/app/ementa-management/ementa-management.component.html
+A	Restaurante_FE/Restaurante/src/app/ementa-management/ementa-management.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/ementa-management/ementa-management.component.ts
+M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
+M	Restaurante_FE/Restaurante/src/app/sala/sala.component.ts
+
+commit 1c8c0fea2df3aac7ba749f199a3d62327b9cc55c	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Sat Nov 30 00:44:11 2024 +0000
+
+    mensagens de erro US05
+
+M	Restaurante_FE/Restaurante/package-lock.json
+M	Restaurante_FE/Restaurante/package.json
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.css
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.html
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.ts
+
+commit 4613ebfef3de1d2348e22bcd7df9acb615072ee5	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 29 17:28:06 2024 +0000
+
+    pequenas correções
+
+M	Restaurante_FE/Restaurante/src/app/Services/carregar-cliente.service.ts
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.html
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.ts
+
+commit b8c5a68a5f3a53dde06a149a69924bda70912e71	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 29 17:10:00 2024 +0000
+
+    US05 - carregar conta cliente
+
+A	Restaurante_FE/Restaurante/src/app/Services/carregar-cliente.service.spec.ts
+A	Restaurante_FE/Restaurante/src/app/Services/carregar-cliente.service.ts
+M	Restaurante_FE/Restaurante/src/app/app.routes.ts
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.css
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.html
+M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.ts
+M	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.html
+M	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.ts
+M	Restaurante_FE/Restaurante/src/app/encomendas-management/encomendas-management.component.html
+M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.spec.ts
+M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
+M	Restaurante_FE/Restaurante/src/app/sala/sala.component.ts
+
+commit 85144797abe538fb7a86d91026049d7331be96d3	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 29 16:02:03 2024 +0000
+
+    criei a área cliente
+
+A	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.css
+A	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.html
+A	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.ts
+A	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.css
+A	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.html
+A	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.ts
+
+commit 976b34ccfa5e05e198e47863dbe93f17ea7faad3	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Fri Nov 29 15:47:03 2024 +0000
+
+    definir preço do prato operacional
+
+M	Restaurante_FE/Restaurante/src/app/Services/prato-sala.service.ts
+M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.html
+M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.spec.ts
+M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.ts
+
+commit 71ab806f4d0e422981833525e670f5f7017e75ff	refs/heads/main
+Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
+Date:   Wed Nov 27 20:09:03 2024 +0000
+
+    definir preço prato
+
+A	Restaurante_FE/Restaurante/src/app/Models/pratoSala.ts
+A	Restaurante_FE/Restaurante/src/app/Services/prato-sala.service.spec.ts
+A	Restaurante_FE/Restaurante/src/app/Services/prato-sala.service.ts
+M	Restaurante_FE/Restaurante/src/app/app.routes.ts
+A	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.css
+A	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.html
+A	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.spec.ts
+A	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.ts
+M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.html
+M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.ts
+A	Sala/package-lock.json
