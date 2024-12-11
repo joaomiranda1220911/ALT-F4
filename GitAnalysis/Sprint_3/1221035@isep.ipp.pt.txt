@@ -1,4 +1,4 @@
-commit 3686dc6801ada9b2cc1392d254fea46f37a56e00	refs/heads/main
+commit 3686dc6801ada9b2cc1392d254fea46f37a56e00	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Wed Dec 4 19:22:50 2024 +0000
 
@@ -16,7 +16,7 @@ M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.html
 M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.ts
 M	Restaurante_FE/Restaurante/src/app/refeicao-create/refeicao-create.component.css
 
-commit 517c019381866dd928a941f45baef209f832c953	refs/heads/main
+commit 517c019381866dd928a941f45baef209f832c953	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Tue Dec 3 14:15:25 2024 +0000
 
@@ -24,7 +24,7 @@ Date:   Tue Dec 3 14:15:25 2024 +0000
 
 A	"Restaurante_FE/Restaurante/Divis\303\243o de tarefas - Grupo Alt-F4 - Sprint 3.pdf"
 
-commit 3f2fb5eaad5460fb37bb3360bc718fb017820771	refs/heads/main
+commit 3f2fb5eaad5460fb37bb3360bc718fb017820771	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Tue Dec 3 14:15:08 2024 +0000
 
@@ -40,7 +40,7 @@ A	Restaurante_FE/Restaurante/src/app/ementa-management/ementa-management.compone
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.ts
 
-commit 1c8c0fea2df3aac7ba749f199a3d62327b9cc55c	refs/heads/main
+commit 1c8c0fea2df3aac7ba749f199a3d62327b9cc55c	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Sat Nov 30 00:44:11 2024 +0000
 
@@ -52,7 +52,7 @@ M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component
 M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.html
 M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.ts
 
-commit 4613ebfef3de1d2348e22bcd7df9acb615072ee5	refs/heads/main
+commit 4613ebfef3de1d2348e22bcd7df9acb615072ee5	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 29 17:28:06 2024 +0000
 
@@ -62,7 +62,7 @@ M	Restaurante_FE/Restaurante/src/app/Services/carregar-cliente.service.ts
 M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.html
 M	Restaurante_FE/Restaurante/src/app/carregar-cliente/carregar-cliente.component.ts
 
-commit b8c5a68a5f3a53dde06a149a69924bda70912e71	refs/heads/main
+commit b8c5a68a5f3a53dde06a149a69924bda70912e71	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 29 17:10:00 2024 +0000
 
@@ -81,7 +81,7 @@ M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.spec.
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.ts
 
-commit 85144797abe538fb7a86d91026049d7331be96d3	refs/heads/main
+commit 85144797abe538fb7a86d91026049d7331be96d3	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 29 16:02:03 2024 +0000
 
@@ -96,7 +96,7 @@ A	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.com
 A	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.spec.ts
 A	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.ts
 
-commit 976b34ccfa5e05e198e47863dbe93f17ea7faad3	refs/heads/main
+commit 976b34ccfa5e05e198e47863dbe93f17ea7faad3	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Fri Nov 29 15:47:03 2024 +0000
 
@@ -107,7 +107,7 @@ M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.html
 M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.spec.ts
 M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.ts
 
-commit 71ab806f4d0e422981833525e670f5f7017e75ff	refs/heads/main
+commit 71ab806f4d0e422981833525e670f5f7017e75ff	refs/tags/v3.0.0
 Author: AnaAlexandraMatos <1221035@isep.ipp.pt>
 Date:   Wed Nov 27 20:09:03 2024 +0000
 

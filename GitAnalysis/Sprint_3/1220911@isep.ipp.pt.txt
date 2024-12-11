@@ -1,4 +1,4 @@
-commit 9956e7569c84cf0ce55b6387ae9502771ea12020	refs/heads/main (HEAD -> main, tag: v3.0.0, origin/main)
+commit 9956e7569c84cf0ce55b6387ae9502771ea12020	refs/tags/v3.0.0 (tag: v3.0.0)
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Dec 4 20:24:14 2024 +0000
 
@@ -6,7 +6,7 @@ Date:   Wed Dec 4 20:24:14 2024 +0000
 
 M	Restaurante_FE/Restaurante/src/app/ementa-consultar/ementa-consultar.component.css
 
-commit 8c7cd869840b58f1c0f07f6e4b2f577e8f2d3098	refs/heads/main
+commit 8c7cd869840b58f1c0f07f6e4b2f577e8f2d3098	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Dec 4 16:53:06 2024 +0000
 
@@ -14,7 +14,7 @@ Date:   Wed Dec 4 16:53:06 2024 +0000
 
 M	Restaurante_FE/Restaurante/src/app/encomendas-management/encomendas-management.component.css
 
-commit 03acc58595fc2ac12268565c0391684d32dbd827	refs/heads/main
+commit 03acc58595fc2ac12268565c0391684d32dbd827	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Dec 4 16:47:28 2024 +0000
 
@@ -23,7 +23,7 @@ Date:   Wed Dec 4 16:47:28 2024 +0000
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.css
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.ts
 
-commit 78511927eb438e7d928d1d5bb67667ba406423a8	refs/heads/main
+commit 78511927eb438e7d928d1d5bb67667ba406423a8	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Dec 4 00:29:29 2024 +0000
 
@@ -31,7 +31,7 @@ Date:   Wed Dec 4 00:29:29 2024 +0000
 
 M	.gitignore
 
-commit 632cc90017c36fc8db5c781c56bbc59a4c3cb8b9	refs/heads/main
+commit 632cc90017c36fc8db5c781c56bbc59a4c3cb8b9	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Dec 4 00:29:03 2024 +0000
 
@@ -39,7 +39,7 @@ Date:   Wed Dec 4 00:29:03 2024 +0000
 
 M	.gitignore
 
-commit d0bdd165d4fe67a9b95d13a74818dd6b0b0acaa1	refs/heads/main
+commit d0bdd165d4fe67a9b95d13a74818dd6b0b0acaa1	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 20:16:33 2024 +0000
 
@@ -47,7 +47,7 @@ Date:   Fri Nov 29 20:16:33 2024 +0000
 
 M	Restaurante_FE/Restaurante/src/app/clientes-management/clientes-management.component.ts
 
-commit e81b6c460524a59757b2d4b372d87e6afbd69b7c	refs/heads/main
+commit e81b6c460524a59757b2d4b372d87e6afbd69b7c	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 20:13:45 2024 +0000
 
@@ -62,7 +62,7 @@ A	Restaurante_FE/Restaurante/src/app/perfil-cliente/perfil-cliente.component.htm
 A	Restaurante_FE/Restaurante/src/app/perfil-cliente/perfil-cliente.component.spec.ts
 A	Restaurante_FE/Restaurante/src/app/perfil-cliente/perfil-cliente.component.ts
 
-commit e1d56c5b7ce3c5bb783e5cbec05ddb4a384286d9	refs/heads/main
+commit e1d56c5b7ce3c5bb783e5cbec05ddb4a384286d9	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 18:55:12 2024 +0000
 
@@ -71,7 +71,7 @@ Date:   Fri Nov 29 18:55:12 2024 +0000
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.html
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.ts
 
-commit afa354ba071607779a1937ccff9c5173e5740b57	refs/heads/main
+commit afa354ba071607779a1937ccff9c5173e5740b57	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 18:44:49 2024 +0000
 
@@ -80,7 +80,7 @@ Date:   Fri Nov 29 18:44:49 2024 +0000
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.html
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.ts
 
-commit 97f2b4c7366b1f7ba98992bfcef7e3992d5d44a8	refs/heads/main
+commit 97f2b4c7366b1f7ba98992bfcef7e3992d5d44a8	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 18:37:36 2024 +0000
 
@@ -90,7 +90,7 @@ M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.html
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.ts
 
-commit 301e246e08f5a5baa415543f6b9420955508d1be	refs/heads/main
+commit 301e246e08f5a5baa415543f6b9420955508d1be	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 17:47:26 2024 +0000
 
@@ -98,7 +98,7 @@ Date:   Fri Nov 29 17:47:26 2024 +0000
 
 M	Sala/sala/app.js
 
-commit 4bd3f6aabbf960dd9872590b3e792603a7b0a0ec	refs/heads/main
+commit 4bd3f6aabbf960dd9872590b3e792603a7b0a0ec	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 15:55:49 2024 +0000
 
@@ -113,7 +113,7 @@ M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.compone
 M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.ts
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
 
-commit b18baeb28ec07c0826c548858eb6c4ce123e1ecd	refs/heads/main
+commit b18baeb28ec07c0826c548858eb6c4ce123e1ecd	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 15:33:15 2024 +0000
 
@@ -122,7 +122,7 @@ Date:   Fri Nov 29 15:33:15 2024 +0000
 M	Restaurante_FE/Restaurante/src/app/encomendas-list/encomendas-list.component.html
 M	Restaurante_FE/Restaurante/src/app/encomendas-list/encomendas-list.component.ts
 
-commit 931452241d23a30eb56809bb20443bb2e1a3aa37	refs/heads/main
+commit 931452241d23a30eb56809bb20443bb2e1a3aa37	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Fri Nov 29 12:21:49 2024 +0000
 
@@ -143,7 +143,7 @@ M	Sala/sala/node_modules/with/node_modules/.bin/acorn
 M	Sala/sala/package-lock.json
 M	Sala/sala/package.json
 
-commit 18d9c13f5b31ab014451ca85eab93ba0bbedb9ce	refs/heads/main
+commit 18d9c13f5b31ab014451ca85eab93ba0bbedb9ce	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Thu Nov 28 12:02:50 2024 +0000
 
@@ -151,7 +151,7 @@ Date:   Thu Nov 28 12:02:50 2024 +0000
 
 M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.css
 
-commit 2919802e2d4b1cf94bb9f736d64b17180c812211	refs/heads/main
+commit 2919802e2d4b1cf94bb9f736d64b17180c812211	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Thu Nov 28 12:00:52 2024 +0000
 
@@ -161,7 +161,7 @@ M	Restaurante_FE/Restaurante/src/app/Services/encomenda.service.ts
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.html
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.ts
 
-commit 01f888a3ad6cea577999b4efdd2ac33f80487b7f	refs/heads/main
+commit 01f888a3ad6cea577999b4efdd2ac33f80487b7f	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Nov 27 02:12:57 2024 +0000
 
@@ -172,7 +172,7 @@ M	Restaurante_FE/Restaurante/src/app/encomendas-list/encomendas-list.component.t
 M	Restaurante_FE/Restaurante/src/app/encomendas-management/encomendas-management.component.html
 M	Restaurante_FE/Restaurante/src/app/encomendas-management/encomendas-management.component.ts
 
-commit 9667dfc037c7932ee5510283dc7622b48a8ae07e	refs/heads/main
+commit 9667dfc037c7932ee5510283dc7622b48a8ae07e	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Nov 27 01:54:01 2024 +0000
 
@@ -180,7 +180,7 @@ Date:   Wed Nov 27 01:54:01 2024 +0000
 
 M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.html
 
-commit 049ab38b196e47f580b54b2c9a21702e9960d286	refs/heads/main
+commit 049ab38b196e47f580b54b2c9a21702e9960d286	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Nov 27 01:51:49 2024 +0000
 
@@ -208,7 +208,7 @@ M	Restaurante_FE/Restaurante/src/app/sala/sala.component.css
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.ts
 
-commit cdd8c74b4200dfc721bf5c3e474aaee91197803e	refs/heads/main
+commit cdd8c74b4200dfc721bf5c3e474aaee91197803e	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Wed Nov 27 00:01:16 2024 +0000
 
@@ -225,57 +225,10 @@ M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.compone
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.css
 M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
 
-commit 5646248fd053367c0814a1c964e6e80eb6feb238	refs/heads/main
+commit 5646248fd053367c0814a1c964e6e80eb6feb238	refs/tags/v3.0.0
 Author: João Miranda <1220911@isep.ipp.pt>
 Date:   Tue Nov 26 23:10:19 2024 +0000
 
     Correção botões em duplicado
 
 M	Restaurante_FE/Restaurante/src/app/app.routes.ts
-
-commit 940bfa4c40e00e65886b9de7258b39524ae424fd	refs/heads/main
-Author: João Miranda <1220911@isep.ipp.pt>
-Date:   Tue Nov 26 01:30:11 2024 +0000
-
-    correção warnings
-
-M	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.ts
-M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.ts
-
-commit 439dcdae748edea145b3f5999b30ef560d34128f	refs/heads/main
-Author: João Miranda <1220911@isep.ipp.pt>
-Date:   Tue Nov 26 01:25:37 2024 +0000
-
-    correção US7
-
-M	Restaurante_FE/Restaurante/src/app/Services/encomenda.service.ts
-
-commit ebbb9d2d8995a53a6e643a3a5c145a428e158032	refs/heads/main
-Author: João Miranda <1220911@isep.ipp.pt>
-Date:   Tue Nov 26 01:16:48 2024 +0000
-
-    US8
-
-M	Restaurante_FE/Restaurante/src/app/Models/encomenda.ts
-M	Restaurante_FE/Restaurante/src/app/Services/encomenda.service.ts
-M	Restaurante_FE/Restaurante/src/app/app.routes.ts
-A	Restaurante_FE/Restaurante/src/app/list-encomendas/list-encomendas.component.css
-A	Restaurante_FE/Restaurante/src/app/list-encomendas/list-encomendas.component.html
-A	Restaurante_FE/Restaurante/src/app/list-encomendas/list-encomendas.component.spec.ts
-A	Restaurante_FE/Restaurante/src/app/list-encomendas/list-encomendas.component.ts
-
-commit 79564f7eb3ab8b77c4ef04d5a28a8eb529152717	refs/heads/main
-Author: João Miranda <1220911@isep.ipp.pt>
-Date:   Tue Nov 26 00:51:52 2024 +0000
-
-    US7
-
-A	Restaurante_FE/Restaurante/src/app/Models/encomenda.ts
-A	Restaurante_FE/Restaurante/src/app/Services/encomenda.service.spec.ts
-A	Restaurante_FE/Restaurante/src/app/Services/encomenda.service.ts
-M	Restaurante_FE/Restaurante/src/app/app.routes.ts
-A	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.css
-A	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.html
-A	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.spec.ts
-A	Restaurante_FE/Restaurante/src/app/encomenda-create/encomenda-create.component.ts
-M	Restaurante_FE/Restaurante/src/favicon.ico

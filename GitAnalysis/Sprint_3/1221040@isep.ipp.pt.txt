@@ -1,4 +1,4 @@
-commit 63cf5279861b35049f2e7c3da1a02bef1a0bba1e	refs/heads/main
+commit 63cf5279861b35049f2e7c3da1a02bef1a0bba1e	refs/tags/v3.0.0
 Author: Tiago Santos <1221040@isep.ipp.pt>
 Date:   Mon Dec 2 20:41:19 2024 +0000
 
@@ -10,7 +10,7 @@ M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.css
 M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.ts
 M	Restaurante_FE/Restaurante/src/app/prato-list/prato-list.component.html
 
-commit 8271b9238192f66db36a846c8c7f8d4e92adb6e5	refs/heads/main
+commit 8271b9238192f66db36a846c8c7f8d4e92adb6e5	refs/tags/v3.0.0
 Author: Tiago Santos <1221040@isep.ipp.pt>
 Date:   Fri Nov 29 22:26:22 2024 +0000
 
@@ -25,7 +25,7 @@ M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.ts
 M	Restaurante_FE/Restaurante/src/app/prato-list/prato-list.component.ts
 M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.html
 
-commit f8e529161f533a18bf001a9fd3ef94395c4462bf	refs/heads/main
+commit f8e529161f533a18bf001a9fd3ef94395c4462bf	refs/tags/v3.0.0
 Author: Tiago Santos <1221040@isep.ipp.pt>
 Date:   Thu Nov 28 12:05:55 2024 +0000
 
@@ -33,7 +33,7 @@ Date:   Thu Nov 28 12:05:55 2024 +0000
 
 M	Restaurante_FE/Restaurante/src/app/prato-list/prato-list.component.css
 
-commit 45d2b59175d0fdb0d827dc3a8afbbcf3f6f59804	refs/heads/main
+commit 45d2b59175d0fdb0d827dc3a8afbbcf3f6f59804	refs/tags/v3.0.0
 Author: Tiago Santos <1221040@isep.ipp.pt>
 Date:   Thu Nov 28 12:01:26 2024 +0000
 
@@ -41,7 +41,7 @@ Date:   Thu Nov 28 12:01:26 2024 +0000
 
 M	Restaurante_FE/Restaurante/src/app/prato-definir/prato-definir.component.css
 
-commit 0829ca623b95f8aa1dc51e6c727ed9d3a2088b0d	refs/heads/main
+commit 0829ca623b95f8aa1dc51e6c727ed9d3a2088b0d	refs/tags/v3.0.0
 Author: Tiago Santos <1221040@isep.ipp.pt>
 Date:   Thu Nov 28 11:54:00 2024 +0000
 
@@ -54,7 +54,7 @@ M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.ts
 M	Restaurante_FE/Restaurante/src/app/prato-list/prato-list.component.html
 M	Restaurante_FE/Restaurante/src/app/prato-list/prato-list.component.ts
 
-commit 77d5b20cfa0a0c937c4ef049989cef726345e911	refs/heads/main
+commit 77d5b20cfa0a0c937c4ef049989cef726345e911	refs/tags/v3.0.0
 Author: Tiago Santos <1221040@isep.ipp.pt>
 Date:   Wed Nov 27 18:05:08 2024 +0000
 
@@ -66,58 +66,3 @@ M	Restaurante_FE/Restaurante/src/app/prato-list/prato-list.component.html
 M	Restaurante_FE/Restaurante/src/app/prato-list/prato-list.component.ts
 M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.html
 M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.ts
-
-commit a0975eb44e33b05a48ae65d36d70b674948fd708	refs/heads/main
-Author: Tiago Santos <1221040@isep.ipp.pt>
-Date:   Tue Nov 26 14:56:58 2024 +0000
-
-    Botão Prato Ementa
-
-M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
-
-commit e5d2cc812a0450206c39dced34432309becf7c6e	refs/heads/main
-Author: Tiago Santos <1221040@isep.ipp.pt>
-Date:   Tue Nov 26 12:24:50 2024 +0000
-
-    Criar Prato -botão, css e inicio das funcionalidades
-
-M	Restaurante_FE/Restaurante/src/app/app.routes.ts
-M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.css
-M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.html
-M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.html
-M	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.ts
-
-commit 3455f1bf8393ebdb2c3cd77ae2013e419f468832	refs/heads/main
-Author: Tiago Santos <1221040@isep.ipp.pt>
-Date:   Tue Nov 26 12:04:39 2024 +0000
-
-    Nome dos botões Completos
-
-M	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
-
-commit 4e7d2c3a89ece1204f083f50e44f2a4ed8b9e368	refs/heads/main
-Author: Tiago Santos <1221040@isep.ipp.pt>
-Date:   Tue Nov 26 11:59:40 2024 +0000
-
-    Criação de Botões e Redirecionar paginas conforme funcionalidade
-    (Pratos Managment finalizado)
-
-M	Restaurante_FE/Restaurante/src/app/Services/prato.service.ts
-M	Restaurante_FE/Restaurante/src/app/app.component.html
-M	Restaurante_FE/Restaurante/src/app/app.component.ts
-M	Restaurante_FE/Restaurante/src/app/app.config.ts
-M	Restaurante_FE/Restaurante/src/app/app.routes.ts
-A	Restaurante_FE/Restaurante/src/app/cozinha/cozinha.component.css
-A	Restaurante_FE/Restaurante/src/app/cozinha/cozinha.component.html
-A	Restaurante_FE/Restaurante/src/app/cozinha/cozinha.component.spec.ts
-A	Restaurante_FE/Restaurante/src/app/cozinha/cozinha.component.ts
-M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.html
-M	Restaurante_FE/Restaurante/src/app/prato-create/prato-create.component.ts
-A	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.css
-A	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.html
-A	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.spec.ts
-A	Restaurante_FE/Restaurante/src/app/pratos-management/pratos-management.component.ts
-A	Restaurante_FE/Restaurante/src/app/sala/sala.component.css
-A	Restaurante_FE/Restaurante/src/app/sala/sala.component.html
-A	Restaurante_FE/Restaurante/src/app/sala/sala.component.spec.ts
-A	Restaurante_FE/Restaurante/src/app/sala/sala.component.ts
